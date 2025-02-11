@@ -1,0 +1,146 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "text_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "asciifolding",
+            "lowercase",
+            "kstem"
+          ]
+        },
+        "path_analyzer": {
+          "type": "custom",
+          "tokenizer": "path_hierarchy"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "gh_page": {
+      "properties": {
+        "repo": {
+          "type": "text",
+          "fields": {
+            "repo": {
+              "type": "keyword",
+              "index": true,
+              "include_in_all": "false"
+            },
+            "path": {
+              "type": "text",
+              "index": true,
+              "search_analyzer": "keyword",
+              "analyzer": "path_analyzer",
+              "include_in_all": "false"
+            }
+          }
+        },
+        "content": {
+          "term_vector": "with_positions_offsets",
+          "index": true,
+          "type": "text",
+          "analyzer": "text_analyzer",
+          "store": "yes"
+        },
+        "url": {
+          "type": "text",
+          "index": true,
+          "store": "yes",
+          "include_in_all": "false"
+        },
+        "title": {
+          "index": true,
+          "type": "text",
+          "analyzer": "text_analyzer",
+          "store": "yes",
+          "boost": 2
+        }
+      }
+    },
+    "wiki_page": {
+      "properties": {
+        "repo": {
+          "type": "text",
+          "fields": {
+            "repo": {
+              "type": "keyword",
+              "index": true,
+              "include_in_all": "false"
+            },
+            "path": {
+              "type": "text",
+              "index": true,
+              "search_analyzer": "keyword",
+              "analyzer": "path_analyzer",
+              "include_in_all": "false"
+            }
+          }
+        },
+        "content": {
+          "term_vector": "with_positions_offsets",
+          "index": true,
+          "type": "text",
+          "analyzer": "text_analyzer",
+          "store": "yes"
+        },
+        "url": {
+          "type": "text",
+          "index": true,
+          "store": "yes",
+          "include_in_all": "false"
+        },
+        "title": {
+          "index": true,
+          "type": "text",
+          "analyzer": "text_analyzer",
+          "store": "yes",
+          "boost": 2
+        }
+      }
+    },
+    "readme": {
+      "properties": {
+        "repo": {
+          "type": "text",
+          "fields": {
+            "repo": {
+              "type": "keyword",
+              "index": true,
+              "include_in_all": "false"
+            },
+            "path": {
+              "type": "text",
+              "index": true,
+              "search_analyzer": "keyword",
+              "analyzer": "path_analyzer",
+              "include_in_all": "false"
+            }
+          }
+        },
+        "content": {
+          "term_vector": "with_positions_offsets",
+          "index": "analyzed",
+          "type": "text",
+          "index": true,
+          "analyzer": "text_analyzer",
+          "store": "yes"
+        },
+        "url": {
+          "type": "text",
+          "store": "yes",
+          "include_in_all": "false"
+        },
+        "title": {
+          "index": true,
+          "type": "text",
+          "analyzer": "text_analyzer",
+          "store": "yes",
+          "boost": 2
+        }
+      }
+    }
+  }
+}

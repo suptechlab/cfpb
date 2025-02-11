@@ -1,0 +1,27 @@
+{
+    "geometry": {
+        "coordinates": [
+            -104.86994357799995,
+            39.753380623000055
+        ],
+        "type": "Point"
+    },
+    "id": "8",
+    "properties": {
+        "AddrFull": null,
+        "AddrNum": null,
+        "Latitude": 0.0,
+        "Longitude": 0.0,
+        "NumSuf": null,
+        "PlaceName": null,
+        "PostDir": null,
+        "PostType": null,
+        "PreDir": null,
+        "PreType": null,
+        "StreetName": null,
+        "UnitNumber": null,
+        "UnitType": null,
+        "Zipcode": "80010"
+    },
+    "type": "Feature"
+}

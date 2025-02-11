@@ -1,0 +1,56 @@
+{
+  "name": "gitbook-plugin-theme-cfpb",
+  "description": "Theme for GitBook Consumer Financial Protection Bureau (CFPB) projects",
+  "main": "./index.js",
+  "version": "0.0.1",
+  "engines": {
+    "gitbook": ">=3.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "capital-framework": "^4.20.0",
+    "gitbook-markdown-css": "1.0.1",
+    "jquery": "3.1.1",
+    "less": "2.7.1",
+    "less-plugin-clean-css": "1.5.1",
+    "uglify-js": "^3.3.3"
+  },
+  "scripts": {
+    "prepare": "./src/build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anselmbradford/theme-cfpb.git"
+  },
+  "author": "Consumer Financial Protection Bureau <tech@cfpb.gov>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/anselmbradford/theme-cfpb/issues"
+  },
+  "contributors": [
+    {
+      "name": "Anselm Bradford",
+      "email": "Anselm.Bradford@cfpb.gov"
+    }
+  ],
+  "gitbook": {
+    "properties": {
+      "styles": {
+        "type": "object",
+        "title": "Custom Stylesheets",
+        "properties": {
+          "website": {
+            "title": "Stylesheet for website output",
+            "default": "styles/website.css"
+          }
+        }
+      },
+      "showLevel": {
+        "type": "boolean",
+        "title": "Show level indicator in TOC",
+        "default": false
+      }
+    }
+  }
+}

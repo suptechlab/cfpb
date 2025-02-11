@@ -1,0 +1,67 @@
+{
+  "name": "grasshopper-loader",
+  "version": "0.0.1",
+  "description": "Fetch public address data and load it into Elasticsearch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/grasshopper-loader.git"
+  },
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "url": "http://cfpb.github.io/"
+  },
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/cfpb/grasshopper-loader/issues"
+  },
+  "homepage": "https://github.com/cfpb/grasshopper-loader",
+  "engines": {
+    "node": "5.6"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "dependencies": {
+    "add-props-stream": "^0.2.0",
+    "async": "^1.4.2",
+    "aws-auto-auth": "^0.1.1",
+    "aws-sdk": "^2.1.31",
+    "centroid-stream": "^0.3.1",
+    "commander": "^2.8.1",
+    "csv-to-vrt": "0.2.4",
+    "elasticsearch": "^10.1.3",
+    "end-of-stream": "^1.1.0",
+    "fs-extra": "^0.23.1",
+    "ftp": "^0.3.10",
+    "inherits": "^2.0.1",
+    "lump-stream": "0.x",
+    "ogr-json-stream": "^0.3.0",
+    "pump": "^1.0.0",
+    "readable-stream": "2.0.x",
+    "request": "^2.60.0",
+    "split2": "^1.0.0",
+    "through2": "^2.0.0",
+    "us": "^1.1.1",
+    "winston": "^1.0.1",
+    "yauzl": "^2.3.1"
+  },
+  "keywords": [
+    "elasticsearch",
+    "streams",
+    "address",
+    "addresses",
+    "public data",
+    "shapefile",
+    "geo",
+    "geodata",
+    "s3",
+    "ogr2ogr",
+    "vrt"
+  ],
+  "preferGlobal": "true",
+  "devDependencies": {
+    "isstream": "^0.1.2",
+    "stream-stats": "^0.7.0",
+    "tape": "^4.0.1"
+  }
+}

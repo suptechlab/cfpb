@@ -1,0 +1,99 @@
+.panel {
+    background: $white;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 400px;
+    z-index: 1000;
+}
+
+#data {
+    border-radius: 2px;
+    padding: 0 20px;
+    /*overflow-y: scroll;*/
+    max-width: 500px;
+}
+
+.result {
+    border-bottom: 1px solid $gray-5;
+    padding: 20px 0;
+    position: relative;
+    &:last-child {
+        border-bottom: none;
+    }
+}
+.result-error {
+    @extend .result;
+    color: $redorange;
+    font-weight: bold;
+}
+.score, .placename, .service, h5 {
+    margin: 0;
+}
+.score, .placename, .service {
+   font-size: .75em;
+}
+.service {
+    color: $gray-80;
+    margin-top: 5px;
+}
+h5 {
+    font-family: "AvenirNextLTW01-Demi", Helvetica, Arial;
+    font-size: .85em;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.geo-symbol {
+    background-color: $gray-50;
+    border-radius: 50%;
+    display: inline-block;
+    height: 5px;
+    margin-bottom: 4px;
+    width: 5px;
+}
+.active .geo-symbol,
+.active .lat-long:hover + .geo-symbol {
+    animation: blink-active 1.5s infinite;
+    -webkit-animation: blink-active 1.5s infinite;
+}
+.lat-long:hover + .geo-symbol {
+        animation: blink-hover 1.5s infinite;
+        -webkit-animation: blink-hover 1.5s infinite;
+    }
+
+@keyframes blink-hover {
+    0% {
+        background-color: rgba(255, 158, 27, 0);
+    }
+    100% {
+        background-color: rgba(255, 158, 27, 1);
+    }
+}
+@-webkit-keyframes blink-hover {
+    0% {
+        background-color: rgba(255, 158, 27, 0);
+    }
+    100% {
+        background-color: rgba(255, 158, 27, 1);
+    }
+}
+
+@keyframes blink-active {
+    0% {
+        background-color: rgba(44, 179, 74, 0);
+    }
+    100% {
+        background-color: rgba(44, 179, 74, 1);
+    }
+}
+@-webkit-keyframes blink-active {
+    0% {
+        background-color: rgba(44, 179, 74, 0);
+    }
+    100% {
+        background-color: rgba(44, 179, 74, 1);
+    }
+}

@@ -1,0 +1,67 @@
+{
+  "properties": {
+    "source": {
+      "type": "keyword",
+      "index": true
+    },
+    "path": {
+      "type": "text",
+      "fields": {
+        "path_full": {
+          "type": "keyword",
+          "index": true,
+          "include_in_all": "false"
+        },
+        "path_analyzed": {
+          "type": "text",
+          "index": true,
+          "search_analyzer": "keyword",
+          "analyzer": "path_analyzer",
+          "include_in_all": "false"
+        }
+      }
+    },
+    "url": {
+      "type": "text",
+      "index": true,
+      "store": "yes",
+      "include_in_all": "false"
+    },
+    "title": {
+      "index": true,
+      "type": "text",
+      "analyzer": "text_analyzer",
+      "store": "yes",
+      "boost": 2
+    },
+    "content": {
+      "term_vector": "with_positions_offsets",
+      "index": true,
+      "type": "text",
+      "analyzer": "text_analyzer",
+      "store": "yes"
+    },
+    "updated_date": {
+      "type": "date",
+      "format": "date_time"
+    },
+    "author": {
+      "type": "text",
+      "index": true
+
+    },
+    "tags": {
+      "type": "text",
+      "index": true,
+      "copy_to": "tag"
+    },
+    "status": {
+      "type": "keyword",
+      "index": true
+    },
+    "assignee": {
+      "type": "text",
+      "index":true
+    }
+  }
+}

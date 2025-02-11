@@ -1,0 +1,81 @@
+{%- import 'macros/atoms/radio-button.html' as radio -%}
+{%- import 'macros/molecules/notification.html' as notification with context -%}
+{%- from 'macros/organisms/financial-item-details.html' import details with context -%}
+{%- import 'macros/financial-item-input.html' as input with context -%}
+{%- import 'macros/financial-item-text.html' as text_item with context -%}
+{%- import 'macros/number-callout.html' as number_callout with context -%}
+
+<div class="skip-nav">
+    <a class="skip-nav_link" href="#main">Skip to main content</a>
+</div>
+
+<header class="o-header">
+    <div class="wrapper wrapper__match-content">
+        <div class="branding">
+            {% if org_logo %}
+                <img src="img/{{ org_logo }}" alt="{{ org_name }}">
+            {% else %}
+                {{ org_name }}
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+<main class="content college-costs" id="main" data-state_gotstarted="false"> {# content__hide-horizontal-overflow removed for position sticky to work #}
+    {%- include 'sections/0-intro.html' -%}
+    <div class="college-costs_app-segment content content__1-3 block block__flush-top">
+        <div class="content_wrapper">
+            {%- include '_nav.html' -%}
+            <div class="content_main
+                        content__flush-top-on-small
+                        content__half-top-on-desk
+                        content__flush-bottom"
+                 id="content_main">
+                <div class="app-container">
+                    <div class="app">
+                        {%- include 'sections/01-school-search.html' -%}
+                        {%- include 'sections/02-costs.html' -%}
+                        {%- include 'sections/03-grants-and-scholarships.html' -%}
+                        {%- include 'sections/04-work-study.html' -%}
+                        {%- include 'sections/05-federal-loans.html' -%}
+                        {%- include 'sections/06-school-loans.html' -%}
+                        {%- include 'sections/07-other-resources.html' -%}
+                        {%- include 'sections/08-loan-counseling.html' -%}
+                        {%- include 'sections/09-make-a-plan.html' -%}
+                        {%- include 'sections/10-max-debt-guideline.html' -%}
+                        {%- include 'sections/11-cost-of-borrowing.html' -%}
+                        {%- include 'sections/12-affording-your-loan.html' -%}
+                        {%- include 'sections/13-school-results.html' -%}
+                        {%- include 'sections/14-summary.html' -%}
+                        {%- include 'sections/15-action-plan.html' -%}
+                        {%- include 'sections/16-save-and-finish.html' -%}
+                        <div class="college-costs_tool-section_buttons m-btn-group block block__mid">
+                            <button class="a-btn college-costs_buttons__next btn__next-step">Next step</button>
+                            <button class="a-btn a-btn__link btn__save" data-app-button="save-and-finish-later">Save and finish later</button>
+                        </div>
+                        <div class="college-costs_save-for-later block block__mid" data-state-based-visibility="save-for-later">
+                            <p>Copy and save this link so that you can come back and review your plan.</p>
+                            {% include 'macros/organisms/copy-link-form.html' %}
+                        </div>
+                    </div>
+                    <div class="costs-not-covered costs-not-covered-sticky">
+                        {{ number_callout.render({
+                                'header': 'Costs not covered yet',
+                                'data_attribute': 'data-financial-item="total_gap"' | safe,
+                                'additional_classes': 'number-callout__warning number-callout__right'
+                            })
+                        }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="o-footer">
+    <div class="wrapper wrapper__match-content">
+        <a class="m-list_link" href="{{ footer_back_url }}">
+            &larr; Back to the main {{ org_name }} website
+        </a>
+    </div>
+</footer>

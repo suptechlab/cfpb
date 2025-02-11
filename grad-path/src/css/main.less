@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Your Financial Path to Graduation
+   ========================================================================== */
+
+// This is your project's main Less file.
+// Project-specific Less rules go after the imports.
+
+// Import Design System components
+@import (less) 'cfpb-core.less';
+@import (less) 'cfpb-icons.less';
+@import (less) 'cfpb-buttons.less';
+@import (less) 'cfpb-forms.less';
+@import (less) 'cfpb-grid.less';
+@import (less) 'cfpb-layout.less';
+@import (less) 'cfpb-typography.less';
+@import (less) 'cfpb-notifications.less';
+@import (less) 'cfpb-expandables.less';
+@import (less) 'cfpb-tables.less';
+
+// Override the Design System theme variables with colors from the brand color palette
+@import (less) 'cf-theme-overrides.less';
+
+// Import styles for components borrowed from consumerfinance.gov
+@import (less) 'molecules/hero.less';
+@import (less) 'organisms/header.less';
+@import (less) 'organisms/footer.less';
+@import (less) 'organisms/secondary-nav.less';
+@import (less) 'skip-nav.less';
+
+// Import app-specific Less files
+@import (less) 'college-costs/vars.less';
+@import (less) 'college-costs/college-costs.less';
+@import (less) 'college-costs/charts.less';
+@import (less) 'college-costs/financial-item.less';
+@import (less) 'college-costs/nav.less';
+@import (less) 'college-costs/number-callout.less';
+@import (less) 'college-costs/search.less';
+@import (less) 'college-costs/state-based.less';
+
+// Import app-specific print styles
+.respond-to-print( {
+  @import (less) 'print.css';
+} );

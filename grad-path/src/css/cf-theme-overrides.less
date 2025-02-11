@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Capital Framework theme overrides
+   ========================================================================== */
+
+/* cfpb-core
+   ========================================================================== */
+
+// Color variables
+
+// body
+@text: @black;
+@brand-color-primary: @purple;
+@brand-color-secondary: @gold-40;
+
+// a
+@link-text: @pacific;
+@link-underline: @pacific;
+@link-text-visited: @purple-dark;
+@link-underline-visited: @purple-dark;
+@link-text-hover: @pacific-dark;
+@link-underline-hover: @pacific-dark;
+@link-text-active: @navy;
+@link-underline-active: @navy;
+
+// table
+@table-head-text: @text;
+@table-head-bg: @gray-5;
+@table-cell-bg: @white;
+@table-cell-bg_alt: @gray-5;
+@table-scrolling-border: @gray-40;
+@table-border: @gray;
+
+// code
+@code-text: @text;
+@code-bg: @gray-5;
+
+// Sizing variables
+
+@base-font-size-px: 16px;
+@base-line-height-px: 22px;
+@base-line-height: unit((@base-line-height-px / @base-font-size-px));
+
+@size-xl: 48px; // Super-size
+
+@size-i: 34px; // h1-size
+@size-ii: 26px; // h2-size
+@size-iii: 22px; // h3-size
+@size-iv: 18px; // h4-size
+@size-v: 14px; // h5-site
+@size-vi: 12px; // h6-size
+@size-code: 13px; // Custom size only for Mono code blocks
+
+// Web fonts
+
+@font-stack: system-ui, sans-serif;
+
+/* cfpb-buttons
+   ========================================================================== */
+
+// Color variables
+
+// .btn
+@btn-text: @white;
+@btn-bg: @pacific;
+@btn-bg-hover: @pacific-dark;
+@btn-bg-active: @navy;
+
+// .btn__secondary
+@btn__secondary-text: @white;
+@btn__secondary-bg: @gray;
+@btn__secondary-bg-hover: @gray-dark;
+@btn__secondary-bg-active: @black;
+
+// .btn__warning
+@btn__warning-text: @white;
+@btn__warning-bg: @red-mid-dark;
+@btn__warning-bg-hover: @red-dark;
+@btn__warning-bg-active: @gray-dark;
+
+// .btn__disabled
+@btn__disabled-text: @gray;
+@btn__disabled-bg: @gray-20;
+@btn__disabled-outline: @gray-20;
+
+// Sizing variables
+
+// .btn
+@btn-font-size: @base-font-size-px;
+@btn-border-radius-size: 4px;
+@btn-v-padding: 8px;
+@btn-h-padding: 14px;
+@btn-v-padding-modifier-ie: 0.8;
+
+// .btn__super
+@btn__super-font-size: 18px;
+
+/* cfpb-expandables
+   ========================================================================== */
+
+// Color variables
+
+// .o-expandable modifiers
+@expandable__border: @gray-40;
+
+/* cfpb-forms
+   ========================================================================== */
+
+// Color variables
+
+// .a-text-input borders
+@input-border: @gray-60;
+@input-border__hover: @pacific;
+@input-border__focused: @pacific;
+@input-border__error: @red;
+@input-border__warning: @gold;
+@input-border__success: @green;
+
+// .a-text-input backgrounds
+@input-bg: @white;
+@input-bg__selected: @pacific;
+@input-bg__disabled: @gray-10;
+@input-bg__disabled-selected: @gray-40;
+
+// .a-text-input text
+@input-text: @black;
+@input-text__disabled: @gray;
+@input-text__placeholder: @gray;
+
+// .a-text-input icons
+@input-icon: @gray;
+@input-icon__success: @green;
+@input-icon__warning: @gold;
+@input-icon__error: @red;
+
+// .a-select
+@select-border: @input-border;
+@select-icon-bg: @gray-10;
+@select-text__disabled: @input-text__disabled;
+
+// .m-form-field
+@form-field-input-border: @input-border;
+@form-field-input-border__disabled: @gray-60;
+@form-field-inset: @white;
+
+// .m-form-field__lg-target
+@form-field-input-lg-target-bg: @gray-10;
+@form-field-input-lg-target-bg__selected: @pacific-20;
+@form-field-input-lg-target-bg__disabled: @gray-20;
+@form-field-input-lg-target-border: @pacific;
+
+// .a-label_helper
+@label-helper: @gray;
+
+// Sizing variables
+
+// .a-select
+@select-height: 35px;
+
+/* cfpb-grid
+   ========================================================================== */
+
+@grid_wrapper-width: 1230px;
+@grid_gutter-width: 30px;
+@grid_total-columns: 12;
+@grid_debug: false;
+
+/* cfpb-icons
+   ========================================================================== */
+
+// Icon SVGs viewbox is 1000 (w) x 1200 (h).
+// The height matches the 19px rendered canvas of text set in Avenir Next
+// sized at 16px (19/16 = 1.1875).
+@cf-icon-height: 1.1875em;
+
+/* cfpb-layout
+   ========================================================================== */
+
+// Color variables
+
+// .block
+@block__bg: @gray-5;
+@block__border: @gray-40;
+@block__border-top: @block__border;
+@block__border-right: @block__border;
+@block__border-bottom: @block__border;
+@block__border-left: @block__border;
+
+// .content_main
+@content_main-border: @block__border;
+
+// .content_sidebar
+@content_sidebar-bg: @block__bg;
+@content_sidebar-border: @block__border;
+
+// .content_line
+@content_line: @block__border;
+
+// .grid_column__top-divider
+@grid_column__top-divider: @block__border;
+
+// .grid_column__left-divider
+@grid_column__left-divider: @block__border;
+
+/* cfpb-tables
+   ========================================================================== */
+
+// Color variables
+
+@table-cell-bg: @white;
+@table-cell-bg_alt: @gray-5;
+@table-scrolling-border: @gray-40;
+@table-border: @gray;
+
+/* cfpb-typography
+   ========================================================================== */
+
+// Webfont variables
+// This is the path to your stylesheet containing @font-face rules.
+@font-face-path: ''; // Set to empty string to prevent loading of any.
+// This is the path for self-hosted fonts.
+@cf-fonts-path: '/static/fonts';
+
+// Color variables
+
+// Running text elements
+
+// .a-micro-copy
+@micro-copy: @black;
+
+// .a-date
+@date: @gray;
+
+// .m-pull-quote
+@pull-quote_body: @black;
+@pull-quote_citation: @gray;
+
+// Headings
+
+// .a-heading__icon
+@heading__icon: @black;
+@heading__icon__hover: @link-text-hover;
+
+// Headers
+
+// .m-slug-header
+@slug-header_border__thin: @gray-40;
+@slug-header_border__thick: @brand-color-primary;
+
+// .m-meta-header
+@meta-header_border: @gray-40;
+
+// Links
+
+// .a-link__jump
+@jump-link_bg: @gray-5;
+@jump-link_border: @gray-40;

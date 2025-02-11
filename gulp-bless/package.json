@@ -1,0 +1,60 @@
+{
+  "name": "gulp-bless",
+  "version": "4.0.1",
+  "homepage": "http://github.com/BlessCSS/gulp-bless",
+  "description": "CSS post-processor which splits CSS files suitably for Internet Explorer < 10. Bless + Gulp = gulp-bless.",
+  "main": "./index.js",
+  "dependencies": {
+    "bless": "^4.0.0",
+    "concat-with-sourcemaps": "^1.0.4",
+    "fancy-log": "^1.3.2",
+    "lodash.isfunction": "^3.0.8",
+    "lodash.isstring": "^4.0.1",
+    "lodash.isundefined": "^3.0.1",
+    "merge": "~1.2.0",
+    "plugin-error": "^1.0.1",
+    "through2": "~0.5.1",
+    "vinyl": "^2.1.0",
+    "vinyl-sourcemaps-apply": "^0.2.1"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-clean-css": "2.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-coverage": "~0.1.24",
+    "gulp-each": "^0.2.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-mocha": "^4.3.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "proxyquire": "~1.0.1",
+    "should": "*",
+    "source-map": "^0.5.6",
+    "stream-assert": "^2.0.3"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BlessCSS/gulp-bless.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "css",
+    "postprocessor",
+    "preprocessor",
+    "split",
+    "internet explorer",
+    "bless"
+  ],
+  "author": "Adam Lynch <adam@teamwork.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/BlessCSS/gulp-bless/issues"
+  },
+  "engines": {
+    "node": ">=0.9"
+  }
+}

@@ -1,0 +1,762 @@
+[
+  {
+    "name": "north_carolina",
+    "url": "http://data.nconemap.gov/downloads/vector/mastadd14.zip",
+    "file": "AddressNC_2014.gdb",
+    "spatialReference": "EPSG:2264",
+    "count": 4916623,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "ADDR_HN"
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["ADDR_SN", "ADDR_ST"]
+      },
+      "City": {
+        "type": "static",
+        "value": "PO_NAME"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIPCODE"
+      }
+    }
+  },
+  {
+    "name": "utah",
+    "url": "ftp://ftp.agrc.utah.gov/UtahSGID_Vector/UTM12_NAD83/LOCATION/UnpackagedData/AddressPoints/_Statewide/AddressPoints_gdb.zip",
+    "file": "AddressPoints.gdb",
+    "count": 1116698,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "AddNum"
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["PrefixDir", "StreetName", "StreetType", "SuffixDir"]
+      },
+      "City": {
+        "type": "static",
+        "value": "AddSystem"
+      },
+      "State": {
+        "type": "static",
+        "value": "State"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZipCode"
+      }
+    }
+  },
+  {
+    "name": "new_york",
+    "url": "http://gis.ny.gov/gisdata/data/ds_921/SAM_Master_Statewide.gdb.zip",
+    "file": "SAM_Master_Statewide_Database.gdb",
+    "count": 4841261,
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["PrefixAddressNumber", "AddressNumber", "SuffixAddressNumber"],
+        "separators": {"1": "", "2": ""}
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["PreModifier", "PreDirectional", "PreType", "StreetName", "PostType", "PostDirectional", "PostModifier"]
+      },
+      "City": {
+        "type": "static",
+        "value": "CityTownName"
+      },
+      "State": {
+        "type": "static",
+        "value": "State"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZipCode"
+      }
+    }
+  },
+  {
+    "name": "arkansas",
+    "url": "http://geostor-vectors.geostor.org/Location/SHP/SITUS_ADDRESS_PT.zip",
+    "file": "SITUS_ADDRESS_PT.shp",
+    "count": 1420822,
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["ADR_NUM", "ADR_NUM_SU"],
+        "separators": {"1": ""}
+      },
+      "Street": {
+        "type": "static",
+        "value": "PSTR_FULNA"
+      },
+      "City": {
+        "type": "static",
+        "value": "ADR_CITY"
+      },
+      "State": {
+        "type": "static",
+        "value": "ADR_STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ADR_ZIP5"
+      }
+    }
+  },
+  {
+    "name": "virginia",
+    "url": "https://ftp.vgingis.com/Download/VA_SiteAddress.txt.zip",
+    "file": "VA_SiteAddress.txt",
+    "count": 3605429,
+    "spatialReference": "NAD83",
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["PREADDRNUM", "ADDRNUM", "ADDRNUMSUF"],
+        "separators": {"1": "", "2": ""}
+      },
+      "Street": {
+        "type": "static",
+        "value": "FULLNAME"
+      },
+      "City": {
+        "type": "static",
+        "value": "PO_NAME"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "dynamic",
+        "value": "return +props.ZIP_5.replace(/,/,'')"
+      }
+    }
+  },
+  {
+    "name": "maine",
+    "url": "http://www.maine.gov/megis/catalog/shps/state/ng911pts.zip",
+    "file": "ng911pts.shp",
+    "count": 553794,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "ADDRESS_NU"
+      },
+      "Street": {
+        "type": "static",
+        "value": "RDNAME"
+      },
+      "City": {
+        "type": "static",
+        "value": "MUNICIPALI"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIPCODE"
+      }
+    }
+  },
+  {
+    "name": "vermont",
+    "url": "http://maps.vcgi.org/gisdata/vcgi/packaged_zips/EmergencyE911_ESITE.zip",
+    "file": "Emergency_ESITE_point.shp",
+    "count": 323327,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "HOUSENUMBE"
+      },
+      "Street": {
+        "type": "dynamic",
+        "value": "return props.PRIMARYNAM || props.SN + ' ' + props.ST"
+      },
+      "City": {
+        "type": "static",
+        "value": "TOWNNAME"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIP"
+      }
+    }
+  },
+  {
+    "name": "district_of_columbia",
+    "url": "http://opendata.dc.gov/agol/arcgis/aa514416aaf74fdc94748f1e56e7cc8a/0.zip",
+    "file": "Address_Points.shp",
+    "count": 146118,
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["ADDRNUM", "ADDRNUMSUF"],
+        "separators": {"1": ""}
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["STNAME", "STREET_TYP", "QUADRANT"]
+      },
+      "City": {
+        "type": "static",
+        "value": "CITY"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIPCODE"
+      }
+    }
+  },
+  {
+    "name": "rhode_island",
+    "url": "http://www.rigis.org/geodata/facility/e911Sites16r2b.zip",
+    "file": "e911Sites16r2b.shp",
+    "count": 406876,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "HouseNumbe"
+      },
+      "Street": {
+        "type": "static",
+        "value": "PrimaryNam"
+      },
+      "City": {
+        "type": "static",
+        "value": "ZN"
+      },
+      "State": {
+        "type": "dynamic",
+        "value": "return props.State || 'RI'"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "Zip"
+      }
+    }
+  },
+  {
+    "name": "montana",
+    "url": "montana.zip",
+    "file": "30_addresspoints_20150504.shp",
+    "count": 498525,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "Number"
+      },
+      "Street": {
+        "type": "static",
+        "value": "Address"
+      },
+      "City": {
+        "type": "static",
+        "value": "City"
+      },
+      "State": {
+        "type": "static",
+        "value": "State"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIP"
+      }
+    }
+  },
+  {
+    "name": "massachusetts",
+    "url": "massachusetts.zip",
+    "file": "MA_ADDRESS_POINTS/MAD_POINTS.gdb",
+    "count": 3231589,
+    "spatialReference": "EPSG:26986",
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["ADDRESS_NUMBER_PREFIX", "ADDRESS_NUMBER", "ADDRESS_NUMBER_SUFFIX"],
+        "separators": {"1": "", "2": ""}
+      },
+      "Street": {
+        "type": "static",
+        "value": "COMPLETE_STREET_NAME"
+      },
+      "City": {
+        "type": "static",
+        "value": "INCORPORATED_MUNICIPALITY"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "POSTAL_CODE"
+      }
+    }
+  },
+  {
+    "name": "maryland",
+    "url": "maryland.zip",
+    "file": "maryland.gdb",
+    "count": 2469856,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "ADDNUMCPLT"
+      },
+      "Street": {
+        "type": "static",
+        "value": "NAMECPLT"
+      },
+      "City": {
+        "type": "static",
+        "value": "CITY"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIPCODE"
+      }
+    }
+  },
+  {
+    "name": "ohio",
+    "url": "ohio.zip",
+    "file": "merge.shp",
+    "count": 4104053,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "Number"
+      },
+      "Street": {
+        "type": "static",
+        "value": "Street"
+      },
+      "City": {
+        "type": "static",
+        "value": "City"
+      },
+      "State": {
+        "type": "static",
+        "value": "State"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "Zipcode"
+      }
+    }
+  },
+  {
+    "name": "tennessee",
+    "url": "tennessee.zip",
+    "file": "TN_Statewide_20151106/TN_Statewide_20151106.gdb",
+    "layerName": "SiteAddress",
+    "spatialReference": "NAD83",
+    "count": 3264341,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "comp_stnum"
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["premod", "predir", "pretype", "name", "type", "sufdir", "postmod"]
+      },
+      "City": {
+        "type": "static",
+        "value": "city"
+      },
+      "State": {
+        "type": "static",
+        "value": "state"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "zip"
+      }
+    }
+  },
+  {
+    "name": "connecticut",
+    "url": "ftp://ftp.ct.gov/pub/gis/Clearinghousedata/Addressing/CT_Address_pt.zip",
+    "file": "CT_Address_Work_2013/CT_Address_Work_2013.gdb",
+    "count": 1014190,
+    "layerName": "Address_Points", 
+    "spatialReference": "EPSG:2234",
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["AddressNumberPrefix", "AddressNumber", "AddressNumberSuffix"],
+        "separators": {"1": "", "2": ""}
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["StreetNamePreModifier", "StreetNamePreDirectional", "StreetNamePreType", "StreetName", "StreetNamePostType", "StreetNamePostDirectional", "StreetNamePostModifier", "StreetNamePostIdentifier"]
+      },
+      "City": {
+        "type": "static",
+        "value": "USPS_PlaceName"
+      },
+      "State": {
+        "type": "static",
+        "value": "StateName"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZipCode"
+      }
+    }
+  },
+  {
+    "name": "washington",
+    "url": "washington.zip",
+    "file": "washington/merge/merge.shp",
+    "count": 1307342,
+    "spatialReference": "EPSG: 102749",
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "Number"
+      },
+      "Street": {
+        "type": "static",
+        "value": "StreetName"
+      },
+      "City": {
+        "type": "static",
+        "value": "City"
+      },
+      "State": {
+        "type": "dynamic",
+        "value": "return props.State || 'WA'"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "Zip_parsed"
+      }
+    }
+  },
+  {
+    "name": "wisconsin",
+    "url": "http://psc.wi.gov/utilityInfo/tele/broadband/documents/LinkWISCONSIN_EBM_ParcelAddress_Data.zip",
+    "file": "LinkWISCONSIN_EBM_ParcelAddress_Data/LinkWISCONSIN_EBM_Final_Share.gdb",
+    "layerName": "AddressPoints_FinalV2",
+    "count": 2734415,
+    "spatialReference": "NAD83",
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["AddNumPrefix", "AddNum", "AddNumSuffix"],
+        "separators": {"1": "", "2": ""}
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["Prefix", "StreetName", "StreetType", "Suffix"]
+      },
+      "City": {
+        "type": "static",
+        "value": "CensusPlaceName"
+      },
+      "State": {
+        "type": "static",
+        "value": "State"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZipCode"
+      }
+    }
+  },
+  {
+    "name": "new_jersey",
+    "url": "https://njgin.state.nj.us/download2/Address/ADDR_POINT_NJ_fgdb.zip",
+    "file": "NJAddressPub_20160621.gdb",
+    "count": 2947990,
+    "spatialReference": "EPSG:3424",
+    "layerName": "AddressPoints_NJ",
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["PRE_NUM", "ADDR_NUM", "SUF_NUM"],
+        "separators": {"1": "", "2": ""}
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["PRE_DIR", "PRE_TYPE", "PRE_MOD", "NAME", "SUF_TYPE", "SUF_DIR", "SUF_MOD"]
+      },
+      "City": {
+        "type": "dynamic",
+        "value": "return props.City || ''"
+      },
+      "State": {
+        "type": "dynamic",
+        "value": "return props.State || 'NJ'"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIP_CODE"
+      }
+    }
+  },
+  {
+    "name": "indiana",
+    "url": "indiana.zip",
+    "file": "indiana/address/indiana.shp",
+    "count": 3000716,
+    "spatialReference": "EPSG:26916",
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "number"
+      },
+      "Street": {
+        "type": "static",
+        "value": "street"
+      },
+      "City": {
+        "type": "static",
+        "value": "city"
+      },
+      "State": {
+        "type": "static",
+        "value": "state"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "zip"
+      }
+    }
+  },
+  {
+    "name": "kansas",
+    "url": "kansas.zip",
+    "file": "CFPB.gdb",
+    "count": 1239446,
+    "spatialReference": "EPSG: 4269",
+    "layerName": "KS_AddressPoints_20160517",
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["HNO", "HNS"],
+        "separators": {"1": ""}
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["PRD", "STP", "RD", "STS", "POD", "POM"]
+      },
+      "City": {
+        "type": "static",
+        "value": "MUNI"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIP"
+      }
+    }
+  },
+  {
+    "name": "colorado",
+    "url": "https://data.colorado.gov/api/geospatial/n7je-akky?method=export&format=Original",
+    "file": "csadPublic/csadPublic.shp",
+    "count": 1688120,
+    "isZipped": true,
+    "spatialReference": "NAD83",
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["AddrNum", "NumSuf"],
+        "separators": {"1": ""}
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["PreDir", "PreType", "StreetName", "PreType", "PostDir"]
+      },
+      "City": {
+        "type": "static",
+        "value": "PlaceName"
+      },
+      "State": {
+        "type": "dynamic",
+        "value": "return props.State || 'CO'"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "Zipcode"
+      }
+    }
+  },
+  {
+    "name": "arizona",
+    "url": "arizona.zip",
+    "file": "arizona_points_8-15-16.gdb",
+    "count": 2909595,
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["AddNum_Pre", "Add_Number", "AddNum_Suf"],
+        "separators": {"1": "", "2": ""}
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["StN_PreMod", "StN_PreDir", "StN_PreTyp", "StN_PreSep", "StreetName", "StN_PosSep", "StN_PosTyp", "StN_PosDir", "StN_PosMod"]
+      },
+      "City": {
+        "type": "static",
+        "value": "Az_Placename"
+      },
+      "State": {
+        "type": "static",
+        "value": "State"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "Post_Code"
+      }
+    }
+  },
+  {
+    "name": "texas_other",
+    "url": "texas_other.zip",
+    "spatialReference": "NAD83",
+    "file": "texas_other.csv",
+    "count": 7153063,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "NUMBER"
+      },
+      "Street": {
+        "type": "static",
+        "value": "STREET"
+      },
+      "City": {
+        "type": "static",
+        "value": "CITY"
+      },
+      "State": {
+        "type": "dynamic",
+        "value": "return props.State || 'TX'"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "POSTCODE"
+      }
+    }
+  },
+  {
+    "name": "texas_csec",
+    "url": "texas_csec.zip",
+    "layerName": "SITE_STRUCTURE_POINTS",
+    "file": "texas_csec.gdb",
+    "count": 2413296,
+    "fields": {
+      "Number": {
+        "type": "multi",
+        "value": ["AddressNumberPrefix", "AddressNumber", "AddressNumberSuffix"],
+        "separators": {"1": "", "2": ""}
+      },
+      "Street": {
+        "type": "multi",
+        "value": ["StreetNamePreModifier", "StreetNamePreDirectional", "StreetNamePreType", "StreetName", "StreetNamePostType", "StreetNamePostDirectional", "StreetNamePostModifier"]
+      },
+      "City": {
+        "type": "static",
+        "value": "PlaceType"
+      },
+      "State": {
+        "type": "static",
+        "value": "State"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "PostalCode"
+      }
+    }
+  },
+  {
+    "name": "florida",
+    "url": "florida.zip",
+    "file": "aggregate/aggregate.shp",
+    "count": 8423679,
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "number"
+      },
+      "Street": {
+        "type": "static",
+        "value": "streetName"
+      },
+      "City": {
+        "type": "static",
+        "value": "city"
+      },
+      "State": {
+        "type": "static",
+        "value": "state"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "zipCode"
+      }
+    }
+  },
+  {
+    "name": "iowa",
+    "url": "iowa.zip",
+    "file": "iowa/iowa_aggregate.csv",
+    "count": 404042,
+    "spatialReference": "NAD83",
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "NUMBER"
+      },
+      "Street": {
+        "type": "static",
+        "value": "STREET"
+      },
+      "City": {
+        "type": "static",
+        "value": "CITY"
+      },
+      "State": {
+        "type": "dynamic",
+        "value": "return props.State || 'IA'"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "POSTCODE"
+      }
+    }
+  }
+]

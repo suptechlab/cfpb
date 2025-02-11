@@ -1,0 +1,16 @@
+.idea
+*.iml
+node_modules
+
+.coverrun
+.coverdata
+debug
+coverage.html
+
+test
+.travis.yml
+
+appveyor.yml
+gulpfile.js
+CONTRIBUTING.md
+

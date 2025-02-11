@@ -1,0 +1,68 @@
+{# ==========================================================================
+
+   Costs Group (organism using flyout code)
+
+   ==========================================================================
+
+   Description:
+
+   Create a financial item costs group flyout when given:
+
+   value:                   Object with following properties:
+
+   value.label:             Label for costs group header.
+
+   value.value:             Value for costs group header.
+
+   value.is_editable:       Whether costs group contains form elements.
+                            Determines the open/close cues.
+
+   value.note:              Additional text for costs group header.
+
+   value.data_attribute:    Data attribute for value element.
+
+   value.status:            Status descriptor for financial item value.
+                            Options include warning.
+
+   ========================================================================== #}
+
+{% macro details(value) %}
+<details class="o-costs-group">
+    <summary class="o-costs-group_header
+                    o-costs-group_header__collapsed
+                    financial-item
+                    financial-item__flyout
+                    {{ ('financial-item__' + value.status | safe ) if value.status else ''}}">
+      <span class="o-costs-group_target">
+        <span class="h4 o-costs-group_label">
+            {{ value.label }}
+        </span>
+        <span class="o-costs-group_link">
+            <span class="financial-item_value" {{ value.data_attribute | safe if value.data_attribute else '' }} >
+               {{ value.value }}
+            </span>
+            <span class="o-costs-group_cue-open" role="img">
+                {% if value.is_editable %}{% include 'icons/edit.svg' %}{% else %}{% include 'icons/plus-round.svg' %}{% endif %}
+            </span>
+            <span class="o-costs-group_cue-close" role="img">
+                {% if value.is_editable %}{% include 'icons/approved-round.svg' %}{% else %}{% include 'icons/minus-round.svg' %}{% endif %}
+            </span>
+        </span>
+        </span>
+        {% if value.note %}
+            <span class="financial-item_note">
+                {{ value.note | safe }}
+            </span>
+        {% endif %}
+    </summary>
+    <div class="o-costs-group_content">
+        {% if caller is defined %}
+            {{ caller() }}
+        {% endif %}
+    </div>
+</details>
+{% endmacro %}
+
+{% if value %}
+    {{ details(value) }}
+{% endif %}

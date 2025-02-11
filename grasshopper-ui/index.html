@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title></title>
+    
+    <meta name="description" content="">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/grasshopper.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <form class="search" id="geocode">
+                        <div class="input-wrapper group">
+                            <input class="input" id="address" name="address" placeholder="Enter an address" type="text" />
+                            <input class="btn" type="submit" value="Search" />
+                            <span class="error">Error</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-1">
+                    <img class="logo" src="img/logo_210.png" width="130" /> 
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <div class="panel">
+            <div id="data"></div>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src='js/grasshopper.js'></script>
+
+</body>
+</html>

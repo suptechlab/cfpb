@@ -1,0 +1,29 @@
+[
+  {
+    "name":"sacramento",
+    "url":"https://cfpb.github.io/grasshopper-retriever/parcels.json",
+    "file":"parcels.json",
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "STREET_NBR"
+      },
+      "Street": {
+        "type": "static",
+        "value": "STREET_NAM"
+      },
+      "City": {
+        "type": "static",
+        "value": "CITY"
+      },
+      "State": {
+        "type": "dynamic",
+        "value": "return 'CA'"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIP"
+      }
+    }
+  }
+]

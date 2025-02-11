@@ -1,0 +1,80 @@
+<div class="college-costs_intro-segment">
+    <!-- context["return_user"] = "iped" in request.GET and request.GET["iped"] -->
+    <section class="m-hero">
+        <div class="m-hero_wrapper">
+            <div class="m-hero_text">
+                <h1 class="m-hero_heading">{{ tool_name }}</h1>
+                {% if hero_paragraph %}
+                    <div class="m-hero_subhead">
+                        <p>{{ hero_paragraph }}</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="m-hero_image-wrapper">
+                <div class="m-hero_image">
+                    <img src="img/hero_940.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="return_user">
+        <div class="content_wrapper">
+            <div class="content_main">
+                <div class="m-notification
+                            m-notification__error
+                            u-hide-if-js">
+                    {% include 'icons/error-round.svg' %}
+                    <div class="m-notification_content">
+                        <div class="h4 m-notification_message">
+                            This tool requires JavaScrip to function. Please enable JavaScript and retry.
+                        </div>
+                     </div>
+                </div>
+                <div class="m-notification
+                            m-notification__visible
+                            u-js-only">
+                    {% include 'icons/updating.svg' %}
+                    <div class="m-notification_content">
+                        <div class="h4 m-notification_message">The page is loading…</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new_user">
+        <div class="content_wrapper">
+            <div class="content_main">
+                <div class="block block__flush-top">
+                    <div class="o-full-width-text-group">
+                        <div class="m-full-width-text">
+                            <h2>This tool can help you:</h2>
+                            <ul>
+                                <li>Understand your financial aid offer</li>
+                                <li>Plan to cover the remaining costs</li>
+                                <li>Estimate how much you’ll owe and if you can afford that debt</li>
+                                <li>Compare offers from different schools</li>
+                                <li>Decide what to do next</li>
+                            </ul>
+                            <h2>Keep coming back as your plan evolves.</h2>
+                            <p>For many students, planning how to pay for school is complicated. It may require multiple conversations with family, advisers, and the school financial aid office to get more information. As you figure out your best options, come back and update your plan as many times as you need!</p>
+                            <p>This tool does not save your personal data. <a href="https://www.consumerfinance.gov/paying-for-college/your-financial-path-to-graduation/how-we-got-these-numbers/">Learn how our partners at the CFPB got the numbers and guidelines for our calculations.</a></p>
+                            <h2>To start, you will need:</h2>
+                            <ul>
+                                <li>Your financial aid offer(s)</li>
+                                <li>An idea of how much money you and your family can put towards school</li>
+                                <li>A private loan offer (if you have one)</li>
+                                <li>The phone number or email address of someone in the financial aid office – it’s their job to answer your questions!</li>
+                            </ul>
+                            <p>You may want to use this tool with someone you trust who can help you weigh your options.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="college-costs_tool-section_buttons">
+                    <button class="a-btn college-costs_buttons__start btn__get-started">Get started</button>
+                </div>
+          </div>
+      </div>
+    </div>
+</div>

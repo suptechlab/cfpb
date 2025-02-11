@@ -1,0 +1,29 @@
+[
+  {
+    "name":"mainejson",
+    "url":"https://cfpb.github.io/grasshopper-retriever/maine.json",
+    "file":"maine.json",
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "ADDRESS_NU"
+      },
+      "Street": {
+        "type": "static",
+        "value": "RDNAME"
+      },
+      "City": {
+        "type": "static",
+        "value": "MUNICIPALI"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIPCODE"
+      }
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name":"mainezipcsv",
+    "url":"https://cfpb.github.io/grasshopper-retriever/maine.csv.zip",
+    "spatialReference":"WGS84",
+    "file":"maine.csv",
+    "fields": {
+      "Number": {
+        "type": "static",
+        "value": "ADDRESS_NU"
+      },
+      "Street": {
+        "type": "static",
+        "value": "RDNAME"
+      },
+      "City": {
+        "type": "static",
+        "value": "MUNICIPALI"
+      },
+      "State": {
+        "type": "static",
+        "value": "STATE"
+      },
+      "Zip": {
+        "type": "static",
+        "value": "ZIPCODE"
+      }
+    }
+  }
+]

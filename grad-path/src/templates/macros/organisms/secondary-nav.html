@@ -1,0 +1,65 @@
+{# ==========================================================================
+
+   secondary_nav.render()
+
+   ==========================================================================
+
+   Description:
+
+   Creates markup for secondary navigation.
+
+   nav_items:     The secondary navigation item structure.
+
+   ========================================================================== #}
+
+{% macro render( nav_items ) %}
+<nav class="o-secondary-nav">
+    <button class="o-secondary-nav_header" type="button" aria-expanded="false">
+        <span class="o-secondary-nav_label">
+            Navigation
+        </span>
+        <span class="o-secondary-nav_cues">
+            <span class="o-secondary-nav_cue-open" aria-label="Show">
+                {% include 'icons/plus-round.svg' %}
+            </span>
+            <span class="o-secondary-nav_cue-close" aria-label="Hide">
+                {% include 'icons/minus-round.svg' %}
+            </span>
+        </span>
+    </button>
+
+    <div class="o-secondary-nav_content">
+        <ul class="o-secondary-nav_list
+                   o-secondary-nav_list__parents">
+        {%- for item in nav_items %}
+            {# TODO: refactor JS to rid of custom `o-secondary-nav_li__parent` #}
+            <li class="o-secondary-nav_list-item__parent"
+                data-nav-is-active="{{item.current if item.current else 'False'}}"
+                data-nav-is-open="False">
+                <button class="o-secondary-nav_link
+                               o-secondary-nav_link__parent"
+                        data-gtm_ignore="true"
+                        data-nav_section="{{ item.data }}">
+                    {{ item.title }}
+                </button>
+            {%- if item.children -%}
+                <ul class="o-secondary-nav_list
+                           o-secondary-nav_list__children"
+                    aria-live="polite">
+                {%- for child in item.children -%}
+                    <li>
+                        <button class="o-secondary-nav_link"
+                                data-gtm_ignore="true"
+                                data-nav_item="{{ child.data }}">
+                            {{ child.title }}
+                        </button>
+                    </li>
+                {%- endfor %}
+                </ul>
+            {%- endif -%}
+            </li>
+        {%- endfor %}
+        </ul>
+    </div>
+</nav>
+{% endmacro %}

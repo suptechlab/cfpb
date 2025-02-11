@@ -1,0 +1,68 @@
+v0.5.3:
+  date: 2013-02-07
+  changes:
+    - Update terms to indicate it's a joint work.
+
+v0.5.2:
+  date: 2013-11-08
+  changes:
+    - Add shell.exec to make sure newly-created meta files get tracked/added.
+
+v0.5.1:
+  date: 2013-11-08
+  changes:
+    - Separate tag and push tasks.
+
+v0.5.0:
+  date: 2013-11-08
+  changes:
+    - Add CC0 licensing.
+    - Rename LICENSE to TERMS.
+
+v0.4.0:
+  date: 2013-11-08
+  changes:
+    - Add Bower support.
+
+v0.3.1:
+  date: 2013-11-07
+  changes:
+    - Improve unit testing.
+
+v0.3.0:
+  date: 2013-11-05
+  changes:
+    - Tidy up docs and deps for public release.
+
+v0.2.3:
+  date: 2013-07-26
+  changes:
+    - Link versions in README to GH tags.
+
+v0.2.2:
+  date: 2013-07-12
+  changes:
+    - Fix package.json write bug.
+    - Commit before tagging.
+    - Improve verbosity.
+
+v0.2.1:
+  date: 2013-07-11
+  changes:
+    - Fix package.json pollution bug.
+
+v0.2.0:
+  date: 2013-07-11
+  changes:
+    - Auto-commit and push git tags.
+    - Auto-update package.json version.
+
+v0.1.1:
+  date: 2013-07-06
+  changes:
+    - Make grunt task more verbose.
+
+v0.1.0:
+  date: 2013-07-01
+  changes:
+    - Initial commit.

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+
+<head>
+    <meta charset="utf-8" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+{% include "_head-meta.html" %}
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="js/college-costs.js" as="script">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/college-costs.js"></script>
+    <script>
+      // If JS is available, swap class on the html element.
+      if (window.fetch) {
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      }
+    </script>
+</head>
+
+
+<body data-file="src/templates/index.html">
+
+{% include "_body.html" %}
+
+</body>
+
+
+</html>

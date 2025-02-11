@@ -1,0 +1,10 @@
+# Ignore system files
+.DS_Store
+.DS_Store*
+
+# npm packages
+node_modules/
+npm-debug.log
+
+# GitBook
+_assets

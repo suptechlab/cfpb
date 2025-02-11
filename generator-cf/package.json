@@ -1,0 +1,44 @@
+{
+  "name": "generator-cf",
+  "version": "3.0.0",
+  "description": "Capital Framework Yeoman generator",
+  "license": "CC0-1.0",
+  "main": "app/index.js",
+  "repository": "cfpb/generator-cf",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "capital",
+    "framework",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "2.4.2",
+    "download": "7.1.0",
+    "promisify-node": "0.5.0",
+    "request-promise": "4.2.4",
+    "rimraf": "2.6.3",
+    "silent-npm-registry-client": "^3.0.1",
+    "underscore.string": "3.3.5",
+    "update-notifier": "2.5.0",
+    "yeoman-generator": "^1.1.1",
+    "yosay": "2.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "yeoman-assert": "3.1.1",
+    "yeoman-test": "1.9.1"
+  }
+}
