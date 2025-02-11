@@ -1,7 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-30a699d3899d7750159079d0de60934708f57a53 refs/remotes/origin/brandon_spinner_test
-f51a602251896eae15edd18767742dad3a98edac refs/remotes/origin/ec2
-7cd97b1d90b303c94e7831494da144b888f006cd refs/remotes/origin/fix/icon
-cc1d40aa29d9a6a5b57f5082c841cf55e19adde9 refs/remotes/origin/fix/text
-133b8e1320ab2b37e62f06c0f43e66bd144a1a87 refs/remotes/origin/fix/whitespace
-8f8f0f5b1ea1e5b168c47123d7166213114b7adf refs/remotes/origin/main

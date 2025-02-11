@@ -1,6 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-dc57f2f9a12fa171641ed31009d24a4fab9ed9cc refs/remotes/origin/gh-pages
-2004da020d934c4fbf01e11415ce2a88c6586c1a refs/remotes/origin/master
-7d9cd5ea5be7a40d2df49072f72057b5c710b1dc refs/tags/v0.1.0
-9dd5f92e2558240233daea9c773c6ea05444cbe3 refs/tags/v0.2.0
-dc57f2f9a12fa171641ed31009d24a4fab9ed9cc refs/tags/v0.4.0
