@@ -1,0 +1,10 @@
+<table id="{{editType}}" class="macro-detail" ng-if="error">
+    <tbody ng-repeat="item in error.errors">
+        <tr ng-repeat="(key, value) in item.properties">
+            <th class="property" scope="row">{{key}}</th>
+            <td class="value">{{value | hmdaMacroValue:key}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p ng-if="!error">No errors found.</p>

@@ -1,0 +1,40 @@
+{
+	"table": "B",
+	"type": "aggregate",
+	"desc": "LOAN PRICING INFORMATION FOR CONVENTIONAL LOANS BY INCIDENCE AND LEVEL",
+	"year": "2013",
+	"msa-md": {
+		"id": "11500",
+		"name": "Anniston-Oxford",
+		"state": "AL"
+	},
+	"types of dwellings": [
+		{
+			"type": "1- to 4-family Owner Occupied Dwellings (Excludes Manufacture Homes)",
+			"incidiences-of-pricing": [
+				{
+					"incidience": "No Pricing Reported",
+					"loan-uses": [
+						{
+							"use": "Home Purchase",
+							"first-lien": 0,
+							"junior-lien": 0
+						}
+					]
+				}
+			],
+			"hoepa-status": [
+				{
+					"status": "HOEPA Loan",
+					"loan-uses": [
+						{
+							"use": "Home Purchase",
+							"first-lien": 0,
+							"junior-lien": 0
+						}
+					]
+				}
+			]
+		}
+	]
+}

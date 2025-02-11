@@ -1,0 +1,45 @@
+{
+	"table": "12-2",
+	"type": "aggregate",
+	"desc": "PRICING INFORMATION FOR CONVENTIONAL MANUFACTURED HOME-PURCHASE LOANS, FIRST LIEN, OWNER-OCCUPIED DWELLING, BY BORROWER OR CENSUS TRACT CHARACTERISTICS",
+	"year": "2013",
+	"msa-md": {
+		"id": "11500",
+		"name": "Anniston-Oxford",
+		"state": "AL"
+	},
+	"borrower-characteristics": [
+		{
+			"characteristic": "Race",
+			"races": [
+				{
+					"race": "American Indian/Alaska Native",
+					"pricing-info": [
+						{
+							"pricing": "No Reported Pricing Data",
+							"count": 1,
+							"value": 165
+						}
+					]
+				}
+			]
+		}
+	],
+	"census-characteristics": [
+		{
+			"characteristic": "Racial/Ethnic Composition",
+			"races": [
+				{
+					"race": "Less than 10% Minority",
+					"pricing-info": [
+						{
+							"pricing": "No Reported Pricing Data",
+							"count": 1,
+							"value": 165
+						}
+					]
+				}
+			]
+		}
+	]
+}

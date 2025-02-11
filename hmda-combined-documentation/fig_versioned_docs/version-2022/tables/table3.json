@@ -1,0 +1,62 @@
+[
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V608",
+        "Data Point": "ULI",
+        "Modification": "Updated edit to check for invalid NULI values"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V660",
+        "Data Point": "Credit Score",
+        "Modification": "Updated edit to include new credit scoring model value"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V662",
+        "Data Point": "Credit Score",
+        "Modification": "Updated edit to include new credit scoring model value"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V665",
+        "Data Point": "Credit Score",
+        "Modification": "Updated edit to include new credit scoring model value"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V667",
+        "Data Point": "Credit Score",
+        "Modification": "Updated edit to include new credit scoring model value"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V720",
+        "Data Point": "Credit Score",
+        "Modification": "New edit to check range for credit scoring models"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V721",
+        "Data Point": "Age",
+        "Modification": "New edit that triggers when exemption code is used in the Age data point"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q654",
+        "Data Point": "DTI",
+        "Modification": "Updated edit is account for NA & Exempt values"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q658",
+        "Data Point": "Loan Term",
+        "Modification": "New edit to check Loan Term maximum value"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q659",
+        "Data Point": "Any data point that accepts a “Not Applicable” or “No Co-Applicant” value",
+        "Modification": "New edit to check for an inadvertent use of Not Applicable codes"
+    }
+]

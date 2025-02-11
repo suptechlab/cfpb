@@ -1,0 +1,41 @@
+{
+	"table": "2",
+	"type": "aggregate",
+	"desc": "Loans purchased. By location of property and type of loan.",
+	"year": "2013",
+	"msa-md": {
+		"id": "11500",
+		"name": "Anniston-Oxford",
+		"state": "AL"
+	},
+	"tracts": [
+		{
+			"tract": "AL/Calhoun County/0002.00",
+			"loan types": [
+				{
+					"type": "FHA, FSA/RHS & VA",
+					"count": 7,
+					"value": 424
+				}
+			]
+		}
+	],
+	"msa-md-totals": {
+		"loan types": [
+			{
+				"type": "FHA, FSA/RHS & VA",
+				"count": 7,
+				"value": 424
+			}
+		]
+	},
+	"invalid-geo": {
+		"loan types": [
+			{
+				"type": "FHA, FSA/RHS & VA",
+				"count": 7,
+				"value": 424
+			}
+		]
+	}
+}

@@ -1,0 +1,83 @@
+{
+	"table": "7-x",
+	"type": "aggregate",
+	"desc": "description goes here",
+	"year": "2013",
+	"msa-md": {
+		"id": "11500",
+		"name": "Anniston-Oxford",
+		"state": "AL"
+	},
+	"Racial/Ethnic Composition": [
+		{
+			"race": "Less than 10% Minority",
+			"dispositions": [
+				{
+					"disposition": "Applications Received",
+					"count": 55,
+					"value": 7403
+				}
+			]
+		}
+	],
+	"Income Characteristics": [
+		{
+			"income": "Low Income",
+			"dispositions": [
+				{
+					"disposition": "Applications Received",
+					"count": 55,
+					"value": 7403
+				}
+			]
+		}
+	],
+	"Income & Racial/Ethic Comp": [
+		{
+			"incomes": [
+				{
+					"income": "Low Income",
+					"Racial/Ethnic Composition": [
+						{
+							"race": "Less than 10% Minority",
+							"dispositions": [
+								{
+									"disposition": "Applications Received",
+									"count": ,
+									"value": 
+								},
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"small county": {
+		"dispositions": [
+			{
+				"disposition": "Applications Received",
+				"count": 0,
+				"value": 0
+			}
+		]
+	},
+	"all other tracts": {
+		"dispositions": [
+			{
+				"disposition": "Applications Received",
+				"count": 0,
+				"value": 0
+			}
+		]
+	},
+	"total": {
+		"dispositions": [
+			{
+				"disposition": "Applications Received",
+				"count": 0,
+				"value": 0
+			}
+		]
+	}
+}

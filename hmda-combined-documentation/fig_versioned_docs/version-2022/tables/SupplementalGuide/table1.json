@@ -1,0 +1,14 @@
+[
+  {
+    "Edit ID": "S307",
+    "Data Field Name(s)": "Calendar Quarter; Action Taken",
+    "Edit Description": "Please confirm the information below and update your file accordingly. The HMDA File does not contain any covered loans or applications with a final action taken date in the quarter being reported. The HMDA file must contain one or more records with an action taken date in the quarter being reported.",
+    "Modification": "New edit that prevents filers from filing quarterly data with no action taken dates that correspond the active filing quarter."
+  },
+  {
+    "Edit ID": "V718",
+    "Data Field Name(s)": "Calendar Quarter",
+    "Edit Description": "An invalid Calendar Quarter was reported. Please review the information below and update your file accordingly. 1) Calendar Quarter must equal 1 for the Quarter 1 submission, and cannot be left blank. 2) Calendar Quarter must equal 2 for the Quarter 2 submission, and cannot be left blank. 3) Calendar Quarter must equal 3 for the Quarter 3 submission, and cannot be left blank.",
+    "Modification": "New edit to check calendar quarter values 1-3."
+  }
+]

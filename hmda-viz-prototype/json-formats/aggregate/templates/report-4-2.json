@@ -1,0 +1,104 @@
+{
+	"table": "4-2",
+	"type": "aggregate",
+	"desc": "DISPOSITION OF APPLICATIONS FOR CONVENTIONAL HOME-PURCHASE LOANS, 1- TO 4-FAMILY AND MANUFACTURED HOME DWELLINGS, BY RACE, ETHNICITY, GENDER AND INCOME OF APPLICANT.",
+	"year": "2013",
+	"msa-md": {
+		"id": "11500",
+		"name": "Anniston-Oxford",
+		"state": "AL"
+	},
+	"races": [
+		{
+			"race": "American Indian/Alaska Native",
+			"dispositions": [
+				{
+					"disposition": "Applications Received",
+					"count": 1,
+					"value": 165
+				}
+			],
+			"genders": [
+				{
+					"gender": "Male",
+					"dispositions": [
+						{
+							"disposition": "Applications Received",
+							"count": 1,
+							"value": 165
+						}
+					]
+				}
+			]
+		}
+	],
+	"enthnicities": [
+		{
+			"ethnicity": "Hispanic or Latino",
+			"dispositions": [
+				{
+					"disposition": "Applications Received",
+					"count": 5,
+					"value": 793
+				}
+			],
+			"genders": [
+				{
+					"gender": "Male",
+					"dispositions": [
+						{
+							"disposition": "Applications Received",
+							"count": 4,
+							"value": 676
+						}
+					]
+				}
+			]
+		}
+	],
+	"minority statuses": [
+		{
+			"status": "White Non-Hispanic",
+			"dispositions": [
+				{
+					"dispostion": "Applications Received",
+					"count": 343,
+					"value": 41987
+				}
+			],
+			"genders": [
+				{
+					"gender": "Male",
+					"dispositions": [
+						{
+							"disposition": "Applications Received",
+							"count": 171,
+							"value": 20873
+						}
+					]
+				}
+			]
+		}
+	],
+	"incomes": [
+		{
+			"income": "Less than 50% of MSA/MD Median",
+			"dispositions": [
+				{
+					"disposition": "Applications Received",
+					"count": 56,
+					"value": 4507
+				}
+			]
+		}
+	],
+	"total": {
+		"dispositions": [
+			{
+				"disposition": "Applications Received",
+				"count": 446,
+				"value": 54819
+			}
+		]
+	}
+}

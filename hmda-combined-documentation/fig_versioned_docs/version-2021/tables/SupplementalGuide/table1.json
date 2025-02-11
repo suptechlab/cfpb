@@ -1,0 +1,20 @@
+[
+  {
+    "Edit ID": "V718",
+    "Data Field Name(s)": "Calendar Quarter",
+    "Edit Description": "An invalid Calendar Quarter was reported. Please review the information below and update your file accordingly. 1) Calendar Quarter must equal 1 for the Quarter 1 submission, and cannot be left blank. 2) Calendar Quarter must equal 2 for the Quarter 2 submission, and cannot be left blank. 3) Calendar Quarter must equal 3 for the Quarter 3 submission, and cannot be left blank.",
+    "Modification": "New edit to check calendar quarter values 1-3."
+  },
+  {
+    "Edit ID": "V627",
+    "Data Field Name(s)": "Census Tract; County",
+    "Edit Description": "An invalid Census Tract or County was provided. Please review the information below and update your file accordingly. 1) If County and Census Tract are not reported NA, they must be a valid combination of information. The first five digits of the Census Tract must match the reported five-digit County FIPS code.",
+    "Modification": "Removed from quarterly reporting platform."
+  },
+  {
+    "Edit ID": "V716",
+    "Data Field Name(s)": "County; State",
+    "Edit Description": "An invalid County or State was provided. Please review the information below and update your file accordingly. 1) The reported State and County are not a valid combination. If neither State nor County were reported NA, then the County must be located within the State.",
+    "Modification": "Removed from quarterly reporting platform."
+  }
+]

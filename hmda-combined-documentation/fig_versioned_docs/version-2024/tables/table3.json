@@ -1,0 +1,38 @@
+[
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V660",
+        "Data Point": "Credit Score",
+        "Modification": "Updated edit to include the added credit scoring models 12, 13, 14 and 15."
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V662",
+        "Data Point": "Credit Score",
+        "Modification": "Updated edit to include the added credit scoring models 12, 13, 14 and 15."
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V665",
+        "Data Point": "Credit Score",
+        "Modification": "Updated edit to include the added credit scoring models 12, 13, 14 and 15."
+    },
+    {
+        "Type of Data Field": "Loan/Application   Register",
+        "Edit Number": "V667",
+        "Data Point": "Credit Score",
+        "Modification": "Updated edit to include the added credit scoring models 12, 13, 14 and 15."
+    },
+    {
+        "Type of Data Field": "Loan/Application   Register",
+        "Edit Number": "V720",
+        "Data Point": "Credit Score",
+        "Modification": "Updated edit to include the added credit scoring models 12, 13, 14 and 15."
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q660",
+        "Data Point": "Property Location",
+        "Modification": "New edit that prevents filers from inputting a street address that exceeds 100 characters. Also, prevents filers from reporting multiple street addresses in a single field."
+    }
+]

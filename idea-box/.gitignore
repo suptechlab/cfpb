@@ -1,0 +1,10 @@
+*.log
+*.pot
+*.pyc
+local_settings.py
+dist
+build
+downloads
+parts
+src/*.egg-info
+.DS_Store

@@ -1,0 +1,104 @@
+{
+  "bounds": [
+    -179.995,
+    -57.1362,
+    180,
+    76.7605
+  ],
+  "center": [
+    -96.0644,
+    39.741,
+    4
+  ],
+  "format": "png8",
+  "interactivity": {
+    "layer": "counties",
+    "template_teaser": "<div class=\"map_tooltip\">\n  <p id=\"tooltip_county\">{{{county_name}}}</p>\n\n  <div class=\"tooltip_category\">\n    <p><span class=\"tooltip_label\">Population: </span>{{{population}}}\n    </p>\n  </div>\n\n  <ul class=\"tooltip_category\">\n    <li><span class=\"tooltip_label\">Home Purchases</span>\n    </li><li><span class=\"tooltip_year\">2015: </span>{{{p_o_y0}}}</li> \n    <li><span class=\"tooltip_year\">2016: </span>{{{p_o_y1}}}\n({{{change_p_o_y0_y1}}}%)</li> \n    <li><span class=\"tooltip_year\">2017: </span>{{{p_o_y2}}} ({{{change_p_o_y1_y2}}}%)</li> \n  </ul>\n\n  <ul class=\"tooltip_category\">\n    <li><span class=\"tooltip_label\">Refinances</span>\n    </li><li><span class=\"tooltip_year\">2015: </span>{{{r_o_y0}}}</li> \n    <li><span class=\"tooltip_year\">2016: </span>{{{r_o_y1}}}\n({{{change_r_o_y0_y1}}}%)</li> \n    <li><span class=\"tooltip_year\">2017: </span>{{{r_o_y2}}} ({{{change_r_o_y1_y2}}}%)</li> \n  </ul>\n\n</div>",
+    "fields": [
+      "county_name",
+      "population",
+      "p_o_y0",
+      "p_o_y1",
+      "change_p_o_y0_y1",
+      "p_o_y2",
+      "change_p_o_y1_y2",
+      "r_o_y0",
+      "r_o_y1",
+      "change_r_o_y0_y1",
+      "r_o_y2",
+      "change_r_o_y1_y2"
+    ]
+  },
+  "minzoom": 4,
+  "maxzoom": 8,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape",
+        "id": "countries",
+        "project": "hmda_2014",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "extent": [
+        -179.99978348919964,
+        -85.051,
+        180,
+        83.63381093402977
+      ]
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -179.174265,
+        17.913769,
+        179.773922,
+        71.352561
+      ],
+      "id": "counties",
+      "class": "county",
+      "Datasource": {
+        "file": "./hmda_lar_geo.json",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": "OGRGeoJSON",
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "counties"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -139.0471919422785,
+        -49.250740248410615,
+        178.44862226797608,
+        81.13822602001464
+      ],
+      "id": "states",
+      "class": "state",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-lines.zip"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "states"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "hmda_r_o_y0_y1",
+  "description": "",
+  "legend": "",
+  "attribution": ""
+}

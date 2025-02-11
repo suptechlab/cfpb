@@ -1,0 +1,302 @@
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+USWDS THEME CUSTOM STYLES
+----------------------------------------
+!! Copy this file to your project's
+   sass root. Don't edit the version
+   in node_modules.
+----------------------------------------
+Custom project SASS goes here.
+
+i.e.
+@include u-padding-right('05');
+----------------------------------------
+*/
+
+@use "uswds-core" as *;
+
+
+/*************************
+   Docusaurus Overwrites
+/*************************/
+
+.navbar {
+   display: block;
+   padding: 0;
+   height: 150px;
+
+   @media (min-width: 640px) {
+      height: 125px;
+   }
+
+   @media (min-width: 997px) {
+      height: 72px;
+   }
+
+   .gov {
+      height: 40px;
+   }
+
+   .logo {
+      height: 32px;
+      min-width: 116px;
+   }
+}
+
+#fig-titlebar {
+   background-color: #fff;
+   display: flex;
+   align-items: center;
+   border-bottom: 1px solid #ddd;
+
+   span {
+      font-size: 1.25em;
+   }
+   @media (min-width: 997px) {
+      display: none;
+   }
+}
+
+.navbar__toggle {
+   margin: 1em 1.5em;
+}
+
+.theme-doc-breadcrumbs {
+   margin-left: 0;
+   @media (min-width: 997px) {
+      margin-left: 0;
+   }
+}
+
+/*************************
+   Algolia Overwrites
+/*************************/
+.DocSearch-Button {
+   padding: 8px !important;
+}
+
+.DocSearch-Button-Placeholder, .DocSearch-Button-Keys {
+   display: none !important;
+
+   @media(min-width: 1370px) {
+      display: flex !important;
+   }
+}
+
+
+
+/*************************
+   usa-banner
+/*************************/
+
+.usa-banner__inner {
+   margin-left: 0 !important;
+}
+
+.usa-banner__header--expanded .usa-banner__inner {
+   margin-left: 0 !important;
+}
+
+.usa-banner .usa-accordion__button {
+   &:hover, &[aria-expanded=false] {
+      padding: 0 0 0 .1em;
+      width: auto;
+      background-image: none;
+   }
+   
+}
+
+/*************************
+   usa-nav
+/*************************/
+.usa-overlay.is-visible {
+   z-index: 1005;
+}
+
+.usa-nav {
+   @media (max-width: 1023px) {
+      width: 80%;
+      z-index: 1006;
+   }
+   @media (min-width: 1024px) {
+      padding: 5px 0 0 0 !important;
+   }
+}
+
+@keyframes slidein-left {
+   0% {
+      transform: translateX(100%);
+   }
+}
+
+.usa-nav-container {
+   background-color: #fff;
+   @media (min-width: 64em) {
+      padding-right: 1em;
+   }
+}
+
+@media (min-width: 64em) {
+
+   .usa-nav__link, .usa-nav__primary-item > a,
+   .usa-nav .usa-accordion__button {
+      text-transform: uppercase;
+      font-size: 13px;
+      font-family: 'Source Sans Pro Web',Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+      color: #565c65;
+      font-weight: 700;
+   }
+
+   .usa-nav__submenu .usa-nav__submenu-item {
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      margin: 0;
+
+      a {
+         display: block;
+         padding: .75em 1em .75em 2em !important;
+      }
+   }
+}
+.usa-nav__submenu-item .subMenuHeading {
+   padding-left: 1em;
+
+   @media (min-width: 1024px) {
+      background-color: rgba(0,0,0,.25);
+      padding: .25em 1em;
+      color: #fff;
+      font-weight: bold;
+   }
+}
+
+.user {
+   
+   button {
+      margin: 0 1em 0 0;
+      font-size: .75em;
+      padding: .1em 1em;
+      background-color: transparent;
+      color: #555;
+      vertical-align: top;
+
+      text-decoration-color: #1f498f;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 5px;
+
+      &:hover {
+         background-color: transparent;
+         text-decoration: underline;
+         color: #555;
+      }
+   }
+   @media (min-width: 1024px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      button {
+         padding: .15em 1em;
+      }
+   }
+
+}
+
+.usa-header--basic .usa-menu-btn {
+   background-color: var(--hmda-blue);
+   &:hover {
+      background-color: var(--hmda-blue-light);
+   }
+}
+
+@media (min-width: 1024px) {
+   .usa-header--basic .usa-nav__primary-item {
+      position: relative;
+   }
+   .usa-header--basic .usa-nav__primary-item > a:hover:after {
+      background-color: #005ea2;
+      border-radius: 0;
+      content: "";
+      display: block;
+      position: absolute;
+      height: 0.3em;
+      left: 1em;
+      right: 1em;
+      bottom: -0.3em;
+   }
+
+   .usa-nav__primary button[aria-expanded=true] {
+      background-color: var(--hmda-blue) !important;
+   }
+   
+   .usa-nav__submenu .usa-nav__submenu-item {
+      background-color: var(--hmda-blue);
+
+      a:hover {
+         background-color: var(--hmda-blue-light);
+      }
+   }
+}
+
+
+/*************************
+   usa-header
+/*************************/
+
+.usa-header--basic {
+   .usa-nav-container {
+      max-width: 100%;
+   
+      @media screen and (min-width: 1024px) {
+         border-bottom: 1px solid #dfe1e2;
+         align-items: flex-start;
+      }
+   
+   }
+
+   .usa-navbar {
+      width: auto;
+      height: 49px;
+
+      .usa-logo {
+         margin: 0 0 0 1em;
+
+         @media (min-width: 1024px) {
+            margin: 10px 0 0 0;
+         }
+
+         a {
+            display: flex;
+            align-items: center;
+            color: #1f498f;
+
+            &:hover {
+               color: #0071bc;
+            }
+
+            img, .logo {
+               margin-right: .5em;
+            }
+
+            span {
+               font-size: 1.2em;
+
+               @media screen and (min-width: 1024px) {
+                  display: none;
+               }
+
+               @media screen and (min-width: 1240px) {
+                  display: inline-flex;
+                  font-size: 1em;
+                  min-width: 14em;
+               }
+            }
+         }
+      }
+   }
+}

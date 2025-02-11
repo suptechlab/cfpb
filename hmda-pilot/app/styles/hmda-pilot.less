@@ -1,0 +1,484 @@
+// Import Normalize
+@import (less) "../../node_modules/normalize-css/normalize.css";
+@import (less) "../../node_modules/normalize-legacy-addon/normalize-legacy-addon.css";
+
+// Import Capital Framework components
+@import (less) "../../node_modules/cf-core/src/cf-vars.less";
+@import (less) "../../node_modules/cf-core/src/cf-media-queries.less";
+@import (less) "../../node_modules/cf-core/src/cf-utilities.less";
+
+// TODO: Replace with cf-core/src/cf-base.less once the fonts for the Capital
+// Framework are self-hosted.
+// @see https://github.com/cfpb/cf-core/issues/33
+@import (less) "cf-base.less";
+
+@import (less) "../../node_modules/cf-grid/src/cf-grid.less";
+@import (less) "../../node_modules/cf-buttons/src/cf-buttons.less";
+@import (less) "../../node_modules/cf-forms/src/cf-forms.less";
+@import (less) "../../node_modules/cf-icons/src/less/icons.less";
+@import (less) "../../node_modules/cf-pagination/src/cf-pagination.less";
+@import (less) "../../node_modules/cf-layout/src/cf-layout.less";
+
+@import (less) "cf-enhancements.less";
+
+@import (less) "header.less";
+@import (less) "footer.less";
+
+@import (less) "brand-palette.less";
+@import (less) "cf-theme-overrides.less";
+
+// ngDialog CSS libraries
+@import (inline) "../../node_modules/ng-dialog/css/ngDialog.css";
+@import (less) "dialog.less";
+
+// HMDA Pilot components
+@import (less) "utils.less";
+@import (less) "wizard.less";
+@import (less) "progressBar.less";
+@import (less) "login.less";
+
+.webfont-demi {
+    .webfont-demi();
+    font-family: "Avenir Next LT W01 Demi", Arial, sans-serif;
+}
+
+// Layouts
+.wrapper, .wrap {
+    .grid_wrapper();
+}
+
+body {
+    .webfont-regular;
+}
+
+ul.site-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 18px;
+    right: 255px;
+
+    li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+footer {
+    margin-top: 3em;
+}
+
+// Disclaimer
+.disclaimer {
+    padding: 30px 30px 30px 0;
+    background-color: @gold-20;
+
+    &.collapsed {
+        padding: 15px 15px 15px 0;
+    }
+
+    h2 > .cf-icon {
+        color: @gold-80;
+    }
+
+    h2 { margin-bottom: .31em; }
+    p { margin: 0; width: 90%; }
+    button { position: absolute; right: 0px; top: 0; }
+}
+
+// Icons
+.cf-spin {
+  -webkit-animation: cf-spin 2s infinite linear;
+  animation: cf-spin 2s infinite linear;
+}
+@-webkit-keyframes cf-spin {
+  0% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes cf-spin {
+  0% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+// Forms
+.form-well, .well {
+    background-color: @gray-5;
+    padding: 1.5em;
+}
+
+.form-verify {
+    margin-top: 2.5em;
+
+    .form-group_item > .form-group_item {
+        margin-left: 1.5em;
+
+        .form-label-header {
+            display: inline-block;
+        }
+    }
+
+    .form-buttons {
+        margin-top: 1.5em;
+
+        div:nth-child(2) {
+            text-align: right;
+        }
+    }
+}
+
+.form-group-horizontal {
+    .form-group_item {
+        .grid_column(6, 12);
+        margin-top: 0;
+        border: 0;
+    }
+
+    .form-label-header {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-buttons {
+        .grid_column(8, 12);
+        margin-top: 1.5em;
+        border: 0;
+    }
+}
+
+.form-group_item__disabled {
+    color: @gray;
+}
+
+.page-errors {
+    .webfont-demi;
+    color: @redorange;
+}
+
+.form-group-veritcal {
+    .form-label-col {
+        .grid_column(2, 12);
+    }
+
+    .form-data-col {
+        .grid_column(8, 12);
+    }
+}
+
+.note-required {
+    font-style: italic;
+    font-size: .8em;
+}
+
+.form-label-required {
+    font-size: .8em;
+    vertical-align: super;
+}
+
+// File Metadata
+.file-metadata {
+    padding: 0 0 2em 0;
+
+    dt, dd {
+        display: inline;
+    }
+    dt:after {
+        content: ":";
+    }
+    dd {
+        .webfont-demi;
+        margin: 0 2em 0 0;
+
+        &.filename {
+            display: inline-block;
+            max-width: 15em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: bottom;
+        }
+    }
+}
+
+h2 label { display: inline; }
+.edit-explanation {
+    .h3;
+    .u-w80pct;
+}
+
+.instructions {
+    width: 40em;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    outline: 0;
+
+    a { .u-link__colors(@pacific); }
+
+    thead {
+        th {
+            small {
+                font-size: .7em;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    // Style for grouped columns of data
+    .col-group-header {
+        text-align: center;
+    }
+    .col-group-header,
+    .col-group-first {
+        border-left: 1px solid @gray;
+    }
+
+    // Format specific data types
+    td.count,
+    td.dollar,
+    td.percent {
+        text-align: right;
+    }
+    td.boolean {
+        text-align: center;
+    }
+}
+
+table.error-summary,
+table.report-summary {
+    tbody {
+        // Highlight the row on hover
+        tr:hover td,
+        tr:hover th {
+            background-color: tint(@teal, 80%);;
+        }
+
+        td.count,
+        td.not-verified {
+            .webfont-demi;
+            color: @redorange;
+        }
+        td.verified {
+            .webfont-demi;
+            color: @green
+        }
+    }
+
+    // Column widths
+    td.id { width: 13%; }
+    td.count,
+    td.verification { width: 15%; }
+}
+
+table.error-detail {
+    thead th {
+        &.count {
+            text-align: center;
+        }
+        &.cf-icon {
+            display: table-cell;
+            font-weight: bold;
+        }
+        &.icon-down:after {
+            content: " \e006";
+        }
+        &.icon-up:after {
+            content: " \e004";
+        }
+    }
+    tbody {
+        tr {
+            border-bottom: 0;
+        }
+        th, td {
+            padding: .25em .625em;
+        }
+
+        th.loan-number,
+        th.line-number,
+        td.action {
+            vertical-align: top;
+        }
+
+        // Column width
+        th.loan-number { width: 26%; }
+        th.line-number { width: 20%; }
+        td.action { width: 17%; }
+    }
+
+    &.grouped-rows tbody {
+        th, td {
+            background: @td-bg;
+        }
+
+        &:nth-child(even) th,
+        &:nth-child(even) td {
+            background: @td-bg-alt;
+        }
+    }
+
+    td.check {
+        width: 6em;
+        text-align: center;
+    }
+}
+
+table.macro-detail {
+    width: 50%;
+}
+
+table.report-detail {
+    th, td {
+        padding: .75em;
+    }
+
+    thead {
+        th {
+            vertical-align: bottom;
+        }
+        th.count {
+            text-align: left;
+        }
+    }
+}
+
+table.row-hover {
+    tbody {
+        tr:hover td,
+        tr:hover th {
+            background-color: tint(@teal, 80%);;
+        }
+    }
+}
+
+.toolbar {
+    text-align: right;
+
+    .summary-header & {
+        margin-top: 1em;
+    }
+
+    .detail-header & {
+        margin-top: 0;
+    }
+
+    .code-descriptions {
+        margin-right: 1.5em;
+    }
+}
+
+// Pagination
+@pagination-text:               @gray;
+@pagination-bg:                 @gray-20;
+
+.pagination {
+    margin-bottom: 20px;
+}
+
+input[type="number"].pagination_current-page {
+    padding: 0;
+}
+
+div.page-size {
+    margin-bottom: 5px;
+}
+
+.dl-horizontal {
+    dt {
+        float: left;
+        width: 160px;
+        overflow: hidden;
+        clear: left;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    dd {
+        margin-left: 180px;
+    }
+}
+
+.respondent-info,
+.file-info {
+    dl {
+        margin-bottom: 0;
+    }
+
+    dt {
+        .webfont-demi;
+
+        &:after {
+            content: ":";
+        }
+    }
+}
+
+.respondent-info {
+    @width: 120px;
+
+    dt {
+        width: @width;
+    }
+    dd {
+        margin-left: @width + 20px;
+    }
+    dt.contactName,
+    dd.contactName {
+        margin-top: 2em;
+    }
+}
+.file-info {
+    @width: 200px;
+
+    dt {
+        width: @width;
+    }
+    dd {
+        margin-left: @width + 20px;
+    }
+}
+
+.nav-buttons {
+    margin-top: 20px;
+    border-top: 1px solid @gray-20;
+    padding-top: 20px;
+
+    div:nth-child(2) {
+        text-align: right;
+    }
+}
+
+// Utility classes
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    .focusable:active,
+    .focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "Edit ID": "Q303",
+    "Data Field Name(s)": "Federal Agency; Federal Taxpayer Identification Number; Legal Entity Identifier (LEI)",
+    "Affected Data Fields": "Federal Agency; Taxpayer Identification; Legal Entity Identifier (LEI)",
+    "Edit Description": "The reported Federal Agency; Federal Taxpayer Identification Number; and Legal Entity Identifier must match the Federal Agency; Federal Taxpayer Identification Number; and Legal Entity Identifier for the financial institution for which you are filing. Please confirm the information below and update your file accordingly. 1) The Federal Agency, Federal Taxpayer Identification Number, and Legal Entity Identifier are reported correctly in the file."
+  }
+]

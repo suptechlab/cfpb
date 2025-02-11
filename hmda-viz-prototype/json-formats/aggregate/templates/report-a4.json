@@ -1,0 +1,45 @@
+{
+	"table": "A4",
+	"type": "aggregate",
+	"desc": "DISPOSITION OF PREAPPROVALS FOR CONVENTIONAL HOME-PURCHASE LOANS, FIRST LIEN, 1- TO 4-FAMILY DWELLINGS (EXCLUDES MANUFACTURED HOMES), BY BORROWER OR CENSUS TRACT CHARACTERISTICS",
+	"year": "2013",
+	"msa-md": {
+		"id": "11500",
+		"name": "Anniston-Oxford",
+		"state": "AL"
+	},
+	"borrower-characteristics": [
+		{
+			"characteristic": "Race",
+			"races": [
+				{
+					"race": "American Indian/Alaska Native",
+					"dispositions": [
+						{
+							"disposition": "Preapprovals Resulting in Originations",
+							"count": ,
+							"value": 
+						}
+					]
+				}
+			]
+		}
+	],
+	"census-characteristics": [
+		{
+			"characteristic": "Racial/Ethnic Composition",
+			"races": [
+				{
+					"race": "Less than 10% Minority",
+					"dispositions": [
+						{
+							"disposition": "Preapprovals Resulting in Originations",
+							"count": 2,
+							"value": 138
+						}
+					]
+				}
+			]
+		}
+	]
+}

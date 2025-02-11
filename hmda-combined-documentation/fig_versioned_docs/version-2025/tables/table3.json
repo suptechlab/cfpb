@@ -1,0 +1,44 @@
+[
+  {
+    "Type of Data Field": "Loan/Application Register",
+    "Edit Number": "V695",
+    "Data Point": "Mortgage Loan Originator NMLSR Identifier",
+    "Modification": "Updated edit to include NMLSR identifier must be four to twelve digits."
+  },
+  {
+    "Type of Data Field": "Filing Instituition, Reporting Period, and Contact Information (Transmittal Sheet)",
+    "Edit Number": "Q303",
+    "Data Point": "Federal Agency; Federal Taxpayer Identification Number; Legal Entity Identifier (LEI)",
+    "Modification": "Changed edit type from S303 to Q303. Updated the edit description to remove the following: The correct financial institution was at the start of the filing and the correct file was uploaded."
+  },
+  {
+    "Type of Data Field": "Loan/Application Register",
+    "Edit Number": "Q616",
+    "Data Point": "Discount Points; Total Loan Costs; Total Points and Fees",
+    "Modification": "Updated edit to note discount points should not be higher than 15% of the loan amount and it must be reported in dollars."
+  },
+  {
+    "Type of Data Field": "Loan/Application Register",
+    "Edit Number": "Q621",
+    "Data Point": "NMLSR ID",
+    "Modification": "Updated edit to note NMLSR ID must be four to twelve digits."
+  },
+  {
+    "Type of Data Field": "Loan/Application Register",
+    "Edit Number": "Q646",
+    "Data Point": "Any data point eligible for an exemption code",
+    "Modification": "Changed edit from macro-quality edit to quality edit"
+  },
+  {
+    "Type of Data Field": "Loan/Application Register/Transmittal Sheet",
+    "Edit Number": "Q647",
+    "Data Point": "Federal Agency; Any field eligible for exemption code",
+    "Modification": "Changed edit from macro-quality edit to quality edit"
+  },
+  {
+    "Type of Data Field": "Loan/Application Register",
+    "Edit Number": "Q651",
+    "Data Point": "Combined Loan to Value Ratio",
+    "Modification": "Updated edit to include the CLTV should be less than 1.5, be reported as a percentage and its general range should be less than 150."
+  }
+]

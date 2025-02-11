@@ -1,0 +1,153 @@
+{% extends "idea/idea-base.html" %}
+
+{% block "content" %}
+
+            {% if banner.is_private %}
+                <div id="content" class="idea-home ic" role="main">
+                    <div class="logo span5">
+                        <h2 class="section">
+                            <a href="{% url 'idea:idea_list'%}">IdeaBox</a>
+                        </h2>
+                    </div>
+            {% else %}
+                <div id="content" class="idea-banner-single ic" role="main">
+                    <div class="row">
+                        <div class="logo span7 section project-title">
+                            <a href="{% url 'idea:idea_list' %}">IdeaBox</a>
+                        </div><!-- /logo -->
+                    </div>
+            {% endif %}
+            <div class="row">
+                <div class="row challenge-info span9">
+                    <div class="challenge-banner">
+                        {% if is_current_banner %}
+                            <h5>Current Challenge:</h5>
+                        {% elif banner.is_private == True %}
+                            <h5>Private Room</h5>
+                        {% else %}
+                            <h5>Expired Challenge:</h5>
+                        {% endif %}
+                        <h2>{{banner.title}}</h2>
+                    </div>
+                    <p class="challenge-entry-content">
+                        {{banner.text|urlize|linebreaksbr}}
+                    </p>
+                    {% if is_current_banner %}
+                        <div id="challenge-link"><a href="{% url 'idea:add_idea' banner.id %}" class="chevron-right">Submit an Idea for this Challenge</a></div>
+                    {% elif banner.is_private %}
+                        <div id="challenge-link"><a href="{% url 'idea:add_idea' banner.id %}" class="chevron-right">Submit an Idea for this private room</a></div>
+                    {% endif %}
+                    {% if not banner.is_private %}
+                        <div id="date-range">
+                            <span id="start">Challenge start date: {{banner.start_date|date:"SHORT_DATE_FORMAT"}}</span>
+                            <span id="end">Challenge end date: {{banner.end_date|date:"SHORT_DATE_FORMAT"}}</span>
+                        </div>
+                    {% endif %}
+                </div><!-- /row -->
+            </div>
+            <div class="row">
+                <section id="main" class="main-content span9">
+                {% if ideas %}
+                {% for idea in ideas %}
+                        <article class="idea-entry">
+                        <div class="row">
+                            {% if not idea.banner or idea.banner.is_votes %}
+                            <div class="idea-votes left">
+                                <div class="count">{{idea.vote_count}}</div>
+                                <div class="phrase">Like{{idea.vote_count|pluralize:",s"}}</div>
+                                <div class="action">
+                                {% if idea.state.name == 'Archive' %}
+                                    <span class="btn-archive">Archived</span>
+                                {% else %}
+                                        <form action="{% url 'idea:upvote_idea' %}" method=POST>
+                                        {% csrf_token %}
+                                        <input type="hidden" name="idea_id" value="{{idea.id}}"/>
+                                        <input type="hidden" name="next" value="{{ request.path }}"/>
+                                        {% if request.user in idea.voters.all%}
+                                            <input type="submit" class="btn btn-voted" value="Liked" id="vote_up"/>
+                                        {% else %}
+                                            <input type="submit" class="btn btn-vote" value="Like" id="vote_up"/>
+                                        {% endif %}
+                                    </form>
+                                {% endif %}
+                                </div>
+                            </div><!-- /idea-votes -->
+                            {% endif %}
+                            <div class="idea-wrap span10">
+                                <header class="idea-title">
+                                    <a href="{% url 'idea:idea_detail' idea.id %}"><h2>{{idea.title}}</h2></a>
+                                </header>
+                                <div class="idea-description">
+                                    {{ idea.summary|truncatechars:250 }}
+                                    <span>
+                                        <a href="{% url 'idea:idea_detail' idea.id %}" class="chevron-right">Read more</a>
+                                    </span>
+                                </div>
+                                <footer class="idea-footer">
+                                    <div class="idea-info">
+                                        <span class="commented"><a href="{% url 'idea:idea_detail' idea.id %}#comments">{{idea.comment_count}} Comment{{idea.comment_count|pluralize:",s"}}</a></span> | <span class="suggested">Suggested on {{idea.time|date:"M d, Y"}}</span>
+                                    </div><!-- /idea-info -->
+                                </footer>
+                            </div><!-- /idea-wrap -->
+                        </div><!-- /row -->
+                    </article>
+                {% endfor %}
+                {% else %}
+                    <article class="no-results">
+                        <div class="row">
+                            <p class="span9">There are no Ideas to display.</p>
+                        </div><!-- /row -->
+                    </article><!-- /no-results -->
+                {% endif %}
+                {% if ideas.object_list.count > 5 %}
+                    <a href="#" class="back-to-top"><i class="icon-chevron-up"></i> Back to top</a>
+                {% endif %}
+
+                <div class="pagination">
+                    <ul>
+                        {% if ideas.has_previous %}
+                            <li><a href="?{% if page_tags %}tags={{ page_tags|join:',' }}&{% endif %}page_num={{ ideas.previous_page_number }}"><i class="icon-chevron-left"></i></a></li>
+                        {% endif %}
+                        {% for page in ideas.paginator.page_range %}
+                            <li class="{% if page == ideas.number %}active{% endif %}">
+                                <a href="?{% if page_tags %}tags={{ page_tags|join:',' }}&{% endif %}page_num={{ page }}">{{ page }}</a>
+                            </li>
+                        {% endfor %}
+                        {% if ideas.has_next %}
+                            <li><a href="?{% if page_tags %}tags={{ page_tags|join:',' }}&{% endif %}page_num={{ ideas.next_page_number }}"><i class="icon-chevron-right"></i></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+                </section><!-- /main /main-content -->
+                <div class="sidebar span3">
+                    {% if banner.is_private %}
+                    <div class="project-add-idea">
+                        <a href="{% url 'idea:add_idea' banner.id %}" class="btn-huge">Submit an Idea</a>
+                    </div><!-- /project-add-idea -->
+                    {% else %}
+                    <div class="project-add-idea">
+                        <a href="{% url 'idea:add_idea' %}" class="btn-huge">Submit an Idea</a>
+                    </div><!-- /project-add-idea -->
+                    {% endif %}
+                    <aside class="tags">
+                        <h3>Browse by Tag:</h3>
+                        <ul>
+                            {% for tag in tags %}
+                            <li class="tag">
+                                <a class="tag_name {% if tag.active %}pushed{% endif %}" href="{{tag.tag_url}}">{{tag}}</a>
+                                <span class="tag_remove">{{tag.count}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </aside>
+                </div><!-- /span_side -->
+            </div><!-- /row -->
+        </div><!-- /main -->
+
+{% endblock %}
+
+{% block "js_scripts" %}
+        <script src="{{ STATIC_URL }}idea/js/functions.js"></script>
+{% block "design_js_scripts" %}{% endblock %}
+{% endblock %}

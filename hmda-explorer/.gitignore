@@ -1,0 +1,52 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.log
+
+# Node packages #
+#################
+node_modules/
+
+# Grunt #
+#########
+.grunt/
+
+# Bower vendor scripts #
+########################
+src/static/vendor
+
+# Non-Bower vendor scripts #
+############################
+# Not all scripts are in the Bower registry, add them here.
+!src/static/vendor/tidy-table/*
+
+# Vim swap files #
+##################
+*.swp
+
+# Shell #
+#########
+ghpages.sh
+
+# Test reports #
+################
+test/coverage
+test/junit
+
+# Built app #
+#############
+dist/
+
+# Jasmine runner #
+# ################
+_SpecRunner.html
+
+# JSON files #
+##############
+src/static/json

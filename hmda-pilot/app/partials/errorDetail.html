@@ -1,0 +1,36 @@
+<pagination>
+
+<div class="detail-header content-l">
+    <div class="content-l_col content-l_col-2-3">
+        <pagination-size></pagination-size>
+    </div>
+    <div class="toolbar content-l_col content-l_col-1-3">
+        <button class="btn btn__link code-descriptions" code-descriptions title="Show List of HMDA Edit Values"><span class="cf-icon cf-icon-help-round"></span> HMDA Edit Values</button>
+        <button class="btn btn__link" hmda-export export="individual" type="{{editType}}" edit-id="{{editId}}" ng-if="error"><span class="cf-icon cf-icon-pdf"></span> Export</button>
+    </div>
+</div>
+
+<table id="{{editType}}" class="error-detail grouped-rows" ng-if="error">
+    <thead>
+        <tr>
+            <th class="loan-number" scope="col" ng-if="error.scope === 'lar'">Loan/Application Number</th>
+            <th class="line-number" scope="col" ng-if="error.scope !== 'lar'">Line Number</th>
+            <th class="description" scope="col">Field</th>
+            <th class="value" scope="col">Submitted Value</th>
+            <th class="action" scope="col" ng-if="editType !== 'quality'">Action</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="item in error.errors | paginate:start():end()">
+        <tr ng-repeat="(key, value) in item.properties">
+            <th class="{{error.scope === 'lar' ? 'loan-number':'line-number'}}" scope="row" rowspan="{{item.properties | keyLength}}" ng-if="$first">{{error.scope == 'lar' ? item.loanNumber : item.lineNumber}}</th>
+            <td class="description">{{ {'property':key, 'lineNumber':item.lineNumber} | hmdaLabel:error.scope}}</td>
+            <td class="value">{{value | hmdaValue:error.scope:key}}</td>
+            <td class="action" rowspan="{{item.properties | keyLength}}" ng-if="$first && editType !== 'quality'">Correct and revalidate</td>
+        </tr>
+    </tbody>
+</table>
+
+<pagination-nav></pagination-nav>
+</pagination>
+
+<p ng-if="!error">No errors found.</p>

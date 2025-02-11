@@ -1,0 +1,32 @@
+[
+    {
+        "Date": "January 2025",
+        "Version": "1.4",
+        "Section": "",
+        "Changes": "<strong>1. Section 1.2</strong>    <ul><li>Updated Section 1.2 with correct the Calendar Year Value</li></ul>"
+    },
+    {
+        "Date": "October 2024",
+        "Version": "1.3",
+        "Section": "",
+        "Changes": "<strong>1. Section 3.4, Table 1</strong>    <ul><li>Added missing footnote two and its footnote’s link to the data field number four, Calendar Quarter</li> <li>Added missing link to the Online Supplemental Guide for Quarterly Filers for 2024</li></ul>   <strong>2. Footnotes</strong>   <ul><li>Added footnote two to the footnotes section</li></ul>"
+    },
+    {
+        "Date": "November 2023",
+        "Version": "1.2",
+        "Section": "",
+        "Changes": "<strong>1. Section 5.3, Table 6</strong>    <ul><li>Added revised edit V660</li><li>Updated edit V720</li></ul>   <strong>2. Section 5.3, Table 7</strong>   <ul><li>Updated edit Q660</li></ul>"
+    },
+    {
+        "Date": "October 2023",
+        "Version": "1.1",
+        "Section": "",
+        "Changes": "<strong>1. Section 1 and 1.2</strong> <ul><li>Updated Calendar Year values</li></ul>"
+    },
+    {
+        "Date": "August 2023",
+        "Version": "1.0",
+        "Section": "",
+        "Changes": "<strong>Original Document.<br>Changes from 2023 FIG:<br>1. Section 3.4, Table 1 and Section 4.2.1</strong> <ul><li>Updated Calendar Year values</li></ul>   <strong>2. Section 3.4, Table 1</strong>   <ul><li>Updated and added new Credit Score Models</li></ul>     <strong>3. Section 3.4, Table 2 and Section 4.2.2</strong>   <ul><li>Updated examples for Application Date and Action Taken Date</li></ul>   <strong>4 . Section 5.2</strong>   <ul><li>Updated table to show 2024 new and revised edits</li></ul>     <strong>5. Section 5.3, Table 6</strong>  <ul><li>Revised edits V662, V665, V667, V720</li></ul> <strong>5. Section 5.3, Table 7</strong>  <ul><li>Added edit Q660</li></ul>"
+    }
+]

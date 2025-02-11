@@ -1,0 +1,13 @@
+.s3-file-info p {
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.s3-file-info p span {
+  color: gray;
+}
+
+.s3-file-info {
+  margin-left: 8px;
+}

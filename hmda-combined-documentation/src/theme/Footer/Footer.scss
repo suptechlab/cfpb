@@ -1,0 +1,116 @@
+.Footer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.Footer .content-wrapper {
+  background: #f1f1f1;
+}
+.Footer .home-link {
+  color: #1f498f;
+  font-family: SourceSansProBold;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+.Footer img {
+  margin-right: 5px;
+  vertical-align: top;
+}
+.Footer .grid {
+  align-items: stretch;
+  display: flex;
+  margin: 0 auto;
+  padding: 3rem;
+  max-width: 1040px;
+}
+
+.Footer h4 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.Footer .grid .item {
+  flex: 1;
+  margin: 0 4em;
+}
+.Footer .grid .item:first-child {
+  margin-left: 0;
+}
+.Footer .grid .item:last-child {
+  margin-right: 0;
+}
+.Footer .unstyled-list {
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.Footer .unstyled-list li {
+  margin-bottom: 0;
+}
+
+.Footer.maintenance .content-wrapper {
+  padding-bottom: 5rem;
+}
+
+.return-to-top {
+  margin: 1em 1em 1em auto;
+  max-width: 1040px;
+  padding: 2 3rem;
+}
+
+.button-link {
+  background-color: #1f498f;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button-link:hover {
+  background-color: #2353a6;
+}
+
+@media screen and (max-width: 850px) {
+  .Footer .grid .item {
+    flex: 1;
+    margin: 0 2em;
+  }
+}
+
+/*************************
+    usa-identifier
+/*************************/
+
+.usa-identifier {
+  background-color: #1f498f;
+
+  .usa-identifier__identity-domain {
+    color: #fff;
+  }
+
+  .usa-identifier__required-link,
+  .usa-identifier__required-link.usa-link,
+  .usa-identifier__section--usagov a,
+  .usa-identifier__identity-disclaimer a {
+
+    &:link,
+    &:visited,
+    &:active {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  .ffiec-icon {
+    height: 48px;
+  }
+}

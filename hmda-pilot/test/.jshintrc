@@ -1,0 +1,37 @@
+{
+  "node": true,
+  "browser": true,
+  "esnext": true,
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "latedef": true,
+  "noarg": true,
+  "regexp": true,
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "trailing": true,
+  "smarttabs": true,
+  "globals": {
+    "angular": false,
+    "$": false,
+    /* Ignore Jasmine globals */
+    "after": false,
+    "afterEach": false,
+    "before": false,
+    "beforeEach": false,
+    "browser": false,
+    "describe": false,
+    "expect": false,
+    "inject": false,
+    "it": false,
+    "jasmine": false,
+    "spyOn": false,
+    /* Ignore Protractor globals */
+    "protractor": false,
+    "element": false,
+    "by": false,
+    "exist": false
+  }
+}

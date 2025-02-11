@@ -1,0 +1,45 @@
+{
+	"table": "12-1",
+	"type": "aggregate",
+	"desc": "DISPOSITION OF APPLICATIONS FOR CONVENTIONAL MANUFACTURED HOME-PURCHASE LOANS, FIRST LIEN, OWNER-OCCUPIED DWELLING, BY BORROWER OR CENSUS TRACT CHARACTERISTICS",
+	"year": "2013",
+	"msa-md": {
+		"id": "11500",
+		"name": "Anniston-Oxford",
+		"state": "AL"
+	},
+	"borrower-characteristics": [
+		{
+			"characteristic": "Race",
+			"races": [
+				{
+					"race": "American Indian/Alaska Native",
+					"dispositions": [
+						{
+							"disposition": "Applications Received",
+							"count": 1,
+							"value": 165
+						}
+					]
+				}
+			]
+		}
+	],
+	"census-characteristics": [
+		{
+			"characteristic": "Racial/Ethnic Composition",
+			"races": [
+				{
+					"race": "Less than 10% Minority",
+					"dispositions": [
+						{
+							"disposition": "Applications Received",
+							"count": 1,
+							"value": 165
+						}
+					]
+				}
+			]
+		}
+	]
+}

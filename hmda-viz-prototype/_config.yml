@@ -1,0 +1,20 @@
+baseurl: /hmda-viz-prototype
+
+exclude: [
+TODO.md,
+NOTES.md,
+sublime,
+json-formats,
+processing,
+node_modules,
+src,
+bower.json,
+package.json,
+Gruntfile.js,
+less,
+aggregate/2012
+]
+
+sass:
+    sass_dir: _scss
+    style: expanded

@@ -1,0 +1,62 @@
+[
+    {
+        "Type of Data Field": "Transmittal Sheet",
+        "Edit Number": "S304",
+        "Data Point": "Total Number of Entries Contained in Submission",
+        "Modification": "Updated language for added clarity"
+    },
+    {
+        "Type of Data Field": "Transmittal Sheet",
+        "Edit Number": "V719",
+        "Data Point": "Financial Institution Name",
+        "Modification": "New edit to check format of Financial Institution Name"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V695",
+        "Data Point": "Mortgage Loan Originator NMLSR Identifier",
+        "Modification": "Updated edit to check values of NMLSR ID"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "V696",
+        "Data Point": "Automated Underwriting System",
+        "Modification": "Edit modified to include new AUS enumeration code"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q615",
+        "Data Point": "Origination Charges; Total Loan Costs; Total Points and Fees",
+        "Modification": "Clarified that edit triggers only when both values are nonzero numbers"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q616",
+        "Data Point": "Discount Points; Total Loan Costs; Total Points and Fees",
+        "Modification": "Clarified that edit triggers only when both values are nonzero numbers"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q650",
+        "Data Point": "Interest Rate",
+        "Modification": "Updated edit to check decimal point limit for maximum value"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q655",
+        "Data Point": "Multifamily Affordable Units",
+        "Modification": "New edit to check Multifamily Affordable Units value at a value"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q656",
+        "Data Point": "Any data point eligible for an alphanumeric exemption code",
+        "Modification": "New edit to check for the use of 1111 as an exemption code"
+    },
+    {
+        "Type of Data Field": "Loan/Application Register",
+        "Edit Number": "Q657",
+        "Data Point": "Any data point with a numeric data field type that is not eligible for an exemption code",
+        "Modification": "New edit to check for the use of 1111 in non-exemption integer fields"
+    }
+]

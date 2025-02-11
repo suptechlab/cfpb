@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "hmda-quarterly-data-service.fullname" . }}-verbiage-configmap
+data:
+  GRAPH_SUMMARY: 31 financial institutions were required to report HMDA quarterly data in 2024. The following graphs show current and historic quarterly HMDA data for these institutions.
+  MEDIAN_INTEREST_RATES_SUBTITLE: ""
+  MEDIAN_INTEREST_RATES_CC_RACE_SUBTITLE: ""
+  MEDIAN_INTEREST_RATES_FHA_RACE_TITLE: For FHA loans, how have median interest rates differed by race/ethnicity?
+  MEDIAN_INTEREST_RATES_FHA_RACE_SUBTITLE: ""
+  APPLICATIONS_VOLUME_SUBTITLE: ""
+  ALL_APPS_VOLUME_SUBTITLE: ""
+  LOANS_VOLUME_SUBTITLE: ""
+  DENIAL_RATES_SUBTITLE: ""
+  DENIAL_RATES_CC_BY_RACE_SUBTITLE: ""
+  DENIAL_RATES_FHA_BY_RACE_SUBTITLE: ""
+  LTV_CC_BY_RACE_SUBTITLE: ""
+  LTV_FHA_BY_RACE_SUBTITLE: ""
+  MEDIAN_CREDIT_SCORES_SUBTITLE: ""
+  MEDIAN_CREDIT_SCORES_CC_RACE_SUBTITLE: ""
+  MEDIAN_CREDIT_SCORES_FHA_RACE_SUBTITLE: ""
+  DTI_TITLE: How have median DTIs changed?
+  DTI_SUBTITLE: ""
+  DTI_CC_RACE_SUBTITLE: ""
+  DTI_FHA_RACE_SUBTITLE: ""
+  TLC_SUBTITLE: ""
+  TLC_CC_RACE_SUBTITLE: ""
+  TLC_FHA_RACE_SUBTITLE: ""

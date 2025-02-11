@@ -1,0 +1,59 @@
+{
+  "name": "hmda-documentation",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids"
+  },
+  "dependencies": {
+    "@docsearch/react": "^3.5.2",
+    "@docusaurus/core": "3.3.2",
+    "@docusaurus/plugin-client-redirects": "3.3.2",
+    "@docusaurus/preset-classic": "3.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-json-to-csv": "^1.2.0",
+    "react-table": "^7.8.0"
+  },
+  "resolutions": {
+    "webpack": "^5.76.3",
+    "postcss": "^8.4.31",
+    "glob-parent": ">=5.1.2"
+  },
+  "devDependencies": {
+    "@discoveryjs/json-ext": "^0.5.7",
+    "@docusaurus/module-type-aliases": "^3.3.0",
+    "@mdx-js/react": "^3.0.0",
+    "@uswds/compile": "^1.1.0",
+    "@uswds/uswds": "^3.7.1",
+    "clsx": "^2.1.0",
+    "cypress": "^13.6.3",
+    "docusaurus-plugin-sass": "^0.2.5",
+    "prism-react-renderer": "^2.3.1",
+    "sass": "^1.70.0",
+    "strip-ansi": "^7.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0"
+  }
+}

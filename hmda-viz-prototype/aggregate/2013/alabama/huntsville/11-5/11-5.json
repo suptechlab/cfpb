@@ -1,0 +1,1867 @@
+{
+    "table": "11-5", 
+    "type": "Aggregate", 
+    "desc": "Pricing information for FHA refinancing loans, first lien, 1- to 4-family owner-occupied dwelling (excludes manufactured homes), by borrower or census tract characteristics", 
+    "year": "2013", 
+    "report-date": "05/27/2015", 
+    "msa": {
+        "id": "26620", 
+        "name": "Huntsville", 
+        "state": "AL", 
+        "state_name": "Alabama"
+    }, 
+    "borrowercharacteristics": [
+        {
+            "characteristic": "Race", 
+            "races": [
+                {
+                    "race": "American Indian/Alaska Native", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 18, 
+                            "value": 2489
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 0, 
+                            "value": "None"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 0, 
+                            "value": "None"
+                        }
+                    ]
+                }, 
+                {
+                    "race": "Asian", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 15, 
+                            "value": 2325
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 0, 
+                            "value": "None"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 0, 
+                            "value": "None"
+                        }
+                    ]
+                }, 
+                {
+                    "race": "Black or African American", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 412, 
+                            "value": 54104
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 10, 
+                            "value": 1062
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 7, 
+                            "value": 729
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 1, 
+                            "value": 71
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 1, 
+                            "value": 114
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 1, 
+                            "value": 148
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.99, 
+                            "value": "2.03"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.72, 
+                            "value": "1.71"
+                        }
+                    ]
+                }, 
+                {
+                    "race": "Native Hawaiian or Other Pacific Islander", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 6, 
+                            "value": 907
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 0, 
+                            "value": "None"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 0, 
+                            "value": "None"
+                        }
+                    ]
+                }, 
+                {
+                    "race": "White", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 1266, 
+                            "value": 176329
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 40, 
+                            "value": 5036
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 20, 
+                            "value": 2811
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 5, 
+                            "value": 653
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 2, 
+                            "value": 180
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 13, 
+                            "value": 1392
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.42, 
+                            "value": "2.33"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.99, 
+                            "value": "1.92"
+                        }
+                    ]
+                }, 
+                {
+                    "race": "2 or more minority races", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 0, 
+                            "value": "None"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 0, 
+                            "value": "None"
+                        }
+                    ]
+                }, 
+                {
+                    "race": "Joint (White/Minority Race)", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 12, 
+                            "value": 1878
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 0, 
+                            "value": "None"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 0, 
+                            "value": "None"
+                        }
+                    ]
+                }, 
+                {
+                    "race": "Race Not Available", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 240, 
+                            "value": 33481
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 1, 
+                            "value": 156
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 1, 
+                            "value": 156
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.58, 
+                            "value": "1.58"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.58, 
+                            "value": "1.58"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "characteristic": "Ethnicity", 
+            "ethnicities": [
+                {
+                    "ethnicity": "Hispanic or Latino", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 39, 
+                            "value": 5883
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 0, 
+                            "value": "None"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 0, 
+                            "value": "None"
+                        }
+                    ]
+                }, 
+                {
+                    "ethnicity": "Not Hispanic or Latino", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 1698, 
+                            "value": 233720
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 47, 
+                            "value": 5794
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 26, 
+                            "value": 3355
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 6, 
+                            "value": 724
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 2, 
+                            "value": 266
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 13, 
+                            "value": 1449
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.31, 
+                            "value": "2.27"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.79, 
+                            "value": "1.75"
+                        }
+                    ]
+                }, 
+                {
+                    "ethnicity": "Joint (Hispanic or Latino/Not Hispanic or Latino)", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 14, 
+                            "value": 2036
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 0, 
+                            "value": "None"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 0, 
+                            "value": "None"
+                        }
+                    ]
+                }, 
+                {
+                    "ethnicity": "Ethnicity Not Available", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 218, 
+                            "value": 29874
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 4, 
+                            "value": 460
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 2, 
+                            "value": 341
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 1, 
+                            "value": 28
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 1, 
+                            "value": 91
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.46, 
+                            "value": "2.18"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 2.33, 
+                            "value": "1.92"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "characteristic": "Minority Status", 
+            "minoritystatuses": [
+                {
+                    "minoritystatus": "White Non-Hispanic", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 1205, 
+                            "value": 167718
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 37, 
+                            "value": 4732
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 19, 
+                            "value": 2626
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 5, 
+                            "value": 653
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 1, 
+                            "value": 152
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 12, 
+                            "value": 1301
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.39, 
+                            "value": "2.32"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.94, 
+                            "value": "1.90"
+                        }
+                    ]
+                }, 
+                {
+                    "minoritystatus": "Others, Including Hispanic", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 511, 
+                            "value": 68776
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 10, 
+                            "value": 1062
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 7, 
+                            "value": 729
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 1, 
+                            "value": 71
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 1, 
+                            "value": 114
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 1, 
+                            "value": 148
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.99, 
+                            "value": "2.03"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.72, 
+                            "value": "1.71"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "characteristic": "Income", 
+            "incomes": [
+                {
+                    "income": "Less than 50% of MSA/MD median", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 263, 
+                            "value": 26101
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 5, 
+                            "value": 448
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 4, 
+                            "value": 317
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 1, 
+                            "value": 131
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.06, 
+                            "value": "2.23"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.69, 
+                            "value": "1.69"
+                        }
+                    ]
+                }, 
+                {
+                    "income": "50-79% of MSA/MD median", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 307, 
+                            "value": 39345
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 10, 
+                            "value": 1027
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 7, 
+                            "value": 780
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 3, 
+                            "value": 247
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.83, 
+                            "value": "1.81"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.73, 
+                            "value": "1.67"
+                        }
+                    ]
+                }, 
+                {
+                    "income": "80-99% of MSA/MD median", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 143, 
+                            "value": 21655
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 4, 
+                            "value": 363
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 3, 
+                            "value": 269
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 1, 
+                            "value": 94
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.07, 
+                            "value": "2.09"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.54, 
+                            "value": "1.56"
+                        }
+                    ]
+                }, 
+                {
+                    "income": "100-119% of MSA/MD median", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 141, 
+                            "value": 21372
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 6, 
+                            "value": 890
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 4, 
+                            "value": 689
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 2, 
+                            "value": 201
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.79, 
+                            "value": "1.73"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.73, 
+                            "value": "1.71"
+                        }
+                    ]
+                }, 
+                {
+                    "income": "120% or more of MSA/MD median", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 269, 
+                            "value": 49462
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 10, 
+                            "value": 1890
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 8, 
+                            "value": 1466
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 1, 
+                            "value": 276
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 1, 
+                            "value": 148
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.94, 
+                            "value": "1.93"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.72, 
+                            "value": "1.71"
+                        }
+                    ]
+                }, 
+                {
+                    "income": "Income Not Available", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 846, 
+                            "value": 113578
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 16, 
+                            "value": 1636
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 2, 
+                            "value": 175
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 3, 
+                            "value": 294
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 11, 
+                            "value": 1167
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 3.2, 
+                            "value": "3.27"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 3.35, 
+                            "value": "3.36"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "characteristic": "Gender", 
+            "genders": [
+                {
+                    "gender": "Male", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 663, 
+                            "value": 91953
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 19, 
+                            "value": 2172
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 15, 
+                            "value": 1796
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 1, 
+                            "value": 97
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 3, 
+                            "value": 279
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.97, 
+                            "value": "1.92"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.72, 
+                            "value": "1.72"
+                        }
+                    ]
+                }, 
+                {
+                    "gender": "Female", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 630, 
+                            "value": 80202
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 16, 
+                            "value": 1893
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 9, 
+                            "value": 1163
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 1, 
+                            "value": 79
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 2, 
+                            "value": 180
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 4, 
+                            "value": 471
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.26, 
+                            "value": "2.22"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.81, 
+                            "value": "1.71"
+                        }
+                    ]
+                }, 
+                {
+                    "gender": "Joint (Male/Female)", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 571, 
+                            "value": 85021
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 15, 
+                            "value": 2033
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 3, 
+                            "value": 581
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 4, 
+                            "value": 548
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 1, 
+                            "value": 114
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 7, 
+                            "value": 790
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.87, 
+                            "value": "2.72"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 2.73, 
+                            "value": "2.41"
+                        }
+                    ]
+                }, 
+                {
+                    "gender": "Gender Not Available", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 105, 
+                            "value": 14337
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 1, 
+                            "value": 156
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 1, 
+                            "value": 156
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.58, 
+                            "value": "1.58"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.58, 
+                            "value": "1.58"
+                        }
+                    ]
+                }
+            ]
+        }
+    ], 
+    "censuscharacteristics": [
+        {
+            "characteristic": "Racial/Ethnic Composition", 
+            "compositions": [
+                {
+                    "composition": "Less than 10% minority", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 133, 
+                            "value": 19019
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 7, 
+                            "value": 731
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 4, 
+                            "value": 342
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 3, 
+                            "value": 389
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.47, 
+                            "value": "2.66"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.63, 
+                            "value": "3.35"
+                        }
+                    ]
+                }, 
+                {
+                    "composition": "10-19% minority", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 660, 
+                            "value": 95676
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 21, 
+                            "value": 2916
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 11, 
+                            "value": 1743
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 2, 
+                            "value": 345
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 8, 
+                            "value": 828
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.48, 
+                            "value": "2.34"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.94, 
+                            "value": "1.92"
+                        }
+                    ]
+                }, 
+                {
+                    "composition": "20-49% minority", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 924, 
+                            "value": 133817
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 17, 
+                            "value": 2134
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 9, 
+                            "value": 1288
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 2, 
+                            "value": 229
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 3, 
+                            "value": 294
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 3, 
+                            "value": 323
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.22, 
+                            "value": "2.11"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.72, 
+                            "value": "1.72"
+                        }
+                    ]
+                }, 
+                {
+                    "composition": "50-79% minority", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 121, 
+                            "value": 12163
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 2, 
+                            "value": 172
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 1, 
+                            "value": 93
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 1, 
+                            "value": 79
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.97, 
+                            "value": "1.94"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.97, 
+                            "value": "1.71"
+                        }
+                    ]
+                }, 
+                {
+                    "composition": "80-100% minority", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 131, 
+                            "value": 10838
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 4, 
+                            "value": 301
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 3, 
+                            "value": 230
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 1, 
+                            "value": 71
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 1.82, 
+                            "value": "1.8"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.71, 
+                            "value": "1.69"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "characteristic": "Income Characteristics", 
+            "incomes": [
+                {
+                    "income": "Low income", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 58, 
+                            "value": 4409
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 1, 
+                            "value": 28
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 1, 
+                            "value": 28
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.73, 
+                            "value": "2.73"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 2.73, 
+                            "value": "2.73"
+                        }
+                    ]
+                }, 
+                {
+                    "income": "Moderate income", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 411, 
+                            "value": 44508
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 11, 
+                            "value": 927
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 7, 
+                            "value": 598
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 3, 
+                            "value": 247
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 1, 
+                            "value": 82
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.01, 
+                            "value": "2.0"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.71, 
+                            "value": "1.71"
+                        }
+                    ]
+                }, 
+                {
+                    "income": "Middle income", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 792, 
+                            "value": 107306
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 25, 
+                            "value": 3273
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 16, 
+                            "value": 2218
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 3, 
+                            "value": 477
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 1, 
+                            "value": 114
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 5, 
+                            "value": 464
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.12, 
+                            "value": "2.05"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 1.79, 
+                            "value": "1.79"
+                        }
+                    ]
+                }, 
+                {
+                    "income": "Upper income", 
+                    "pricinginformation": [
+                        {
+                            "pricing": "No Reported Pricing Data", 
+                            "count": 708, 
+                            "value": 115290
+                        }, 
+                        {
+                            "pricing": "Reported Pricing Data", 
+                            "count": 14, 
+                            "value": 2026
+                        }, 
+                        {
+                            "pricing": "1.50 - 1.99", 
+                            "count": 5, 
+                            "value": 880
+                        }, 
+                        {
+                            "pricing": "2.00 - 2.49", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "2.50 - 2.99", 
+                            "count": 1, 
+                            "value": 152
+                        }, 
+                        {
+                            "pricing": "3.00 - 3.99", 
+                            "count": 8, 
+                            "value": 994
+                        }, 
+                        {
+                            "pricing": "4.00 - 4.99", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "5 or more", 
+                            "count": 0, 
+                            "value": 0
+                        }, 
+                        {
+                            "pricing": "Mean", 
+                            "count": 2.88, 
+                            "value": "2.72"
+                        }, 
+                        {
+                            "pricing": "Median", 
+                            "count": 3.39, 
+                            "value": "2.82"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

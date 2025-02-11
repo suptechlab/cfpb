@@ -1,0 +1,550 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+/***********************************
+  Default Overwrites
+/***********************************/
+
+:root {
+  --ifm-color-primary: #1f498f;
+  --ifm-color-primary-dark: #1c4281;
+  --ifm-color-primary-darker: #1a3e7a;
+  --ifm-color-primary-darkest: #163364;
+  --ifm-color-primary-light: #22509d;
+  --ifm-color-primary-lighter: #2454a4;
+  --ifm-color-primary-lightest: #285fba;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-font-family-base: Source Sans Pro;
+  --docusaurus-announcement-bar-height: 26px !important;
+  --ifm-navbar-height: 10rem;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-item-padding-horizontal: .275rem;
+  --ifm-navbar-link-hover-color: #0071bc;
+
+  --hmda-blue: #1f498f;
+  --hmda-blue-light: #2360C2;
+  --hmda-blue-dark: #162e51;
+  --hmda-blue-bright: #3B7BE9;
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-heading-color: #444;
+
+}
+@media screen and (min-width: 640px) {
+  :root {
+    --ifm-navbar-height: 9rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  :root {
+    --ifm-navbar-height: 5rem;
+  }
+}
+
+@media screen and (min-width: 996px) and (max-width: 1100px)  {
+  .col--3 {
+    --ifm-col-width: 0;
+  }
+ }
+
+@media screen and (min-width: 1280px) {
+  :root {
+    --ifm-navbar-item-padding-horizontal: .8rem;
+  }
+
+}
+
+.markdown p {
+  font-size: 18px;
+  color: #5b616b;
+}
+
+.markdown h1:first-child, h1 {
+  --ifm-h1-font-size: 2.5rem;
+  color: var(--hmda-blue);
+}
+
+/***********************************
+  Banner USA
+/***********************************/
+
+.banner {
+  background-color: #f1f1f1;
+  color: #000;
+  /* padding-bottom: 0.7rem; */
+  text-align: left;
+}
+
+@media screen and (min-width: 481px) {
+  .banner {
+    font-size: 1.3rem;
+    padding-bottom: 0;
+  }
+}
+
+.banner-content {
+  padding-right: 1.5rem;
+  padding-bottom: 3px;
+  padding-left: 1.5rem;
+  background-color: transparent;
+  font-size: 1.5rem;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .banner-content {
+    padding-bottom: 2.3rem;
+    padding-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .banner-content {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+
+.banner-content p:first-child {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .banner-content p:first-child {
+    margin-top: 0;
+  }
+}
+
+.banner-inner {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1.5rem;
+  padding-left: 1rem;
+}
+
+.banner-inner::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+@media screen and (min-width: 951px) {
+  .banner-inner {
+    padding-right: 3rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.banner-header {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 481px) {
+  .banner-header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.banner-header p {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 481px) {
+  .banner-header p {
+    margin-bottom: 2px;
+    display: inline-block;
+  }
+}
+
+.banner-header img {
+  float: left;
+  margin-right: 1rem;
+  margin-top: 0;
+  width: 2.4rem;
+}
+
+@media screen and (min-width: 481px) {
+  .banner-header img {
+    margin-right: 0.7rem;
+    width: 20px;
+  }
+}
+
+
+.announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+  background-color: #f1f1f1 !important;
+}
+
+
+/***********************************
+  Navbar
+/***********************************/
+
+.navbar {
+  padding-right: 0 !important;
+}
+
+.navbar__link {
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.navbar__link--active {
+  border: 2px solid #000;
+  border-width: 0 0 2px 0;
+  color: #000;
+  padding: 0;
+  margin-left: .8rem;
+  margin-right: .8rem;
+}
+
+.navbar__link:hover {
+  border-color: #0071bc;
+}
+
+.hmda-name {
+  display: none;
+  font-size: 1.55rem;
+  color: #1f498f;
+  font-weight: 700;
+  padding-left: .5em;
+}
+
+@media screen and (min-width: 1500px) {
+  .hmda-name {
+    display: inline-block;
+  }
+}
+
+.navbar__brand,
+.navbar__logo {
+  margin-right: 0;
+}
+
+/* Emphasize sidebar selection */
+.menu__link--active {
+  border-radius: 0;
+  font-weight: bold;
+  border-left: 5px solid #1f498f;
+}
+
+.menu__link--sublist.menu__link--active,
+.table-of-contents__link--active {
+  font-weight:bold;
+  border-left: none;
+}
+
+/* Prevent Chrome hover-on-link display of URL from obscuring sidebar options */
+li.theme-doc-sidebar-item-category.theme-doc-sidebar-item-category-level-1:last-of-type {
+  margin-bottom: 50px;
+}
+
+/***********************************
+  Bottom PageNav Hacks for Short Content
+/***********************************/
+
+.pagination-nav {
+  margin-bottom: 5em;
+}
+
+.docs-doc-id-faq\/downloading-datasets, 
+.docs-doc-id-faq\/filing-faq, 
+.docs-doc-id-faq\/data-browser-maps-faq,
+.docs-doc-id-publications\/general\/derived-data-fields,
+.docs-doc-id-publications\/loan-level-datasets\/lar-data-fields,
+.docs-doc-id-publications\/loan-level-datasets\/ts-data-fields,
+.docs-doc-id-publications\/loan-level-datasets\/panel-data-fields,
+.docs-doc-id-publications\/loan-level-datasets\/lar-data-fields-v1,
+.docs-doc-id-publications\/loan-level-datasets\/ts-data-fields-v1,
+.docs-doc-id-publications\/loan-level-datasets\/panel-data-fields-v1,
+.docs-doc-id-tools\/data-browser\/data-browser-faq,
+.docs-doc-id-tools\/data-browser\/data-browser-maps-faq,
+.docs-doc-id-tools\/data-browser\/derived-data-fields,
+.docs-doc-id-tools\/data-browser\/lar-data-fields,
+.docs-doc-id-tools\/file-format-verification\/file-format-verification,
+.docs-doc-id-tools\/online-lar-formatting\/online-lar-formatting,
+.docs-doc-id-api\/file-serving\/index {
+  .pagination-nav {
+    margin-bottom: 50vh;
+  }
+}
+
+/***********************************
+  Algolia SearchBar
+/***********************************/
+
+[class^="searchBox"] {
+  padding-left: .2rem !important;
+  margin-right: 1rem
+}
+
+/***********************************
+  Tool Links
+/***********************************/
+
+.tool-link {
+  font-weight: normal;
+}
+
+
+/**************************
+  Style Guide
+/**************************/
+
+.color-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  .color-card {
+    border: 1px solid #aaa;
+    width: 200px;
+    .color {
+      height: 150px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .hmda-blue {
+      background-color: var(--hmda-blue);
+    }
+    .hmda-blue-light {
+      background-color: var(--hmda-blue-light);
+    }
+    .hmda-blue-dark {
+      background-color: var(--hmda-blue-dark);
+    }
+    .hmda-blue-bright {
+      background-color: var(--hmda-blue-bright);
+    }
+    p {
+      padding: 1em;
+      span {
+        display: inline-block;
+        font-weight: bold;
+        margin-right: .5em;
+      }
+    }
+  }
+}
+
+.link {
+  color: var(--hmda-blue-light);
+  text-decoration: underline;
+}
+.link-visited {
+  color: var(--hmda-blue);
+}
+.link-hover {
+  color: var(--hmda-blue-bright);
+}
+
+
+/***************************************
+  Typography
+/***************************************/
+
+ h1 {
+  font-size: 40px;
+  color: var(--ifm-color-primary);
+ }
+
+ h2 { font-size: 32px; }
+ h3 { font-size: 24px; }
+ h4 { font-size: 20px; }
+ h5 { font-size: 16px; }
+ h6 { font-size: 13px; }
+ .theme-doc-markdown p { font-size: 18px; }
+
+
+.docs-version-2025, .docs-version-2024, .docs-version-2023, .docs-version-2022, .docs-version-2021 {
+  h2 {
+    color: var(--ifm-color-primary);
+    font-size: 36px;
+  }
+  h3 { font-size: 32px; }
+  h4 { font-size: 24px; }
+  h5 { font-size: 20px; }
+  h6 { font-size: 16px; }
+  .col--3 {
+    display: none;
+  }
+
+  .nav-item a.active {
+    color: #ff0000; /* Adjust the color to your preference */
+    font-weight: bold; /* Optional: Adjust the styling as needed */
+  }
+}
+
+/***************************************
+  FIG Tables
+/***************************************/
+ 
+ .react-table {
+  table {
+    position: relative;
+    overflow: unset;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  tbody {
+    vertical-align: top;
+  }
+
+  .table1, .table2, .table5, .table6, .table7, .table8 {
+    .table-name th {
+      top: 5em;
+      line-height: 1em;
+    }
+    th {
+      position: sticky;
+      top: 7.5em;
+      background-color: #eaeaea;
+      border: 1px solid #ccc;
+      line-height: 1em;
+    
+    }
+    .anchorWithStickyNavbar_LWe7 {
+      scroll-margin-top: 12em;
+    }
+  }
+}
+
+/***************************************
+  Print Page Button
+/***************************************/
+.printBtn {
+ position: absolute;
+ right: 0;
+ top: 0;
+ font-size: 12px;
+ padding: .25em 1em;
+ background-color: #eee;
+ border-radius: .5em;
+ margin-top: .5em;
+ cursor: pointer;
+ &:hover {
+  color: #fff;
+  background-color: var(--hmda-blue-light);
+ }
+}
+
+article, .fig-section {
+ position: relative;
+}
+
+/***************************************
+  Export CSV Button
+/***************************************/
+
+.export-csv {
+  text-align: right;
+
+  .btn-csv {
+    font-size: 12px;
+    padding: .5em 1em;
+    border-radius: .25em;
+    border: 1px solid #ccc;
+    margin-bottom: .25em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--hmda-blue-light);
+      color: #fff;
+    }
+  }
+}
+
+/***************************************
+  Version Log
+/***************************************/
+
+.table0 {
+  td:nth-of-type(4) {
+    width: 100%;
+  }
+}
+
+/***************************************
+  Printing
+/***************************************/
+
+@media print {
+
+  /* Hide Navbar Menu */
+  .navbar {
+    display: none !important;
+  }
+
+  /* Hide Footer */
+  .usa-identifier {
+    display: none !important;
+  }
+
+  /* Hide return to top button */
+  .return-to-top {
+    display: none !important;
+  }
+
+  /* Hide Export CSV button */
+  .export-csv {
+    display: none !important;
+  }
+  
+  /* Hide the print button itself when printing */
+  .printBtn {
+    display: none !important;
+  }
+
+  /* Hide Version Banner */
+  .theme-doc-version-banner {
+    display: none !important;
+  }
+
+  /* Hide Breadcrumb navigation */
+  .theme-doc-breadcrumbs {
+    display: none !important;
+  }
+}
+
+/***************************************
+  Login.gov FAQ
+/***************************************/
+
+.login-gov-table {
+  table {
+    td {
+      vertical-align: top;
+    }
+    td:nth-of-type(1){
+      min-width: 75px;
+    }
+    td:nth-of-type(2){
+      min-width: 300px;
+    }
+  }
+
+}
+
+.scale-image-down {
+  width: 300px;
+}

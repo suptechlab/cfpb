@@ -1,0 +1,78 @@
+{% extends "idea/idea-base.html" %}
+
+{% block "content" %}
+
+        <div id="content" class="idea-add ic" role="main">
+            <div class="row">
+                <div class="logo span7 section project-title">
+                    {% if idea.banner and idea.banner.is_private %}
+                        <a href="{% url 'idea:room_detail' idea.banner.slug %}">{{ idea.banner.title }}</a>
+                    {% else %}
+                        <a href="{% url 'idea:idea_list' %}">IdeaBox</a>
+                    {% endif %}
+                </div><!-- /logo -->
+            </div>
+            <div class="add-summary">
+                <h2>Thanks for sharing your Idea</h2>
+
+                <div class="summary-text">What happens next:</div>
+
+                <div class="summary-section">
+                    <h4 class="summary-section-header">
+                        Watch the Likes go up
+                    </h4>
+                    <div class="summary-section-body">
+                        Gauge support for your Idea by watching who has Liked it. Don’t
+                        worry, people can’t unlike it.
+                    </div>
+                </div>
+                
+                <div class="summary-section">
+                    <h4 class="summary-section-header">
+                        Others can leave comments
+                    </h4>
+                    <div class="summary-section-body">
+                        Start a conversation yourself, or join it by responding to any
+                        questions or comments others may have. You'll receive a notification
+                        when someone comments on your Idea or responds to a comment.
+                    </div>
+                </div>
+                
+                <div class="summary-section">
+                    <h4 class="summary-section-header">
+                        Add tags to find support or collaboration
+                    </h4>
+                    <div class="summary-section-body">
+                        You or anyone can add more tags to your Idea. This helps filter and
+                        group similar Ideas, and find areas that people are talking the most
+                        about.
+                    </div>
+                </div>
+                
+                <div class="summary-section">
+                    <h4 class="summary-section-header">
+                        Show your support
+                    </h4>
+                    <div class="summary-section-body">
+                        Check out the Ideas submitted by your colleagues on the IdeaBox landing
+                        page. You may find potential collaborators for your own Ideas by showing
+                        your support.
+                    </div>
+                </div>
+                
+                <div class="summary-text">
+                    Ideas with the greatest interest will receive attention from the IdeaBox team. 
+                </div>
+
+                <div id="submit-buttons">
+                    {% if idea.banner and idea.banner.is_private %}
+                        <a class="btn" href="{% url "idea:room_detail" idea.banner.slug %}">Take me to the private Idea room</a>
+                    {% else %}
+                        <a class="btn" href="{% url "idea:idea_list" %}">Take me to IdeaBox</a>
+                    {% endif %}
+                    <a class="btn" href="{% url "idea:idea_detail" idea.id %}">Take me to my Idea</a>
+                </span>
+            </div><!-- /add-summary -->
+        </div><!-- /main -->
+
+{% endblock %}

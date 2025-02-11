@@ -1,0 +1,46 @@
+{
+  "name": "hubot-acrogov",
+  "description": "A hubot script that translates government acronyms.",
+  "version": "2.4.1",
+  "author": "higs4281 <higs4281@gmail.com>",
+  "license": "CC0-1.0",
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "acronyms",
+    "government"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CFPB/hubot-acrogov.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CFPB/hubot-acrogov/issues"
+  },
+  "dependencies": {
+    "coffee-script": "~1.6",
+    "grunt": "^1.0.1",
+    "hubot": "^2.18.0",
+    "snyk": "^1.85.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-test": "~0.7.0",
+    "grunt-release": "~0.6.0",
+    "hubot-mock-adapter": "^1.0.0",
+    "hubot-mock-adapter-helper": "0.0.1",
+    "matchdep": "~0.1.2",
+    "mocha": "*",
+    "sinon": "^1.17.4",
+    "sinon-chai": "*"
+  },
+  "main": "index.coffee",
+  "scripts": {
+    "test": "grunt test",
+    "install": "if [ -n \"$HUBOT_ACRO_PRIVATE_FILE\" ]; then curl -o src/json/acro.priv.json $HUBOT_ACRO_PRIVATE_FILE; fi",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
+}

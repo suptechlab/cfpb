@@ -1,0 +1,13 @@
+{
+  "apiHost": "http://localhost:3000",
+  "filingAPIHost": "https://ffiec.cfpb.gov/v2/filing",
+  "filingAPIHostBeta": "https://ffiec.beta.cfpb.gov/v2/filing",
+  "authHost": "https://ffiec.cfpb.gov",
+  "authHostBeta": "https://ffiec.beta.cfpb.gov",
+  "adminAPIHost": "http://localhost:8081",
+  "publicAPIHost": "https://ffiec.cfpb.gov/v2/public",
+  "dataBrowserAPIHost": "https://ffiec.cfpb.gov/v2/data-browser-api",
+  "rateSpreadAPI": "https://ffiec.cfpb.gov/public/rateSpread",
+  "quarterlyDataAPI": "https://ffiec.cfpb.gov/quarterly-data/graphs"
+  
+}
