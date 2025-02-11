@@ -1,0 +1,24 @@
+{
+  "name": "bapital-typography",
+  "version": "4.0.0",
+  "description": "Capital Framework typography",
+  "less": "src/bapital-typography.less",
+  "style": "bapital-typography.css",
+  "scripts": {
+    "build": "yarn run compile && yarn run compress",
+    "compile": "lessc src/bapital-typography.less bapital-typography.css --autoprefix='last 2 versions','Explorer >= 8'",
+    "compress": "uglifycss bapital-typography.css > bapital-typography.min.css"
+  },
+  "dependencies": {
+    "bapital-core": "^4.0.0",
+    "bapital-icons": "^4.0.0"
+  },
+  "keywords": [
+    "typography"
+  ],
+  "devDependencies": {
+    "less": "^3.8.1",
+    "less-plugin-autoprefix": "^2.0.0",
+    "uglifycss": "^0.0.29"
+  }
+}

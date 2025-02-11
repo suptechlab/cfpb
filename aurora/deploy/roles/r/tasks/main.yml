@@ -1,0 +1,157 @@
+---
+- name: Ensure umask is correct
+  lineinfile:
+    dest: "~/.bashrc"
+    line: umask 0022
+    regexp: (.*)umask(.*)
+    state: present
+
+- name: Install R-core
+  yum:
+    name: R-core
+    state: "{{ r_core_state }}"
+    disable_gpg_check: yes
+  register: r_core_updated
+  tags:
+    - r
+
+- name: Check if rstudio server is installed
+  yum:
+    list: rstudio-server
+  when: r_core_updated.changed
+  register: rstudio_installed
+  tags:
+    - r
+
+- name: Restart rstudio if R updates and rstudio server is installed
+  command: /bin/true
+  when: "{{ (rstudio_installed is defined and rstudio_installed.results|length > 0 and item['yumstate']=='installed') }}"
+  with_items: "{{ rstudio_installed.results | default([]) }}"
+  notify: restart rstudio-server
+  tags:
+    - r
+
+- name: Install base packages
+  yum:
+    name: "{{ item }}"
+    state: "{{ r_core_state }}"
+    disable_gpg_check: yes
+  with_items:
+    - R-devel
+    - blas
+    - blas-devel
+    - lapack
+    - lapack-devel
+    - texinfo
+    - texinfo-tex
+    - libicu
+    - libicu-devel
+  tags:
+    - r
+
+- name: Ensure Java is configured
+  shell: "R CMD javareconf"
+  tags:
+    - r
+
+- name: Ensure that R is executable
+  file:
+    dest: /usr/lib64/R/etc/{{ item }}
+    mode: 0644
+  with_items:
+    - ldpaths
+    - Makeconf
+  tags:
+    - r
+
+- name: Install packages required by R packages
+  yum:
+    name: "{{ item }}"
+    state: present
+    disable_gpg_check: yes
+  with_items: "{{ r_dependencies | difference(r_dependencies_ignore | default([],true)) }}"
+  tags:
+    - r
+
+- name: Find any locked directories
+  find:
+    paths: "{{ r_system_package_dir }}"
+    pattern: '00LOCK-*'
+    file_type: directory
+  register: locked_dirs
+  tags:
+    - r
+
+- name: Remove locked directories
+  file:
+    path: "{{ item.path }}"
+    state: absent
+  with_items:
+    - "{{ locked_dirs.files }}"
+  tags:
+    - r
+
+- name: Update existing R packages
+  shell: source scl_source enable devtoolset-2 && /usr/bin/Rscript --slave --no-save --no-restore-history -e "update.packages(repos=c('http://cran.rstudio.com/'),ask=FALSE,checkBuilt=TRUE);"
+  async: 3600
+  poll: 60
+  tags:
+    - r
+    - skip-travis
+  when: install_r_updates
+
+- name: Install R packages
+  shell: source scl_source enable devtoolset-2 && /usr/bin/Rscript --slave --no-save --no-restore-history -e "if (! ('{{ item }}' %in% installed.packages()[,'Package'])) { install.packages(pkgs='{{ item }}', INSTALL_opts=c('--no-test-load'),repos=c('http://cran.rstudio.com/'),dep=TRUE); print('Added'); } else { print('Already installed'); }"
+  with_items: "{{ r_packages | difference(r_packages_ignore | default([],true)) }}"
+  register: r_result
+  failed_when: "r_result.rc != 0 or 'had non-zero exit status' in r_result.stderr"
+  changed_when: "'Added' in r_result.stdout"
+  tags:
+    - r
+    - skip-travis
+  when: install_r_packages
+
+- name: Install R packages with opts
+  shell: source scl_source enable devtoolset-2 && /usr/bin/Rscript --slave --no-save --no-restore-history -e "if (! ('{{ item.name }}' %in% installed.packages()[,'Package'])) { install.packages(pkgs='{{ item.name }}', configure.args='--with-{{ item.name }}-lib={{ item.lib }}, --with-{{ item.name }}-include={{ item.include }}', INSTALL_opts=c('--no-test-load'),repos=c('http://cran.rstudio.com/'),dep=TRUE); print('Added'); } else { print('Already installed'); }"
+  with_items: "{{ r_packages_with_opts }}"
+  register: r_result
+  failed_when: "r_result.rc != 0 or 'had non-zero exit status' in r_result.stderr"
+  changed_when: "'Added' in r_result.stdout"
+  tags:
+    - r
+    - skip-travis
+  when: install_r_packages
+
+- name: Install R packages from Github
+  shell: source scl_source enable devtoolset-2 && /usr/bin/Rscript --slave --no-save --no-restore-history -e "library(devtools); if (! ('{{ item.name }}' %in% installed.packages()[,'Package'])) { install_github('{{ item.user }}/{{ item.name }}'); print('Added'); } else { print('Already installed'); }"
+  with_items: "{{ r_packages_github }}"
+  register: r_github_result
+  failed_when: "r_github_result.rc != 0 or 'had non-zero exit status' in r_github_result.stderr"
+  changed_when: "'Added' in r_github_result.stdout"
+  tags:
+    - r
+    - skip-travis
+  when: install_r_packages
+
+- name: Re-ensure that R is executable
+  file:
+    dest: /usr/lib64/R/etc/{{ item }}
+    mode: 0644
+  with_items:
+    - ldpaths
+    - Makeconf
+  tags:
+    - r
+  when: install_r_packages
+
+- name: Permissions for R package directory
+  file:
+    state: directory
+    mode: '2775'
+    path: "{{ item }}"
+    owner: root
+    group: "{{ restricted_group_name }}"
+    recurse: yes
+  with_items: "{{ r_system_package_dir }}"
+  tags:
+    - r

@@ -1,0 +1,11 @@
+{
+    "name": "CFPB JavaScript CI workflow",
+    "description": "A Javascript CI workflow template for CFPB repositories based on Gulp.",
+    "iconName": "nodejs",
+    "categories": [
+        "JavaScript"
+    ],
+    "filePatterns": [
+        "package.json$"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "capital-framework-type-testing",
+  "version": "0.5.3",
+  "description": "A demo page for testing a wide range of typesetting combos in Capital Framework.",
+  "homepage": "https://cfpb.github.io/cf-type-testing/",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/cf-type-testing.git"
+  },
+  "license": "CC0",
+  "dependencies": {
+    "cf-typography": "^1.2.0",
+    "cf-grid": "^1.0.2",
+    "cf-buttons": "^1.7.0",
+    "cf-layout": "^2.0.0",
+    "cf-forms": "^1.4.0",
+    "cf-core": "git@github.com:jimmynotjim/cf-core.git#type-sizing",
+    "cf-icons": "^1.0.1",
+    "cf-expandables": "^1.0.1",
+    "html5shiv": "latest",
+    "jquery.easing": "~1.3.0"
+  }
+}

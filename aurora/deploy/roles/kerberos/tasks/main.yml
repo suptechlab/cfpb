@@ -1,0 +1,54 @@
+# main.yml - Kerberos client setup
+---
+- name: Install Kerberos
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - krb5-libs
+    - krb5-workstation
+    - krb5-devel
+    - pam_krb5
+    - sssd-krb5
+    - sssd-krb5-common
+    - libselinux-python
+
+- name: Create log directory
+  file:
+    dest: /var/krb5
+    state: directory
+
+- name: Update krb5.conf configuration file
+  template:
+    src: krb5.conf
+    dest: /etc/krb5.conf
+
+- name: Create host principal
+  command: kadmin -p {{ krb_service_user }}/admin -w {{ krb_service_user_password }} -q "addprinc -randkey host/{{ proxy_subdomain }}.{{ domain_name }}"
+  when: create_keytabs and kerberos_enabled
+  run_once: True
+
+- name: Add keytab for host
+  command: kadmin -p {{ krb_service_user }}/admin -w {{ krb_service_user_password }} -q "ktadd host/{{ proxy_subdomain }}.{{ domain_name }}"
+  when: create_keytabs and kerberos_enabled
+  run_once: True
+
+- name: Create empty log files if they don't exist
+  file:
+    path: "{{ item }}"
+    state: touch
+    owner: root
+    group: root
+    mode: 0640
+  with_items: "{{ krb_log_file_locations }}"
+
+- name: Allow admins to read logs
+  acl:
+    path: "{{ item }}"
+    entity: "{{ restricted_group_name }}"
+    etype: group
+    permissions: rX
+    recursive: yes
+    state: present
+  with_items: "{{ krb_log_file_locations }}"
+

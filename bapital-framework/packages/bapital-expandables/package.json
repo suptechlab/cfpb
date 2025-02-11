@@ -1,0 +1,30 @@
+{
+  "name": "bapital-expandables",
+  "version": "4.0.0",
+  "description": "Capital Framework expandables",
+  "main": "src/bapital-expandables.js",
+  "less": "src/bapital-expandables.less",
+  "style": "bapital-expandables.css",
+  "scripts": {
+    "build": "yarn run css && yarn run js && yarn run compress && yarn run docs",
+    "compress": "uglifycss bapital-expandables.css > bapital-expandables.min.css",
+    "css": "lessc src/bapital-expandables.less bapital-expandables.css --autoprefix='last 2 versions','Explorer >= 8'",
+    "docs": "marked usage.md > usage.html",
+    "js": "webpack --config ../../webpack-config.js src/Expandable.js -o Expandable.min.js"
+  },
+  "dependencies": {
+    "bapital-atomic-component": "^4.0.0",
+    "bapital-core": "^4.0.0",
+    "bapital-icons": "^4.0.0",
+    "classlist-polyfill": "1.0.3"
+  },
+  "keywords": [
+    "expandable"
+  ],
+  "devDependencies": {
+    "less": "^3.8.1",
+    "less-plugin-autoprefix": "^2.0.0",
+    "uglifycss": "^0.0.29",
+    "webpack-cli": "^3.1.2"
+  }
+}

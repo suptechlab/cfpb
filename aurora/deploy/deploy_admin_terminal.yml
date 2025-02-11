@@ -1,0 +1,32 @@
+# deploy_admin_terminal.yml
+---
+- hosts: admin_terminal
+  become: yes
+  become_method: sudo
+  roles:
+    - {role: puppet_disable, when: "disable_puppet"}
+    - {role: iptables, when: "iptables_config"}
+    - common
+    - {role: epel, when: "use_epel and not 'production' in group_names"}
+    - {role: python, when: "custom_repo"}
+    - {role: python-build, when: "install_python and not custom_repo" }
+    - {role: log-courier, when: "install_logstash"}
+    - eod
+    - odbc
+
+  tasks:
+    - name: Install development tools
+      yum:
+        name: "@development"
+        state: present
+        disable_gpg_check: yes
+
+    - name: Install Ansible in Python 2.7
+      become: no
+      pip:
+        virtualenv_command: /usr/local/bin/virtualenv
+        virtualenv: ~/.virtualenvs/data-platform
+        name: ansible
+        state: present
+        umask: "0022"
+      when: "install_python"

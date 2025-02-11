@@ -1,0 +1,187 @@
+---
+- hosts: research_environment
+  become: yes
+  become_method: sudo
+  roles:
+    - {role: iptables, when: "iptables_config"}
+    - common
+    - {role: epel, when: "use_epel and not 'production' in group_names"}
+    - emacs
+    - jdk
+    - odbc
+    - postgresql-client
+  post_tasks:
+    - name: research eod symlinks
+      file:
+         src: "{{ item.src }}"
+         dest: "{{ item.dest }}"
+      with_items: "{{ eod_symlinks }}"
+
+    - name: Install xauth dependency
+      yum:
+        name: xorg-x11-xauth
+        state: present
+
+    - name: Ensure X11 Forwarding is present
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: ^\s*X11Forwarding\s*no
+        line: X11Forwarding yes
+      when: not custom_repo
+
+    - name: Ensure ClientAliveCountMax is set to correct value
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: ^\s*ClientAliveCountMax\s*[0-9]+
+        line: ClientAliveCountMax 384
+      when: not custom_repo
+
+    - name: Ensure run level 5
+      lineinfile:
+        dest: /etc/inittab
+        regexp: initdefault
+        line: "id:5:initdefault:"
+
+    - name: research printers symlinks
+      file:
+        state: link
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      with_items: "{{ printers_symlinks }}"
+
+    - name: Install git
+      yum:
+        name: git
+        state: present
+
+- hosts: research_ancillary_services
+  become: yes
+  become_method: sudo
+  roles:
+    - umask
+    - devtools
+    - open_office
+    - evince
+    - stattransfer
+    - sublime
+    - ultra-edit
+  post_tasks:
+    - name: Install texlive
+      yum:
+        name: texlive
+        state: present
+
+- hosts: research_eod
+  become: yes
+  become_method: sudo
+  pre_tasks:
+    - name: Stop EOD
+      service:
+        name: "otecs_13.8"
+        state: stopped
+      when: eod_upgrade is defined and eod_upgrade
+
+- hosts: research_eod
+  become: yes
+  become_method: sudo
+  serial: 1
+  roles:
+    - eod
+
+- hosts: research_gauss
+  become: yes
+  become_method: sudo
+  roles:
+    # - gauss
+    - stata
+    - gocd
+    - stattransfer
+    - math_lm
+    - r
+
+- hosts: research_stata
+  become: yes
+  become_method: sudo
+  roles:
+    - stata
+    - stattransfer
+    - r
+
+- hosts: research_python
+  become: yes
+  become_method: sudo
+  roles:
+    - devtools
+    - devtools6
+    - {role: python, when: "custom_repo"}
+    #- {role: python-build, when: "not custom_repo"}
+    - {role: python27-scl, when: "not custom_repo"}
+    - python36-scl
+    - python-libs
+    - postgresql-client
+    - r-core
+    - r-libs
+    - r-studio-desktop
+    - r-studio-server
+    - r-studio-server-config
+    - pycharm
+    - gocd
+    - stattransfer
+
+  post_tasks:
+    - name: Install Gnome-Terminal package
+      yum:
+        name: "{{ item }}"
+        state: present
+        disable_gpg_check: yes
+      with_items:
+        - gnome-terminal
+
+    - name: Install texlive
+      yum:
+        name: texlive
+        state: present
+
+- hosts: research_sas
+  become: yes
+  become_method: sudo
+  roles:
+    - sas
+    - gocd
+    - stattransfer
+    - r
+
+- hosts: research_spss
+  become: yes
+  become_method: sudo
+  roles:
+    # - spss
+    - gocd
+    - stattransfer
+
+- hosts: research_matlab
+  become: yes
+  become_method: sudo
+  roles:
+    - matlab
+    - gocd
+    - stattransfer
+
+  tasks:
+  - name: Install libselinux-python and libicu package
+    yum:
+      name: "{{ item }}"
+      state: present
+      disable_gpg_check: yes
+    with_items:
+      - libicu
+      - libselinux-python
+
+  - name: Install git
+    yum:
+      name: "{{ item }}"
+      state: present
+      disable_gpg_check: yes
+    with_items:
+      - libicu
+      - libselinux-python

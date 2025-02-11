@@ -1,0 +1,11 @@
+{
+    "name": "CFPB PyPI publish workflow",
+    "description": "A workflow to publish Python packages to PyPI when a GitHub release is published.",
+    "iconName": "python",
+    "categories": [
+        "Python"
+    ],
+    "filePatterns": [
+        "^setup.py$"
+    ]
+}

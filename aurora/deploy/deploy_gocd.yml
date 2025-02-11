@@ -1,0 +1,143 @@
+---
+- hosts: ci_server
+  become: yes
+  become_method: sudo
+  roles:
+    - common
+    - {role: puppet_disable, when: "disable_puppet"}
+    - {role: iptables, when: "iptables_config"}
+    - gocd_server
+    - gocd
+
+- hosts: ci_agent
+  become: yes
+  become_method: sudo
+  serial: 1
+  max_fail_percentage: 10
+  roles:
+    - common
+    - devtools
+    - devtools7
+    - {role: puppet_disable, when: "disable_puppet"}
+    - {role: iptables, when: "iptables_config"}
+    - gocd
+    # - pentaho Per Tim 11.18.19 -- Pentaho not used.
+    - {role: python, when: "custom_repo"}
+    - {role: python-build, when: "not custom_repo"}
+    - python36-scl
+    - python-libs
+    - odbc
+    - {role: ruby, when: "install_ruby"}
+    - sqitch
+    - nodejs
+    - maven
+    - tesseract
+    #- julia
+
+- hosts: ci_agent
+  become: yes
+  become_method: sudo
+  tasks:
+    #- name: Activate Julia repo
+    #  get_url:
+    #    url: https://copr.fedoraproject.org/coprs/nalimilan/julia/repo/epel-6/nalimilan-julia-epel-6.repo
+    #    dest: /etc/yum.repos.d/nalimilan-julia-epel-6.repo
+    #  when: not 'production' in group_names
+
+    - name: Install additional packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - "@development"
+        - screen
+        - p7zip
+    #    - julia
+
+    - name: Install Additional Database Automation packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - htop
+        - rsync
+        - unzip
+        - gpg
+        - pigz
+        - facter
+        - sysstat # sar, iostat, vmstat
+        - systemtap # dtrace equivalent
+        - ant
+
+    - name: Install Database Automation custom packages
+      yum:
+        name: "{{ item }}"
+        state: "{{ db_automation_package_state }}"
+        disable_gpg_check: yes
+      with_items: "{{ db_automation_custom_packages }}"
+      when: db_automation_custom_packages is defined
+
+- hosts: ci_terminal
+  become: yes
+  become_method: sudo
+  roles:
+    - common
+    - devtools
+    - {role: puppet_disable, when: "disable_puppet"}
+    - {role: iptables, when: "iptables_config"}
+    - {role: epel, when: "use_epel and not 'production' in group_names"}
+    - eod
+    #- talend # Talend goes here because it installs an older java
+    - gocd
+    - {role: python, when: "custom_repo"}
+    - {role: python-build, when: "not custom_repo"}
+    - python36-scl
+    - python-libs
+    - r-core
+    - r-libs
+    - {role: ruby, when: "install_ruby"}
+    - pycharm
+    - r-studio-desktop
+    - clouseau
+    #- {role: pentaho, when: "install_pentaho"}   Per Tim 11.18.19 Pentaho not used
+    - sublime
+#   - julia
+
+  tasks:
+    - name: Install development packages
+      yum:
+        name: "{{ item }}"
+        state: present
+        disable_gpg_check: yes
+      with_items:
+        - "@development"
+        - gcc-gfortran
+        - python-devel
+        - nodejs
+
+    - name: Install custom RPMs
+      yum:
+        name: "{{ item }}"
+        state: present
+        disable_gpg_check: yes
+      with_items:
+        - xsv
+        - gnucobol
+        - htop
+        - p7zip
+        - sf-dataloader
+      when: custom_repo
+
+    - name: Install Database Automation custom packages
+      yum:
+        name: "{{ item }}"
+        state: "{{ db_automation_package_state }}"
+        disable_gpg_check: yes
+      with_items: "{{ db_automation_custom_packages }}"
+      when: db_automation_custom_packages is defined
+
+- hosts: hadoop_edge
+  become: yes
+  become_method: sudo
+  roles:
+    - gocd

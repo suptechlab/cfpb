@@ -1,0 +1,37 @@
+/* ==========================================================================
+   capital-framework-type-testing
+   ========================================================================== */
+
+// This is your project's main Less file.
+// Project-specific Less rules go after the imports.
+
+// Import Capital Framework.
+@import (less) "../../vendor/cf-typography/src/cf-typography.less";
+@import (less) "../../vendor/cf-grid/src/cf-grid.less";
+@import (less) "../../vendor/cf-buttons/src/cf-buttons.less";
+@import (less) "../../vendor/cf-layout/src/cf-layout.less";
+@import (less) "../../vendor/cf-forms/src/cf-forms.less";
+@import (less) "../../vendor/cf-core/src/cf-core.less";
+@import (less) "../../vendor/cf-icons/src/cf-icons.less";
+@import (less) "../../vendor/cf-expandables/src/cf-expandables.less";
+
+// Import the brand color palette.
+@import (less) "brand-palette.less";
+
+// Uncomment to import Avenir font on CFPB projects.
+// If this project is on a non-CFPB domain,
+// use this file as a template for adding web fonts.
+@import (less) 'licensed-fonts.css';
+
+// Override the Capital Framework theme variables with colors from the brand color palette.
+@import (less) "cf-theme-overrides.less";
+
+// Import the Capital Framework enhancements
+@import (less) "cf-enhancements.less";
+
+// We've generated some sample rules for you. They're used with the index.html file.
+// Please delete them before starting your project.
+
+.footer {
+    padding-top: unit(@grid_gutter-width / @base-font-size-px, em);
+}

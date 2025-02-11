@@ -1,0 +1,113 @@
+# GOCD now uses a new CA and SNI, which is not supported when
+# the "managed" machine is using Python < 2.7.9.
+#- name: Get GoCD RPM
+#  get_url:
+#    url: "{{ gocd_server_package_url }}"
+#    dest: /tmp/
+#    checksum: "sha1:{{ gocd_server_checksum }}"
+#    validate_certs: False
+
+- name: Download GoCD Server RPM
+  shell: "curl -o {{ gocd_server_package_path }}/{{ gocd_server_package_name }} {{ gocd_server_package_url }}"
+  args:
+    creates: "{{ gocd_server_package_path }}/{{ gocd_server_package_name }}"
+
+- name: Verify RPM checksum
+  stat:
+    checksum_algorithm: sha1
+    path: "{{ gocd_server_package_path }}/{{ gocd_server_package_name }}"
+    get_md5: False
+  register: gocd_rpm
+
+- name: Ensure the checksum maches expected value
+  assert:
+    that: "gocd_rpm.stat.checksum == '{{ gocd_server_checksum }}'"
+
+- name: Install GoCD dependencies
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - git
+
+- name: Install GoCD Server
+  yum:
+    name: "{{ gocd_server_package_path }}/{{ gocd_server_package_name }}"
+    state: present
+  when: not gocd_upgrade
+  notify:
+    - restart go-server
+
+- name: Upgrade GoCD Server
+  command: "rpm -U {{ gocd_server_package_path }}/{{ gocd_server_package_name }}"
+  when: gocd_upgrade
+  notify:
+    - restart go-server
+
+- name: Ensure working directory exists
+  file:
+    state: directory
+    dest: "{{ gocd_server_work_dir }}"
+    owner: go
+    group: go
+    mode: 0755
+  notify:
+    - restart go-server
+
+- name: Add configuration options
+  template:
+    src: go-server.j2
+    dest: /etc/default/go-server
+  notify:
+    - restart go-server
+
+- name: Create password file
+  copy:
+    dest: /var/go/.password
+    content: "admin:{{ gocd_admin_password }}"
+    owner: go
+    group: go
+    mode: 0600
+  notify:
+    -  restart go-server
+
+- name: Open GoCD Server port
+  command: "iptables -I {{ iptables_chain }} 3 -m state --state NEW -p tcp --dport {{ gocd_server_port }} -j ACCEPT"
+  when: iptables_config
+
+- name: Open GoCD SSL Server port
+  command: "iptables -I {{ iptables_chain }} 3 -m state --state NEW -p tcp --dport {{ gocd_server_ssl_port }} -j ACCEPT"
+  when: iptables_config
+
+- name: Save rules
+  command: "/sbin/service iptables save"
+  when: iptables_config
+
+- name: Start the GoCD Server
+  service:
+    name: go-server
+    state: started
+    enabled: yes
+  when: iptables_config and deploy_iptables
+
+- name: Set recursive admin permissions on log folders
+  acl:
+    path: "{{ item }}"
+    entity: "{{ restricted_group_name }}"
+    etype: group
+    permissions: rX
+    recursive: yes
+    state: present
+  with_items: "{{ gocd_server_log_file_locations }}"
+
+- name: Set default admin permissions on log folders
+  acl:
+    path: "{{ item }}"
+    entity: "{{ restricted_group_name }}"
+    etype: group
+    permissions: rX
+    default: yes
+    state: present
+  with_items: "{{ gocd_server_log_file_locations }}"
+
+

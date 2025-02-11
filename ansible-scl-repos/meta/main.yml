@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  author: Victor Cabral 
+  description: An ansible role to install Software Collections Lists
+  company: Excella Consulting 
+  # Some suggested licenses:
+  # - BSD (default)
+  # - MIT
+  # - GPLv2
+  # - GPLv3
+  # - Apache
+  # - CC-BY
+  license: license (GPLv2, CC-BY, etc)
+  min_ansible_version: 1.2
+  platforms:
+  - name: EL
+    versions:
+      - 7
+  categories:
+    - system
+dependencies: []
+  

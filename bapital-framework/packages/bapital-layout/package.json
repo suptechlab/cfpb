@@ -1,0 +1,24 @@
+{
+  "name": "bapital-layout",
+  "version": "4.0.0",
+  "description": "Capital Framework layouts",
+  "less": "src/bapital-layout.less",
+  "style": "bapital-layout.css",
+  "scripts": {
+    "build": "yarn run compile && yarn run compress",
+    "compile": "lessc src/bapital-layout.less bapital-layout.css --autoprefix='last 2 versions','Explorer >= 8'",
+    "compress": "uglifycss bapital-layout.css > bapital-layout.min.css"
+  },
+  "dependencies": {
+    "bapital-core": "^4.0.0",
+    "bapital-grid": "^4.0.0"
+  },
+  "keywords": [
+    "layout"
+  ],
+  "devDependencies": {
+    "less": "^3.8.1",
+    "less-plugin-autoprefix": "^2.0.0",
+    "uglifycss": "^0.0.29"
+  }
+}

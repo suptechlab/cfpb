@@ -1,0 +1,10 @@
+@use 'css/base' as *;
+
+.complex-example {
+  button { margin: $gutter-narrow 0; }
+  .descriptor {
+    display:block;
+    margin: $gutter-narrow 0;
+    text-decoration: underline;
+  }
+}

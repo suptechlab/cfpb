@@ -1,0 +1,33 @@
+{
+  "name": "cf-component-demo",
+  "version": "1.0.1",
+  "description": "Contains Jade templates for creating docs and demos for Capital Framework components.",
+  "keywords": ["capital-framework", "capital", "topdoc", "documentation", "demo"],
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "url": "https://cfpb.github.io/"
+  },
+  "homepage": "https://github.com/cfpb/cf-component-demo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/cf-component-demo.git"
+  },
+  "bugs": "https://github.com/cfpb/cf-component-demo/issues",
+  "licenses": [
+    {
+      "type": "Public Domain",
+      "url": "https://github.com/cfpb/cf-component-demo/blob/master/TERMS.md"
+    }
+  ],
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-bower-task": "~0.4.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-less": "~0.11.4",
+    "grunt-contrib-uglify": "~0.5.1"
+  }
+}

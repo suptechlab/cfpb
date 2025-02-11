@@ -1,0 +1,27 @@
+{
+  "name": "cf-theme-cfpb",
+  "version": "1.0.0",
+  "description": "Capital Framework theme for CFPB websites and applications.",
+  "less": "src/cf-theme-cfpb.less",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfpb/cf-theme-cfpb.git"
+  },
+  "keywords": [
+    "capital-framework",
+    "cf-theme"
+  ],
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
+  },
+  "license": "SEE LICENSE IN TERMS.md",
+  "bugs": {
+    "url": "https://github.com/cfpb/cf-theme-cfpb/issues"
+  },
+  "homepage": "https://github.com/cfpb/cf-theme-cfpb#readme"
+}

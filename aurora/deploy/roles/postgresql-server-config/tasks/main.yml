@@ -1,0 +1,321 @@
+---
+- debug:
+    var: standby
+
+- name: Allow postgres empty password login temporarily
+  become: yes
+  become_method: sudo
+  lineinfile:
+    dest: "{{ pp_datadir }}/pg_hba.conf"
+    regexp: '^host(.*)postgres(.*)md5'
+    backrefs: yes
+    line: 'host\1postgres\2trust'
+  notify: restart postgres
+  when: pp_install
+
+- meta: flush_handlers
+  when: pp_install
+
+- pause:
+    seconds: "{{ pp_server_start_pause }}"
+  when: pp_install
+
+- name: Ensure password is correct
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    port: "{{ pp_serverport }}"
+    db: postgres
+    script: "ALTER user postgres PASSWORD '{{ pp_superpassword }}';"
+  check_mode: no
+  #no_log: true
+  when: pp_install
+
+- name: Disallow postgres empty password login
+  become: yes
+  become_method: sudo
+  lineinfile:
+    dest: "{{ pp_datadir }}/pg_hba.conf"
+    regexp: '^host(.*)postgres(.*)trust'
+    backrefs: yes
+    line: 'host\1postgres\2md5'
+  notify: restart postgres
+  when: pp_install
+
+- meta: flush_handlers
+  when: pp_install
+
+# These scripts allow for the necessary changes that may
+# need to be made to allow the configuration scripts
+# to properly execute.
+- name: Execute pre-configuration scripts
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    db: "{{ item.db }}"
+    script: "{{ item.script }}"
+  with_items: "{{ pp_pre_scripts }}"
+  check_mode: no
+  when: not standby
+
+- name: Execute configuration scripts
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    db: "{{ item.db }}"
+    script: "{{ item.script }}"
+  with_items: "{{ pp_setup_scripts }}"
+  check_mode: "{{ item.check_mode }}"
+  when: not standby
+
+### Step 2: Create Operational DBA role, which will have all non-superuser privileges
+###         on databases created from the custom database templates, and additional
+###         privileges defined by custom functions
+
+- name: Create "Operational DBA" role
+  postgresql_user:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    name: operational_dba
+    role_attr_flags: INHERIT,NOLOGIN,NOSUPERUSER,NOCREATEDB,NOCREATEROLE
+    state: present
+  check_mode: no
+  when: not standby
+
+- name: Create Operational DBA schema
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    db: "{{ item }}"
+    script: CREATE SCHEMA IF NOT EXISTS op_dba
+  check_mode: no
+  register: result
+  with_items:
+    - postgres
+    - template1
+  changed_when:
+    - '"already exists" not in result.notices'
+  when: not standby
+
+- name: Allow operational_dba role to use the op_dba schema.
+  postgresql_privs:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    database: "{{ item }}"
+    roles: operational_dba
+    privs: USAGE
+    type: schema
+    obj: op_dba
+    state: present
+  with_items:
+    - postgres
+    - template1
+  when: not standby
+
+- name: Load custom functions for defining privileged Operational DBA actions in template1
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    db: template1
+    script: "{{ item.script }}"
+  with_items: "{{ pp_dba_scripts }}"
+  check_mode: no
+  changed_when: false
+  when: not standby
+
+- name: Load custom functions for defining privileged Operational DBA actions in postgres
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    db: postgres
+    script: "{{ dba_script.script }}"
+  with_items: "{{ pp_dba_scripts }}"
+  loop_control:
+    loop_var: dba_script
+  check_mode: no
+  changed_when: false
+  when: not standby
+
+- name: Retrieve list of databases
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    db: postgres
+    script: "SELECT datname FROM pg_database WHERE datistemplate=false AND datname != 'edb';"
+  register: database_list
+  changed_when: false
+
+- debug:
+    var: database_list
+
+- include: create_functions.yml
+  with_items: "{{ database_list.query_result }}"
+  when: database_list is defined and not standby
+
+# TODO: This should have a where clause to limit it to Citus hosts, or perhaps
+# be moved to the Citus role.
+- name: Update Citus extension
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    db: "{{ item }}"
+    script: ALTER EXTENSION citus UPDATE
+  check_mode: no
+  register: result
+  failed_when: result.notices is defined and result.notices is search('extension "citus" does not exist')
+  changed_when: result.notices is not defined or "is already installed" not in result.notices
+  with_items: "{{ database_list.query_result }}"
+
+- name: Grant operational_dba role execute permissions on op_dba schema in template1
+  postgresql_privs:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    database: template1
+    roles: operational_dba
+    privs: EXECUTE
+    schema: op_dba
+    type: function
+    obj: "{{ item.signature }}"
+    state: present
+  with_items: "{{ pp_dba_scripts }}"
+  when: not standby
+
+- name: Grant operational_dba role execute permissions on op_dba schema in postgres
+  postgresql_privs:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    database: postgres
+    roles: operational_dba
+    privs: EXECUTE
+    schema: op_dba
+    type: function
+    obj: "{{ item.signature }}"
+    state: present
+  with_items: "{{ pp_dba_scripts }}"
+  when: not standby
+
+# Setup default user permissions, etc., for template DB's
+- name: Configure default privileges
+  postgresql_privs:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    database: "{{ item.db }}"
+    objs: "{{ item.objs }}"
+    privs: "{{ item.privs }}"
+    roles: "{{ item.roles }}"
+    schema: "{{ item.schema }}"
+    type: "{{ item.type }}"
+    state: "{{ item.state }}"
+  with_items: "{{ pp_privs }}"
+  when: not standby
+
+# Any post-configuration scripts that need to be executed go here
+- name: Execute post-configuration scripts
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    db: "{{ item.db }}"
+    script: "{{ item.script }}"
+  with_items: "{{ pp_post_scripts }}"
+  check_mode: no
+  changed_when: false
+  when: not standby
+
+### Step 3: Create default service account using operational_dba role
+
+- name: Create default service account
+  postgresql_user:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    name: "{{ pp_dba_username }}"
+    role_attr_flags: INHERIT,LOGIN,NOSUPERUSER,NOCREATEDB,NOCREATEROLE
+    encrypted: yes
+    password: "{{ pp_dba_password }}"
+    state: present
+  check_mode: no
+  ignore_errors: yes
+  when: not standby
+
+- name: Add default service account to operational_dba group
+  postgresql_privs:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    database: postgres
+    roles: "{{ pp_dba_username }}"
+    objs: operational_dba
+    type: group
+    state: present
+    admin_option: no
+  when: not standby
+
+# TODO: ignore_errors is required due to FIPS blocking of the md5 package.
+#       Investigate if there's a better approach to resolving this.
+- name: Create replication role
+  postgresql_user:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    name: "{{ replication_user }}"
+    role_attr_flags: LOGIN,REPLICATION
+    encrypted: yes
+    password: "{{ replication_password }}"
+    state: present
+  check_mode: no
+  ignore_errors: yes
+
+- name: Set permissions on log file directory recursively
+  become: yes
+  become_method: sudo
+  acl:
+    path: "{{ pp_log_directory }}"
+    entity: "{{ item }}"
+    etype: group
+    permissions: rX
+    recursive: yes
+    state: present
+  with_items: "{{ pg_admin_group_names }}"
+  when: not install_edb
+
+- name: Set default admin permissions on log folders
+  become: yes
+  become_method: sudo
+  acl:
+    path: "{{ pp_log_directory }}"
+    entity: "{{ item }}"
+    etype: group
+    permissions: rX
+    default: yes
+    state: present
+  with_items: "{{ pg_admin_group_names }}"
+  when: not install_edb

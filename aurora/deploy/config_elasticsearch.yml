@@ -1,0 +1,14 @@
+---
+- hosts: elasticsearch
+  become: yes
+  become_method: sudo
+  roles:
+    - elasticsearch-config
+
+- hosts: elk
+  become: yes
+  become_method: sudo
+  roles:
+    - elasticsearch-config
+    - logstash-config
+    - kibana-config

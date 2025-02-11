@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Victor Cabral 
+  description: An ansible role to PDF Reactor
+  company: Excella Consulting 
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+  - name: EL
+    versions:
+      - 7
+  categories:
+    - system
+dependencies: []
+  

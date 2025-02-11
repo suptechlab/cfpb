@@ -1,0 +1,28 @@
+{
+  "name": "bapital-buttons",
+  "version": "4.0.0",
+  "description": "Capital Framework buttons",
+  "less": "src/bapital-buttons.less",
+  "style": "bapital-buttons.css",
+  "dependencies": {
+    "bapital-core": "^4.0.0",
+    "bapital-icons": "^4.0.0"
+  },
+  "scripts": {
+    "build": "yarn run compile && yarn run compress && yarn run docs",
+    "compile": "lessc src/bapital-buttons.less bapital-buttons.css --autoprefix='last 2 versions','Explorer >= 8'",
+    "compress": "uglifycss bapital-buttons.css > bapital-buttons.min.css",
+    "docs": "marked usage.md > usage.html"
+  },
+  "keywords": [
+    "buttons"
+  ],
+  "devDependencies": {
+    "lerna-changelog": "^0.8.2",
+    "less": "^3.8.1",
+    "less-plugin-autoprefix": "^2.0.0",
+    "marked": "^0.5.2",
+    "uglifycss": "^0.0.29"
+  },
+  "gitHead": "62ef3b1fe617c5e30b3bac3b4b1cd26f78f7bc7c"
+}

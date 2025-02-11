@@ -1,0 +1,40 @@
+{
+  "name": "bapital-framework",
+  "version": "4.0.0",
+  "description": "CFPB's UI framework",
+  "main": "src/bapital-framework.js",
+  "less": "src/bapital-framework.less",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
+  },
+  "license": "SEE LICENSE IN TERMS.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cfpb/bapital-framework.git"
+  },
+  "scripts": {
+    "build": "yarn run compile && yarn run compress",
+    "compile": "lessc src/bapital-framework.less bapital-framework.css --autoprefix='last 2 versions','Explorer >= 8'",
+    "compress": "uglifycss bapital-framework.css > bapital-framework.min.css"
+  },
+  "bugs": {
+    "url": "https://github.com/cfpb/bapital-framework/issues"
+  },
+  "dependencies": {
+    "bapital-atomic-component": "^4.0.0",
+    "bapital-buttons": "^4.0.0",
+    "bapital-core": "^4.0.0",
+    "bapital-expandables": "^4.0.0",
+    "bapital-forms": "^4.0.0",
+    "bapital-grid": "^4.0.0",
+    "bapital-icons": "^4.0.0",
+    "bapital-layout": "^4.0.0",
+    "bapital-notifications": "^4.0.0",
+    "bapital-pagination": "^4.0.0",
+    "bapital-tables": "^4.0.0",
+    "bapital-typography": "^4.0.0"
+  },
+  "gitHead": "62ef3b1fe617c5e30b3bac3b4b1cd26f78f7bc7c"
+}

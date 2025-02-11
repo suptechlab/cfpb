@@ -1,0 +1,26 @@
+{
+  "name": "bapital-pagination",
+  "version": "4.0.0",
+  "description": "Capital Framework pagination",
+  "less": "src/bapital-pagination.less",
+  "style": "bapital-pagination.css",
+  "scripts": {
+    "build": "yarn run compile && yarn run compress",
+    "compile": "lessc src/bapital-pagination.less bapital-pagination.css --autoprefix='last 2 versions','Explorer >= 8'",
+    "compress": "uglifycss bapital-pagination.css > bapital-pagination.min.css"
+  },
+  "dependencies": {
+    "bapital-buttons": "^4.0.0",
+    "bapital-core": "^4.0.0",
+    "bapital-icons": "^4.0.0"
+  },
+  "keywords": [
+    "pagination"
+  ],
+  "devDependencies": {
+    "less": "^3.8.1",
+    "less-plugin-autoprefix": "^2.0.0",
+    "uglifycss": "^0.0.29"
+  },
+  "gitHead": "62ef3b1fe617c5e30b3bac3b4b1cd26f78f7bc7c"
+}

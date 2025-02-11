@@ -1,0 +1,24 @@
+{
+  "name": "bapital-notifications",
+  "version": "4.0.0",
+  "description": "Capital Framework notifications",
+  "less": "src/bapital-notifications.less",
+  "style": "bapital-notifications.css",
+  "scripts": {
+    "build": "yarn run compile && yarn run compress",
+    "compile": "lessc src/bapital-notifications.less bapital-notifications.css --autoprefix='last 2 versions','Explorer >= 8'",
+    "compress": "uglifycss bapital-notifications.css > bapital-notifications.min.css"
+  },
+  "dependencies": {
+    "bapital-core": "^4.0.0",
+    "bapital-icons": "^4.0.0"
+  },
+  "keywords": [
+    "notifications"
+  ],
+  "devDependencies": {
+    "less": "^3.8.1",
+    "less-plugin-autoprefix": "^2.0.0",
+    "uglifycss": "^0.0.29"
+  }
+}

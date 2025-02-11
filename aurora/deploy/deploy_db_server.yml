@@ -1,0 +1,41 @@
+# deploy_db_server.yml
+---
+- hosts: db_server
+  become: yes
+  become_method: sudo
+  roles:
+    - {role: iptables, when: "iptables_config"}
+    - common
+    - {role: epel, when: "use_epel and not 'production' in group_names"}
+    - {role: log-courier, when: "install_logstash"}
+    - role: jdk
+    - role: postgresql-server
+  post_tasks:
+    - name: Ensure file transfer folder exists
+      file:
+        dest: "{{ pp_file_transfer_dir }}"
+        state: directory
+        mode: 0755
+        owner: postgres
+        group: postgres
+      when: pp_file_transfer_dir is defined
+
+    - name: Create symlink from PostgreSQL data directory
+      file:
+        dest: "{{ pp_datadir }}/file_transfers"
+        src: "{{ pp_file_transfer_dir }}"
+        state: link
+      when: pp_file_transfer_dir is defined
+
+    - name: Ensure PG is started
+      service:
+        name: "{{ pp_servicename }}"
+        state: started
+        enabled: yes
+      tags:
+        - postgresql-server
+
+- hosts: db_server
+  roles:
+    - role: postgresql-server-config
+

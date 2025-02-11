@@ -1,0 +1,19 @@
+---
+- name: Install emacs
+  yum:
+    name: "{{ item }}"
+    state: present
+    disable_gpg_check: yes
+  with_items:
+    - emacs
+    - libotf
+
+- name: Install Emacs Speaks Statisitcs
+  yum:
+    name: "{{ item }}"
+    state: present
+    disable_gpg_check: yes
+  with_items:
+    - emacs-common-ess.noarch
+    - emacs-ess.noarch
+  when: custom_repo

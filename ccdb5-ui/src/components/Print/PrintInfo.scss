@@ -1,0 +1,10 @@
+.print-info,
+.print-info-footer {
+  width: 100%;
+  background: var(--gray-5);
+  word-break: break-all;
+  padding: 15px;
+  span {
+    font-weight: 600;
+  }
+}

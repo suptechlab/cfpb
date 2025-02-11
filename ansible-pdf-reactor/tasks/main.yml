@@ -1,0 +1,51 @@
+---
+- name: Find pdfreactor directory
+  find:
+    paths: "{{ PDF_REACTOR_INSTALL_DIR }}"
+    patterns: "PDFreactor"
+    file_type: "directory"
+  register: PDF_reactor_exist
+
+- name: Delete error log
+  file:
+    state: absent
+    path: "{{PDF_REACTOR_INSTALL_DIR}}/bin/error.log"
+
+- block:
+  - name: Download PDFReactor
+    get_url:
+      url: "{{ PDF_REACTOR_URL }}/{{ PDF_REACTOR_FILE }}"
+      dest: "/tmp/{{ PDF_REACTOR_FILE }}"
+      timeout: 60
+      use_proxy: true
+
+  - name: Untar PDFReactor
+    unarchive:
+      src: "/tmp/{{ PDF_REACTOR_FILE }}"
+      dest: "{{ PDF_REACTOR_INSTALL_DIR }}"
+      copy: no
+      creates: "{{ PDF_REACTOR_INSTALL_DIR }}/PDFreactor/*"
+
+  - name: Create pdfreactorwebservice symlink
+    file:
+      src: "{{ PDF_REACTOR_INSTALL_DIR }}/PDFreactor/bin/pdfreactorwebservice"
+      dest: "/etc/init.d/pdfreactorwebservice"
+      owner: root
+      group: root
+      state: link
+
+  - name: Clean up install file
+    file:
+      state: absent
+      path: "/tmp/{{ PDF_REACTOR_FILE }}"
+
+  when: "PDF_reactor_exist.matched == 0"
+
+- name: Start and enable pdfreactor
+  service: name=pdfreactorwebservice state=started enabled=yes
+
+- name: Delete examples
+  file:
+    state: absent
+    path: "{{PDF_REACTOR_INSTALL_DIR}}/samples"
+

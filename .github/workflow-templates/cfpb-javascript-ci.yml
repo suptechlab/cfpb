@@ -1,0 +1,28 @@
+name: Frontend CI workflow
+
+on: [pull_request, push]
+
+jobs:
+
+  frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install Node dependencies
+        run: |
+          npm config set package-lock false
+          npm install
+
+      - name: Lint front-end code
+        run: gulp lint
+
+      - name: Run front-end unit tests
+        run: npm test
+

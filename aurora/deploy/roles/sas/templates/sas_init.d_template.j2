@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# chkconfig: - 20 80
+# Start up script for SAS studio application
+#
+
+
+# Source function library.
+. /etc/init.d/functions
+
+prog="{{ sas_config_home }}/sasstudio.sh"
+
+RETVAL=0
+
+status() {
+  $prog status
+}
+
+start() {
+  echo -n "Starting sas studio: "
+  $prog start
+  RETVAL=$?
+  return $RETVAL
+}
+
+stop() {
+  echo -n "Shutting down sas: "
+  $prog stop
+  RETVAL=$?
+  return $RETVAL
+}
+
+case "$1" in
+    status)
+        status
+        ;;
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage:  {status|start|stop|restart}"
+        exit 1
+        ;;
+esac
+exit $?

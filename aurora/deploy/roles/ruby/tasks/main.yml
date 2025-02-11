@@ -1,0 +1,101 @@
+# main.yml
+---
+- name: Add mpapis public key
+  shell: "curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -"
+  tags:
+    - ruby
+
+- name: Add pkuczynskipublic key
+  shell: "curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -"
+  tags:
+    - ruby
+
+- name: Get script file
+  get_url:
+    url: https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer
+    dest: /tmp/rvm-installer.sh
+    force: yes
+  tags:
+    - ruby
+
+- name: Configure rvm-installer
+  file:
+    dest: /tmp/rvm-installer.sh
+    mode: 0755
+  tags:
+    - ruby
+
+- name: Install RVM and stable Ruby
+  command: "/tmp/rvm-installer.sh stable --ruby"
+  register: install_rvm_ruby
+  changed_when: '"Already installed" not in install_rvm_ruby.stderr or "Upgrading" in install_rvm_ruby.stdout'
+  when: install_ruby
+  tags:
+    - ruby
+
+- name: Ensure /etc/rvmrc is available
+  file:
+    dest: /etc/rvmrc
+    mode: 0664
+  when: install_ruby
+  tags:
+    - ruby
+
+- name: Determine if system-wide ruby is installed
+  stat:
+    path: "{{ item }}"
+  register: stat_result
+  with_items:
+    - /usr/bin/ruby
+    - /usr/bin/gem
+  when: install_ruby
+  tags:
+    - ruby
+
+- name: Create symlink for ruby to /usr/local/bin otherwise
+  file:
+    state: link
+    src: /usr/local/rvm/rubies/default/bin/ruby
+    dest: /usr/local/bin/ruby
+  when: install_ruby
+  tags:
+    - ruby
+
+- name: Create symlink for gem to /usr/local/bin otherwise
+  file:
+    state: link
+    src: /usr/local/rvm/rubies/default/bin/gem
+    dest: /usr/local/bin/gem
+  when: install_ruby
+  tags:
+    - ruby
+
+- name: Install bundler globally
+  gem:
+    name: bundler
+    state: present
+    user_install: no
+    executable: /usr/local/rvm/rubies/default/bin/gem
+  environment:
+    PATH: "/usr/local/rvm/gems/default/bin/:/usr/local/rvm/rubies/default/bin/:{{ ansible_env.PATH }}"
+  when: install_ruby
+  tags:
+    - ruby
+
+- name: Create symlink for Bundler
+  file:
+    state: link
+    src: /usr/local/rvm/rubies/default/bin/bundle
+    dest: /usr/local/bin/bundle
+  when: install_ruby
+  tags:
+    - ruby
+
+- name: Create symlink for ruby_executable_hooks
+  file:
+    state: link
+    src: /usr/local/rvm/rubies/default/bin/ruby_executable_hooks
+    dest: /usr/local/bin/ruby_executable_hooks
+  when: install_ruby
+  tags:
+    - ruby

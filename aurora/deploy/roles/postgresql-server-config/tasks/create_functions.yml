@@ -1,0 +1,20 @@
+---
+- set_fact:
+    database: "{{ item }}"
+
+- debug:
+    var: database
+
+- name: "Load custom functions for defining privileged Operational DBA actions in {{ database }}"
+  postgresql_exec:
+    login_host: localhost
+    login_user: "{{ pp_superaccount }}"
+    login_password: "{{ pp_superpassword }}"
+    port: "{{ pp_serverport }}"
+    db: "{{ database }}"
+    script: "{{ dba_script.script }}"
+  with_items: "{{ pp_dba_scripts }}"
+  loop_control:
+    loop_var: dba_script
+  check_mode: no
+  changed_when: False

@@ -1,0 +1,12 @@
+{
+    "name": "cf.gov satellite app backend CI workflow",
+    "description": "A backend CI workflow template for cf.gov satellite apps based on tox.",
+    "iconName": "django",
+    "categories": [
+        "Python"
+    ],
+    "filePatterns": [
+        "^setup.py$",
+        "^tox.ini$"
+    ]
+}

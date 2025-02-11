@@ -1,0 +1,271 @@
+---
+- debug:
+    msg: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}"
+
+- set_fact:
+    pp_install_or_upgrade: "{{ (pp_install | bool) or (pp_upgrade | bool) }}"
+
+- debug:
+    msg: "pp_install: {{ pp_install }} ; pp_upgrade: {{ pp_upgrade }} ; pp_install_or_upgrade: {{ pp_install_or_upgrade }} "
+
+- name: Include variable for os
+  include_vars: rhel_7.yml
+  when: ansible_distribution_major_version == "7"
+  tags:
+    - postgresql-server
+
+- debug:
+    msg: "install_edb = {{ install_edb }}"
+
+- name: Include variable for edb
+  include_vars: edb.yml
+  when: install_edb
+  tags:
+    - postgresql-server
+
+# without this, getting an ssl connect error for pg install
+- name: Upgrade ssl package
+  yum:
+    name: 'openssl'
+    state: latest
+  tags:
+    - postgresql-server
+
+- name: Install Postgres pgdg
+  yum:
+    name: "{{ pgdg_repository }}"
+    state: present
+  check_mode: no
+  when: not custom_repo
+  tags:
+    - postgresql-server
+
+- name: Install Postgres key
+  rpm_key:
+    key: "{{ postgres_repository_key_url }}"
+    state: present
+  tags:
+    - postgresql_server
+
+- name: Install Postgres
+  yum:
+    name: '{{ pp_packages }}'
+    state: present
+  when: not install_edb
+  check_mode: no
+  tags:
+    - postgresql-server
+
+- include: install_edb.yml
+  when: install_edb
+  tags:
+    - postgresql-server
+
+- name: Ensure the temporary directory exists
+  file:
+    path: "{{ pp_temp_dir }}"
+    recurse: yes
+    state: directory
+  tags:
+    - postgresql-server
+
+- name: Ensure pg service account group exists
+  group:
+    name: "{{ pp_serviceaccount }}"
+  tags:
+    - postgresql-server
+
+- name: Ensure pg service account exists
+  user:
+    name: "{{ pp_serviceaccount }}"
+  tags:
+    - postgresql-server
+
+- name: Ensure the data directory exists
+  file:
+    path: "{{ pp_datadir }}"
+    state: directory
+    owner: "{{ pp_serviceaccount }}"
+    group: "{{ pp_serviceaccount }}"
+    mode: 0700
+  tags:
+    - postgresql-server
+
+- name: Ensure the WAL directory exists
+  file:
+    path: "{{ pp_xlogdir }}"
+    state: directory
+    owner: "{{ pp_serviceaccount }}"
+    group: "{{ pp_serviceaccount }}"
+    mode: 0700
+  tags:
+    - postgresql-server
+
+- name: Ensure Unix sockets directory exists
+  file:
+    path: "{{ pp_unix_socket_dirs }}"
+    state: directory
+    owner: "{{ pp_serviceaccount }}"
+    group: "{{ pp_serviceaccount }}"
+    mode: 0700
+  tags:
+    - postgresql-server
+
+- name: Ensure systemd directory exists
+  file:
+    state: directory
+    path: /etc/systemd/system/postgresql-{{ pg_version }}.service.d
+  when: ansible_distribution_major_version == "7"
+  tags:
+    - postgresql-server
+
+- name: Add custom PGDATA
+  template:
+    src: environment.conf.j2
+    dest: /etc/systemd/system/postgresql-{{ pg_version }}.service.d/environment.conf
+  when: ansible_distribution_major_version == "7"
+  notify:
+    - reload-daemon
+  tags:
+    - postgresql-server
+
+- name: Create postgres cluster
+  shell: "{{ pp_initdb }}"
+  when: pp_install_or_upgrade
+  tags:
+    - postgresql-server
+
+- name: Ensure the log directory has the right permissions
+  file:
+    path: "{{ pp_log_directory }}"
+    state: directory
+    owner: "{{ pp_serviceaccount }}"
+    group: "{{ pp_serviceaccount }}"
+    mode: 0755
+  tags:
+    - postgresql-server
+
+- name: Configure PostgreSQL identity mappings
+  template:
+    src: pg_ident.conf.j2
+    dest: "{{ pp_datadir }}/pg_ident.conf"
+    group: "{{ pp_superaccount }}"
+    owner: "{{ pp_superaccount }}"
+    mode: 0600
+  when: pp_ident_mappings is defined
+  notify:
+    - reload postgres
+    - restart postgres
+  tags:
+    - postgresql-server
+
+- name: Configure PostgreSQL connection options
+  template:
+    src: pg_hba.conf.j2
+    dest: "{{ pp_datadir }}/pg_hba.conf"
+    group: "{{ pp_superaccount }}"
+    owner: "{{ pp_superaccount }}"
+    mode: 0600
+  notify:
+    - reload postgres
+    - restart postgres
+  tags:
+    - postgresql-server
+
+- name: Configure PostgreSQL server
+  template:
+    src: "{{ pp_config_template }}"
+    dest: "{{ pp_datadir }}/postgresql.conf"
+    group: "{{ pp_superaccount }}"
+    owner: "{{ pp_superaccount }}"
+    mode: 0600
+  notify:
+    - reload postgres
+    - restart postgres
+  tags:
+    - postgresql-server
+
+# IF SSL is enabled, generate the cert and key
+- name: Create SSL certificate request
+  shell: "openssl req -nodes -new -text -subj \"{{ pp_ssl_string }}\" -out server.req"
+  args:
+    chdir: "{{ pp_datadir }}"
+    creates: "{{ pp_datadir }}/server.req"
+  when: pp_ssl_enable == 'on'
+  tags:
+    - postgresql-server
+
+- name: Generate key
+  shell: "openssl rsa -in privkey.pem -out server.key"
+  args:
+    chdir: "{{ pp_datadir }}"
+    creates: "{{ pp_datadir }}/server.key"
+  when: pp_ssl_enable == 'on'
+  tags:
+    - postgresql-server
+
+- name: Generate cert
+  shell: "openssl req -x509 -in server.req -text -key server.key -out server.crt"
+  args:
+    chdir: "{{ pp_datadir }}"
+    creates: "{{ pp_datadir }}/server.crt"
+  when: pp_ssl_enable == 'on'
+  tags:
+    - postgresql-server
+
+- name: Ensure permissions are correct
+  file:
+    dest: "{{ pp_datadir }}/{{ item }}"
+    owner: "{{ pp_serviceaccount }}"
+    group: "{{ pp_serviceaccount }}"
+  with_items:
+    - privkey.pem
+    - server.crt
+    - server.key
+    - server.req
+  when: pp_ssl_enable == 'on'
+  tags:
+    - postgresql-server
+
+- name: Change permissions on server.key
+  file:
+    dest: "{{ pp_datadir }}/server.key"
+    mode: "og-rwx"
+  when: pp_ssl_enable == 'on'
+  tags:
+    - postgresql-server
+
+- name: Install requirements for postgresql Ansible tasks
+  yum:
+    name: [
+      'postgresql10-devel',
+      'python-psycopg2',
+      'git'
+      ]
+    state: present
+  become: yes
+  become_method: sudo
+  check_mode: no
+
+- name: Install extensions and supplementary packages
+  yum:
+    name: "{{ item }}"
+    state: present
+    disable_gpg_check: yes
+  with_items: "{{ pp_extensions }}"
+  tags:
+    - postgresql-server
+
+- name: open up ports in iptables
+  command: "iptables -I {{ iptables_chain }} 3 -p tcp -m tcp --dport {{ pp_serverport }} -j ACCEPT"
+  when: iptables_config and deploy_iptables
+  tags:
+    - postgresql-server
+
+- name: Save rules
+  # TODO: see if we can either use Ansible's service, or call "service" (no /sbin/)
+  #command: "/sbin/service iptables save"
+  command: "/usr/sbin/iptables-save"
+  when: iptables_config and deploy_iptables
+  tags:
+    - postgresql-server

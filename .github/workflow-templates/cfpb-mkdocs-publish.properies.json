@@ -1,0 +1,8 @@
+{
+    "name": "CFPB MkDocs publish workflow",
+    "description": "A workflow template to publish MkDocs documentation to gh-pages on merges to main.",
+    "iconName": "blank",
+    "filePatterns": [
+        "^mkdocs.yml$"
+    ]
+}

@@ -1,0 +1,29 @@
+---
+- hosts: analytics_terminal
+  become: yes
+  become_method: sudo
+
+  roles:
+    - {role: puppet_disable, when: "disable_puppet"}
+    - {role: iptables, when: "iptables_config"}
+    - common
+
+- import_playbook: deploy_development_terminal.yml
+- import_playbook: deploy_r_terminal.yml
+
+- hosts: analytics_terminal
+  become: yes
+  become_method: sudo
+  roles:
+    - {role: eod, when: "install_desktop"}
+    - {role: log-courier, when: "install_logstash"}
+
+  post_tasks:
+    - name: Open port range for app prototyping
+      command: "iptables -I {{ iptables_chain }} 3 -m state --state NEW -p tcp --dport 8000:8100 -s {{ hostvars[item]['ansible_ssh_host'] }} -j ACCEPT"
+      when: iptables_config
+      with_items: "{{ groups['proxy_server'] }}"
+
+    - name: Save rules
+      command: "/sbin/service iptables save"
+      when: iptables_config

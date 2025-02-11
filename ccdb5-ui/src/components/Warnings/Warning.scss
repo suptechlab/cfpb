@@ -1,0 +1,20 @@
+.warning {
+  &.m-notification {
+    margin: 10px;
+
+    .m-notification__message {
+      padding-right: 18px;
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px 10px;
+    cursor: pointer;
+    svg {
+      fill: var(--gray);
+    }
+  }
+}

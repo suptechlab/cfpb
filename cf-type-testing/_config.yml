@@ -1,0 +1,16 @@
+# Base configuration
+exclude: ['node_modules', 'src', 'bower.json', 'CHANGELOG.md', 'CONTRIBUTING.md', 'Gemfile', 'Gemfile.lock', 'Gruntfile.js', 'LICENSE', 'package.json', 'README.md', 'screenshot.png', 'setup.sh', 'TERMS.md']
+markdown: kramdown
+highlighter: pygments
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# When using this template with a project page set the baseurl to '/project-name'
+# For user/organization pages set this to an empty string
+# When working locally use jekyll serve --baseurl '' so that you can view everything at localhost:4000
+# See http://jekyllrb.com/docs/github-pages/ for more info
+#baseurl: ''
+baseurl: /cf-type-testing

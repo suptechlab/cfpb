@@ -1,0 +1,27 @@
+{
+  "name": "bapital-forms",
+  "version": "4.0.0",
+  "description": "Capital Framework form fields",
+  "less": "src/bapital-forms.less",
+  "style": "bapital-forms.css",
+  "scripts": {
+    "build": "yarn run compile && yarn run compress",
+    "compile": "lessc src/bapital-forms.less bapital-forms.css --autoprefix='last 2 versions','Explorer >= 8'",
+    "compress": "uglifycss bapital-forms.css > bapital-core.min.css"
+  },
+  "dependencies": {
+    "bapital-buttons": "^4.0.0",
+    "bapital-core": "^4.0.0",
+    "bapital-grid": "^4.0.0",
+    "bapital-icons": "^4.0.0"
+  },
+  "keywords": [
+    "forms"
+  ],
+  "devDependencies": {
+    "less": "^3.8.1",
+    "less-plugin-autoprefix": "^2.0.0",
+    "uglifycss": "^0.0.29"
+  },
+  "gitHead": "62ef3b1fe617c5e30b3bac3b4b1cd26f78f7bc7c"
+}

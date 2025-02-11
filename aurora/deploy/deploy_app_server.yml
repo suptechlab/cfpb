@@ -1,0 +1,76 @@
+---
+- hosts: app_server
+  become: yes
+  become_method: sudo
+  roles:
+    - {role: puppet_disable, when: "disable_puppet"}
+    - {role: iptables, when: "iptables_config"}
+    - common
+    - {role: epel, when: "use_epel and not 'production' in group_names"}
+    - {role: python, when: "custom_repo"}
+    - {role: python-build, when: "not custom_repo"}
+    - python36-scl
+    - python-libs
+    - ruby
+    - postgresql-client
+    - gocd
+    - emacs
+    - pycharm
+    - nginx
+    - nodejs
+    - redis
+    - maven
+    #- julia
+
+# Install development packages
+- hosts: app_server
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Install development packages
+      yum:
+        name: "{{ item }}"
+        state: present
+        disable_gpg_check: yes
+      with_items:
+        - "@development"
+        - gcc-gfortran
+        - python-devel
+        - screen
+
+    - name: Install custom RPMs
+      yum:
+        name: "{{ item }}"
+        state: present
+        disable_gpg_check: yes
+      with_items:
+        - xsv
+        - gnucobol
+        - htop
+        - p7zip
+        - rhobot
+      when: custom_repo
+
+- hosts: app_server
+  become: yes
+  become_method: sudo
+  roles:
+    - jdk
+    - r-core
+    - r-libs
+    - r-shiny
+    - {role: log-courier, when: "install_logstash"}
+    - clouseau
+
+- hosts: app_server
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Open port range for app services
+      command: "iptables -I {{ iptables_chain }} 3 -m state --state NEW -p tcp --dport 30000:31000 -s {{ hostvars[item]['ansible_ssh_host'] }} -j ACCEPT"
+      when: iptables_config
+      with_items: "{{ groups['proxy_server'] }}"
+
+    - name: Save rules
+      command: "/sbin/service iptables save"
+      when: iptables_config

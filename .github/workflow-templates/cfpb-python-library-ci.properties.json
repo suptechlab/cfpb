@@ -1,0 +1,12 @@
+{
+    "name": "CFPB Python library CI workflow",
+    "description": "A Python CI workflow template for CFPB Python libraries based on tox.",
+    "iconName": "python",
+    "categories": [
+        "Python"
+    ],
+    "filePatterns": [
+        "^setup.py$",
+        "^tox.ini$"
+    ]
+}

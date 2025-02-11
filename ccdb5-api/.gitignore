@@ -1,0 +1,33 @@
+# Python #
+#########
+.python-version
+
+# Django #
+#################
+*.egg-info
+.eggs/
+
+# Testing #
+###########
+.coverage
+htmlcov/
+.tox/
+
+# OS Files #
+############
+.DS_Store
+
+.env
+*.pyc
+db.sqlite3
+
+# Documentation files *
+
+site/
+
+# IDEs
+.idea/
+
+# In-Directory Venvs
+venv/
+.venv/

@@ -1,0 +1,102 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+_site/
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Vim swap files #
+##################
+*.swp
+
+# Python #
+#################
+*.pyc
+*.egg-info/
+__pycache__/
+*.py[cod]
+.env
+
+# Django #
+#################
+*.egg-info
+.installed.cfg
+
+# Unit test / coverage reports
+#################
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Front-End #
+#############
+node_modules/
+bower_components/
+.grunt/
+src/vendor/
+dist/
+
+# Vagrant #
+###########
+.vagrant/
+*.vdi
+local_settings.yml
+
+# extra variable files
+.vagrant*
+
+
+# Ansible #
+###########
+*.retry
+
+# Ansible Vault password file
+.vault_password
+
+# Local project files #
+#######################
+local_settings.yml
+system_key
+
+*~
+\#*
+pipcache
+yumcache
+
+# This is a generated file, but the initial version is useful and should not change:
+.devcontainer/docker-compose.yml

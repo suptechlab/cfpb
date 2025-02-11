@@ -1,0 +1,11 @@
+{
+    "name": "cf.gov satellite app release workflow",
+    "description": "A release workflow template for cf.gov satellite apps.",
+    "iconName": "django",
+    "categories": [
+        "Python"
+    ],
+    "filePatterns": [
+        "setup.py$"
+    ]
+}

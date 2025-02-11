@@ -1,0 +1,47 @@
+---
+- name: Download pycharm to remote host
+  shell: "mkdir -p /var/cache/downloads; if [[ ! -f /var/cache/downloads/{{ pycharm_download_basename }} ]]; then curl -L --silent --show-error {{ pycharm_download_url }} -o /var/cache/downloads/{{ pycharm_download_basename }} ; fi"
+  tags:
+    - pycharm
+
+- name: Extract pycharm to destination
+  unarchive:
+    copy: no
+    src: /var/cache/downloads/{{ pycharm_download_basename }}
+    dest: /opt/
+    mode: 0644
+    creates: /opt/{{ pycharm_path }}
+  tags:
+    - pycharm
+
+- name: Ensure read permissions are set
+  shell: "chmod a+r /opt/{{ pycharm_path }}/ -R"
+  tags:
+    - pycharm
+
+- name: Ensure directories can be displayed
+  shell: "find /opt/{{ pycharm_path }}/ -type d -exec chmod a+x {} +"
+  tags:
+    - pycharm
+
+- name: Ensure executables are executable
+  shell: "chmod a+x /opt/{{ pycharm_path }}/bin/{{ item }}"
+  with_items:
+    - "pycharm.sh"
+    - "inspect.sh"
+    - "fsnotifier"
+    - "fsnotifier64"
+  tags:
+    - pycharm
+
+- name:  Create syslinks for executables
+  file:
+    src: "/opt/{{ pycharm_path }}/bin/{{ item }}.sh"
+    dest: "/usr/local/bin/{{ item }}"
+    state: link
+    force: yes
+  with_items:
+    - "pycharm"
+    - "inspect"
+  tags:
+    - pycharm
