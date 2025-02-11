@@ -1,0 +1,31 @@
+{
+  "name": "is-money-usd",
+  "version": "0.1.2",
+  "main": "index.js",
+  "description": "Test for a USD currency formatted input",
+  "homepage": "https://github.com/cfpb/is-money-usd",
+  "bugs": "https://github.com/cfpb/is-money-usd/issues",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "url": "http://consumerfinance.gov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/is-money-usd"
+  },
+  "license": "Public Domain",
+  "keywords": [
+    "money",
+    "currency",
+    "finance",
+    "financial",
+    "boolean",
+    "browserify"
+  ],
+  "devDependencies": {
+    "nodeunit": "~0.8.6"
+  },
+  "scripts": {
+    "test": "nodeunit test/is-money-tests.js"
+  }
+}

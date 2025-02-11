@@ -1,0 +1,88 @@
+---
+# tasks file for newrelic_wsgi
+
+- name: record variables supplied by environment file 
+  shell: echo "{{ env_vars }}"
+  sudo: yes
+
+#    https://docs.newrelic.com/docs/agents/python-agent/installation-configuration/python-agent-admin-script
+- name: create directory for newrelic config
+  file:
+    dest=/opt/newrelic/
+    mode=755
+    state=directory
+  sudo: yes
+
+- name: create directory for newrelic logging accessible to apache user and newrelic
+  file:
+    dest={{newrelic_agentlog_path}}
+    mode=755
+    owner=apache
+    group=apache
+    state=directory
+  sudo: yes
+ 
+- name: pip install newrelic
+  pip: name=newrelic
+       extra_args='--install-option="--install-scripts=/usr/bin"'
+  sudo: yes
+
+- name: use newrelic-admin to generate ini
+  command: newrelic-admin generate-config {{newrelic_license_key}} {{newrelic_ini_file}}
+  sudo: yes
+
+# lineinfile only replaces the last matching lines; use replace for multiple app_name replaces
+- name: modify python newrelic.ini app name
+  replace: dest={{newrelic_ini_file}} regexp='.*app_name =.*\n' replace="app_name = {{application_name}}\n"
+  sudo: yes
+
+- name: modify python newrelic.ini high security on
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="high_security =" line="high_security = true"
+  sudo: yes
+
+- name: modify python newrelic.ini logfile
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="log_file =" line="log_file = {{newrelic_agentlog_file}}"
+  sudo: yes
+
+- name: modify python newrelic.ini whitelist
+  lineinfile: dest={{newrelic_ini_file}} insertafter="license_key =" state=present regexp="strip_exception_messages\.whitelist =" line="strip_exception_messages.whitelist = Exception AttributeError IndexError ImportError KeyError TypeError ValueError django.db.utils:IntegrityError django.db.utils:OperationalError django.db.utils:ProgrammingError django.core.exceptions:FieldError django.core.exceptions:ValidationError django.template.base:TemplateSyntaxError jinja2.exceptions:UndefinedError jinja2.exceptions:TemplateNotFound requests.exceptions:HTTPError urllib2:URLError UnicodeDecodeError AssertionError regulations.views.error_handling:MissingContentException requests.exceptions:ConnectionError"
+
+  sudo: yes
+  
+# 404 errors are ignored by default. We want to track them so 404 has been removed from this list.
+- name: modify python newrelic.ini ignored status codes
+  lineinfile: dest={{newrelic_ini_file}} insertafter="license_key =" state=present regexp="error_collector\.ignore_status_codes =" line="error_collector.ignore_status_codes = 300 301 302 303 304 305 306 307 308 200 201 202 203 204 205 206 207 208 226 100 101 102"
+  sudo: yes
+
+# These additional newrelic.ini configs are added to satisfy security auditing requirements, even though they're set to the same as the default. These are no-op, since they're set to the defaults.
+- name: modify python newrelic.ini developer_mode
+  lineinfile: dest={{newrelic_ini_file}} insertafter="license_key =" state=present line="developer_mode = false"
+  sudo: yes
+
+- name: modify python newrelic.ini xray_session
+  lineinfile: dest={{newrelic_ini_file}} insertafter="license_key =" state=present line="xray_session.enabled = true"
+  sudo: yes
+
+- name: make empty log file with right permissions 
+  file:
+    dest={{newrelic_agentlog_file}}
+    mode=660
+    owner=apache
+    group=apache
+    state=touch
+  sudo: yes
+
+- name: add agent config to the wsgi file
+  lineinfile: dest={{wsgi_scriptfile}} state=present line="newrelic.agent.initialize('{{newrelic_ini_file}}')" insertbefore=BOF
+  sudo: yes
+  when: (wsgi_scriptfile!="") 
+
+- name: import newrelic to wsgi
+  lineinfile: dest={{wsgi_scriptfile}} state=present line="import newrelic.agent" insertbefore=BOF
+  sudo: yes
+  when: (wsgi_scriptfile!="") 
+
+- name: restart apache server
+  service: name=httpd state=restarted sleep=1
+  sudo: yes
+  ignore_errors: yes

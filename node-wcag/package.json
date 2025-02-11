@@ -1,0 +1,67 @@
+{
+  "name": "wcag",
+  "description": "Test a site for WCAG or Section 508 compliancy.",
+  "version": "0.3.0",
+  "homepage": "https://github.com/cfpb/node-wcag",
+  "author": {
+    "name": "Chris Contolini",
+    "url": "https://consumerfinance.gov"
+  },
+  "contributors": [
+    {
+      "name": "Geir Gåsodden",
+      "email": "geir.gasodden@pythonia.no",
+      "url": "https://github.com/zrrrzzt"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cfpb/node-wcag.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cfpb/node-wcag/issues"
+  },
+  "license": "CC0-1.0",
+  "keywords": [
+    "accessibility",
+    "wcag",
+    "508",
+    "section 508",
+    "cli",
+    "command line"
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "wcag": "./cli.js"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "eslint index.js && nodeunit test",
+    "coveralls": "jscoverage index.js && WCAG_COVERAGE=1 nodeunit --reporter=lcov test | coveralls"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "capitalize": "^1.0.0",
+    "html-entities": "^1.1.3",
+    "http-https": "^1.0.0",
+    "indent-string": "^2.1.0",
+    "localtunnel": "^1.7.0",
+    "log-symbols": "^1.0.2",
+    "minimist": "^1.2.0",
+    "protocolify": "^1.0.1",
+    "update-notifier": "^0.5.0",
+    "valid-url": "^1.0.9",
+    "verbalize": "^0.1.2",
+    "xml2js": "^0.4.12"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "eslint": "^1.4.3",
+    "jscoverage": "^0.6.0",
+    "nodeunit": "^0.9.1",
+    "verb": "^0.8.10"
+  }
+}

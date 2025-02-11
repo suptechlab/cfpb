@@ -1,0 +1,37 @@
+/* remove user avatar */
+.avatar-user,
+.AvatarStack,
+.avatar {
+    height: 0px;
+    display: none !important;
+}
+
+/* remove user real names */
+.p-name,
+.vcard-names,
+.vcard-fullname {
+    display: none !important;
+}
+
+/* remove user details */
+.vcard-details {
+    display: none !important;
+}
+
+/* hide the hover card content */
+
+.js-hovercard-content {
+    display: none !important;
+}
+
+/* remove full h-card from profile */
+
+.h-card {
+    display: none !important;
+}
+
+/* remove profile README */
+
+.page-profile .entry-content {
+    display: none !important;
+}

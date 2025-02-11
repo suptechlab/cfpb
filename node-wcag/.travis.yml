@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - 6
+install:
+  - npm install
+after_script:
+  - npm run coveralls
+env: ACHECKER_ID=69f6ea6a9e30b37c3d341d3b716df218f8942c0e

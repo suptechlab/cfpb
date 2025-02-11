@@ -1,0 +1,71 @@
+{
+  "name": "leaflet-text-circle",
+  "version": "1.0.2",
+  "description": "SVG circle marker with a label inside",
+  "main": "index.js",
+  "scripts": {
+    "test": "browserify ./test/*.test.js | tap-closer | smokestack | tap-status",
+    "test:watch": "nodemon --exec 'npm run lint && npm test'",
+    "lint": "eslint ./src/",
+    "start": "npm run watch & npm run server",
+    "watch": "watchify -d demo/js/index.js -o demo/js/build.js -v",
+    "server": "http-server -p 3002",
+    "build-js": "browserify -v -d --external leaflet ./index.js -o dist/L.TextCircle-src.js",
+    "compress": "uglifyjs ./dist/L.TextCircle-src.js -o ./dist/L.TextCircle.js -m --comments",
+    "build": "npm run lint && npm run build-js && npm test && npm run compress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flacoman91/leaflet-text-circle.git"
+  },
+  "keywords": [
+    "leaflet",
+    "label",
+    "circlemarker",
+    "svg"
+  ],
+  "author": "Alexander Milevski <info@w8r.name>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flacoman91/leaflet-text-circle/issues"
+  },
+  "homepage": "https://github.com/flacoman91/leaflet-text-circle#readme",
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "browserify-shim": {
+    "leaflet": "global:L"
+  },
+  "dependencies": {
+    "leaflet-path-drag": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.0.0",
+    "browserify-shim": "^3.8.14",
+    "eslint": "^3.4.0",
+    "faucet": "0.0.1",
+    "http-server": "^0.9.0",
+    "leaflet": "^1.3.1",
+    "nodemon": "^1.10.2",
+    "prosthetic-hand": "^1.3.1",
+    "smokestack": "^3.4.1",
+    "tap-closer": "^1.0.0",
+    "tap-status": "^1.0.1",
+    "tape": "^4.8.0",
+    "uglify-js": "^3.3.10",
+    "watchify": "^3.10.0"
+  }
+}

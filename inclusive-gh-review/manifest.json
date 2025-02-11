@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Inclusive Review",
+    "version": "0.1.0",
+  
+    "description": "Remove names, avatars, and personal information from GitHub",
+    "short_name": "Inclusive Review",
+    "permissions": ["activeTab", "declarativeContent", "tabs"],
+  
+    "content_scripts": [
+      {
+        "matches": ["https://github.com/*"],
+        "css": ["override.css"],
+        "js": ["override.js"]
+      }
+    ],
+  
+    "page_action": {
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png"
+      }
+    }
+  }

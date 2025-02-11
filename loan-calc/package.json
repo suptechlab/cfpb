@@ -1,0 +1,27 @@
+{
+  "name": "loan-calc",
+  "version": "0.2.1",
+  "description": "Calculate monthly loan payments",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cfpb/loan-calc.git"
+  },
+  "keywords": [
+    "money",
+    "mortgage",
+    "loan",
+    "calculator"
+  ],
+  "author": "CFPB",
+  "license": "Public Domain",
+  "bugs": {
+    "url": "https://github.com/cfpb/loan-calc/issues"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.6"
+  }
+}

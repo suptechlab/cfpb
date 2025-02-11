@@ -1,0 +1,10 @@
+{
+  "admins": {
+    "names": [],
+    "roles": ["kratos|enabled"]
+  },
+  "members": {
+    "names": [],
+    "roles": []
+  }
+}

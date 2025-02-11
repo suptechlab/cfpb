@@ -1,0 +1,102 @@
+---
+# tasks file for newrelic_php
+
+- name: record variables supplied by environment file
+  shell: echo "{{ env_vars }}"
+  sudo: yes
+
+- name: install rpm
+  yum: name=rpm
+  sudo: yes
+
+# It is only a problem that this fails if yum install newrelic php agent also fails
+- name: use rpm to get new relic yum repo
+  shell: rpm -Uvh http://yum.newrelic.com/pub/newrelic/el5/x86_64/newrelic-repo-5-3.noarch.rpm
+  sudo: yes
+  ignore_errors: yes
+
+- name: yum install newrelic php agent
+  yum: name=newrelic-php5
+  sudo: yes
+
+- name: configure a php agent
+  shell: export NR_INSTALL_SILENT=true; /usr/bin/newrelic-install install
+  sudo: yes
+  notify:
+    - restart apache
+
+- name: modify php newrelic.ini license
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.license =" line="newrelic.license = {{newrelic_license_key}}"
+  sudo: yes
+
+- name: modify php newrelic.ini app name
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.appname =" line="newrelic.appname = {{application_name}}"
+  sudo: yes
+
+- name: modify php newrelic.ini high security on
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.high_security =" line="newrelic.high_security = 1"
+  sudo: yes
+
+- name: modify php newrelic.error_collector
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.error_collector.enabled =" line="newrelic.error_collector.enabled = true"
+  sudo: yes
+
+- name: modify php newrelic.error_collector.record_database_errors
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.error_collector.record_database_errors =" line="newrelic.error_collector.record_database_errors = true"
+  sudo: yes
+
+- name: modify php newrelic.daemon.auditlog
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.daemon.auditlog =" line="newrelic.daemon.auditlog = {{newrelic_agentlog_daemonaudit}}"
+  sudo: yes
+
+- name: modify php newrelic.daemon.logfile
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.daemon.logfile =" line="newrelic.daemon.logfile = {{newrelic_agentlog_daemon}}"
+  sudo: yes
+
+- name: modify php newrelic.error_collector.prioritize_api_errors
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.error_collector.prioritize_api_errors =" line="newrelic.error_collector.prioritize_api_errors = true"
+  sudo: yes
+
+- name: modify php newrelic.analytics_events.capture_attributes
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.analytics_events.capture_attributes =" line="newrelic.analytics_events.capture_attributes = true"
+  sudo: yes
+
+- name: modify php newrelic.ini newrelic.capture_params
+  lineinfile: dest={{newrelic_ini_file}} state=present insertafter="[newrelic]" regexp="newrelic.capture_params =" line="newrelic.capture_params = true"
+  sudo: yes
+
+- name: modify php newrelic.ini newrelic.daemon.proxy
+  lineinfile: dest={{newrelic_ini_file}} state=present insertafter="[newrelic]" regexp="newrelic.daemon.proxy =" line="newrelic.daemon.proxy = {{daemon_proxy}}"
+  sudo: yes
+
+- name: modify php newrelic.ini logfile
+  lineinfile: dest={{newrelic_ini_file}} state=present regexp="newrelic.logfile =" line="newrelic.logfile = {{newrelic_agentlog_file}}"
+  sudo: yes
+
+# permissions for logging files
+- name: daemon log with right permissions
+  file:
+    dest={{newrelic_agentlog_daemon}}
+    mode=660
+    state=touch
+  sudo: yes
+
+- name: daemon audit log with right permissions
+  file:
+    dest={{newrelic_agentlog_daemonaudit}}
+    mode=660
+    state=touch
+  sudo: yes
+
+- name: logfile with right permissions
+  file:
+    dest={{newrelic_agentlog_file}}
+    mode=660
+    state=touch
+  sudo: yes
+
+- name: restart newrelic-daemon 
+  shell: ps -ef | grep newrelic-daemon | grep -v grep | awk '{print $2}' | xargs kill -9
+  sudo: yes
+  notify:
+    - restart apache
