@@ -1,0 +1,16 @@
+language: php
+php:
+  - "5.5"
+  - "5.4"
+  - "5.3"
+before_script: 
+  - composer self-update
+  - composer install
+  - rm -rf report/
+  - mkdir -p build/logs
+script:
+  - phpunit --exclude-group=wip --coverage-text --coverage-clover build/logs/clover.xml
+after_failure:
+after_success:
+after_script:
+  - php vendor/bin/coveralls -v

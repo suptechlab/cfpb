@@ -1,0 +1,33 @@
+{% extends "news/base.html" %}
+
+{% block "content" %}
+<div id="content" class="news">
+
+<header class="project-header compact-header">
+    <div class="row span9">
+        <div class="logo">
+            <h2 class="section">
+                <a href="{% url "news:list" %}" title="Back to Announcements home">Announcements</a>
+            </h2>
+        </div>
+    </div><!-- /row -->
+</header><!-- /project-header -->
+
+<article class="row">
+  <header class="span12">
+      <h1>{{ item.title }}</h1>
+      <div class="meta">
+          Posted by 
+          <span>{{ item.create_user.first_name }} {{ item.create_user.last_name }}</span> 
+          <span>on {{ item.publish_date|date:"M d, Y" }}.</span>
+      </div>
+  </header>
+  <div class="span7 offset4">
+    {% autoescape off %}
+      {{ item.body|linebreaks|urlize }}
+      {% endautoescape %}
+  </div>
+</article>
+
+</div>
+{% endblock %}

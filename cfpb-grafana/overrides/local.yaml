@@ -1,0 +1,8 @@
+service:
+  type: LoadBalancer
+  port: 9999
+
+dashboards:
+  default:
+    example:
+      file: dashboards/example.json

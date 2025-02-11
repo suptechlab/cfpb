@@ -1,0 +1,26 @@
+{
+  "name": "@cfpb/cfpb-analytics",
+  "version": "0.3.2",
+  "description": "Data layer analytics utility.",
+  "homepage": "https://github.com/cfpb/cfpb-analytics",
+  "bugs": "https://github.com/cfpb/cfpb-analytics/issues",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "url": "http://consumerfinance.gov"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "src/cfpb-analytics.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/cfpb-analytics"
+  },
+  "license": "SEE LICENSE IN TERMS.md",
+  "keywords": [
+    "cfpb-analytics",
+    "analytics",
+    "cfpb"
+  ],
+  "type": "module"
+}

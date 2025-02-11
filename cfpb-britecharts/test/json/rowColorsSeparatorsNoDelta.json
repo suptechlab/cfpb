@@ -1,0 +1,102 @@
+{
+    "data": [
+        {
+            "hasChildren": true,
+            "isParent": true,
+            "name": "Radiating",
+            "value": 2024,
+            "pctOfSet": 5,
+            "width": ".5"
+        },
+        {
+            "hasChildren": false,
+            "isParent": false,
+            "name": "Radiating Kid",
+            "value": 1024,
+            "parent": "Radiating",
+            "pctOfSet": 55,
+            "width": ".4"
+        },
+        {
+            "hasChildren": false,
+            "isParent": false,
+            "name": "More Information about Radiating",
+            "splitterText": "More Information about Radiating >",
+            "value": "",
+            "parent": "Radiating",
+            "width": 0.3,
+            "isTextSeparator": true
+        },
+        {
+            "hasChildren": false,
+            "name": "Opalescent",
+            "isParent": true,
+            "value": 7000,
+            "pctOfSet": 100,
+            "width": ".5"
+        },
+        {
+            "hasChildren": true,
+            "name": "Shining",
+            "isParent": true,
+            "value": 213,
+            "pctOfSet": 12,
+            "width": ".5"
+        },
+        {
+            "hasChildren": false,
+            "isParent": false,
+            "name": "Brillian Brillian Brillian BrillianBrillian Brillian",
+            "value": 6001,
+            "parent": "Shining",
+            "pctOfSet": 70,
+            "width": ".4"
+        },
+        {
+            "hasChildren": false,
+            "isParent": false,
+            "name": "Vivid",
+            "value": 613,
+            "parent": "Shining",
+            "pctOfSet": 24,
+            "width": ".4"
+        },
+        {
+            "hasChildren": false,
+            "isParent": false,
+            "name": "More Information about Shining",
+            "splitterText": "More Information about Shining >",
+            "value": "",
+            "parent": "Shining",
+            "pctOfSet": "",
+            "width": 0.3,
+            "isTextSeparator": true
+        },
+        {
+            "hasChildren": true,
+            "name": "Brilliant",
+            "isParent": true,
+            "value": 1900,
+            "pctOfSet": 8,
+            "width": ".5"
+        },
+        {
+            "hasChildren": false,
+            "isParent": false,
+            "name": "Increase",
+            "value": 1900,
+            "parent": "Brilliant",
+            "pctOfSet": 8,
+            "width": ".4"
+        },
+        {
+            "hasChildren": false,
+            "isParent": false,
+            "name": "Decrease",
+            "value": 1900,
+            "parent": "Brilliant",
+            "pctOfSet": 8,
+            "width": ".4"
+        }
+    ]
+}

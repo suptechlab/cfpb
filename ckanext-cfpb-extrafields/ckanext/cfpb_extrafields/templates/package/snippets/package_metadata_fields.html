@@ -1,0 +1,335 @@
+{% ckan_extends %}
+{% import 'macros/form.html' as form %}
+{% import 'macros/form_custom.html' as form_custom %}
+
+{% block package_metadata_fields %}
+{{super()}}
+{% resource 'cfpb_extrafields/popover.js' %}
+{% resource 'cfpb_extrafields/popover.css' %}
+{% resource 'cfpb_extrafields/otherspecify.js' %}
+
+<hr>
+<h3>I. Content</h3>
+
+{{ form.markdown('also_known_as', id='field-also_known_as',
+label=_('Also Known As'), placeholder=_(''), value=data.also_known_as, error=errors.also_known_as) }}
+
+<div class="core-field">
+{{ form.markdown('data_source_names', id='field-data_source_names', label=_('Data Source(s)'), placeholder=_('e.g., vendor-one'), value=data.data_source_names, error=errors.data_source_names) }}
+</div>
+
+<div class="core-field">
+{{ form_custom.select_multi_with_other('source_categories',
+      label=_('Source Categories'),
+      current_values=h.clean_select_multi(data.get('source_categories', '')),
+      options_defaults=h.options_source_categories(),
+      error=errors.source_categories) }}
+</div>
+
+<div class='core-field'>
+{{ form.input('content_temporal_range_start', id='field-content_temporal_range_start', type='date', label=_("Coverage Start Date"), placeholder="eg 2012-12-21", value=data.content_temporal_range_start, error=errors.content_temporal_range_start) }}
+</div>
+<div class='core-field'>
+{{ form.input('content_temporal_range_end', id='field-content_temporal_range_end', type='date', label=_("Coverage End Date"), placeholder="eg 2012-12-21", value=data.content_temporal_range_end, error=errors.content_temporal_range_end) }}
+</div>
+
+{{ form.select('content_periodicity', label=_('Periodicity'), id='field-content_periodicity', options=h.options_content_periodicity(), selected=data.content_periodicity, error=errors.content_periodicity, classes=['control-medium']) }}
+
+{{ form.input('content_spatial', label=_("Spatial Coverage"), placeholder="e.g., continental USA", value=data.content_spatial, error=errors.content_spatial) }}
+{#{ form_custom.select_multi_with_other('content_spatial',
+label=_('Spatial Coverage'),
+current_values=h.clean_select_multi(data.get('content_spatial', '')),
+options_defaults=h.options_content_spatial(),
+error=errors.content_spatial,
+) }#}
+
+{{ form.select('update_frequency', label=_('Update Frequency'), id='field-update_frequency', options=h.options_update_frequency(), selected=data.update_frequency, error=errors.update_frequency, classes=['control-medium']) }}
+
+{{ form.input('wiki_link', label=_("Wiki Link"), placeholder="http://cfpb.local/...", type="url", value=data.wiki_link, error=errors.wiki_link) }}
+
+{% call form.input_block("field-website_url",_("Reference Website URL"), error="") %} {# this is just for clicking #}
+    <input id="field-website_url" type="url" placeholder="http://www..."  value="{{data.website_url}}" name="website_url" />
+    <input id="field-website_name" type="text" placeholder="name" value="{{data.website_name}}" name="website_name" />
+{% endcall %}
+
+{{ form.input('dataset_last_modified_date', type='date', label=_("Dataset Last Modified Date"), placeholder="eg 2012-12-21", value=data.dataset_last_modified_date, error=errors.dataset_last_modified_date) }}
+
+<hr>
+
+<h3>II. Access</h3>
+
+<div class="core-field">
+  <div id="field-contact_primary">
+    {% call form.input_block("field-contact_primary_name",_("Data Steward (Primary)"), error="", is_required=true) %} {# this is just for clicking #}
+    <input id="field-contact_primary_name" type="text" placeholder='{{ _("last name, first name") }}' value="{{data.contact_primary_name}}" name="contact_primary_name" required/>
+    <input id="field-contact_primary_email" type="email" placeholder="contact@domain.gov" value="{{data.contact_primary_email}}" name="contact_primary_email" />
+    {% endcall %}
+  </div>
+</div>
+
+{% call form.input_block("field-contact_secondary_name",_("Data Steward (Secondary)"), error="") %} {# this is just for clicking #}
+    <input id="field-contact_secondary_name" type="text" placeholder='{{ _("last name, first name") }}' value="{{data.contact_secondary_name}}" name="contact_secondary_name" />
+    <input id="field-contact_secondary_email" type="email" placeholder="contact@domain.gov" value="{{data.contact_secondary_email}}" name="contact_secondary_email" />
+{% endcall %}
+
+{{ form.markdown('access_notes', id='field-access_notes', label=_('How to Get Access'), placeholder=_(''), value=data.access_notes, error=errors.access_notes) }}
+
+<div class="core-field">
+{{ form.markdown('access_restrictions', id='field-access_restrictions', label=_('Access Restrictions'), placeholder=_(''), value=data.access_restrictions, error=errors.access_restrictions) }}
+</div>
+
+<div class="core-field">
+{{ form.markdown('usage_restrictions', id='field-usage_restrictions',
+label=_('Usage Restrictions'), placeholder=_(''), value=data.usage_restrictions, error=errors.usage_restrictions) }}
+</div>
+
+<hr>
+
+<h3>III. Administrative</h3>
+
+{{ form.markdown('dataset_notes', id='field-dataset_notes', label=_('Dataset Notes'), placeholder=_(''), value=data.dataset_notes, error=errors.dataset_notes) }}
+
+{{ form_custom.radio('obfuscated_title', label=_('Obfuscated Title'), current_value=data.obfuscated_title) }}
+
+{{ form.markdown('transfer_details', id='field-transfer_details', label=_('Transfer Details'), placeholder=_('enter text'), value=data.transfer_details, error=errors.transfer_details) }}
+
+{{ form.input('transfer_initial_size', label=_("Transfer Initial Size (MB)"), placeholder="eg 1.2", value=data.transfer_initial_size, error=errors.transfer_initial_size) }}
+
+{{ form.select('transfer_method', label=_('Transfer Method'), id='field-transfer_method', options=h.options_transfer_method(), selected=data.transfer_method, error=errors.transfer_method, classes=['control-medium']) }}
+
+{{ form.input('obligation', label=_("Obligation"), value=data.obligation, placeholder="e.g., $10.00", error=errors.obligation)}}
+
+<hr>
+<h3>IV. Compliance</h3>
+
+<div class='core-field'>
+{{ form.select('sensitivity_level', label=_('sensitivity level'), id='field-sensitivity_level', options=h.options_sensitivity_level(), selected=data.sensitivity_level, error=errors.sensitivity_level, classes=['control-medium']) }}
+</div>
+<script>
+  var b='<button type="button" data-module="popover" \
+          data-module-html="sensitivity_level_popover.html" \
+          data-module-title="{{ _('Sensitivity Level') }}" \
+          <i class="icon-info-sign"></i>\
+  </button>'
+  document.getElementById('field-sensitivity_level').parentNode.insertAdjacentHTML("beforeend",b);
+</script>
+
+
+<div class="core-field">
+{{ form_custom.select_multi_with_other('legal_authority_for_collection',
+label=_('legal authority for collection'),
+current_values=h.clean_select_multi(data.get('legal_authority_for_collection', '')),
+options_defaults=h.options_legal_authority_for_collection(),
+error=errors.legal_authority_for_collection,
+) }}
+</div>
+
+<div class="core-field">
+  <div class="control-group" id="field-relevant_governing_documents" >
+    <label class="control-label" for="field-relevant_governing_documents">{{ _("relevant governing documents") }}</label>
+    <div class="controls">
+      <select name="relevant_governing_documents" data-module="autocomplete" multiple>
+        {% for op in h.tag_relevant_governing_documents()  %}
+          <option value="{{ op }}" {% if op in data.get('relevant_governing_documents', []) %}selected="selected"{% endif %}>{{ op }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="core-field">
+{{ form.input('dig_id', label=_("DIG ID"), placeholder="DI#####", value=data.dig_id, error=errors.dig_id) }}
+</div>
+
+<div class="core-field">
+{{ form.markdown('initial_purpose_for_intake', id='field-initial_purpose_for_intake', label=_('initial purpose for intake'), placeholder=_(''), value=data.initial_purpose_for_intake, error=errors.initial_purpose_for_intake) }}
+</div>
+
+{{ form_custom.select_one_with_other('pra_exclusion',
+label=_('PRA exemption'),
+current_value=data.get('pra_exclusion', ''),
+options_defaults=h.options_pra_exclusion(),
+error=errors.pra_exclusion,) }}
+
+<div class="core-field">
+{{ form.input('pra_omb_control_number', label=_("PRA: OMB control number"), placeholder="####-####", value=data.pra_omb_control_number, error=errors.pra_omb_control_number) }}
+</div>
+
+{{ form.input('pra_omb_expiration_date', type='date', label=_("PRA: OMB expiration date"), placeholder="eg 2012-12-21", value=data.pra_omb_expiration_date, error=errors.pra_omb_expiration_date) }}
+
+<div class='core-field'>
+{{ form_custom.radio('privacy_contains_pii',
+label=_('privacy: contains PII?'),
+current_value=data.privacy_contains_pii,
+error=errors.privacy_contains_pii)}}
+</div>
+
+<div class='core-field'>
+{{ form_custom.radio('privacy_contains_ssn',
+label=_('privacy: contains SSN?'),
+current_value=data.privacy_contains_ssn,
+error=errors.privacy_contains_ssn)}}
+</div>
+{{ form_custom.radio('privacy_has_direct_identifiers',
+label=_('privacy: has direct identifiers?'),
+current_value=data.privacy_has_direct_identifiers)}}
+
+{{ form_custom.radio('transfer_date',
+label=_('Transfer: Date'),
+current_value=data.transfer_date)}}
+{{ form_custom.radio('data_governance_notes',
+label=_('Data Governance: Notes'),
+current_value=data.data_governance_notes)}}
+{{ form_custom.radio('legal_notes',
+label=_('Legal: Notes'),
+current_value=data.legal_notes)}}
+{{ form_custom.radio('pra_notes',
+label=_('PRA: Notes'),
+current_value=data.pra_notes)}}
+{{ form_custom.radio('privacy_notes',
+label=_('Privacy: Notes'),
+current_value=data.privacy_notes)}}
+
+<div class="core-field">
+{{ form_custom.select_multi_with_other('privacy_pia_title',
+label=_('privacy: PIA title'),
+current_values=h.clean_select_multi(data.get('privacy_pia_title', '')),
+options_defaults=h.options_privacy_pia_title(),
+error=errors.privacy_pia_title,
+size="550",
+) }}
+</div>
+
+{{ form_custom.select_one_with_other('privacy_pia_notes',
+label=_('privacy: PIA notes'),
+current_value=data.get('privacy_pia_notes', ''),
+options_defaults=h.options_privacy_pia_notes(),
+error=errors.privacy_pia_notes,) }}
+
+<div class="core-field">
+{{ form_custom.select_multi_with_other('privacy_sorn_number',
+label=_('privacy: SORN number'),
+current_values=h.clean_select_multi(data.get('privacy_sorn_number', '')),
+options_defaults=h.options_privacy_sorn_number(),
+error=errors.privacy_sorn_number,
+size="550",
+) }}
+</div>
+
+{{ form.markdown('records_retention_schedule', id='field-records_retention_schedule', label=_('records retention schedule'), placeholder=_(''), value=data.records_retention_schedule, error=errors.records_retention_schedule) }}
+
+{{ form_custom.select_multi_with_other('foia_exemptions',
+label=_('FOIA: Exemptions'),
+current_values=h.clean_select_multi(data.get('foia_exemptions', '')),
+options_defaults=h.options_foia_exemptions(),
+error=errors.foia_exemptions,
+size="550",
+other=False,
+) }}
+
+<div>
+{{ form.markdown('foia_exemptions_notes', id='field-foia_exemptions_notes', label=_('FOIA Exemption Notes'), placeholder=_(''), value=data.foia_exemptions_notes, error=errors.foia_exemptions_notes) }}
+</div>
+
+{{ form.input('procurement_document_id', label=_("procurement document ID"), placeholder="CFPB-12-Z-00015-0011", value=data.procurement_document_id, error=errors.procurement_document_id) }}
+
+{% if false %}
+{{ form.markdown('cleansing_rules_used', id='field-cleansing_rules_used', label=_('cleansing rules used'), placeholder=_(''), value=data.cleansing_rules_used, error=errors.cleansing_rules_used) }}
+{% endif %}
+
+<hr>
+<h3>V. Open Data</h3>
+
+{{ form_custom.radio('opendata_indicator',
+label=_('Open Data: open data indicator'),
+current_value=data.opendata_indicator)}}
+
+{{ form_custom.radio('opendata_priority_indicator',
+label=_('Open Data: priority indicator'),
+current_value=data.opendata_priority_indicator)}}
+
+{{ form.input('opendata_public_location',
+label=_('Open Data: public location'),
+value=data.opendata_public_location,
+error=errors.opendata_public_location)}}
+
+<script>
+  // NOTES: less than IE9 support
+  // Using Object.keys.
+  //   If needed we can shim from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+
+  _popup_dict = {
+      "access_notes": "Information on how to request access to this dataset",
+      "access_restrictions": "Rules for allowing users to access data, above and beyond normal Bureau policies and applicable law. Subject to some exceptions, information should only be accessed if the employee has a need to know the information.",
+      "contact_primary": "The main point of contact for information about the dataset",
+      "contact_secondary_name": "The auxillary point of contact for information about the dataset",
+      "contact_secondary_email": "The auxillary point of contact for information about the dataset",
+      "content_periodicity": "For data collected of multiple time periods, the frequency of the observations in the dataset",
+      "content_spatial": "Geographic coverage of the content",
+      "content_temporal_range_end": "End of the period of time covered by the data",
+      "content_temporal_range_start": "Beginning of the period of time covered by the data",
+      "data_governance_notes": "Any additional information related to the data governance metadata",
+      "data_source_names": "Individuals or organization(s) that provided the data to the Bureau",
+      "dataset_last_modified_date": "The date the underlying dataset was last modified",
+      "dataset_notes": "Notes and additional information that Bureau staff might find useful",
+      "dig_id": "Unique identifier assigned by the Data Intake Group for datasets reviewed under the Data Intake Group process. For more information, see http://team.cfpb.local/wiki/index.php/Data_Intake_Group",
+      "initial_purpose_for_intake": "Original business use for intaking the dataset",
+      "legal_authority_for_collection": "Legal authority under which the data was collected",
+      "legal_notes": "Any additional information related to the legal metadata",
+      "obfuscated_title": "Is the title of this dataset encrypted or hidden?",
+      "pra_exclusion": "If applicable, the reason for being exempt from Paperwork Reduction Act",
+      "pra_notes": "Any additional information related to the PRA metadata",
+      "pra_omb_control_number": "The number assigned from OMB, if the information collection needed approval by the OMB under the Paperwork Reduction Act (PRA). See the PRA wiki page for more information http://team.cfpb.local/wiki/index.php/Paperwork_Reduction_Act_-_PRA",
+      "pra_omb_expiration_date": "If applicable, the expiration date of the OMB control number from OMB",
+      "privacy_contains_pii": "Does this dataset contain personally identifiable information?",
+      "privacy_has_direct_identifiers": "Does this dataset contain direct personal identifiers (e.g. name, address, etc.)?",
+      "privacy_has_privacy_act_statement": "Is there a related Privacy Act Statement?",
+      "privacy_pia_notes": "Information on if a PIA is applicable to this dataset",
+      "privacy_pia_title": "If needed, the title of the applicable Privacy Impact Assessment (PIA). For a full list of the Bureau's PIAs, go to http://www.consumerfinance.gov/privacy/",
+      "privacy_notes": "Any additional information related to the privacy metadata",
+      "privacy_sorn_number": "If applicable, the title of the applicable System of Record Notice (SORN). For a full list of the Bureau's SORN's, go to http://www.consumerfinance.gov/privacy/",
+      "procurement_document_id": "If applicable, the unique identifier from the Office of Procurement's internal database",
+      "records_retention_schedule": "The relevant retention schedule or other information about retention requirements",
+      "relevant_governing_documents": "Which types of documents govern this dataset",
+      "sensitivity_level": "Bureau-assigned sensitivity level per the Information Sensitivity Leveling Standard. For more information, see http://team.cfpb.local/wiki/index.php/Information_Sensitivity_Leveling_Standard",
+      "tags": "High-level subject matter that the dataset is related to. This creates tags that help group related datasets.",
+      "transfer_date": "Initial date where the data was brought into the Bureau",
+      "transfer_details": "Notes on the transfer of the dataset into CFPB systems",
+      "transfer_initial_size": "Approximate size of the dataset when brought into the Bureau (in megabytes)",
+      "transfer_method": "Technique, format, or medium for bringing the data into the bureau",
+      "update_frequency": "How often the Bureau receives updates to the data",
+      "foia_exemptions": "Would this data be available through a FOIA request? If yes, coose \"No Exemption\". If no, indicate the FOIA exemptions that would prevent publication of this data asset",
+      "foia_exemptions_notes": "If a FOIA Exemption is supported, please list any supporting information available such as law that prvents publication, privacy agreement, Memo of Understanding with a company or agency, subset of data that can be published if applicable",
+      "opendata_indicator": "Can the Bureau publish this data asset to Data.gov and ConsumerFinance.gov?",
+      "opendata_priority_indicator": "Has this data asset been added to the Bureau's priority data asset due to the value it can provide to external customers, its prior publication on ConsumerFinance.gov, or data assets recommended for publication by customer facing Bureau organizations?",
+      "opendata_public_location": "What is the URL where the general public can access the data assets, its data dictionary, JSON, XML, and or API?",
+      "usage_restrictions": "Rules and restrictions for using the specific dataset, above and beyond normal Bureau policies and applicable law. All usage and disclosure of information is subject to applicable law, including the Bureau’s confidentiality regulations, the Privacy Act, and the Trade Secrets Act.  Information should not be disclosed outside of the Bureau unless it is aggregated and does not directly or indirectly identify an individual or an entity.  Additional usage or disclosure restrictions may be present in contracts, MOUs, NDAs, or similar agreements.",
+      "website_url": "Link to a relevant website",
+      "wiki_link": "Link to a CFPB wiki page for this dataset"
+    }
+
+  var fields = Object.keys(_popup_dict);
+  document.addEventListener("DOMContentLoaded", function(event) {
+
+    for(var i=0; i < fields.length; i++ )      // safe for < IE9
+    {
+      var field = fields[i];
+      var el = $("#"+field+",#field-"+field);
+      el.attr("title", _popup_dict[field]);
+      el.closest(".control-group").attr("title", _popup_dict[field]);
+    }
+  });
+</script>
+
+{% endblock %}
+
+{% block package_metadata_fields_url %}
+{% endblock %}
+{% block package_metadata_fields_version %}
+{% endblock %}
+{% block package_metadata_author %}
+{% endblock %}
+{% block package_metadata_fields_maintainer %}
+{% endblock %}
+{% block package_metadata_fields_custom %}
+{% endblock %}

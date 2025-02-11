@@ -1,0 +1,25 @@
+{
+  "name": "@cfpb/browserslist-config",
+  "version": "0.0.4",
+  "description": "Browserslist data for consumerfinance.gov.",
+  "homepage": "https://github.com/cfpb/cfpb-analytics",
+  "bugs": "https://github.com/cfpb/cfpb-analytics/issues",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "url": "http://consumerfinance.gov"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/cfpb-analytics"
+  },
+  "license": "SEE LICENSE IN TERMS.md",
+  "keywords": [
+    "cfpb-analytics",
+    "analytics",
+    "cfpb"
+  ],
+  "type": "module"
+}

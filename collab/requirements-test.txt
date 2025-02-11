@@ -1,0 +1,10 @@
+django-nose==1.4.2
+nose-progressive==1.5.1
+exam==0.5.1
+coverage==4.0.3
+webtest==2.0.20
+django-webtest==1.7.8
+factory-boy==1.2.0
+django-factory-boy==1.0.0
+BeautifulSoup4==4.4.1
+django-dynamic-fixture==1.8.5

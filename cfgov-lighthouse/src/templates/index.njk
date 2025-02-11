@@ -1,0 +1,70 @@
+{% extends "./base.njk" %}
+
+{% block body %}
+<header>
+<h1>Lighthouse report summary</h1>
+</header>
+
+{% set factors = [ 'mobile', 'desktop' ] -%}
+
+{% set categories = [
+  [ 'Performance', 'performance' ],
+  [ 'Accessibility', 'accessibility' ],
+  [ 'Best practices', 'best-practices' ],
+  [ 'SEO', 'seo' ]
+] -%}
+
+<table class="cfpblh-table">
+  <thead>
+    <tr>
+      <th>URL</th>
+      <th>REPORT DATE</th>
+      {% for factor in factors %}
+        <th>{{ factor | upper }}</th>
+      {% endfor %}
+      <th>HISTORY</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for page, resultlist in pages | dictsort %}
+    {% set latest_result = resultlist | dictsort | last %}
+    {% set date = latest_result[0] %}
+    {% set results = latest_result[1] %}
+    <tr>
+      <td>
+        <a href="{{ results.url }}">{{ results.url }}</a>
+      </td>
+      <td>
+        {{ date  | replace( "_", "-") | date( "MMM. D, YYYY" ) }}
+      </td>
+      {% for factor in factors %}
+      <td>
+        <ul class="m-list m-list__unstyled">
+          {% for name, slug in categories %}
+          <li class="m-list_item">
+            {{ name }} <strong>{{ ( results[ factor ].summary[ slug ] * 100 ) | round }}</strong>
+            {{ results[ factor ].summary[ slug ] | scoreIcon | safe }}
+          </li>
+          {% endfor %}
+        </ul>
+
+        <div>
+          <a target="_blank"
+             class="report-link"
+             href="reports/{{ results[ factor ].jsonPath }}">
+            View full report
+          </a>
+        </div>
+      </td>
+      {% endfor %}
+
+      <td>
+        <a href="{{ RELATIVE_URL }}/{{ page }}/">
+          View history
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

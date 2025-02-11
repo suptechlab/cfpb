@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <script>window.$ = window.jQuery = require('jquery');</script>
+      <script src="app.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/styles.css">
+      <meta charset="UTF-8">
+      <title>CFPB Site Viewer</title>
+    </head>
+    <body>
+      <h1 class="app-title">CFPB Crawler App</h1>
+      <div class="crawler-controls section">
+        <h2>Crawler Controls</h2>
+        <div class="crawler-running-indicator">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+            <div id="running-cover" class="cover"></div>
+          </div>
+        <div class="crawler-controls_button-area">
+          <button id="crawler-start" disabled>Start Crawler</button>
+          <button id="crawler-stop" disabled>Stop Crawler</button>
+
+          <div id="discovery-radio" style="display:none">
+            <h3>Discovery</h3>
+            <label for="discovery-toggle__on">
+              <input type="radio" id="discovery-toggle__on" name="discovery-toggle" value="yes" disabled>On
+            </label>
+            <label for="discovery-toggle__off" disabled>
+              <input type="radio" id="discovery-toggle__off" name="discovery-toggle" value="no" disabled>Off
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="crawler-stats section">
+        <h2>Crawler Status</h2>
+        <p id="stats-line"></p>
+      </div>
+      <div class="db-info section">
+        <h2>Database Information</h2>
+        <p class="db-info_status"><strong>Database Status:</strong> <span id="db-info_status-span"></span></p>
+        <p id="db-info_rows" class="db-info_rows"></p>
+        <p id="db-info_new-rows" class="db-info_new-rows"></p>
+      </div>
+    </body>
+  </html>

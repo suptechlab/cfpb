@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <title>How to create offer ID hashes - college-costs</title>
+    
+    
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/syntax.css">
+    
+
+    
+    <style type="text/css">
+        .sidebar-nav a:hover,
+        .sidebar-nav a:focus,
+        .sidebar-nav a:active,
+        .sidebar-nav a.sidebar-nav-active {
+            border-left-color: #2CB34A;
+        }
+        header {
+            border-bottom-color: #2CB34A;
+        }
+    </style>
+    
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="../js/respond.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body>
+    
+    <div class="container">
+        <header role="banner">
+            <div class="wrap">
+                
+                <img class="logo" src="https://cfpb.github.io/img/logo_210.png" alt="Consumer Financial Protection Bureau">
+                
+                <h1 class="site-title"><a class="title-link" href="../">college-costs</a></h1>
+            </div>
+        </header>
+    
+        <div class="wrap content">
+            <aside>
+                <nav class="sidebar-nav" role="navigation">
+                    <ul>
+                        
+                        <li>
+                             
+                            <a href=".." class="">Introduction</a>
+
+                            
+                        </li>
+                        
+                        <li>
+                            
+                            <span>Specifications</span>
+                            <ul class="secondary-nav">
+                                
+                                <li>
+                                    <a href="../csv-spec/" class="">CSV spec for program data</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="./" class="sidebar-nav-active">How to create offer ID hashes</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="../url-spec/" class="">URL spec for offer data</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="../notification-spec/" class="">Notification spec validating offers</a>
+                                </li>
+                                
+                            </ul>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </aside>
+
+            <section id="main" class="main-content" role="main">
+                <h2 id="offer-ids">Offer IDs</h2>
+<p>Offer IDs allow a school to provide a disclosure of a student's enrollment offer without revealing who the student is. They also allow the CFPB to send a confirmation to the school after a disclosure is reviewed.</p>
+<p>Only the school will know which student the offer ID applies to.</p>
+<p>Two important details to note:  </p>
+<ul>
+<li><strong>The first seven characters in the offer ID should be given to the student so that she can confirm on the  disclosure page that the offer is hers.</strong> </li>
+<li><strong>An offer ID can be used only once.</strong><br />
+If an offer ID generates a notification, either successful or with an error, it cannot be used again to validate an offer. If a student needs to re-evaluate an offer, a new offer ID needs to be generated and used in a new offer URL. </li>
+</ul>
+<h2 id="technical-details">Technical details</h2>
+<p>We chose a 40-hex-character hash as the standard form for an offer ID because it has two advantages:  </p>
+<ul>
+<li>Unique hash values are easy to create in a way that cannot be traced back to a student.</li>
+<li>The hashes contain only numbers and the letters a-f and are safe to transmit and accept.</li>
+</ul>
+<p>The school is free decide how to generate the offer IDs, and we will allow up to 128 hex characters so other hashing algorithms can be used, but the IDs need to be unique. <br />
+One easy method would be to combine a timestamp and another value -- such as a student ID or a random number or phrase -- and generate a SHA-1 hash from the combined values.</p>
+<p>Following is an example Python function that does just that.</p>
+<pre><code class="python">import hashlib
+import datetime
+
+
+def create_hash(value):
+    val = value + datetime.datetime.now().isoformat()
+    return hashlib.sha1(val).hexdigest()
+</code></pre>
+
+<p>This would return a unique offer ID that could be used as the 'oid' value in a student's offer URL.<br />
+If run again, even with the same input value, it would generate a new unique ID, because a new timestamp is used in creating each hash.</p>
+<p>The school could then keep a record of the ID and the student it is for, and use it in the student's disclosure URL as spelled out in our <a href="https://cfpb.github.io/college-costs/url-spec/">URL specification</a>.</p>
+<h2 id="a-helper-script">A helper script</h2>
+<p>The hashing function above is part of an offer-generating script that is <a href="http://files.consumerfinance.gov.s3.amazonaws.com/pb/paying_for_college/scripts/create_offer_ids.py">available for download</a>. When run from a shell command line, the script can be used to create a single ID or a whole batch of IDs, and the result can be saved as a spreadsheet.</p>
+<p>The command to use the script takes this form:</p>
+<pre><code>python create_offer_ids.py &quot;VALUE&quot; [--number N] [--csv]
+</code></pre>
+
+<ul>
+<li>VALUE is a word or phrase of your choice, used to increase randomness.</li>
+<li>The <code>--number</code> option allows you to provide a number [N] of IDs you'd like to create.</li>
+<li>The <code>--csv</code> option tells the script to create a spreadsheet containing the new IDs.</li>
+</ul>
+<p>Example usages:</p>
+<pre><code>python create_offer_ids.py &quot;go tigers&quot;
+</code></pre>
+
+<p>This will return a single unique offer ID, something like this:<br />
+<code>2df92217303700c6165d56a24b89cef419133a89</code></p>
+<pre><code>python create_offer_ids.py &quot;go tigers&quot; --number 2
+</code></pre>
+
+<p>This will return two unique offer IDs, such as<br />
+<code>4e259e04a2265b2d3d1114e3f66cb41a44f5be91</code><br />
+<code>ee350cdc99747d7b85e3556ef1d99ef2b0d1f8b0</code></p>
+<pre><code>python create_offer_ids.py &quot;go tigers&quot; --number 200 --csv
+</code></pre>
+
+<p>The program will now return a message like this:<br />
+<code>200 offer IDs were output to 'student_offer_ids_2016-10-11.csv'</code></p>
+<p>The CSV could be opened in a program such as Excel and used to assign IDs to prospective students.</p>
+<p>Notes:</p>
+<ul>
+<li>The date tag in the CSV's name depends on the day the script is run.</li>
+<li>If run with the <code>--csv</code> option multiple times on the same day, the new IDs will be appended to the first CSV created that day, if it hasn't been moved to a different directory.</li>
+<li>If run on another day, a new CSV would be created with that day's date in the name.</li>
+</ul>
+            </section>
+        </div>
+
+        <footer role="contentinfo">
+            <div class="wrap">
+                This project is maintained by <a href="https://cfpb.github.io">The Consumer Financial Protection Bureau.</a>.
+
+                <p>Hosted on <a href="http://pages.github.com/">GitHub Pages</a>.</p>
+            </div>
+        </footer>
+    </div> 
+</body>
+</html>

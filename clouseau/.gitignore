@@ -1,0 +1,14 @@
+*.clouseau
+*.swn
+*.egg-info
+*.pyc
+*.swo
+*.log
+*.swp
+tmp
+temp
+_temp
+build/
+dist/
+venv/
+sandbox/

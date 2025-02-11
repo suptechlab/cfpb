@@ -1,0 +1,7 @@
+coverage
+coveralls
+mock
+nose
+parameterized
+openpyxl
+lxml

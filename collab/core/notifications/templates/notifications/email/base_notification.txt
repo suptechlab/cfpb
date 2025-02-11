@@ -1,0 +1,8 @@
+{% block "body" %}
+{% endblock %}
+
+---
+You received this notification as a service of the CFPB Staff Directory.  If you no longer wish to receive these notifications, you can opt-out by visiting your staff directory account page and deselecting "Email notifications."
+
+CFPB Staff Directory: {{ project_url }}/staff/
+Your account page: {{ project_url }}/account/

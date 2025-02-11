@@ -1,0 +1,100 @@
+{% extends "search/base.html" %}
+{% block "content" %}
+<form action="" method="POST" id="submit-form">
+    {% csrf_token %}
+    <div id="content" class="search-results">
+        <h1>Search results for '{{ term }}'</h1>
+        
+        <div id="search_accordion">
+
+            {% if not index %}
+            <div class="results-group" data-model="Wiki" style="display:none;">
+                <h3>Wiki (<span id="wiki_count_hook"></span> results)</h3>
+
+                {% if suggested_results %}
+                <div class="suggested-result">
+                    <h4>Suggested result</h4>
+                    <a href="{{ suggested_results.0.suggested_url }}">
+                       {{ suggested_results.0.name }}
+                    </a>
+                    <p>{{ suggested_results.0.description }}</p>
+                </div>
+                {% endif %}
+
+                <ol id="wiki_results_hook"></ol>
+            </div>
+            {% endif %}
+
+            {% regroup results by index_name as by_index %}
+            
+            {% if results|length < 1 %}
+                <div class="no-results-message" style="display:none;">
+                    <h3>There are no results that match your search.</h3>
+                    <p>Please check your spelling or try a different search term.</p>
+                </div>
+            {% else %}
+
+                {% for results_by_index in by_index %}
+                <div class="results-group" data-model="{{ results_by_index.grouper }}">
+                    <h3>
+                        {{ results_by_index.grouper }}
+                    {% if results_by_index.grouper == 'Staff Directory' and results_by_index.list|length > 100 %}
+                        (showing first 100 results of {{ results_by_index.list|length }}) 
+                    {% elif results_by_index.list|length > 50 %}
+                        (showing first 50 results of {{ results_by_index.list|length }})
+                    {% else %}
+                        ({{ results_by_index.list|length }} results)
+                    {% endif %}
+                    </h3>
+
+                    {% regroup results_by_index.list by content_type as by_content %}
+                    {% for results_by_content in by_content %}
+                        {% if results_by_content.grouper == 'core.person' %}
+                                <ol class="profile_images cf">
+                                    {% for p in results_by_content.list|slice:":100" %}
+                                        <li>
+                                            <a href="{{ p.url }}">
+                                                <img class="tiny_photo" src="{{ p.image }}"/>
+                                                <span>{{ p.display }}</span>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ol>
+                        {% else %}
+                            <ol data-results-by-content-grouper="{{ results_by_content.grouper }}">
+                               {% for item in results_by_content.list|slice:":50" %}
+                                    <li>
+                                        <a name="item_url" href="{{ item.url }}">
+                                            {{ item.display }}
+                                        </a>
+                                        {% if item.description %}
+                                            <p>
+                                                {{ item.description }}
+                                            </p>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+                {% endfor %}
+        
+            {% endif %}
+
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block "js_ready" %}
+    {% include "search/search_results.js" %}
+{% endblock %}
+
+{% block "js_scripts" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/external_link.js"></script>
+<script type="text/javascript">
+    $('[name="item_url"]').each(function(i, el) { tagExternalLink(el) });
+</script>
+{% endblock %}

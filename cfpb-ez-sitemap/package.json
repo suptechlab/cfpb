@@ -1,0 +1,14 @@
+{
+  "name": "site-mapper",
+  "version": "1.0.0",
+  "description": "CFPB site mapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sitemap-generator": "^7.5.2"
+  }
+}

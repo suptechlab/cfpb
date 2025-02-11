@@ -1,0 +1,29 @@
+{% for module in apache_modules %}
+LoadModule {{module.name}} {{module.path}}
+{% endfor %}
+
+ServerRoot {{apache_server_root}}
+WSGISocketPrefix sockets/wsgi
+
+ErrorLog apache.error.log
+CustomLog apache.custom.log combined
+
+Listen {{apache_port}}
+<VirtualHost 0.0.0.0:{{apache_port}}>
+    ServerName {{ckan_server_name}}
+    ServerAlias {{ckan_server_alias}}
+    WSGIScriptAlias / {{ckan_config_dir}}/apache.wsgi
+
+    # Pass authorization info on (needed for rest api).
+    WSGIPassAuthorization On
+
+    # Deploy as a daemon (avoids conflicts between CKAN instances).
+    {% if apache_run_wsgi_daemon %}
+    WSGIDaemonProcess ckan_default user={{ckan_user}} group={{ckan_group}} display-name=ckan_default processes=2 threads=15 
+
+    WSGIProcessGroup ckan_default
+    {% endif %}
+    #XXX: This put logs relative to SERVER_ROOT, which is /etc/httpd for non-mesos
+    ErrorLog ckan_default.error.log
+    CustomLog ckan_default.custom.log combined
+</VirtualHost>

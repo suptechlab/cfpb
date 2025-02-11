@@ -1,0 +1,75 @@
+{#
+* Database (category: "database")
+X title
+X database server
+X database name
+X schema
+X description
+X roles and descriptions (+ reveals more)
+X + intake_date
+X + hidden (required) url
+#}
+
+{% if location=="form" %}
+  <!-- cfpb_extrafields_database.html snippet -->
+  {% import 'macros/form.html' as form %}
+  <!-- A "URL" fiel is REQUIRED for all types -->
+  {% if data.url %}
+    {{ form.hidden('url', value=data.url)}}
+  {% else %}
+    {{ form.hidden('url', value=" optional URL or click (X) to upload a file")}}
+  {% endif %}
+
+  <!-- format persists unless reset -->
+  <div hidden class='core-field'>
+  <input id="format" value="database" name="format"/>
+  </div>
+  
+  {{ form.input('database_server', type='text', label=_("database server"),
+  placeholder="", value=data.database_server,
+  error=errors.database_server) }}
+  {{ form.input('database_name', type='text', label=_("database name"),
+  placeholder="", value=data.database_name,
+  error=errors.database_name) }}
+  {{ form.input('database_schema', type='text', label=_("database schema"),
+  placeholder="", value=data.database_schema,
+  error=errors.database_schema) }}
+  
+  <div class='core-field'>
+  {{ form.markdown('description', id='field-description', label=_('description'), 
+  placeholder=_('Some useful notes about the data'), value=data.description,
+  error=errors.description) }}
+  </div>
+  
+  {{ form.input('intake_date', type='date', label=_("intake date"),
+  placeholder="eg 2012-12-21",value=data.intake_date, error=errors.intake_date) }}
+
+  {% snippet "package/snippets/resource_type-specific/cfpb_extrafields_field-roles.html", data=data  %}
+  <!-- end cfpb_extrafields_database.html snippet -->
+  
+{% elif location=="description" %}
+  <!-- cfpb_extrafields_database.html snippet -->
+  {% resource 'cfpb_extrafields/create_downloadable_file.js' %}
+  <textarea hidden id="dsn_box">
+[ODBC]
+DRIVER={{data.storage_location}} [e.g., SQL Server]
+UID=sa
+DATABASE={{data.storage_location_path}} 
+WSID=P2
+APP=Visual Basic
+SERVER=(local)  
+Description=Pubs in local SQL Server</textarea>
+  <!-- commenting DSNs out for the initial roll-out 
+  <a class="btn btn-default" download="cfpb_{{data.name}}_{{data.format}}.dsn"
+     id="downloadlink">DSN file (an importable path to this resource)</a>
+  -->
+  <!-- end cfpb_extrafields_database.html snippet -->
+
+{% elif location=="metadata" %}
+  <!-- cfpb_extrafields_database.html snippet -->
+  <!-- end cfpb_extrafields_database.html snippet -->
+  
+{% else %}
+  Bad location snippet choice
+  
+{% endif %}

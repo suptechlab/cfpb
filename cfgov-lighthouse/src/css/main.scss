@@ -1,0 +1,51 @@
+@use '@cfpb/cfpb-design-system/src/' as *;
+
+@include define-custom-props();
+
+.cfpblh-container {
+  width: 100%;
+  padding-top: 15px;
+}
+
+.cfpblh-container header,
+.cfpblh-table {
+  margin: auto;
+  width: calc(100% - 60px);
+}
+
+// Second column
+.cfpblh-table td:nth-child(2) {
+  min-width: 200px;
+}
+
+// Third column
+.cfpblh-table td:nth-child(3) {
+  min-width: 200px;
+}
+
+// Fourth column
+.cfpblh-table td:nth-child(4) {
+  vertical-align: top;
+}
+
+.u-transparent {
+  opacity: 0;
+}
+
+.u-fill-red {
+  fill: var(--red);
+}
+
+.u-fill-gold {
+  fill: var(--gold);
+}
+
+.u-unstyled-link {
+  font-style: none !important;
+  color: var(--black) !important;
+  border-bottom: none !important;
+
+  &:hover {
+    color: var(--pacific-dark) !important;
+  }
+}

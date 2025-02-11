@@ -1,0 +1,15 @@
+{
+  "name": "cfpb-crawler",
+  "version": "1.0.0",
+  "description": "A crawler designed to be run via automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simplecrawler": "^1.1.6",
+    "sqlite3": "^3.1.13"
+  }
+}

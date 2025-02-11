@@ -1,0 +1,39 @@
+{
+  "name": "cfpb-analytics",
+  "private": true,
+  "description": "Analytics support for consumerfinance.gov sites.",
+  "homepage": "https://github.com/cfpb/cfpb-analytics",
+  "bugs": "https://github.com/cfpb/cfpb-analytics/issues",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "url": "http://consumerfinance.gov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/cfpb-analytics"
+  },
+  "license": "SEE LICENSE IN TERMS.md",
+  "keywords": [
+    "cfpb-analytics",
+    "analytics",
+    "cfpb"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "browserslist-ga-export": "^5.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.2.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.3.3"
+  },
+  "scripts": {
+    "jest": "yarn node --experimental-vm-modules $(yarn bin jest packages/**/*.spec.js)",
+    "lint": "scripts/lint.sh"
+  },
+  "type": "module"
+}

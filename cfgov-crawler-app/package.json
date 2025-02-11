@@ -1,0 +1,28 @@
+{
+  "name": "cfgov-crawler-app",
+  "version": "0.1.0",
+  "description": "An electron site crawler app for consumerfinance.gov",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "install-app-deps",
+    "start": "electron index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cf-core": "^4.6.3",
+    "cf-notifications": "^2.0.2",
+    "cheerio": "^1.0.0-rc.10",
+    "electron": "^13.6.9",
+    "is-url": "1.2.2",
+    "jquery": "^3.6.0",
+    "json-beautify": "1.0.1",
+    "md5": "^2.3.0",
+    "simplecrawler": "^1.1.9",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.26.0"
+  }
+}

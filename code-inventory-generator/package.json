@@ -1,0 +1,21 @@
+{
+  "name": "code-inventory-generator",
+  "version": "2.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.87.0"
+  },
+  "scripts": {
+    "start": "node index",
+    "lint": "prettier index.js lib/*.js --write",
+    "deploy": "now -E --public"
+  },
+  "now": {
+    "alias": "code-json"
+  },
+  "devDependencies": {
+    "now": "^11.1.12",
+    "prettier": "^1.4.2"
+  }
+}
