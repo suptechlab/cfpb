@@ -1,0 +1,245 @@
+{# ==========================================================================
+
+   social_media.render()
+
+   ==========================================================================
+
+   Description:
+
+   Creates markup for Social Media molecule.
+
+   value:                   Object of optional parameters.
+
+   value.blurb:             Sets the text of a tweet, the subject of an email,
+                            or the title of a LinkedIn post.
+                            Default is "Look what I found on the CFPB's site!"
+
+   value.is_share_view:     Whether the "Share this" heading is shown.
+                            Default is true.
+
+   value.is_printable:      Whether the molecule is on a page meant to be
+                            printed and should thus show the print link.
+                            Default is false.
+
+   value.email_title        Sets subject for email
+
+   value.email_text         Sets body for email
+
+   value.email_signature    Sets signature for email
+
+   value.linkedin_title     Sets title for LinkedIn post
+
+   value.linkedin_text      Sets text for LinkedIn post
+
+   value.twitter_text:      Sets content for tweet
+
+   value.twitter_hashtags:  A comma-separated list of hashtags
+                            to be appended to default Tweet text.
+                            https://dev.twitter.com/web/tweet-button/parameters
+
+   value.twitter_related:   A comma-separated list of accounts
+                            related to the content of the shared URI.
+                            https://dev.twitter.com/web/tweet-button/parameters
+                            Default is `cfpb`.
+
+   value.twitter_lang:      Loads text components in the specified language,
+                            if other than English.
+                            https://dev.twitter.com/web/tweet-button/parameters
+
+   ========================================================================== #}
+
+{% macro render( value={} ) %}
+
+{% set default_blurb = _('Look what I found on the CFPB\'s site!') %}
+{% set blurb = value.blurb or (page.seo_title if page) or value.title or default_blurb %}
+
+{% set parsed_url = request.build_absolute_uri() | urlencode %}
+{% set is_share_view = value.is_share_view | default( true ) %}
+{% set is_printable = value.is_printable | default( false ) %}
+
+{% set facebook_campaign = '?utm_source=facebook&utm_medium=social&utm_campaign=share_button' | urlencode %}
+{% set twitter_campaign = '?utm_source=twitter&utm_medium=social&utm_campaign=share_button' | urlencode %}
+{% set linkedin_campaign = '?utm_source=linkedin&utm_medium=social&utm_campaign=share_button' | urlencode %}
+{% set email_campaign = '?utm_source=webpage&utm_medium=email&utm_campaign=share_button' | urlencode %}
+
+{% set email_title = value.email_title or blurb %}
+{% set default_email_text = _("Check out this page from the CFPB") %}
+{% set email_text = value.email_text or ( default_email_text ~ ' - ' ) %}
+{% set email_signature = ' ' + value.email_signature if value.email_signature else '' %}
+{% set email_body = email_text ~ '%20' ~ parsed_url ~ email_campaign ~ email_signature %}
+{% set email_share_url = 'mailto:?subject=' ~ email_title | urlencode ~ '&body=' ~ email_body %}
+
+{% set linkedin_title = ( value.linkedin_title or blurb ) | urlencode %}
+{% set linkedin_text = ( value.linkedin_text or '' ) | urlencode %}
+{% set twitter_text = ( value.twitter_text or blurb ) | urlencode %}
+
+<div class="m-social-media
+            m-social-media--{{ 'share' if is_share_view else 'follow' }}">
+    {% if is_share_view %}
+        <div class="h5 m-social-media__heading">
+            {% if is_printable -%}
+                {{ _('Share & print') }}
+            {%- else -%}
+                {{ _('Share this') }}
+            {%- endif %}
+        </div>
+    {% endif %}
+
+    <ul class="m-list
+               m-list--unstyled
+               m-list--horizontal
+               m-social-media__icons">
+
+        {% set facebook_homepage = _('https://www.facebook.com/CFPB') %}
+        {% set facebook_info = {
+            'name': 'Facebook',
+            'homepage': facebook_homepage,
+            'share_url': 'https://www.facebook.com/dialog/share?app_id=210516218981921&display=page&href=' ~ parsed_url ~ facebook_campaign,
+            'icon': 'facebook'
+        } %}
+
+        {% set twitter_homepage = _('https://x.com/CFPB') %}
+        {% set twitter_info = {
+            'name': 'X',
+            'homepage': twitter_homepage,
+            'share_url': _share_twitter_url(parsed_url ~ twitter_campaign, twitter_text, value) | trim,
+            'icon': 'x'
+        } %}
+
+        {% set linkedin_info = {
+            'name': 'LinkedIn',
+            'homepage': 'https://www.linkedin.com/company/consumer-financial-protection-bureau',
+            'share_url': 'https://www.linkedin.com/shareArticle?mini=true&url=' ~ parsed_url ~ linkedin_campaign ~ '&title=' ~ linkedin_title ~ '&summary=' ~ linkedin_text,
+            'icon': 'linkedin'
+        } %}
+
+        {% set email_info = {
+            'name': 'email',
+            'share_url': email_share_url,
+            'icon': 'email'
+        } %}
+
+        {% set youtube_info = {
+            'name': 'YouTube',
+            'homepage': 'https://www.youtube.com/user/cfpbvideo',
+            'icon': 'youtube'
+        } %}
+
+        {% set flickr_info = {
+            'name': 'Flickr',
+            'homepage': 'https://www.flickr.com/photos/cfpbphotos',
+            'icon': 'flickr'
+        } %}
+
+        {% set print_this_page = _('Print this page') %}
+        {% set print_info = {
+            'name': print_this_page,
+            'share_url': 'window.print();',
+            'icon': 'print'
+        } %}
+
+        {% if is_share_view %}
+            {% set links = [
+                facebook_info,
+                twitter_info,
+                linkedin_info,
+                email_info
+            ] %}
+        {% else %}
+            {% set links = [
+                facebook_info,
+                twitter_info,
+                linkedin_info,
+                youtube_info,
+                flickr_info
+            ] %}
+        {% endif %}
+
+
+        {% for link in links %}
+            {% if is_share_view %}
+                <li class="m-list__item">
+                    <a class="m-social-media__icon"
+                       href="{{ link.share_url if link.name != 'email' else link.share_url | trim }}"
+                       {{ 'target="_blank" rel="noopener noreferrer"' | safe if link.name != 'email' else '' }}
+                       aria-label="{{ _('Share on') }} {{ link.name }}">
+                        {{ svg_icon(link.icon ~ '-square') }}
+                    </a>
+                </li>
+            {% else %}
+                <li class="m-list__item">
+                    <a class="m-social-media__icon"
+                       href="{{ link.homepage | trim }}"
+                       aria-label="{{ _('Visit us on') }} {{ link.name }}">
+                        {{ svg_icon(link.icon ~ '-square') }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if is_share_view and is_printable %}
+            <li class="m-list__item m-social-media__print">
+                <button class="a-btn a-btn--link m-social-media__icon"
+                   onclick="{{ print_info.share_url }}"
+                   aria-label="{{ print_info.name }}"
+                   type="button">
+                    {{ svg_icon(print_info.icon) }}
+                </button>
+            </li>
+        {% endif %}
+
+    </ul>
+</div>
+{% endmacro %}
+
+{# ==========================================================================
+
+   _share_twitter_url()
+
+   ==========================================================================
+
+   Description:
+
+   Returns a Twitter share URL when given:
+
+   parsed_url:               URL-encoded URL.
+
+   blurb:                    Suggested text for the tweet.
+
+   options:                  Object of optional parameters.
+
+   options.twitter_hashtags: (Optional) A comma-separated list of hashtags
+                             to be appended to default Tweet text.
+                             https://dev.twitter.com/web/tweet-button/parameters
+
+   options.twitter_related:  (Optional) A comma-separated list of accounts
+                             related to the content of the shared URI.
+                             https://dev.twitter.com/web/tweet-button/parameters
+                             Default is `cfpb`.
+
+   options.twitter_lang:     (Optional) Loads text components in the specified
+                             language, if other than English.
+                             https://dev.twitter.com/web/tweet-button/parameters
+
+   ========================================================================== #}
+
+{%- macro _share_twitter_url(parsed_url, blurb, options) -%}
+    {%- set _share_twitter_url = 'https://x.com/intent/tweet' -%}
+    {%- set _share_twitter_url = _share_twitter_url + '?url=' + parsed_url -%}
+    {%- set _share_twitter_url = _share_twitter_url + '&via=CFPB' -%}
+    {%- set _share_twitter_url = _share_twitter_url + '&text=' + blurb + '%20--' -%}
+
+    {%- if options.twitter_hashtags %}
+        {% set _share_twitter_url = _share_twitter_url + '&hashtags=' + options.twitter_hashtags.replace('#','')|urlencode %}
+    {% endif -%}
+
+    {%- if options.twitter_related %}
+        {% set _share_twitter_url = _share_twitter_url + '&related=' + options.twitter_related %}
+    {%- else %}
+        {% set _share_twitter_url = _share_twitter_url + '&related=cfpb' %}
+    {% endif -%}
+
+    {%- if options.twitter_lang %}
+        {% set _share_twitter_url = _share_twitter_url + '&lang=' + options.twitter_lang %}
+    {% endif -%}{{- _share_twitter_url -}}
+{% endmacro %}

@@ -1,0 +1,83 @@
+@font-face{	
+	font-family: "Avenir Next";
+	src:url("woff/fa19948e-5e38-4909-b31e-41acd170d6f2.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/f0d655c5-a88a-49ad-bb29-f3b5cca41731.woff") format("woff");
+	font-weight: 100;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/1e9892c0-6927-4412-9874-1b82801ba47a.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/92b66dbd-4201-4ac2-a605-4d4ffc8705cc.woff") format("woff");
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/f26faddb-86cc-4477-a253-1e1287684336.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/8344e877-560d-44d4-82eb-9822766676f9.woff") format("woff");
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/91b50bbb-9aa1-4d54-9159-ec6f19d14a7c.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/bc350df4-3100-4ce1-84ce-4a5363dbccfa.woff") format("woff");
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/b8e906a1-f5e8-4bf1-8e80-82c646ca4d5f.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/25e83bf5-47e3-4da7-98b1-755efffb0089.woff") format("woff");
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/181c847e-cdbc-43d5-ae14-03a81c8953b4.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: "Avenir Next";
+	src:url("woff/8c17992f-c017-49e0-b573-779f62016f06.woff") format("woff");
+	font-weight: 900;
+	font-style: italic;
+}

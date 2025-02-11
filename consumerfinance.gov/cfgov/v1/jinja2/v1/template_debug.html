@@ -1,0 +1,60 @@
+{% extends "v1/layouts/layout-full.html" %}
+
+{% block title %}Debugging template {{ debug_template_name }}{% endblock %}
+
+{% block css %}
+{{ super() }}
+<style>
+.test-case {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.test-case_link {
+    display: none;
+    font-size: 18px;
+}
+
+.test-case h2:hover .test-case_link {
+    display: inline-block;
+}
+
+.test-case_render {
+    outline: 1px dashed rgb( 0, 0, 0, 0.1 );
+    outline-offset: 10px;
+}
+</style>
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content_main %}
+    <div class="block block--flush-top">
+        <h1>{{ debug_template_name }}</h1>
+
+        {% if debug_test_cases %}
+        <ul>
+            {% for name in debug_test_cases.keys() %}
+            <li><a href="#{{ name | slugify }}">{{ name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% for name, rendered in debug_test_cases | items %}
+        <div class="content__line"></div>
+        <div id="{{ name | slugify }}" class="test-case">
+            <h2>
+                {{ name }}
+                <a class="test-case_link" href="#{{ name | slugify }}">#</a>
+            </h2>
+            <div class="test-case_render">
+            {{ rendered | safe }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block wagtailuserbar %}{% endblock %}
+
+{% block footer %}{% endblock %}

@@ -1,0 +1,30 @@
+{# ==========================================================================
+
+   Content block
+
+   ==========================================================================
+
+   Description:
+
+   Outputs the blocks from an Ask content streamfield:
+
+   value: List of blocks from a Streamfield block.
+
+   ========================================================================== #}
+
+{% for block in value %}
+    {% if loop.last %}
+    <div
+        {% if block.value.anchor_tag %}
+        id="{{ block.value.anchor_tag }}"
+        {% endif %}>
+    {% endif %}
+    {% if block.block_type == 'text' %}
+        {{ block.value.content | richtext | safe }}
+    {% else %}
+        {% include_block block %}
+    {% endif %}
+    {% if loop.last %}
+    </div>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,91 @@
+{
+  "name": "crtool",
+  "version": "2.0.0",
+  "description": "The Curriculum Review Tool is an interactive tool that allows a teacher to assess the merits of a financial education curriculum.",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  },
+  "browserslist": "> 0.5%, Chrome >= 76, Edge >= 98, Firefox >= 78, safari >= 12, not dead",
+  "bugs": "https://github.com/cfpb/curriculum-review-tool/issues",
+  "dependencies": {
+    "core-js": "2.5.6",
+    "css-loader": "^6.7.1",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "jquery": "^3.5.1",
+    "react": "^16.14.0",
+    "react-app-polyfill": "^1.0.3",
+    "react-dom": "^16.14.0",
+    "react-modal": "3.4.4",
+    "react-scripts": "^5.0.1",
+    "react-test-renderer": "^16.14.0",
+    "resolve-url": "0.2.1",
+    "select2": "^4.0.13"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "babel-jest": "24.9.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "cf-atomic-component": "8.0.1",
+    "cf-buttons": "8.0.1",
+    "cf-core": "8.0.1",
+    "cf-expandables": "8.0.1",
+    "cf-forms": "8.0.2",
+    "cf-grid": "8.0.1",
+    "cf-icons": "8.0.1",
+    "cf-layout": "8.0.1",
+    "cf-notifications": "8.0.1",
+    "cf-pagination": "8.0.1",
+    "cf-tables": "8.0.1",
+    "cf-typography": "8.0.1",
+    "glob-all": "^3.3.0",
+    "gulp": "^4.0.2",
+    "gulp-changed": "3.2.0",
+    "gulp-clean-css": "4.2.0",
+    "gulp-debug": "^4.0.0",
+    "gulp-eslint": "6.0.0",
+    "gulp-header": "2.0.7",
+    "gulp-less": "4.0.1",
+    "gulp-newer": "1.4.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "1.4.0",
+    "gulp-replace": "1.0.0",
+    "gulp-sourcemaps": "2.6.5",
+    "gulp-stylelint": "^13.0.0",
+    "mock-local-storage": "1.0.5",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "webpack-stream": "^7.0.0",
+    "xhr-mock": "^2.5.1"
+  },
+  "homepage": "https://www.consumerfinance.gov/",
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./src/jest/setup.js"
+    ]
+  },
+  "license": "SEE LICENSE IN TERMS.md",
+  "main": "src/index.js",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cfpb/curriculum-review-tool.git"
+  },
+  "scripts": {
+    "build": "react-scripts build --debug && mkdir -p ./crtool/static/tdp/js && awk '{ print $0 \"\\n\" }' build/static/**/*.js > ./crtool/static/tdp/js/crtool.react.v1.js && mv build/static/js/*.map ./crtool/static/tdp/js/ && npx gulp",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "jest --coverage --env=jsdom"
+  }
+}

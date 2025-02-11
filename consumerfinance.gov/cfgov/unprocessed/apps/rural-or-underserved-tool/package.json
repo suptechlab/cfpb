@@ -1,0 +1,21 @@
+{
+  "name": "rural-or-underserved-tool",
+  "description": "The consumerfinance.gov/rural-or-underserved-tool website.",
+  "homepage": "https://www.consumerfinance.gov/rural-or-underserved-tool",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/consumerfinance.gov.git"
+  },
+  "license": "SEE LICENSE IN TERMS.md",
+  "dependencies": {
+    "fastdom": "1.0.12",
+    "jsonp-p": "2.0.0",
+    "papaparse": "5.3.2"
+  },
+  "type": "module"
+}

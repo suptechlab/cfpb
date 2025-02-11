@@ -1,0 +1,51 @@
+<div class="activity">
+    <h3><a href="{{ result.url }}">{{ result.title }}</a></h3>
+    <p class="meta">
+        <span class="a-date">
+            Updated
+            <span class="datetime">
+                <time datetime="{{ result.date_attr }}">
+                    {{ result.date }}
+                </time>
+            </span>
+        </span>
+    </p>
+    <p>
+        <span class="a-icon a-icon--large a-icon--gold a-icon--space-after">
+            {{ svg_icon('favorite-round') }}
+        </span>
+        <span class="activity__for">Ideal for: {{ result.grade_level | join(', ') }}</span>
+    </p>
+    <p class="lead-paragraph u-mb30">{{ result.summary }}</p>
+    <div class="activity__meta-wrapper">
+        <div>
+            <h4 class="h5">Key information</h4>
+            <div class="layout-row u-mb15">
+                <h5 class="activity_meta-key">Topic:</h5>
+                {{ result.topic }}
+            </div>
+            <div class="layout-row">
+                <h5 class="activity__meta-key">Activity duration:</h5>
+                {{ result.activity_duration }}
+            </div>
+            {% if result.available_in_spanish %}
+            <div class="layout-row u-mt15">
+                <strong>Available in Spanish</strong>
+            </div>
+            {% endif %}
+        </div>
+        <div>
+            <h4 class="h5">Building block</h4>
+            <ul class="m-list m-list--unstyled">
+                {% for block in result.building_block %}
+                    <li class="m-list__item">
+                        <span class="a-icon a-icon--large a-icon--space-after">
+                            {{ svg_icon(block.svg_icon ~ '-round') }}
+                        </span>
+                        {{ block.title }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

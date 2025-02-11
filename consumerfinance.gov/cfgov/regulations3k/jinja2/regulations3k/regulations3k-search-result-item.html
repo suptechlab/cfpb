@@ -1,0 +1,16 @@
+{%- import 'v1/includes/molecules/tags.html' as tags %}
+{% macro render(result) %}
+
+{%- set reg_name = result.part ~ ' (' ~ result.reg ~ ')' -%}
+
+<article class="results__item">
+    <h4>
+        <a href="{{ result.url }}">{{ result.label }}</a>
+    </h4>
+    <p>{{ result.snippet }}</p>
+
+    {% set tags_links=({ 'text': reg_name },) %}
+    {{ tags.render( tags_links, show_heading=false ) }}
+</article>
+
+{% endmacro %}

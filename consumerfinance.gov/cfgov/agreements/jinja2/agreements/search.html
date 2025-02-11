@@ -1,0 +1,92 @@
+{% extends "agreements/base_agreements.html" %}
+
+{% set breadcrumb_items = [
+    ({'href':'/','title':'Home'}),
+    ({'href':'/data-research/credit-card-data/','title':'Credit cards'}),
+    ({'href':'/credit-cards/agreements/','title':'Credit card agreement database'}),
+] %}
+
+{% block title -%}
+    Credit card agreement database search result | Consumer Financial Protection Bureau
+{%- endblock %}
+
+{% block content_main %}
+    <div class="block block--flush-top">
+        <h1>Credit card agreement database</h1>
+    </div>
+    <div class="block">
+        <div id="ccagrsearch">
+            <h2>Agreements by '{{ issuer.name }}'</h2>
+            <table class="o-table o-table--striped o-table--stack-on-small u-w100pct">
+                <thead>
+                    <tr>
+                        <th>Issuer</th>
+                        <th>Agreement description</th>
+                        <th class="u-w20pct">Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in page.object_list %}
+
+                    <tr>
+                        <td data-label="Issuer">
+                            {{ result.issuer.name }}
+                        </td>
+                        <td data-label="Agreement description">
+                            {{ result.description }}
+                        </td>
+                        <td class="u-w20pct" data-label="Download">
+                            <a href="{{ result.uri }}">
+                                PDF ({{ result.size | filesizeformat }})
+                                {{ svg_icon('download') }}
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% if page.has_next() or page.has_previous() %}
+        <div class="block block--flush-top block--flush-bottom block--padded-top">
+            {% import 'v1/includes/molecules/pagination.html' as pagination with context %}
+            {{ pagination.render(
+                page.paginator.num_pages,
+                page.number,
+                'ccagrsearch'
+            ) }}
+        </div>
+        {% endif %}
+
+    </div>
+
+    {% include '_database_disclaimer.html' %}
+
+    {{ agreements_issuers() | safe }}
+{% endblock %}
+
+{% block content_sidebar scoped  %}
+    <div class="block block--flush-top">
+        <div class="m-related-links">
+            <header class="m-slug-header">
+                <h2 id="issuer-select" class="m-slug-header__heading">
+                    Search again
+                </h2>
+            </header>
+            <h3 class="h6">
+                Show agreements by card issuer
+            </h3>
+
+            <p id="select-root" class="u-mb5"></p>
+            <div style="display:none" id="issuer-slug">{{issuer.slug}}</div>
+            <p>
+                <a href="#find-issuer">
+                    Can't find an issuer?
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="block">
+        {% include '_need_help.html' %}
+    </div>
+{% endblock %}

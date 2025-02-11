@@ -1,0 +1,120 @@
+<fieldset id="identify-mortgage-company" class="cr-fieldset identify-product-options">
+
+    {{#if phoneNumber }}
+    <div class="row cr-question">
+        <div class="span3 cr-label cr-question-left identify-debt-collection-company-phone">
+            <label for="company-account">
+                What phone number has been receiving calls from this debt collector?
+            </label>
+            <input type="text"
+                   name="company-account"
+                   id="company-account"
+                   class="accountinput"
+                   placeholder="">
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="row cr-question">
+        <div class="span3 cr-label">
+            <label>
+                Please provide as much information as you want to share to help the company find you in their system and respond to your complaint.
+                <small class="inline">
+                  (optional)
+                </small>
+            </label>
+
+        </div>
+
+        <div class="span9 cr-answer cr-radios cr-behalf prodselect">
+            {{#if accountNumber }}
+            <label class="radio block">
+                <input type="radio" class='identify-account identification-type account-number' name="identify-account" value="account-number">
+                Account number
+            </label>
+            {{/if}}
+
+            {{#if residenceDob }}
+            <label class="radio block last">
+                <input type="radio"
+                       class="identify-account
+                              identification-type
+                              address-dob"
+                       name="identify-account"
+                       value="address-dob">
+                Residence address + Date of birth
+            </label>
+            {{/if}}
+
+            {{#if billingAddress }}
+            <label class="radio block last">
+                <input type="radio" class='identify-account identification-type billing-address' name="identify-account" value="billing-address">
+                Billing address
+            </label>
+            {{/if}}
+
+            {{#if loanNumber }}
+            <label class="radio block">
+                <input type="radio" class='identify-account identification-type loan-number' name="identify-account" value="loan-number">
+                Loan number
+            </label>
+            {{/if}}
+
+            {{#if lastSsn }}
+            <label class="radio block last">
+                <input type="radio"
+                       class="identify-account
+                              identification-type
+                              social-security-last-four"
+                       name="identify-account"
+                       value="social-security-last-four">
+                Last four digits of Social Security Number
+            </label>
+            {{/if}}
+
+            {{#if residenceAddress }}
+            <label class="radio block last">
+                <input type="radio" class='identify-account identification-type residence-address' name="identify-account" value="residence-address">
+                Residence address
+            </label>
+            {{/if}}
+
+            {{#if ssn }}
+            <label class="radio block last">
+                <input type="radio"
+                       class='identify-account
+                             identification-type
+                             social-security-number'
+                       name="identify-account"
+                       value="social-security-number">
+                Social security number
+            </label>
+            {{/if}}
+
+            {{#if cardNumber }}
+            <label class="radio block">
+                <input type="radio"
+                       class="identify-account
+                              identification-type
+                              card-number"
+                       name="identify-account"
+                       value="card-number">
+                Card number
+            </label>
+            {{/if}}
+
+            {{#if transactionNumber }}
+            <label class="radio block">
+                <input type="radio"
+                       class="identify-account
+                              identification-type
+                              transaction-number"
+                       name="identify-account"
+                       value="transaction-number">
+                Transaction number
+            </label>
+            {{/if}}
+        </div>
+    </div>
+
+</fieldset>

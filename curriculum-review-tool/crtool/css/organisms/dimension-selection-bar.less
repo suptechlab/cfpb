@@ -1,0 +1,222 @@
+// Dimension selection bar
+
+@bp-dimension-2-columns: 495px;
+@bp-dimension-4-columns: 1035px;
+@bp-dimension-wide-gutters: 923px;
+@bp-dimension-larger-text: 1140px;
+
+.o-dimension-selection-bar {
+    clear: both;
+    list-style-type: none;
+    margin: 0 unit( -7.5px / @base-font-size-px, em ) unit( 30px / @base-font-size-px, em );
+    padding-left: 0;
+
+    .respond-to-min(@bp-dimension-2-columns, {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    });
+
+    .respond-to-min(@bp-dimension-wide-gutters, {
+        margin-left: unit( -15px / @base-font-size-px, em );
+        margin-right: unit( -15px / @base-font-size-px, em );
+    });
+}
+
+.o-dimension-section-bar_dimension {
+    display: block;
+    margin: unit( 30px / @base-font-size-px, em ) unit( 7.5px / @base-font-size-px, em );
+    width: 100%;
+
+    .respond-to-min(@bp-dimension-2-columns, {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-basis: 40%;
+        margin-bottom: 0;
+    });
+
+    .respond-to-min(@bp-dimension-4-columns, {
+        flex-basis: 20%;
+    });
+
+    .respond-to-min(@bp-dimension-wide-gutters, {
+        margin-left: unit( 15px / @base-font-size-px, em );
+        margin-right: unit( 15px / @base-font-size-px, em );
+    });
+}
+
+.o-dimension-section-bar_button {
+    .a-btn();
+    border: 0px solid @btn-bg;
+    flex-grow: 1;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+
+    &:focus,
+    &:hover {
+        background-color: @btn-bg-hover;
+        border-color: @btn-bg-hover;
+    }
+
+    &:active {
+        background-color: @btn-bg-active;
+        border-color: @btn-bg-active;
+    }
+
+    &.is-active {
+        background-color: @pacific-20;
+        border-color: @pacific;
+        color: @text;
+
+        .o-dimension-section-bar_selector-status {
+            color: @gray;
+        }
+
+        &:active {
+            background-color: @pacific-20;
+            border-color: @pacific;
+            color: @text;
+
+            .o-dimension-section-bar_selector-status {
+                color: @gray;
+            }
+        }
+    }
+
+    &.is-complete {
+        background-color: @white;
+        border-color: @green;
+        color: @text;
+
+        .o-dimension-section-bar_selector-status {
+            color: @gray;
+        }
+
+        .a-icon {
+            color: @green;
+        }
+
+        &:focus,
+        &:hover {
+            background-color: @btn-bg-hover;
+            border-color: @btn-bg-hover;
+            color: @btn-text;
+
+            .a-icon {
+                color: inherit;
+            }
+
+            .o-dimension-section-bar_selector-status {
+                color: @btn-text;
+            }
+        }
+
+        &:active {
+            background-color: @green-20;
+            border-color: @green;
+            color: @text;
+
+            .o-dimension-section-bar_selector-status {
+                color: @gray;
+            }
+        }
+    }
+
+    &.is-active.is-complete {
+        background-color: @green-20;
+        border-color: @green;
+        color: @text;
+
+        .a-icon {
+            color: @green;
+        }
+
+        .o-dimension-section-bar_selector-status {
+            color: @gray;
+        }
+    }
+}
+
+.o-dimension-section-bar_selector {
+    background-color: inherit;
+    border: 2px solid;
+    border-color: inherit;
+    border-radius: 0.25em;
+    box-sizing: border-box;
+    color: inherit;
+    font-size: unit( @size-v / @base-font-size-px, em );
+    height: 100%;
+    padding: unit( 13px / @size-v, em );
+    text-align: left;
+    transition-duration: 0.1s;
+    transition-property: background-color, border-color, color;
+
+    .respond-to-min(@bp-dimension-2-columns, {
+        min-height: unit( 93px / @size-v, em );
+    });
+
+    .respond-to-min(@bp-dimension-larger-text, {
+        font-size: unit( @base-font-size-px / @base-font-size-px, em );
+        padding: unit( 13px / @base-font-size-px, em );
+    });
+
+    // Fixes delayed transitions in Chrome;
+    * {
+        transition: none;
+    }
+}
+
+.o-dimension-section-bar_selector-title {
+    .heading-4();
+    display: block;
+    font-size: unit( @base-font-size-px / @base-font-size-px, em );
+
+    .respond-to-min(@bp-dimension-larger-text, {
+        font-size: unit( @size-iv / @base-font-size-px, em );
+    });
+}
+
+.o-dimension-section-bar_selector-status {
+    font-size: unit( @size-v / @base-font-size-px, em );
+    font-style: italic;
+    transition-duration: 0.1s;
+    transition-property: color;
+
+    .respond-to-min(@bp-dimension-larger-text, {
+        font-size: unit( @base-font-size-px / @size-iv, em );
+    });
+}
+
+.o-dimension-section-bar_selector-text {
+    display: block;
+    font-weight: 400;
+}
+
+.o-dimension-section-bar_dimension-details {
+    color: @gray;
+    font-size: unit( @size-v / @base-font-size-px, em );
+    list-style-type: none;
+    padding-left: 0;
+
+    .respond-to-min(@bp-dimension-larger-text, {
+        font-size: unit( @base-font-size-px / @base-font-size-px, em );
+    });
+
+    > li {
+        display: inline-block;
+        margin: 0;
+    }
+
+    > li + li::before {
+        border: 2px solid @gray;
+        content: '';
+        display: inline-block;
+        height: 0;
+        margin: 0 unit( 8px / @size-vi, em );
+        position: relative;
+        top: unit( -2px / @size-vi, em );
+        width: 0;
+    }
+}

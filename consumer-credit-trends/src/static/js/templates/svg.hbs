@@ -1,0 +1,33 @@
+
+
+<div class="chart_wrapper block">
+    <!-- build:css -->
+    {{#unless indexPage}}
+    <link rel="stylesheet" href="../../../static/css/charts.min.css">
+    {{/unless}}
+    <!-- endbuild -->
+
+    <h3>{{ title }}</h3>
+
+    <div class="svg_wrapper"
+        id="{{ elementID }}"
+        data-chart-type="{{ chartType }}"
+        data-source="{{ source }}"
+        data-title="{{ title }}"
+        data-market="{{ market }}"
+        data-report-type="{{ reportType }}"
+    >
+    </div>
+
+
+    <p class="block__sub block__border-top block short-desc chart_footnote">
+        <strong>Source:</strong> <a class="icon-link icon-link__download" href="https://raw.githubusercontent.com/cfpb/consumer-credit-trends/master/data/{{ source }}"> <span class="icon-link_text">Download CSV file</span> </a><br>
+        <strong>Date published:</strong> December 2016<br>
+        <strong>Note:</strong> Data from the last six months are not final.
+    </p>
+
+
+    {{#unless indexPage}}
+    <script class="mainjs" src="../../../static/js/main.min.js"></script>
+    {{/unless}}
+</div><!-- .chart_wrapper -->

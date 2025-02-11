@@ -1,0 +1,264 @@
+/* ==========================================================================
+   /complaint Portal Page responsive prototype
+   ========================================================================== */
+
+/* Override all fixed widths */
+.cr-theme .wrapper,
+#header > div,
+#footer > div,
+.wrapper-container,
+#header nav ul,
+.split,
+.bottom {
+  width: auto;
+  max-width: 976px;
+}
+
+/* Hide mobile-only classes/IDs */
+.mob-h2,
+#mob-diff-service,
+#mob-detail-links
+/*#mortgage h4,
+#student-loan h4,
+#vehicle h4,
+#payday-loan h4,
+#other-loan h4,
+#bank-account h4,
+#credit-card h4,
+#credit-report h4,
+#debt-collection h4,
+#money-transfer h4,
+#other-service h4*/ {
+  display: none;
+}
+
+
+/* MEDIA QUERIES
+   ========================================================================== */
+
+/* Widescreen (1600px) */
+@media only screen and (max-width: 100em) { 
+
+}
+
+/* Desktop (1280px) */ 
+@media only screen and (max-width: 80em) { 
+
+}
+
+/* Landscape tablet/netbook/laptop (1024px) */
+@media only screen and (max-width: 64em) { 
+
+}
+
+/* Tablet/netbook (960px) */
+@media only screen and (max-width: 60em) { 
+  .cr-theme img.isocon-200 {
+    width: auto;
+    height: auto;
+  }
+}
+
+/* Tablet/netbook (768px) */
+@media only screen and (max-width: 48em) { 
+
+}
+
+/* Small tablet (600px) */
+@media only screen and (max-width: 37.5em) {
+
+}
+
+/* Mobile landscape (480px) */
+@media only screen and (max-width: 30em), only screen and (max-device-width: 30em) { 
+
+  body {
+    font-size: 14px;
+  }
+  /* Hide cf.gov header and footer for prototype. 
+  OAH team developing responsive version of current header/footer */
+  .wrapper-banner,
+  header, 
+  footer {  
+    display: none; 
+  }
+  .cr-theme .wrapper {
+    margin: 0;
+    padding: 0 15px;
+  }
+  .cr-theme .row-fluid .span12,
+  .cr-theme .row-fluid .span11,
+  .cr-theme .row-fluid .span10,
+  .cr-theme .row-fluid .span9,
+  .cr-theme .row-fluid .span8,
+  .cr-theme .row-fluid .span7,
+  .cr-theme .row-fluid .span6,
+  .cr-theme .row-fluid .span5,
+  .cr-theme .row-fluid .span4,
+  .cr-theme .row-fluid .span3,
+  .cr-theme .row-fluid .span2,
+  .cr-theme .row-fluid .span1 {
+    width: 100%;
+    *width: 100%;
+    margin-left: 0;
+  }
+  .cr-theme h1.display-type {
+    font-size: 26px;
+  }
+  .cr-theme h3 {
+    font-size: 1.125em;
+    line-height: 1.4em;
+  }
+  /*Hide on mobile only*/
+  .cr-theme h3 #subhead-question {
+    display: none;
+  }
+  .cr-theme .l-separated--top {
+    padding: 20px 0 20px 0;
+  }
+  .cr-theme h5.l-separated-small--bottom {
+    border-top: 1px solid #7FB8E6;
+    padding-top: 30px;
+  }
+  .cr-theme .sub-theme-quiet--divided {
+    padding: 30px 0 15px 0;
+  }
+  .cr-theme .well {
+    padding: 15px;
+  }
+  .cr-theme img.isocon-200 {
+    width: 33%;
+    display: none;
+  }
+
+  /*Tighten leading between financial products*/
+  .cr-theme .l-separated-small--vertical {
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+
+  /*Product list, styling version 2 (centered minicons)*/
+  .cr-theme .row-fluid.mob-table:before, 
+  .cr-theme .row-fluid.mob-table:after {
+    display: inline;
+  }
+  .cr-theme .span4.mob-span6 {
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .cr-theme .mob-span6 a {
+    display: inline-block;
+    text-align: center;
+  }
+  .cr-theme .mob-span6 h4.no-margin {
+    margin: auto;
+  }
+  .cr-theme .mob-span6 i, 
+  .cr-theme .mob-span6 span.heading-with-icon_text {
+    display: block;
+    padding: 0;
+  }
+  .cr-theme .mob-span6 span.link {
+    border-bottom: 1px dotted #0072CE;
+  }
+
+  /*Return to #main /complaint page from product detail view*/
+  .cr-theme .financial-product h4 {
+    border-bottom: 1px solid #7FB8E6;
+    padding-bottom: 15px;
+  }
+  .cr-theme .financial-product h4.no-margin {
+    margin-bottom:  20px;
+  }
+  .cr-theme .financial-product h4 span.link,
+  .cr-theme .financial-product h4 span.link:hover,
+  .cr-theme .financial-product h4 span.link:focus {
+    border-bottom: none;
+  }
+
+  /*Display on mobile only*/
+  .cr-theme .h2-type {
+    display: none;
+  }
+  .cr-theme .mob-h2 {
+    display: inline-block;
+  }
+  .cr-theme .mob-h2 h2 {
+    float: left;
+    width: 80%;
+    margin-top: 0;
+  }
+  .cr-theme .mob-h2 img.isocon-200 {
+    display: inline;
+    float: right;
+    width: 20%;
+  }
+
+  .cr-theme .well {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .cr-theme .well a {
+    width: 70%;
+    text-align: center;
+  }
+  .cr-theme .well .l-separated--bottom {
+    padding-bottom: 20px;
+  }
+  .cr-theme .well p.no-margin {
+    padding-bottom: 30px;
+  }
+
+  /*Hide unselected conditionals, when there are > 3 options*/
+  .cr-theme .hideConditionals {
+    display: none;
+  }
+  .cr-theme #mob-diff-service {
+    padding-top: 20px;
+    font-family: "Avenir Next Medium", Arial, sans-serif;
+    font-size: 14px;
+    color: #0072CE;
+  }
+  .cr-theme #mob-diff-service:hover {
+    color: #7FB8E6;
+    cursor: pointer;
+  }
+
+  .cr-theme .sub-product-radios {
+    background-color: #F1F2F2;
+    padding: 20px 15px;
+    margin: 0 -15px;
+  }
+  .cr-theme .sub-product-radios h3 {
+    font-size: 1.25em;
+  }
+  .cr-theme #debt-settlement_conditional,
+  .cr-theme #credit-repair_conditional {
+    border-top: 1px solid #D0D0CE;
+  }
+
+
+  .cr-theme #mob-detail-links div {
+    display: block;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+  }
+  .cr-theme #mob-detail-links div:first-child {
+    border-bottom: 1px solid #7FB8E6;
+    padding-bottom: 20px;
+  }
+  .cr-theme #mob-detail-links div a {
+    border-bottom: none;
+  }
+  .cr-theme #mob-detail-links div i {
+    float: right;
+  }
+
+}
+
+
+/* Mobile portrait (320px) */
+@media only screen and (max-width: 20em) {
+
+}

@@ -1,0 +1,29 @@
+{% extends 'v1/layouts/base.html' %}
+
+{% block content scoped %}
+    {# content_modifiers block is only used by story_page.html, 404.html, and 500.html #}
+    <main class="u-layout-grid {% block content_modifiers -%}{%- endblock %}"
+          id="main"
+          {% if language == 'ar' %} dir="rtl" {% endif %}>
+
+        {% if self.content_intro().strip() %}
+            <div class="u-layout-grid__content-intro">
+                {% block content_intro scoped -%}{%- endblock %}
+            </div>
+        {% endif %}
+
+        <div class="u-layout-grid__wrapper">
+            {% block pre_content scoped -%}
+                {% include 'v1/layouts/_breadcrumbs.html' %}
+            {%- endblock %}
+
+            {% block body_content scoped %}
+                {# content__main_modifiers block is only used by the homepage #}
+                <div class="u-layout-grid__main {% block content_main_modifiers -%}{%- endblock %}">
+                    {% block content_main scoped -%}{%- endblock %}
+                    {% include 'v1/layouts/_footnotes.html' %}
+                </div>
+            {% endblock %}
+        </div>
+    </main>
+{% endblock %}

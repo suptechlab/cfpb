@@ -1,0 +1,24 @@
+{
+  "name": "@cfpb/webc",
+  "version": "0.0.1",
+  "description": "cfpb webc design system",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve --incremental"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "webc"
+  ],
+  "license": "CC0-1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "2.0.0-canary.23",
+    "@11ty/eleventy-plugin-webc": "0.8.1",
+    "eslint": "8.29.0",
+    "eslint-config-prettier": "8.5.0"
+  }
+}

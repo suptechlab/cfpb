@@ -1,0 +1,77 @@
+#complaint-hero-image {
+    float: right;
+    padding-top: 16px;
+    padding-left: 16px;
+}
+
+.confirmation .superheader {
+    padding-bottom: 20px;
+}
+
+.confirmation .content_intro {
+    padding-bottom: 42px;
+}
+
+.content_intro h2 {
+    padding-bottom: 18px;
+}
+
+.content_intro h3,
+.content_intro h4 {
+    padding-bottom: 18px;
+}
+
+#intro-actions #start-button {
+    float: left;
+    clear: right;
+}
+
+#intro-actions #tys-text {
+    margin-left: 24px;
+    width: 500px;
+    float: left;
+    clear: right;
+}
+
+.complaint-info-section {
+    padding-bottom: 56px;
+}
+
+#response-pie {
+    padding-bottom: 24px;
+}
+
+aside .content_line {
+    margin-bottom: 24px;
+    margin-top: 16px;
+}
+
+// TODO: Check if sidenav-item can be removed from markup and remove this.
+/*aside .sidenav-item {
+    margin-top: 16px;
+}*/
+
+.content_block {
+    margin-bottom: 16px;
+}
+
+#complaints-icon {
+    float: left;
+    padding-right: 24px;
+}
+
+.confirmation .complaint-info-section {
+    padding-right: 32px;
+    padding-top: 64px;
+}
+
+#complaint-id-box {
+    background: #f2f2f2;
+    padding: 24px;
+    width: 640px;
+    margin: 16px 0 32px;
+}
+
+#complaint-id-box {
+    font-size: 1.2em;
+}

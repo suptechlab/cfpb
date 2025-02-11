@@ -1,0 +1,227 @@
+{# ==========================================================================
+
+   event_meta_address()
+
+   ==========================================================================
+
+   Description:
+
+   Create HTML event meta address markup when given:
+
+   venue:                     A post date from a query result.
+
+   address_format (optional): A python string format to display to
+                              address information
+                              (e.g. '{venue} - {city}, {state}').
+                              Defaults to '{city}, {state}'.
+
+   ========================================================================== #}
+
+{% macro event_meta_address(event, address_format='{city}, {state}') %}
+    {%- set city   =  event.venue_city   | default('', true) -%}
+    {%- set state  =  event.venue_state  | default('', true) -%}
+    {%- set street =  event.venue_street | default('', true) -%}
+    {%- set suite  =  event.venue_suite  | default('', true) -%}
+    {%- set name   =  event.venue_name   | default('', true) -%}
+    {%- set zip    =  event.venue_zipcode | default('', true) -%}
+    <p class="event-meta__address h-adr">
+        {%- macro _city() %}
+            <span class="event-meta__city p-locality">{{ city }}</span>
+        {% endmacro %}
+
+        {%- macro _state() %}
+            <span class="event-meta__state p-state">{{ state }}</span>
+        {% endmacro %}
+
+        {%- macro _street() %}
+            <span class="event-meta__street p-street-address">{{ street }}</span>
+        {% endmacro -%}
+
+        {%- macro _suite() %}
+            <span class="event-meta__suite p-extended-address">{{ suite }}</span>
+        {% endmacro -%}
+
+        {% macro _venue() %}
+            <span class="event-meta__venue p-extended-address">{{ name }}</span>
+        {% endmacro %}
+
+        {% macro _zip() %}
+            <span class="event-meta__zip p-postal-code">{{ zip }}</span>
+        {% endmacro %}
+
+        {{
+            address_format.format(**{
+                'city'   : _city()   | trim,
+                'street' : _street() | trim,
+                'state'  : _state()  | trim,
+                'suite'  : _suite()  | trim,
+                'venue'  : _venue()  | trim,
+                'zip'    : _zip()    | trim
+            }) | safe
+        }}
+    </p>
+{% endmacro %}
+
+
+{# ==========================================================================
+
+   event_venue()
+
+   ==========================================================================
+
+   Description:
+
+   Create an event post venue when given:
+
+   post: A post from a query result.
+
+   event_state: A string indicating the state of the event.
+                Possible values: past, present, future.
+
+   ========================================================================== #}
+
+{% macro event_venue(event, event_state) %}
+    {% set state_prefix = ', ' if event.venue_city and event.venue_state else '' %}
+    {% set city_prefix_state = event.venue_city ~ state_prefix ~ event.venue_state %}
+
+    <section class="event-venue">
+        <div class="event-venue__details">
+            <header class="event-venue__header">
+                {% if ( event_state == 'present' ) %}
+                <button class="a-btn event-venue__live-btn">
+                    {{ svg_icon('broadcast') }}
+                    <span>Live</span>
+                </button>
+                {% endif %}
+                <h2 class="event-venue__heading">
+                    {{ city_prefix_state }}
+                </h2>
+            </header>
+            <div class="content-l">
+                <div class="event-meta content-l__col content-l__col-1-2">
+                    {{ event_meta_address(event,
+                        address_format ='{venue} {street} {suite}
+                        {city}' ~ state_prefix ~ '{state} {zip}'
+                    ) }}
+                </div>
+                <div class="content-l__col content-l__col-1-2 event-calendar__container">
+                {% if event_state == 'past' and event.live_stream_availability and not event.archive_video_id %}
+                    Video replay will be<br> available shortly
+                {% else %}
+                    {% import 'v1/includes/macros/time.html' as time %}
+                    {% if event.start_dt %}
+                        {{ time.render(event.start_dt) }}
+                    {% endif %}
+                {% endif %}
+                </div>
+          </div>
+        </div>
+        <footer>
+            <figure class="event-media__container">
+                {% if event_state == 'present' and event.live_video_id %}
+                    {# DISPLAY LIVESTREAM #}
+                    {% import 'v1/includes/organisms/video-player.html' as video_player with context %}
+                    {{ video_player.render(
+                        video_id=event.live_video_id,
+                        button_pos='bottom-right'
+                    ) }}
+                {% elif event_state == 'past' and event.archive_video_id %}
+                    {# DISPLAY VIDEO RECORDING #}
+                    {% import 'v1/includes/organisms/video-player.html' as video_player with context %}
+                    {{ video_player.render(
+                        video_id=event.archive_video_id,
+                        button_pos='bottom-right'
+                    ) }}
+                {% elif event.venue_image_type == 'map' %}
+                    {# DISPLAY MAP IMAGE #}
+                    {# Note: Max dimesions for Mapbox static image API: 1280x1280. #}
+                    <img src="{{ event.location_image_url(size='708x398') }}" alt="">
+                {% elif event.venue_image_type == 'image' %}
+                    {# DISPLAY SPECIFICALLY-CHOSEN VENUE IMAGE #}
+                    {% set img = image(event.venue_image, 'width-1416') %}
+                    <img class="o-post-preview__image"
+                         src="{{ img.url }}"
+                         alt="{{ image_alt_value(img) }}">
+                {% endif %}
+            </figure>
+        </footer>
+    </section>
+{% endmacro %}
+
+
+{# ==========================================================================
+
+   event_agenda()
+
+   ==========================================================================
+
+   Description:
+
+   Create an event agenda table when given
+
+   post: A post from a query result.
+
+   ========================================================================== #}
+
+{% macro event_agenda(event) %}
+  <div class="block
+              block--padded-top
+              block--border-top">
+    <h2>Agenda</h2>
+    <table class="o-table
+                  event-agenda__table
+                  o-table--stack-on-small
+                  u-w100pct
+                  block
+                  block--flush-top">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Agenda</th>
+                <th>Location</th>
+                <th>Speakers</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for block in event.agenda_items %}
+          {% set bound = block.value.bound_blocks %}
+            <tr>
+                <td>
+                    {% import 'v1/includes/macros/time.html' as time %}
+                    {% if bound.start_time.value is not none %}
+                      {{ time.render(
+                          bound.start_time.render(),
+                          {'date':false,'time':true,'timezone':false}
+                      ) }}
+                    {% endif %}
+                    {% if bound.end_time.value is not none %}
+                      &ndash;
+                      {{ time.render(bound.end_time.render(), {'time':true, 'timezone':true}) }}
+                    {% endif %}
+                </td>
+                <td data-label="Agenda">
+                    {{ bound.description.render() }}
+                </td>
+                <td data-label="Location">
+                  {% if bound.location.render() %}
+                    {{ bound.location.render() }}
+                  {% endif %}
+                </td>
+                <td data-label="Speakers">
+                {% for speaker in bound.speakers.value %}
+                    {%- if speaker.bound_blocks.url.render() -%}
+                    <a href="{{ speaker.bound_blocks.url.render() }}">
+                    {{- speaker.bound_blocks.name.render() -}}
+                    </a>
+                    {%- else -%}
+                    {{- speaker.bound_blocks.name.render() -}}
+                    {%- endif -%}
+                    {{ '; ' if loop.index < loop.length else '' }}
+                {%- endfor -%}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  </div>
+{% endmacro %}

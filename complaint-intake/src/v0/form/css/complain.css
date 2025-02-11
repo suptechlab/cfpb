@@ -1,0 +1,2323 @@
+/**
+ *
+ * Complain
+ * CFPB "Submit a complaint" forms
+ *
+ */
+
+
+/* ==========================================================================
+   Branding and header
+   ========================================================================== */
+
+body .wrapper-body {
+
+}
+
+body .wrapper-container {
+    margin: 0 auto;
+    overflow: visible;
+}
+
+body header .wrapper-container,
+body .wrapper-banner .wrapper-container {
+    overflow: hidden;
+    padding-bottom: 0;
+} {
+    overflow: hidden;
+    padding-bottom: 0;
+}
+
+body .wrapper-container.annoslide {
+    margin: 0 auto 0 441px;
+}
+
+body p, body label {
+    font-size: 16px;
+}
+
+.brand h1 {
+    background: transparent url(../img/minicon_payday-loan.png) scroll no-repeat left center;
+    padding: 12px 0 12px 50px;
+    margin: 0.5em 0;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    .brand h1 {
+        background-image: url(../img/minicon_payday-loan_@2.png);
+        background-size: 40px 40px;
+    }
+}
+
+/* ==========================================================================
+   Grid adjustments that overwrite new-core.css
+   ========================================================================== */
+
+.cr-content {
+    min-width: 960px;
+/*     max-width: 1176px; */
+}
+
+/*
+
+CHANGE TO GIVE ANNOTATIONS SPACE
+.annoslide .cr-content {
+    min-width: 1100px;
+}
+
+*/
+
+/* sidebar on the left with the steps */
+.cr-steps {
+    width: 52px;
+    margin: 0 0 0 0;
+/*     max-width: 263px; */
+/*    padding-top: 42px; */
+    min-height: 600px;
+/*
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+*/
+    border-right: 1px solid #ccc;
+    background-color: #e6e6e6;
+}
+
+/* main area with questions and form to fill out */
+.cr-primary {
+    width: 898px; /* this is bumped up with max width below to throttle it */
+    min-width: 640px;
+    max-width: 898px;
+    margin-left: 10px;
+    padding-bottom: 88px;
+}
+
+/*
+CHANGE TO GIVE ANNOTATIONS SPACE
+.annoslide .cr-primary {
+    margin-left: 100px;
+}
+
+*/
+.cr-primary .cr-primary-container {
+    padding: 32px 32px 0 32px;
+}
+
+
+/* ==========================================================================
+   Modules
+   ========================================================================== */
+
+/* Navigation modules
+   .cr-steps: the large ordered steps in the sidebar
+   ========================================================================== */
+
+.cr-steps li {
+    padding-top: 8px;
+    background-color: #e6e6e6;
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    height: 44px;
+    width: 52px;
+    color: #000;
+    font-size: 1.5em;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    text-decoration: none;
+/*     text-indent: 8px; */
+}
+
+.cr-steps li a .status {
+    display: none;
+}
+
+/* bg stripes that hang over the nav */
+
+.cr-steps li.active:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    right: -6px;
+    width: 6px;
+    background: #000;
+}
+
+/* In order to get the bg stripes to line up, we position things carefully */
+
+/*
+.cr-steps li:first-child a:after { top: 0; }
+.cr-steps li:nth-child(4) a:after { background-position: 1px 0; }
+.cr-steps li:nth-child(even) a:after { background-position: 2px 0; }
+*/
+
+.cr-steps li.active {
+/*     background-color: #b3b3b3; */
+}
+
+.cr-steps li:hover,
+.cr-steps li.active:hover {
+    background-color: #63666a !important;
+}
+
+.cr-steps li.active:after {
+    background-color: #63666a;
+    background-image: none;
+    top: 0;
+}
+
+.cr-steps li.incomplete a {
+    color: #888;
+    text-decoration: none;
+}
+
+/*
+.cr-steps li a.incomplete .status {
+    display: block;
+    text-transform: capitalize;
+    font-size: 70%;
+}
+*/
+
+.cr-steps li.complete {
+    background-color: #addc91;
+}
+
+.cr-steps li.active a,
+.cr-steps li.active a:hover {
+    color: #000;
+}
+
+
+.cr-steps li:last-child a {
+    border-bottom: 0;
+}
+
+/*
+.cr-steps li a .step-num {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    background: transparent url(../img/icon-cr-number-sprite.png) scroll no-repeat 0 0;
+    position: absolute;
+    right: 12px;
+    top: 11px;
+}
+*/
+
+.cr-steps li a.incomplete .step-num {
+    top: 14px;
+}
+
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    .cr-steps li a .step-num {
+        background-image: url(../img/icon-cr-number-sprite-retina.png);
+        background-size: 175px;
+    }
+
+}
+
+/* Question and answer modules
+    .cr-primary: right side question/answer container
+    .cr-question: question and answer
+    ========================================================================== */
+
+.cr-primary a {
+    text-decoration: none;
+}
+
+.cr-question {
+    overflow: hidden;
+    background-color: #f2f2f2;
+}
+
+.cr-question.cr-typeahead {
+    overflow: visible;
+}
+
+.cr-question small {
+    color: #666;
+}
+
+.cr-question-right {
+/*     display: inline-block; */
+    width: 268px;
+    border: 0;
+    text-align: left;
+}
+
+.cr-question-right-medium {
+    width: 20%;
+    text-align: right;
+    padding: 0;
+    border: 0;
+}
+
+.cr-question-right label,
+.cr-question-right-medium label {
+/*     padding: 20px 0 0; */
+}
+
+.cr-question.cr-sub-question {
+    background-color: #f2f2f2;
+    border-top: 0;
+}
+
+.cr-question.even {
+    background-color: #e6e6e6;
+}
+
+.cr-question.sepsec {
+    border-top:1px solid #ccc;
+}
+
+
+.cr-question.cr-sub-question > .cr-answer {
+    padding: 8px 8px 0;
+}
+
+.cr-question.cr-sub-question:first-child > .cr-answer {
+    padding-top: 15px;
+
+}
+
+.cr-question > .cr-answer p {
+    font-size: .8em;
+    margin-right: 1em;
+}
+
+.cr-label {
+    width: 100%;
+    font-size: 16px;
+/*
+    border-right: 1px solid #ccc;
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    text-align: right;
+*/
+}
+
+.cruxform .cr-question-left,
+.cruxform .cr-question-right {
+    width: 360px;
+    float: left;
+}
+
+
+.cruxform .zipcode-row .cr-question-left {
+    width: 180px;
+    float: left;
+}
+
+
+.cruxform .cr-question-with-checkbox,
+.cruxform .cr-question-with-checkbox .cr-question-left {
+    width: 466px;
+
+}
+
+.cruxform .cr-question.normal-checkbox label.radio.block {
+
+    text-indent: 0;
+    background-color: none;
+}
+
+.cruxform .cr-question-left input,
+.cruxform .cr-question-right input,
+.cruxform .cr-question-left select,
+.cruxform .cr-question-right select,
+.cruxform .cr-label select {
+    float: left;
+    clear: left;
+    width: 286px;
+    margin-left: 18px;
+}
+
+.cruxform .cr-question-col input,
+.cruxform .cr-question-col select,
+.cruxform .cr-question-with-checkbox input,
+.cruxform .cr-question-with-checkbox select {
+    margin-left: 18px;
+}
+
+.cruxform .cr-question-col select {
+    /*
+        TODO: This is a static width to match the width of inputs.
+              This will need to be updated to be dynamic if the
+              form is responsive.
+    */
+    width: 160px;
+}
+
+.cruxform .cr-question-left input.zipinput,
+.cruxform .cr-question-right input.zipinput {
+    width: 100px;
+}
+
+cruxform .cr-question-left input.accountinput {
+    width: 220px;
+}
+
+.cruxform .cr-question-left input.checkbox,
+.cruxform .cr-question-right input.checkbox,
+.cruxform .cr-question-with-checkbox label {
+    float: none;
+    clear: none;
+    width: auto;
+    margin: 0px;
+}
+
+.cruxform .cr-question-left input.checkbox {
+
+    margin-left: 2px;
+}
+
+.cruxform .cr-question-with-checkbox input {
+
+        width: 452px;
+        height: 28px;
+        margin-bottom: 8px;
+    padding-left: 8px;
+
+}
+
+
+.cruxform .zipcode-row .cr-question-right {
+
+    width: 280px;
+}
+
+.cruxform .account-number-row .cr-question-right {
+
+    width: 200px;
+}
+
+.cruxform .account-number-row .cr-question-right.bigger-side-helper {
+    width: 370px;
+}
+
+.cruxform .cr-question-right.question-checkbox {
+    margin-left: 18px;
+    width: 300px;
+
+}
+
+.cruxform .cr-question-left label,
+.cruxform .cr-question-right label,
+.cruxform .cr-question-col label {
+    margin-left: 18px;
+    padding-left: 0px;
+    margin-top: 8px;
+}
+
+.cruxform .cr-question-right.question-checkbox label {
+    padding-left: 42px;
+    font-size: 16px;
+}
+
+.cruxform .cr-question-right.right-helper {
+    padding: 36px 0 0 0;
+}
+
+.cruxform .additional-consumer-email .cr-question-right.right-helper label {
+    padding: 0px 0px 0px 36px;
+    width: 326px;
+}
+
+.cruxform .additional-consumer-email .cr-question-right.right-helper input.cr-no-email {
+    margin-right: 10px;
+}
+
+.cruxform .cr-question-right.additional-company-checkbox {
+    padding: 16px 0 0 0;
+}
+
+.cruxform .cr-question .helper-left {
+    margin-top: 8px;
+}
+
+.cruxform .cr-question-right p {
+    margin: 0 0 0 18px;
+}
+
+.cruxform .cr-question-left p {
+    margin: 44px 0 4px 18px;
+}
+
+.borrower-email .cr-question-left p {
+    margin-top: 0;
+}
+
+.cruxform .cr-question-left.identify-debt-collection-company-phone {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 24px;
+}
+
+.cruxform .cr-question-left.identify-debt-collection-company-phone input {
+    width: 160px;
+}
+
+
+.cruxform .cr-fieldset .cr-question-last {
+    padding-bottom: 24px;
+}
+
+.cr-question.cr-typeahead .cr-label {
+    min-height: 82px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+fieldset {
+    margin: 0;
+}
+
+/* Override pagination fieldset settings. */
+.content fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cr-label label,
+.cr-label legend {
+    width: 100%;
+    font-family: "Avenir Next Medium", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 16px 8px 3px 18px;
+    text-align: left;
+}
+
+.cr-label .label-subtext {
+    padding-left: 18px;
+}
+
+.cr-label.cr-question-col {
+   /*
+        TODO: This is a static width four columns on a line.
+              This will need to be updated to be dynamic if the
+              form is responsive.
+    */
+    width: 23.575%;
+}
+
+/*
+.page-step-1 .cr-label label{
+    width:140px;
+}
+*/
+
+.cr-review-page .cr-label label, .cr-review-page .cr-label legend{
+    min-height: auto;
+}
+
+.cr-label label.first {
+    padding-top: 15px;
+}
+
+.cr-label label.last,
+.follow-up label.last,
+.cr-radios .radio.last {
+    padding-bottom: 15px;
+}
+
+.cr-label .sub-label {
+    font-size: .8em;
+    margin-top: 20px;
+    color: #63666a;
+}
+
+.cr-answer {
+    width: 76%;
+    padding: 16px 8px 10px 2px;
+    position: relative;
+}
+
+.cr-question.cr-sub-question .cr-answer.last {
+    padding-bottom: 15px;
+}
+
+.cr-answer-left {
+    width: 34%;
+}
+
+.cr-answer-left-small {
+    width: 14%;
+}
+
+.cr-answer-left-medium {
+    width: 24%;
+}
+
+.cr-answer-right {
+    width: 24.5%;
+    display: inline-block;
+}
+
+.cr-answer-right input {
+    width: 100%;
+}
+
+.cr-answer .left {
+    float: left;
+    width: 40%;
+}
+
+/*
+.cr-answer.cr-radios .radio {
+    padding-left: 3px;
+    padding-right: 15px;
+}
+*/
+
+.cr-answer.cr-radios .radio.selected {
+    font-family: "Avenir Next Bold", Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.cr-answer.cr-radios .radio input {
+    padding-left: 3px;
+    margin-right: 8px;
+}
+
+.cr-answer textarea {
+    width: 95%;
+}
+
+.cr-answer .cr-ssn-info {
+    padding-top: 8px;
+    display: block;
+}
+
+.cr-primary .follow-up.phone {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.cr-primary .follow-up {
+    border-top: 1px dashed #ccc;
+    margin-top: 20px;
+    padding-top: 15px;
+    display: none;
+    font-size: .875em;
+    animation: fadein .2s;
+    -moz-animation: fadein .2s; /* Firefox */
+    -webkit-animation: fadein .2s; /* Safari and Chrome */
+    -o-animation: fadein .2s; /* Opera */
+}
+
+.cr-primary .visible-follow-up {
+    display: block;
+    margin-left: 140px;
+    padding-left:20px;
+}
+
+.cr-primary .follow-up label,
+.cr-primary .follow-up p {
+    font-size: 1em;
+}
+
+.cr-primary .follow-up > div {
+    animation: fadein .2s;
+    -moz-animation: fadein .2s; /* Firefox */
+    -webkit-animation: fadein .2s; /* Safari and Chrome */
+    -o-animation: fadein .2s; /* Opera */
+}
+
+.cr-primary .follow-up.cr-explanation {
+    border-top: 1px solid #ccc;
+    margin-top: 5px;
+    padding-top: 10px;
+}
+
+.cr-primary .follow-up p:first-child {
+    margin-top: 5px;
+}
+
+/* company info */
+
+.cr-company-info .radio-follow-up .yes,
+.cr-diff-company-info .radio-follow-up .yes {
+    padding-bottom: 15px;
+}
+
+.cr-company-info .radio-follow-up .no,
+.cr-diff-company-info .radio-follow-up .no {
+    display: none;
+    padding-bottom: 15px;
+}
+
+.cr-answer hr {
+    /*margin: -1px 40px 0 168px;*/
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #f2f2f2;
+}
+
+.cr-company-info hr {
+    margin: -1px 40px 0 168px;
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #f2f2f2;
+    animation: fadein .2s;
+    -moz-animation: fadein .2s; /* Firefox */
+    -webkit-animation: fadein .2s; /* Safari and Chrome */
+    -o-animation: fadein .2s; /* Opera */
+}
+
+.cr-company-address,
+.cr-diff-company-address,
+.cr-servicemember-info,
+.cr-military-status,
+.cr-diff-company-info {
+    display: none;
+}
+
+.cr-servicemember-tip {
+    font-size: .9em;
+}
+
+/* continue buttons */
+
+.terms-container {
+    width: 60%;
+    float: left;
+    margin-top: -7px;
+    margin-left:50px;
+}
+
+.terms-container label.checkbox.block {
+    text-indent: -27px;
+}
+
+#terms {
+    margin-right:10px;
+}
+
+.cr-continue {
+    padding-left: 35px;
+    padding-right: 95px;
+}
+
+.pre-footer {
+    border-top: 1px solid #d0d0ce;
+    padding-top: 30px;
+}
+
+/*
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    .cr-continue .btn {
+        background-image: url(../img/icon-continue-arrow-retina.png);
+        background-size: 30px;
+    }
+}
+*/
+
+/* file upload */
+
+.cr-uploaded-files {
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: .9em;
+}
+
+.cr-uploaded-files .cr-delete-file {
+    display: inline-block;
+    background: transparent url(../img/icon-remove.png) scroll no-repeat center right;
+    text-indent: -99999px;
+    margin-left: 5px;
+    padding: 0;
+    width: 14px;
+}
+
+.cr-upload-info {
+    margin-bottom: 10px;
+    padding-top: 8px;
+    display: block;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    .cr-uploaded-files .cr-delete-file {
+        background-image: url(../img/icon-remove-retina.png);
+        background-size: 14px;
+    }
+
+}
+
+.cr-answer.upload-file input {
+    display: none;
+}
+
+.cr-answer.upload-file button {
+    padding: .5em .9em;
+    background-color: #63666a;
+}
+
+/* Validation
+   ========================================================================== */
+
+.cr-validate {
+    background: transparent url(../img/icon-validate-sprite.png) scroll no-repeat -99999px 0;
+    width: 16px;
+    height: 16px;
+    text-indent: -99999px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+.cr-validate.loading {
+    background-image: url(../img/icon-validate-loading.gif);
+    background-position: 0 0;
+}
+
+.cr-validate.success {
+    background-position: 0 0;
+}
+
+.cr-validate.failure {
+    background-position: 0 -16px;
+}
+
+
+/* Phone numbers
+   ========================================================================== */
+
+.cr-answer .cr-phone.first {
+    margin-bottom: 15px;
+}
+
+.cr-answer .cr-phone.last {
+    display: inline-block;
+}
+
+.cr-answer .add-number {
+    font-size: .8em;
+    margin-left: 10px;
+}
+
+/* Content review (step #4) modules
+    .cr-review: each step's review section
+    .cr-review-complaint: top review section
+    .cr-review-title: title above each step's review section
+    .cr-review-body: the info to review
+    ========================================================================== */
+
+.cr-review-complaint {
+    padding: 18px 20px;
+}
+
+dt.cr-disclose,
+dd.cr-disclose,
+.cr-review-complaint.cr-disclose,
+.row.cr-disclose {
+    background-color: #dbedd6;
+    border-right: 10px solid #addc95;
+    border-left: 10px solid #addc95;
+    padding: 5px 10px;
+}
+
+.cr-review-complaint.cr-disclose {
+    border: 10px solid #addc95;
+    font-size: .9em;
+    padding: 10px;
+}
+
+dt.cr-disclose {
+    border-top: 10px solid #addc95;
+}
+
+dd.cr-disclose {
+    border-bottom: 10px solid #addc95;
+}
+
+.row.cr-disclose {
+    border: 10px solid #addc95;
+}
+
+.cr-disclose.no-top {
+    border-top: 0;
+}
+
+.cr-disclose.no-bottom {
+    border-bottom: 0;
+}
+
+.cr-review-complaint h4 {
+    margin: 0 0 10px 0;
+    text-transform: none;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-size: .75em;
+    font-weight: 500;
+}
+
+.cr-review-complaint .cr-review-company {
+    margin: 10px 0 7px;
+}
+
+.cr-review-complaint .cr-company-name {
+    font-family: "Avenir Next Bold", Arial, sans-serif;
+    font-weight: 700;
+}
+
+.cr-review-complaint label {
+    padding: 0;
+    font-size: .9em;
+}
+
+.cr-review-complaint input {
+    margin-right: 5px;
+}
+
+.cr-review-title h3 {
+    font-family: "Avenir Next Medium", Arial, sans-serif;
+    font-size: .9em;
+    padding-top: 3px;
+    float: left;
+    margin: 0;
+}
+
+.cr-review-title aside a {
+    background: transparent url(../img/icon-edit.png) scroll no-repeat center right;
+    padding: 5px 20px 3px;
+    float: right;
+    font-size: .9em;
+    font-family: "Avenir Next Bold", Arial, sans-serif;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .cr-review-title aside a {
+        background-image: url(../img/icon-edit-retina.png);
+        background-size: 14px;
+    }
+}
+
+.cr-review-body {
+    margin-bottom: 20px;
+}
+
+.cr-review-body dl {
+    background-color: #f2f2f2;
+}
+
+.cr-review-body .left {
+    width: 48%;
+    float: left;
+}
+
+.cr-review-body .left,
+.cr-review-body .right {
+    float: left;
+}
+
+.cr-review-body .left dd,
+.cr-review-body .right dd {
+    margin-bottom: 0;
+}
+
+/* Completion thank you (step #5) modules
+    .cr-thank-you: container
+    ========================================================================== */
+
+.cr-thank-you h2 {
+    margin: 0;
+    font-size: 2.1em;
+}
+
+.cr-thank-you h3 {
+    margin: 1em 0;
+    text-transform: none;
+}
+
+.cr-thank-you h3 .complaint-number {
+    color: #43b02a;
+    display: block;
+}
+
+.cr-thank-you h4 {
+    font-size: 1.5em;
+    text-transform: none;
+    margin: 40px 0 20px 0;
+    padding: 0;
+}
+
+.cr-thank-you h5 {
+    font-size: 1.3em;
+    padding-left: 35px;
+    margin: 0;
+    background: transparent url(../img/icon-numbers-sprite.png) scroll no-repeat 0 3px;
+}
+
+.cr-thank-you p {
+    line-height: 1.4em;
+}
+
+.cr-thank-you ol {
+    margin: 0;
+    padding: 0;
+}
+
+.cr-thank-you li {
+    list-style-type: none;
+    min-height: 126px;
+    box-sizing: border-box;
+    margin: 0 -30px;
+    padding: 10px 0 10px 120px;
+    background: transparent url(../img/icon-final-steps-sprite.png) scroll no-repeat 30px 14px;
+}
+
+.cr-thank-you li:nth-child(odd) {
+    background-color: #f6f5f3;
+}
+
+.cr-thank-you li div {
+    margin: 0 15px 0 30px;
+}
+
+.cr-thank-you li p {
+    margin-top: .4em;
+    margin-bottom: 0;
+}
+
+.cr-thank-you li.company-response { background-position: 30px -118px; }
+.cr-thank-you li.consumer-review { background-position: 30px -250px; }
+.cr-thank-you li.review-and-investigate { background-position: 30px -382px; }
+.cr-thank-you li.analyze-and-report { background-position: 30px -512px; }
+
+.cr-thank-you li.company-response h5 { background-position: 0 -42px; }
+.cr-thank-you li.consumer-review h5 { background-position: 0 -87px; }
+.cr-thank-you li.review-and-investigate h5 { background-position: 0 -132px; }
+.cr-thank-you li.analyze-and-report h5 { background-position: 0 -177px; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    .cr-thank-you li {
+        background-image: url(../img/icon-final-steps-sprite-retina.png);
+        background-size: 100px 626px;
+    }
+
+    .cr-thank-you li h5 {
+        background-image: url(../img/icon-numbers-sprite-retina.png);
+        background-size: 25px 428px;
+    }
+}
+
+/* Chat stuff
+   ========================================================================== */
+
+#chat-now {
+    float: right;
+    margin: 10px 20px;
+    font-size: .9em;
+    text-decoration: none;
+    font-family: "Avenir Next Demi", Arial, sans-serif;
+    font-weight: 700;
+    font-style: bold;
+}
+
+/* Modal overlay
+   ========================================================================== */
+
+.cr-modal {
+    z-index: 99999;
+    font-size: .9em;
+}
+
+.cr-modal-bg { /* Shades out background when selector is active */
+    position:fixed;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    background-color:black;
+    opacity: .5; /* Sets opacity so it's partly transparent */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE transparency */
+    filter: alpha(opacity=50); /* More IE transparency */
+    z-index: 99999;
+}
+
+.cr-modal-offset { /* Fixed position to provide the vertical offset */
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    z-index: 999999; /* ensures box appears above overlay */
+}
+
+.cr-modal-content { /* The actual box, centered in the fixed-position div */
+    width: 60%;
+    min-width: 200px;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    min-width: 200px;
+    max-width: 640px;
+}
+
+.cr-modal-inner {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.cr-modal-inner h2 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.cr-modal-close {
+    background: #fff url('../img/icon-modal-close.png') scroll repeat top center;
+    width: 30px;
+    height: 30px;
+    text-indent: -99999px;
+    display: block;
+    background-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Animations
+   ========================================================================== */
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Utility classes
+   ========================================================================== */
+
+.block {
+    display: block;
+}
+
+.temp-hide {
+    display: none;
+}
+
+dl {
+    margin: 0;
+}
+
+dl.even {
+    background-color: #e6e6e6;
+}
+
+dt, dd {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: .95em;
+    line-height: 1.5em;
+}
+
+dt {
+    color: #666;
+    padding-bottom: 5px;
+}
+
+dd {
+    padding-top: 0;
+}
+
+/* Payday Lending Changes */
+.guide-panel {
+    background: #f3f3f3;
+    padding: 20px;
+    margin: 39px 26px 0 20px;
+    border: 1px solid #bbb;
+}
+
+.guide-panel a { text-decoration: underline; }
+.guide-panel p { margin: 0px; }
+
+.cr-answer p {
+    font-size: .8em;
+    margin-right: 1em;
+}
+
+.error-panel {
+    background: #F8DAD6;
+    padding: 20px;
+    margin: 39px 26px 0 20px;
+    border: 1px solid #E9A092;
+}
+
+.error-panel a {
+    text-decoration: underline;
+}
+
+.panel-content {
+    margin-left: 62px;
+}
+
+.panel-content ul {
+    padding: 0px 0px 0px 20px;
+}
+
+.icon-exc {
+    background: url(../img/green-ex.png);
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 42px;
+}
+
+.icon-info {
+    background: url(../img/more-info.png);
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 42px;
+}
+
+.icon-x {
+    background: url(../img/x-red.png);
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 42px;
+}
+
+.icon-gray-exc {
+    background: url(../img/gray-exc.png);
+    width: 22px;
+    height: 22px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    .icon-gray-exc {
+        background-image: url(../img/minicon_alert_xsmall.png);
+        background-size: 22px;
+    }
+}
+
+.left-obj {
+    float: left;
+    margin-right: 20px;
+}
+
+.follow-up .left-obj {
+    margin: 10px 15px 10px 0;
+}
+
+#relationship-to-person {
+    padding-bottom: 15px;
+    display: none;
+}
+
+.cr-primary #relationship-to-person .follow-up {
+    margin-top: 0px;
+}
+
+.debt-state, .debt-website, #filter-personal-info { display: none; }
+
+#ans-rel-other-who {
+    display: none;
+    margin: 10px 0;
+}
+
+fieldset.cr-fieldset {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+.is-required {
+    position: absolute;
+/*background: darkred;*/
+    left: -1000px;
+}
+
+ul, ul[class*="span"] {
+    list-style-type: square;
+}
+
+.cr-edit-sect {
+    float: right;
+}
+
+.cr-edit-sect a {
+    display: inline-block;
+    background-color: #63666A;
+    background-image: url(../img/edit-icon.png);
+    background-repeat: no-repeat;
+    background-position: 20px 10px;
+    padding: 8px 30px 6px 45px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-top: -6px;
+
+    color:white;
+    text-decoration: none;
+}
+
+.cr-edit-sect a:hover {
+    background-color: #434547;;
+}
+
+.icon-twitter{display: block;background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-twitter.png);width: 25px;height: 25px;}
+.icon-twitter:hover{background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-twitter-active.png);}
+.icon-facebook{display: block;background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-facebook.png);width: 25px;height: 25px;}
+.icon-facebook:hover{background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-facebook-active.png);}
+.icon-flickr{display: block;background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-flickr.png);width: 25px;height: 25px;}
+.icon-flickr:hover{background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-flickr-active.png);}
+.icon-youtube{display: block;background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-youtube.png);width: 25px;height: 25px;}
+.icon-youtube:hover{background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-youtube-active.png);}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){.icon-twitter{display: block;background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-twitter-retina.png);width: 25px;height: 25px;background-size: 25px;}
+.icon-twitter:hover{background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-twitter-retina-active.png);}
+.icon-facebook{display: block;background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-facebook-retina.png);width: 25px;height: 25px;background-size: 25px;}
+.icon-facebook:hover{background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-facebook-retina-active.png);}
+.icon-flickr{display: block;background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-flickr-retina.png);width: 25px;height: 25px;background-size: 25px;}
+.icon-flickr:hover{background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-flickr-retina-active.png);}
+.icon-youtube{display: block;background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-youtube-retina.png);width: 25px;height: 25px;background-size: 25px;}
+.icon-youtube:hover{background-image: url(https://help.consumerfinance.gov/euf/rightnow/optimized/1373459435/themes/complaint_form/img/icon-youtube-retina-active.png);}
+}
+
+.wrapper-banner {
+    width: 100%;
+    background-color: #f7f5f4;
+    padding: 4px 0;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.split {
+    line-height: 1.25em;
+    width: 1016px;
+    display: block;
+    position: relative;
+}
+
+.official-website {
+    padding-right: 24px;
+    background: transparent url("http://www.consumerfinance.gov/wp-content/themes/cfpb_nemo/_/img/us_flag_small.png") right center no-repeat;
+}
+
+.cr-validate-message {
+    display: none;
+    margin-top: 0.5em;
+    color: #D12124;
+    font-size: 0.8125em;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.right-info {
+    float: right;
+    width: 160px;
+    color: #777;
+}
+
+.right-info-large {
+    width: 300px;
+}
+
+.cr-review-answer {
+    padding-top: 20px;
+}
+
+hr.pull-up {
+    position: absolute;
+    width: 450px;
+    margin-top: -15px;
+}
+
+/* ADD EXCITING BENCODE */
+
+.label_same_as_header {
+    display: none;
+}
+
+.prodselect label.radio.block,
+.issueselect label.radio.block,
+.cr-radios label {
+    margin-left: 0;
+}
+
+/* .select-product-or-issue, */
+.all-topissues,
+.all-subissues,
+#debt_collection_subissues,
+#credit_reporting_subissues,
+#debt_collection_subsubissues,
+#credit_reporting_subsubissues,
+#product_options,
+#resolution_options,
+#subproduct_options,
+#issue_options,
+#subissue_options,
+#payday_questions_options,
+.cr-radios  {
+ display: inline-block;
+  column-count: 2;
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+ width: 100%;
+ -webkit-column-gap: 4px;
+ vertical-align: top;
+
+}
+
+.select-save-method {
+    display: inline-block;
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    width: 100%;
+    -webkit-column-gap: 4px;
+    vertical-align: top;
+}
+
+.select-product-or-issue label,
+.prodselect label.block,
+.issueselect label.block,
+#payday_questions_options label.block,
+#resolution_options label.block,
+.select-save-method label.block,
+.cr-radios label {
+    display: block;
+    position: relative;
+    background: #dee0e2;
+    width: 100%;
+    border: 1px solid #dee0e2;
+    padding: 18px 30px 15px 45px;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    -o-column-break-inside: avoid;
+    -ms-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.select-product-or-issue label:nth-child(2n + 1),
+.prodselect label.block:nth-child(2n + 1),
+.issueselect label.block:nth-child(2n + 1),
+#payday_questions_options label.block:nth-child(2n + 1),
+#resolution_options label.block:nth-child(2n + 1),
+.select-save-method label.block:nth-child(2n + 1),
+.cr-radios label {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.select-product-or-issue label:first-child,
+.prodselect label.block:first-child,
+.issueselect label.block:first-child,
+#payday_questions_options label.block:first-child,
+#resolution_options label.block:first-child,
+.select-save-method label.block:first-child,
+.cr-radios label {
+    margin-top: 4px;
+}
+/*
+  @media (min-width: 641px) {
+    .block-label {
+      float: left;
+      margin-top: 5px;
+      margin-bottom: 5px; } }
+*/
+.block-label input {
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.block-label:hover {
+    border-color: #0b0c0c;
+}
+
+.inline .block-label {
+    clear: none;
+    margin-right: 15px;
+}
+
+.js-enabled .selected {
+  background: #fff;
+  border-color: #0b0c0c;
+}
+
+.js-enabled label.focused {
+  outline: 3px solid #ffbf47;
+}
+
+.js-enabled .focused input:focus {
+  outline: none;
+}
+
+.cruxform h2 {
+    font-size: 26px;
+    line-height: 33px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-transform: none;
+}
+
+.cruxform .wrapper-body h3 {
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding-top: 42px;
+    text-transform: none;
+}
+
+.cruxform p {
+    max-width: 718px;
+}
+
+.whathappened textarea {
+    width: 718px;
+}
+
+.cruxform .cr-answer-left input {
+    width: 286px;
+}
+
+.cruxform .subproduct-list {
+/*  width: 600px; */
+}
+
+/*
+.cruxform #zombie_subissues_sublabel {
+    margin-top: 24px;
+
+
+}
+*/
+
+/*
+.cruxform #credit_reporting_subissues {
+
+    padding-bottom: 200px;
+
+}
+*/
+
+#zombie_subissues_sublabel {
+/*  margin-top: 250px; */
+}
+
+.select-product-or-issue label.active,
+.prodselect label.active,
+.issueselect label.active,
+.cr-radios label.active,
+#payday_questions_options label.active,
+#resolution_options label.active {
+    background: #DBEDD4;
+    border: 1px solid #2CB34A;
+}
+
+.cruxform .wrapper-body section a {
+    text-decoration: underline
+}
+
+p.page-intro,
+p.page-intro2 {
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 8px;
+    margin: 0px;
+}
+
+p.page-intro-small {
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+p.page-intro.extra-bottom {
+    margin-bottom: 16px;
+
+}
+
+.cruxform #save-and-continue-later-link {
+    text-decoration: underline;
+}
+
+.cruxform #save-and-continue-later-link,
+.cruxform #save-and-continue-review-page {
+    text-align: right;
+    float: right;
+    display: block;
+}
+
+.cruxform #save-and-continue-later-link,
+.cruxform #save-and-continue-review-page {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#review-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #f2f2f2;
+    text-align: center;
+}
+
+#review-placeholder p {
+    color: #bbb;
+    padding-top: 180px;
+}
+
+.attachments .cr-question-left p {
+    font-size: 16px;
+    margin-top: 14px;
+}
+
+.cruxform.yourinfo p {
+    margin-bottom: 12px;
+}
+
+.cruxform .forward-company-details {
+/*  margin-top: 14px; */
+}
+
+/*
+
+cruxform input.company-name-input {
+
+    height: 40px;
+}
+
+*/
+
+/* ==========================================================================
+   Mortgage follow-up questions
+   ========================================================================== */
+
+.cruxform .subissue_label.mortgage_servicer_making_payments_subissues.mortgage_servicer_unable_pay_subissues {
+    margin-top: -8px;
+}
+
+.cruxform .mortgage-servicer-subissue-question__text {
+    border-top: 1px dashed #ccc;
+    margin-top: 20px;
+}
+
+.cruxform .mortgage-servicer-subissue-question .cr-question-left {
+    width: 402px;
+}
+
+.cruxform .mortgage-servicer-subissue-question .cr-question-left label {
+    padding-left: 0;
+    border: none;
+    margin-left: 0;
+    background-color: transparent;
+}
+
+.cruxform .mortgage-servicer-subissue-question .cr-question-left input {
+    margin-left: 0;
+}
+
+
+.company_verification_fieldset .cr-question {
+    padding-left: 20px;
+}
+
+.mortgage-servicer-subissue-question__followup {
+    display: none;
+}
+
+.company-name-option {
+    height: 72px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top: 1px dotted #aaa;
+    width: 500px;
+}
+
+.company-name-option p {
+    width: 280px;
+    padding-right: 20px;
+}
+
+.company-name-option label,
+.company-name-option p {
+    float: left;
+    text-align: top;
+}
+
+.company-name-option label {
+    padding-top: 16px;
+}
+
+/* ==========================================================================
+   Affiliation details
+   ========================================================================== */
+
+#affiliations > .prodselect {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.affiliation-details > .cr-label > label {
+    padding-top: 30px;
+    text-transform: uppercase;
+}
+
+.affiliation-section:not(:last-of-type) {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+#small-business-owner-details {
+    padding-top: 15px;
+}
+
+#small-business-owner-details > .span3.cr-label {
+    margin-left: 0;
+}
+
+#small-business-owner-details .select-product-or-issue.all-topissues {
+    box-sizing: border-box;
+    padding: 15px 18px 0 18px;
+}
+
+#small-business-owner-followups {
+    display: none;
+}
+
+/* ==========================================================================
+   Company autocomplete and not boarded
+   ========================================================================== */
+
+.autocomplete-suggestions { border: 1px solid #777; background: #fff; cursor: pointer; overflow: auto; }
+.autocomplete-suggestion { padding: 14px 12px; font-size: 16px; white-space: nowrap; overflow: hidden; border-bottom: dotted 1px #ccc; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #0072ce; }
+
+.company-not-boarded-info h3,
+.company-not-boarded-info p {
+    padding-left: 18px;
+}
+
+.company-not-boarded-info .cr-question-with-checkbox input {
+    margin-left: 18px;
+}
+
+.company-not-boarded-info textarea {
+    margin-left: 18px;
+    width: 452px;
+    overflow: visible;
+}
+
+/* ==========================================================================
+   Consent checkboxes
+   ========================================================================== */
+
+fieldset.narrative-consent {
+    width: 720px;
+    margin-top: 24px;
+    margin-bottom: 28px;
+}
+
+.cr-question-consent-checkbox {
+    padding: 24px 24px 24px 24px;
+}
+
+.cr-question-consent-checkbox p,
+.cr-question-certify-checkbox p {
+    line-height: 1.4em;
+    margin: 0.2em;
+}
+
+.cr-consent-checkbox {
+    overflow: visible;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.cr-certify-checkbox {
+    overflow: visible;
+    margin-left: 4px;
+}
+
+.cr-certify-checkbox label {
+    margin-left: 12px;
+}
+
+/*
+.cr-question-consent-checkbox label {
+    font-family: "Avenir Next", Arial, sans-serif;
+
+}
+*/
+
+.cr-question-consent-checkbox .consent-checkbox,
+.cr-question-certify-checkbox .certify-checkbox {
+    padding: 16px 8px 3px 18px;
+    text-align: left;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.cr-question-consent-checkbox input.consent-checkbox {
+    padding: 0px 8px 3px 18px;
+    margin-right: 13px !important;
+}
+
+/* ==========================================================================
+   Saving
+   ========================================================================== */
+
+.cr-save-option {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.cr-save-option p {
+    width: 100%;
+    float: left;
+    clear: left;
+}
+
+.cr-save-option input {
+    width: 300px;
+    float: left;
+    clear: left;
+}
+
+.cr-save-option.email input {
+    width: 380px;
+}
+
+.cr-save-option label {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+hr.save-method-hr,
+#save-options hr {
+    border: 1px dashed #ccc;
+}
+
+fieldset.save-method {
+    padding: 12px 24px 32px 0;
+}
+
+/* ==========================================================================
+   Everything else
+   ========================================================================== */
+
+#attachment-alert {
+    border: 1px solid #FFB149;
+    background: #FFECD1;
+    padding: 12px;
+    margin: 24px 0px 12px 0px;
+}
+
+#attachment-alert-icon {
+    padding: 8px 0px 8px 8px;
+    margin: 12px;
+}
+
+#attachment-alert p {
+    margin-top: 10px;
+}
+
+button.secondary {
+    background: #75787B;
+}
+
+.confirmation-2-column {
+    width: 42%;
+    padding-right: 54px;
+    float: left;
+    padding-bottom: 72px;
+}
+
+.confirmation-2-column p {
+    padding-bottom: 8px;
+}
+
+.confirmation-1-column {
+    width: 100%;
+    float: left;
+    clear: left;
+    padding-bottom: 28px;
+}
+
+#complaint-numbers {
+    width: 72%;
+    margin: 24px 0 28px 0;
+}
+
+#complaint-numbers p {
+    padding-left: 22px;
+}
+
+#confirmation-hr {
+    margin-top: 48px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+}
+
+#scrubbed-narrative {
+  margin: 36px 24px 32px 24px;
+  font-size: 14px;
+  line-height: 21px;
+  color: #75787B;
+}
+
+#scrubbed-narrative span.redacted-text {
+    background: #75787B;
+}
+
+.review .cr-primary {
+    padding-bottom: 0;
+}
+
+.review .pre-footer {
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.review .pre-footer .btn {
+    text-transform: none;
+}
+
+#review-sections {
+    padding-top: 16px;
+    margin-bottom: 56px;
+}
+
+#review-sections .review-section {
+    margin-bottom: 18px;
+    padding: 6px 20px 28px 20px;
+    height: auto;
+    background: #f2f2f2;
+}
+
+#review-sections .review-column {
+    width: 220px;
+    margin-right: 40px;
+    float: left;
+    padding-top: 12px;
+}
+
+#review-sections .review-full-width {
+/*  width: 100%; */
+    margin-right: 48px;
+    padding-top: 0px;
+    display: block;
+}
+
+#review-what-happened-text,
+#review-desired-resolution-text {
+    display: block;
+    float: left;
+    clear: left;
+
+}
+
+#review-narrative-consent {
+    display: block;
+    float: left;
+    clear: left;
+    border-top: 1px solid #BABBBD;
+    padding-top: 18px;
+    margin-top: 32px;
+    margin-bottom: 0px;
+}
+
+#review-sections .review-section + h2 {
+    margin-top: 60px;
+}
+
+#review-sections .review-column p {
+    margin: 8px 0px;
+}
+
+#review-sections .review-column p.additional-row {
+    margin-top: 24px;
+}
+
+#review-sections .review-heading-text {
+    font-family: 'AvenirNextLTW01-Regular', Arial, sans-serif;
+    font-size: 22px;
+    display: block;
+    width: 80%;
+    float: left;
+    margin-top: 24px;
+}
+
+#review-sections .review-edit-link {
+    display: block;
+    width: 18%;
+    float: left;
+    margin-top: 24px;
+}
+
+#review-sections .review-edit-link a {
+    text-decoration: none;
+}
+
+#narrative-consent-take-two {
+    display: block;
+    float: left;
+    clear: left;
+    border-top: 1px solid #BABBBD;
+    border-bottom: 1px solid #BABBBD;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-top: 32px;
+    margin-bottom: 0px;
+    padding-right: 8px;
+}
+
+#narrative-consent-take-two .radio {
+    padding-top: 0;
+    padding-left: 0;
+}
+
+#attachment-fieldset {
+    margin-bottom: 42px;
+    padding: 6px 20px 16px 20px;
+    height: auto;
+    background: #f2f2f2;
+}
+
+#attachment-drag-drop-area {
+
+}
+
+
+#upload-section {
+    border: dashed 1px #75787B;
+    margin: 14px auto;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 24px;
+}
+
+#attachment-drag-instructions {
+    font-size: 20px;
+    color: #75787B;
+}
+
+#upload-button {
+    text-align: center;
+}
+
+#attachment-size-info {
+
+}
+
+.cr-modal .your-id-number {
+    font-size: 20px;
+    padding: 8px 0;
+}
+
+.product-specific-questions .follow-up {
+
+}
+
+.product-specific-questions .follow-up label {
+    background: none;
+    border: none;
+    margin-left: 0px;
+}
+
+.product-specific-questions .follow-up input,
+.product-specific-questions .follow-up select {
+    margin-left: 0px;
+}
+
+.product-specific-questions .cr-question-with-sidebar {
+    width: 392px;
+}
+
+.product-specific-questions .cr-question-with-sidebar input {
+    width: 368px;
+}
+
+.product-specific-questions .cr-question-right {
+
+}
+
+.product-specific-questions .cr-question-left label,
+.product-specific-questions .cr-question-left input {
+  margin-left: 0;
+}
+
+.product-specific-questions .cr-question-left label {
+    padding-bottom: 8px;
+}
+
+.welcome {
+    font-family: 'AvenirNextLTW01-Regular',Arial,sans-serif;
+}
+
+.welcome h2 {
+    margin-top: 18px;
+}
+
+ol#welcome-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+#get-started-button {
+    padding-right: 22px;
+}
+
+#get-started-button button {
+    width: 220px;
+    padding: 12px;
+}
+
+#get-started-button button:hover {
+    background-color: #328ed8;
+}
+
+.cruxform section a:hover {
+    color: #328ed8;
+}
+
+#consumer2-identity .right-helper,
+.point-of-contact #poc-access-div {
+    padding-top: 20px;
+}
+
+#consumer2-identity .right-helper label {
+    text-indent: -16px;
+}
+
+#poc-disclosure p,
+#add-consumer p,
+#addcon-phone-number p {
+    margin-left: 20px;
+    padding: 8px 0;
+}
+
+h3 .helper-instructions {
+    font-size: 18px;
+    color: #919395;
+    font-family: "Avenir Next Medium", sans-serif;
+}
+
+#resolution_options {
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    padding-top: 0;
+}
+
+#resolution-options-header h3 {
+/*  padding-top: 48px; */
+}
+
+#resolution-options-list {
+    width: 100%;
+    clear: left;
+}
+
+#annotations-sidebar {
+    width: 400px;
+    padding-right: 20px;
+    margin-right: 16px;
+    margin-top: 0px;
+    position: fixed;
+    top: 0;
+    overflow-x: scroll;
+    z-index: 5000;
+}
+
+#annotations-sidebar.opened {
+    background: #F8F8F8;
+    border-right: 6px solid #E3E4E5;
+    height: 100%;
+}
+
+#annotations-toggle {
+    font-size: 16px;
+    padding: 0 0 0 12px;
+}
+
+#annotations-opener {
+    display: block;
+    padding: 0 0 0 12px;
+}
+
+#annotations-list {
+    margin: 0 0 0 0;
+    padding: 0 0 0 12px;
+}
+
+#annotations-list li {
+    list-style: none;
+    margin: 8px 0px;
+    font-size: 14px;
+}
+
+#annotations-list p {
+    font-size: 14px;
+}
+
+.annotation-button h6 {
+    background: #FFB149;
+    border: #FF9E1B 1px solid;
+    padding: 8px !important;
+    font-size: 11px;
+    width: 80px;
+    display: block;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -106px;
+    color: #0072CE;
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: normal;
+    font-family: "Avenir Next Bold", Arial, sans-serif;
+    line-height: normal;
+}
+
+a.annotation-button {
+    text-decoration: underline;
+    padding: 0;
+}
+
+a.annotation-button:hover,
+.annotation-button h6:hover {
+    background-color: #FFCE8D;
+    text-decoration: underline;
+
+}
+
+#annotations-list li .anno-comment li {
+    list-style: disc;
+    margin-left: 16px;
+}
+
+#narrative-extra {
+    padding-top: 8px;
+    padding-left: 24px;
+    font-family: "Avenir Next Medium", Arial, sans-serif
+}
+
+#log-in-link {
+    text-decoration: none;
+}
+
+/* Format Social Security number on my company step to XXX-XX-XXXX. */
+#ssn1,
+#ssn2,
+#ssn3,
+#bd1,
+#bd2,
+#bd3 {
+    float: left;
+    clear: initial;
+}
+
+#ssn1::-webkit-input-placeholder,
+#ssn2::-webkit-input-placeholder,
+#ssn3::-webkit-input-placeholder,
+#bd1::-webkit-input-placeholder,
+#bd2::-webkit-input-placeholder,
+#bd3::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+#ssn1::-moz-placeholder,
+#ssn2::-moz-placeholder,
+#ssn3::-moz-placeholder,
+#bd1::-moz-placeholder,
+#bd2::-moz-placeholder,
+#bd3::-moz-placeholder {
+    color: #ccc;
+}
+
+#ssn1 {
+    width: 45px;
+}
+
+#ssn2,
+#bd1,
+#bd2 {
+    width: 39px;
+    margin-left: 10px;
+}
+
+#bd1 {
+    margin-left: 18px;
+}
+
+#ssn3,
+#bd3 {
+    width: 57px;
+    margin-left: 10px;
+}
+
+.social-security-number .dash::before,
+.social-security-number .dash::before {
+    display: inline-block;
+    content: '–';
+    height: 10px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#affiliations {
+    border-top: dotted 1px #ccc;
+    padding-top: 12px;
+}
+
+#additional-consumer-identity2,
+#additional-consumer-identity3 {
+    clear: none;
+}
+
+#company-type-2-option .prodselect {
+    margin-left: 0;
+}

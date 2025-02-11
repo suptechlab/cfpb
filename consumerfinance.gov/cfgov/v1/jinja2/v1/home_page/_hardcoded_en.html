@@ -1,0 +1,100 @@
+{%- set hero = {
+    "heading": "<strong>On your side</strong> through life’s financial moments." | safe,
+    "body": "We’re the Consumer Financial Protection Bureau, a U.S. government agency dedicated to making sure you are treated fairly by banks, lenders and other financial institutions.",
+    "image": {
+        "url": static( "apps/homepage/img/hero.jpg" ),
+        "height": 575,
+        "width": 755
+    },
+    "is_50_50": true,
+    "is_jumbo": true
+} -%}
+
+{%- set answers_heading = "Find answers to your money questions" -%}
+
+{%- set topics = {
+    "cards": [
+        {
+            "icon": "credit-report",
+            "text": "Credit reports",
+            "url": "/consumer-tools/credit-reports-and-scores/",
+        },
+        {
+            "icon": "debt-collection",
+            "text": "Debt collection",
+            "url": "/consumer-tools/debt-collection/",
+        },
+        {
+            "icon": "mortgage",
+            "text": "Mortgages",
+            "url": "/consumer-tools/mortgages/",
+        },
+        {
+            "icon": "credit-card",
+            "text": "Credit cards",
+            "url": "/consumer-tools/credit-cards/",
+        },
+        {
+            "icon": "arrow-right-round",
+            "text": "See all money topics",
+            "url": "/consumer-tools/",
+        }
+    ],
+} -%}
+
+<!-- {%- set highlights_heading = "Bureau highlights" -%} -->
+
+{%- set highlights = [
+    {
+        "img_src": static( "apps/homepage/img/putting-green_housing-counselor.png" ),
+        "card_type": "highlight",
+        "heading": "Talk with an expert about your housing needs for free",
+        "link_text": "Find a housing counselor",
+        "link_url": "/find-a-housing-counselor/"
+    },
+    {
+        "img_src": static( "apps/homepage/img/putting-green_submit-a-complaint.png" ),
+        "card_type": "highlight",
+        "heading": "Submit a complaint about a financial product or service",
+        "link_text": "Start a complaint",
+        "link_url": "/complaint/"
+    },
+] -%}
+
+{%- set announcements = [
+    {
+        "heading": "The CFPB is standing up for you",
+        "content": "<ul><li><strong>6.8 million+</strong> consumer complaints sent for response</li><li><strong>$21 billion+</strong> in financial relief as a result of CFPB actions</li><li><strong>205 million+</strong> people eligible for financial relief</li></ul>" | safe,
+        "link_text": "",
+        "link_url": ""
+    },
+    {
+        "heading": "Protecting you from junk fees",
+        "content": "<p>The CFPB is working to save households billions of dollars a year by reducing exploitative junk fees charged by banks and financial companies.</p>" | safe,
+        "link_text": "Read about junk fees",
+        "link_url": "/rules-policy/junk-fees/"
+    }
+] -%}
+
+{%- set breakout_cards_heading = "Get help planning for future goals" -%}
+
+{%- set breakout_cards = [
+    {
+        "card_type": "breakout",
+        "link_text": "Buy a house",
+        "link_url": "/owning-a-home/",
+        "img_src": static( "apps/homepage/img/key-house.png" ),
+    },
+    {
+        "card_type": "breakout",
+        "link_text": "Pay for college",
+        "link_url": "/paying-for-college/",
+        "img_src": static( "apps/homepage/img/graduate.png" ),
+    },
+    {
+        "card_type": "breakout",
+        "link_text": "Get an auto loan",
+        "link_url": "/consumer-tools/getting-an-auto-loan/",
+        "img_src": static( "apps/homepage/img/key-car.png" )
+    }
+] -%}

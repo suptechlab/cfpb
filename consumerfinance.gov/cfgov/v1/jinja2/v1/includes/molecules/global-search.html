@@ -1,0 +1,74 @@
+{# ==========================================================================
+
+   Global Search
+
+   ==========================================================================
+
+   Description:
+
+   Creates a global search box.
+
+   ========================================================================== #}
+
+
+
+{% macro render( language='en' ) %}
+
+{%- set search_url_base = "https://search.consumerfinance.gov/search" -%}
+{%- set search_url = (
+    search_url_base
+    ~ "?affiliate=" ~ search_gov_affiliate()
+    ~ "&query="
+) -%}
+
+<div class="m-global-search"
+     data-js-hook="behavior_flyout-menu">
+    <div class="m-global-search__fallback">
+        <a rel="nofollow" href="{{ search_url }}">
+            {{ _('Search') }}
+        </a>
+    </div>
+    <button class="m-global-search__trigger"
+            data-js-hook="behavior_flyout-menu_trigger"
+            aria-label="{{ _('Search the consumerfinance.gov website') }}">
+        <span class="m-global-search__trigger-open-label">
+            {{ svg_icon('search') }}
+            <span class="u-hide-on-mobile">{{ _('Search') }}</span>
+        </span>
+        <span class="m-global-search__trigger-close-label">
+            {{ svg_icon('error') }}
+            <span class="u-hide-on-mobile">{{ _('Close') }}</span>
+        </span>
+    </button>
+    <div class="m-global-search__content
+                u-hidden"
+         data-js-hook="behavior_flyout-menu_content"
+         role="search">
+        <form class="m-global-search__content-form"
+              action="{{ search_url_base }}"
+              method="get">
+            {#
+                The following two inputs are required by the search portal.
+                See: https://search.gov/manual/code.html
+            #}
+            <input type="hidden"
+                   name="utf8"
+                   value="✓">
+            <input type="hidden"
+                   id="affiliate"
+                   name="affiliate"
+                   value="{{ search_gov_affiliate() }}">
+
+            {% import 'v1/includes/organisms/search-input.html' as search_input %}
+            {% set placeholder_value = _('Search the CFPB') %}
+            {{ search_input.render({
+                "input_id": "m-global-search_query",
+                "input_name": "query",
+                "input_aria_label": _('Search for your question'),
+                "placeholder": placeholder_value,
+                "submit_aria_label": placeholder_value
+            }) }}
+        </form>
+    </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Submit a complaint | What is this complaint about?</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="v0/form/css/normalize.css">
+    <link rel="stylesheet" href="v0/form/css/grid.css">
+    <link rel="stylesheet" href="v0/form/css/fonts.css">
+    <link rel="stylesheet" href="v0/form/css/new-core.css">
+    <link rel="stylesheet" href="v0/form/css/complain.css">
+    <link rel="stylesheet" href="v0/form/css/typeahead.css">
+    <!-- <link rel="stylesheet" href="form/css/responsive.css"> -->
+    <link rel="stylesheet" href="static/css/header.min.css">
+    <link rel="stylesheet" href="static/css/footer.min.css">
+    <link rel="stylesheet" href="static/css/main.min.css">
+    <link rel="stylesheet" href="static/css/pagination.min.css">
+
+    <!-- Custom modernizr for touch detection only, see the .js file for the build link -->
+    <script src="v0/form/js/vendor/modernizr.custom.js"></script>
+
+    <!--
+        Old IE polyfills for:
+        - HTML5 tags
+        - Media queries (so we can style mobile first)
+    -->
+    <!--[if lt IE 9]>
+    <script src="static/js/html5shiv-printshiv.min.js"></script>
+    <script src="v0/form/js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="prodselect cruxform">
+
+    <header class="o-header" role="banner">
+        <div class="m-global-eyebrow
+                    m-global-eyebrow__horizontal">
+            <div class="wrapper
+                        wrapper__match-content">
+                <div class="m-global-eyebrow_tagline">
+                    An official website of the
+                    <span class="m-global-eyebrow_tagline-usa">United States Government</span>
+                </div>
+                <div class="m-global-eyebrow_actions">
+                    <ul class="list__unstyled
+                               list__horizontal
+                               m-global-eyebrow_languages">
+                        <li class="list_item">
+                            <a href="/es/" hreflang="es" lang="es">
+                                Español
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="m-global-eyebrow_phone">
+                        (855) 411-2372
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="o-header_content js">
+
+            <div class="wrapper wrapper__match-content">
+
+                <a class="o-header_logo" href="/">
+                    <!--[if lt IE 9]>
+                    <img class="o-header_logo-img"
+                         src="static/img/logo_sm-exec.png"
+                         alt="Consumer Financial Protection Bureau"
+                         width="237"
+                         height="50">
+                     <![endif]-->
+                     <!--[if gt IE 8]><!-->
+                     <img class="o-header_logo-img u-js-only" src="static/img/logo_sm-exec.svg" onerror="this.onerror=null;this.src='/static/img/logo_sm-exec.png';" alt="Consumer Financial Protection Bureau" width="237" height="50">
+                     <noscript>
+                        &lt;img class="o-header_logo-img"
+                        src="static/img/logo_sm-exec.png"
+                        alt="Consumer Financial Protection Bureau"
+                        width="237"
+                        height="50"&gt;
+                    </noscript>
+                    <!--<![endif]-->
+                </a>
+            </div>
+
+        </div>
+        <script>
+          /* TODO: scope no-js to individual molecules/organisms. This is a hack to fix no-js on the on-demand header, while also allowing the menu to be scoped to o-header for on-demand pages. */
+          var headerDom = document.querySelector( '.o-header_content' );
+          headerDom.className = headerDom.className.replace('no-js','js');
+        </script>
+    </header>
+
+    <noscript>
+        For full functionality of this application, it is necessary to enable JavaScript.
+        Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+        instructions how to enable JavaScript in your web browser</a>.
+    </noscript>
+
+    <div class="wrapper-body page-step-1">
+    <!-- ANNOTATIONS SIDEBAR -->
+        <div id="annotations-sidebar">
+            <p id="annotations-opener"><a href="#">⎘</a></p>
+            <p id="annotations-toggle" class="opened"><a href="#">⎗</a></p>
+
+            <ul id="annotations-list">
+                <li class="annotation-format">
+                    <h3 class="anno-title">Title of annotation</h3>
+<!--                <h6 class="anno-date">Date added</h6> -->
+                    <p class="anno-link-text"><a class="anno-link" href="#">Link to element</a></p>
+                    <div class="anno-comment">Placeholder text</div>
+                </li>
+            </ul>
+        </div>
+        <!-- END OF ANNOTATIONS SIDEBAR -->
+        <div class="wrapper-container">
+
+<!-- =============
+     BEGIN CONTENT
+     ============= -->
+
+     <section class="content row cr-content">
+
+      <div class="span8 cr-primary">
+        <!-- .error-panel -->
+        <div class="guide-panel error-panel" style="display:none;">
+          <div class='icon-x left-obj'></div>
+          <div class="panel-content">
+            This page could not be submitted because the following questions are incomplete or have errors:
+            <ul id='error-list'>
+              <li><a href="#cr-describe-issue">Which of these best describes your issue?</a></li>
+              <li><a href="#cr-what-happened">Describe what happened so we can understand the issue...</a></li>
+              <li><a href="#cr-what-do-you-think">What do you think would be a fair resolution to your issue?</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- end .error-panel -->
+
+        <div id="select_product" class="cr-primary-container">
+          <h2>What is this complaint about?</h2>
+          <p class="page-intro page-intro select-product extra-bottom">Choose the product or service that best matches your complaint.</p>
+
+          <!-- This is hidden with CSS as it's redundant from the header of the page -->
+          <label for="cr-describe-issue" class="last label_same_as_header">
+            Which product or service is your complaint about?
+            <div class='is-required'>Answer Required</div>
+          </label>
+
+          <div id="product_options" class="select-product-or-issue">
+
+            <label class="radio block">
+              <input name="radio_" type="radio" class="radio_input product product_credit_reporting" id="credit_reporting" />
+              Credit reporting
+              <br /><small></small>
+            </label>
+
+            <label class="radio block">
+              <input name="radio_" type="radio" class="radio_input product product_credit_reporting" id="debt" />
+              Debt collection
+              <br /><small></small>
+            </label>
+
+            <label class="radio block">
+              <input name="radio_" type="radio" class="radio_input product mortgage" id="mortgage" />
+              Mortgage
+              <br /><small></small>
+            </label>
+
+            <label class="radio block">
+              <input name="radio_" type="radio" class="radio_input product student_loan" id="student_loan" />
+              Student loan
+              <br /><small></small>
+            </label>
+
+            <label class="radio block">
+              <input name="radio_" type="radio" class="radio_input product vehicle_loan" id="vehicle_loan" />
+              Vehicle loan or lease
+              <br /><small></small>
+            </label>
+
+            <label class="radio block">
+              <input name="radio_" type="radio" class="radio_input product product_card" id="card" />
+              Credit card or prepaid card
+              <br /><small></small>
+            </label>
+
+            <label class="radio block">
+              <input name="radio_" type="radio" class="radio_input product product_credit_reporting" id="checking" />
+              Checking or savings account
+              <br /><small></small>
+            </label>
+
+            <label class="radio block">
+              <input name="radio_" type="radio" class="radio_input product product_credit_reporting" id="money_trans" />
+              Money transfer or money service
+              <br /><small></small>
+            </label>
+
+            <label class="radio block">
+              <input name="radio_" type="radio" class="radio_input product consumer_loan" id="consumer_loan" />
+              Payday, store, or other loan
+              <br /><small></small>
+            </label>
+          </div>
+        </div>
+        <!-- question -->
+        <div id="select_subproduct" class="select-product-or-issue cr-primary-container">
+          <div class="cr-label title subproduct-list">
+
+            <h3 id="mortgage_label"
+            for="select_subproduct"
+            class="last product subproduct_label product_mortgage label_same_as_header">
+            What kind of mortgage?
+            <!--             <div class='is-required'>Answer Required</div> -->
+          </h3>
+
+          <h3 id="student_loan_label"
+          for="select_subproduct"
+          class="last product subproduct_label product_student_loan label_same_as_header">
+          What kind of student loan?
+          <!--             <div class='is-required'>Answer Required</div> -->
+        </h3>
+
+        <h3 id="vehicle_loan_label"
+        for="select_subproduct"
+        class="last product subproduct_label product_vehicle_loan label_same_as_header">
+        Loan or lease?
+        <!--             <div class='is-required'>Answer Required</div> -->
+      </h3>
+
+      <h3 id="consumer_loan_label"
+      for="select_subproduct"
+      class="last product subproduct_label product_consumer_loan label_same_as_header">
+      What kind of loan?
+      <!--             <div class='is-required'>Answer Required</div> -->
+    </h3>
+
+    <h3 id="card_label"
+    for="select_subproduct"
+    class="last product subproduct_label product_card label_same_as_header">
+    What kind of card?
+    <!--             <div class='is-required'>Answer Required</div> -->
+  </h3>
+
+  <h3 id="checking_label"
+  for="select_subproduct"
+  class="last product subproduct_label product_checking label_same_as_header">
+  Which type of banking product?
+  <!--             <div class='is-required'>Answer Required</div> -->
+</h3>
+
+<h3 id="money_trans_label"
+for="select_subproduct"
+class="last product subproduct_label product_money_trans label_same_as_header">
+What type of service?
+<!--             <div class='is-required'>Answer Required</div> -->
+</h3>
+
+<h3 id="debt_label"
+for="select_subproduct"
+class="last product subproduct_label product_debt label_same_as_header">
+What type of debt?
+<!--             <div class='is-required'>Answer Required</div> -->
+</h3>
+
+<h3 id="credit_reporting_label"
+for="select_subproduct"
+class="last product subproduct_label product_credit_reporting label_same_as_header">
+What type of credit reporting product?
+<div class='is-required'>Answer Required</div>
+</h3>
+
+
+</div>
+<div id="subproduct_options" class="select-product-or-issue">
+ <!--     -->
+ <div id="mortgage_products" class="subproduct_sect mortgage_products">
+  <label id="home-mortgage" class="radio block" data-issues="mortgage">
+    <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+    Home mortgage
+    <br /><small></small>
+  </label>
+  <label id="home-equity-line-of-credit" class="radio block" data-issues="mortgage">
+    <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+    Home equity line of credit
+    <br /><small></small>
+  </label>
+  <label id="reverse-mortgage" class="radio block" data-issues="mortgage">
+    <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+    Reverse mortgage
+    <br /><small></small>
+  </label>
+
+</div>
+
+<div id="student_loan_products" class="subproduct_sect student_loan_products">
+
+  <label id="federal-student-loan" class="radio block u-mt0 u-mb0" data-issues="student_loan">
+    <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+    Federal student loan
+    <br /><small>Stafford, Direct Subsidized, Direct Unsubsidized, consolidation, PLUS, Perkins, Federal Family Education Loan (FFEL)</small>
+  </label>
+  <label id="private-student-loan" class="radio block" data-issues="student_loan">
+    <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+    Private student loan
+    <br /><small>Private, alternative, or co-signed loans; federal loans refinanced with a private lender; other student loans</small>
+  </label>
+<!--
+            <label id="student-loan-unsure" class="radio block" data-issues="student_loan">
+                <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+                I don't know
+                <br /><small></small>
+            </label>
+          -->
+        </div>
+
+        <div id="vehicle_loan_products" class="subproduct_sect vehicle_loan_products">
+
+          <label id="vehicle-loan" class="radio block" data-issues="vehicle_loan">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Loan
+            <br /><small></small>
+          </label>
+          <label id="vehicle-lease" class="radio block" data-issues="vehicle_lease">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Lease
+            <br /><small></small>
+          </label>
+        </div>
+
+        <fieldset id="consumer_loan_products" class="subproduct_sect consumer_loan_products">
+
+          <label id="payday-loan" class="radio block" data-addtlquestions="payday" data-issues="payday_loan">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Payday loan
+            <br /><small></small>
+          </label>
+          <label id="pawn-loan" class="radio block" data-addtlquestions="payday" data-issues="pawn_loan">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Pawn loan
+            <br /><small></small>
+          </label>
+          <label id="title-loan" class="radio block" data-addtlquestions="payday" data-issues="title_loan">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Title loan
+            <br /><small></small>
+          </label>
+          <label id="installment-loan" class="radio block" data-addtlquestions="payday" data-issues="installment_loan">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Installment loan
+            <br /><small></small>
+          </label>
+          <label id="personal-line-of-credit" class="radio block" data-issues="personal_line_of_credit">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Personal line of credit
+            <br /><small></small>
+          </label>
+        </fieldset>
+
+        <div id="card_products" class="subproduct_sect card_products">
+
+          <label id="credit-card" class="radio block" data-issues="credit_card">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Credit card
+            <br /><small>Used for purchasing items on credit</small>
+          </label>
+          <label id="gift-card" class="radio block" data-issues="prepaid_card">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Gift card
+            <br /><small>Gift, loyalty or promotional card issued by a store</small>
+          </label>
+          <label id="government-benefit-card" class="radio block" data-issues="prepaid_card">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Government benefit card
+            <br /><small>Used for Social Security, unemployment compensation or a tax refund</small>
+          </label>
+          <label id="reloadable-prepaid-card" class="radio block" data-issues="prepaid_card">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Reloadable prepaid card
+            <br /><small>Used for shopping anywhere</small>
+          </label>
+          <label id="ID-prepaid-card" class="radio block" data-issues="prepaid_card">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            ID prepaid card
+            <br /><small>Prepaid card attached to a student or other ID</small>
+          </label>
+          <label id="mobile-wallet" class="radio block" data-issues="prepaid_card">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Mobile wallet
+            <br /><small>Used for making payments on your mobile phone</small>
+          </label>
+
+          <label id="payroll-card" class="radio block" data-issues="prepaid_card">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Payroll card
+            <br /><small>Used for receiving your paycheck from your employer</small>
+          </label>
+
+          <label id="transit-card" class="radio block" data-issues="prepaid_card">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Transit card
+            <br /><small>A transit card that can be used for shopping anywhere</small>
+          </label>
+          <label id="refund-anticipation" class="radio block" data-issues="refund_anticipation">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Refund anticipation card
+            <br /><small>Used for receiving a tax refund</small>
+          </label>
+        </div>
+
+        <div id="checking_products" class="subproduct_sect checking_products">
+
+          <label id="checking-account" class="radio block" data-issues="checking_account">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Checking account
+            <br /><small></small>
+          </label>
+
+          <label id="savings-account" class="radio block" data-issues="savings_account">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Savings account
+            <br /><small></small>
+          </label>
+          <label id="certificate-of-deposit" class="radio block" data-issues="certificate_of_deposit">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            CD (Certificate of Deposit)
+            <br /><small></small>
+          </label>
+          <label id="other-bank-product-or-service" class="radio block" data-issues="checking_account">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Other bank product or service
+            <br /><small></small>
+          </label>
+<!--
+            <label id="cashing-a-check-without-an-account" class="radio block" data-issues="check_cashing">
+                <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+                Cashing a check without an account
+                <br /><small></small>
+            </label>
+
+          -->
+        </div>
+
+        <div id="money_trans_products" class="subproduct_sect money_trans_products">
+
+          <label id="domestic-money-transfer" class="radio block" data-issues="money_transfer">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Domestic (US) money transfer
+            <br /><small></small>
+          </label>
+          <label id="international-money-transfer" class="radio block" data-issues="money_transfer">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            International money transfer
+            <br /><small></small>
+          </label>
+          <label id="check-cashing" class="radio block" data-issues="check_cashing">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Check cashing
+            <br /><small></small>
+          </label>
+          <label id="mobile-wallet" class="radio block" data-issues="prepaid_card">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Mobile wallet
+            <br /><small></small>
+          </label>
+
+          <label id="money-order" class="radio block" data-issues="money_order">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Money order
+            <br /><small></small>
+          </label>
+
+          <label id="refund-anticipation" class="radio block" data-issues="refund_anticipation">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Refund anticipation check
+            <br /><small></small>
+          </label>
+
+          <label id="traveler-or-cashier" class="radio block" data-issues="traveler_cashier_check">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Traveler's check or cashier's check
+            <br /><small></small>
+          </label>
+
+          <label id="foreign-currency-exchange" class="radio block" data-issues="fx_exchange">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Foreign currency exchange
+            <br /><small></small>
+          </label>
+
+          <label id="virtual-currency" class="radio block" data-issues="virtual_currency">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Virtual currency
+            <br /><small></small>
+          </label>
+
+          <label id="debt-settlement" class="radio block" data-issues="credit_repair">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Debt settlement
+            <br /><small></small>
+          </label>
+
+        </div>
+
+        <div id="debt_products" class="subproduct_sect debt_products">
+
+          <label id="credit-card-debt-collection" class="radio block" data-issues="debt_collection">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Credit card debt
+            <br /><small></small>
+          </label>
+          <label id="mortgage-debt-collection" class="radio block" data-issues="debt_collection">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Mortgage debt
+            <br /><small></small>
+          </label>
+          <label id="medical-debt-collection" class="radio block" data-issues="debt_collection">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Medical debt
+            <br /><small></small>
+          </label>
+          <label id="payday-loan-debt-collection" class="radio block" data-addtlquestions="payday" data-issues="debt_collection">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Payday loan debt
+            <br /><small></small>
+          </label>
+          <label id="auto-debt-collection" class="radio block" data-issues="debt_collection">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Auto debt
+            <br /><small></small>
+          </label>
+          <label id="federal-student-debt-collection" class="radio block" data-issues="debt_collection">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Federal student loan debt
+            <br /><small></small>
+          </label>
+
+          <label id="non-federal-student-debt-collection" class="radio block" data-issues="debt_collection">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Private student loan debt
+            <br /><small></small>
+          </label>
+          <label id="other-debt-collection" class="radio block" data-issues="debt_collection">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Other debt
+            <br /><small></small>
+          </label>
+          <label id="unknown-debt-collection" class="radio block" data-issues="debt_collection">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            I do not know
+            <br /><small></small>
+          </label>
+        </div>
+
+        <div id="credit_reporting_products" class="subproduct_sect credit_reporting_products">
+
+          <label id="credit-reporting" class="radio block" data-issues="credit_reporting">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Credit reporting or credit score
+            <br /><small></small>
+          </label>
+          <label id="credit-repair" class="radio block" data-issues="credit_repair">
+            <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+            Credit repair services
+            <br /><small></small>
+          </label>
+
+        </div>
+
+      </div>
+    </div>
+    <div id="payday_questions" class="select-product-or-issue cr-primary-container product-specific-questions store-location-questions">
+      <div class="cr-label title">
+
+
+        <h3 id="payday_questions_label" for="select_subproduct" class="last product ">
+          Where did you get the loan? <small class="inline">(optional)</small>
+        </h3>
+      </div>
+      <fieldset id="payday_questions_options" class="payday_questions">
+
+        <label id="at-store" class="radio block" >
+          <input name="loan_origination" type="radio" class="radio_input_subpro"/>
+          In person/at a store (even if you applied online)
+          <br /><small></small>
+        </label>
+        <label id="online" class="radio block" >
+          <input name="loan_origination" type="radio" class="radio_input_subpro"/>
+          Online
+          <br /><small></small>
+        </label>
+
+      </fieldset>
+
+      <fieldset id="online-questions" class="payday_questions follow-up">
+
+        <div class="span3 cr-label cr-question-left cr-question-with-sidebar">
+          <label for="con1-email">
+            What is the company’s website? <small class="inline">(optional)</small>
+          </label>
+
+          <input type="email" name="cr-email2" id="cr-email2_2356852120719850" placeholder="" class="input-large left">
+        </div>
+        <div class="span2 cr-label cr-question-right right-helper">
+          <p>This can help us identify the company.</p>
+        </div>
+      </fieldset>
+
+      <fieldset id="store-questions" class="payday_questions follow-up">
+
+        <div class="span3 cr-label cr-question-left cr-question-with-sidebar">
+          <label for="con1-email">
+            Where is the store located? <small class="inline">(optional)</small>
+          </label>
+
+          <select name="cr-suffix" id="cr-suffix2_4851476384792477">
+            <option value="" disabled="disabled" selected="selected">Select a state...</option>
+            <option label="Alabama" value="2" >Alabama</option>
+            <option label="Alaska" value="1" >Alaska</option>
+            <option label="American Samoa" value="4" >American Samoa</option>
+            <option label="Arizona" value="5" >Arizona</option>
+            <option label="Arkansas" value="3" >Arkansas</option>
+            <option label="California" value="6" >California</option>
+            <option label="Colorado" value="7" >Colorado</option>
+            <option label="Connecticut" value="8" >Connecticut</option>
+            <option label="Delaware" value="10" >Delaware</option>
+            <option label="District Of Columbia" value="9" >District Of Columbia</option>
+            <option label="Federated States Of Micronesia" value="12" >Federated States Of Micronesia</option>
+            <option label="Florida" value="11" >Florida</option>
+            <option label="Georgia" value="13" >Georgia</option>
+            <option label="Guam" value="14" >Guam</option>
+            <option label="Hawaii" value="15" >Hawaii</option>
+            <option label="Idaho" value="17" >Idaho</option>
+            <option label="Illinois" value="18" >Illinois</option>
+            <option label="Indiana" value="19" >Indiana</option>
+            <option label="Iowa" value="16" >Iowa</option>
+            <option label="Kansas" value="20" >Kansas</option>
+            <option label="Kentucky" value="21" >Kentucky</option>
+            <option label="Louisiana" value="22" >Louisiana</option>
+            <option label="Maine" value="25" >Maine</option>
+            <option label="Marshall Islands" value="26" >Marshall Islands</option>
+            <option label="Maryland" value="24" >Maryland</option>
+            <option label="Massachusetts" value="23" >Massachusetts</option>
+            <option label="Michigan" value="27" >Michigan</option>
+            <option label="Minnesota" value="28" >Minnesota</option>
+            <option label="Mississippi" value="31" >Mississippi</option>
+            <option label="Missouri" value="29" >Missouri</option>
+            <option label="Montana" value="32" >Montana</option>
+            <option label="Nebraska" value="35" >Nebraska</option>
+            <option label="Nevada" value="39" >Nevada</option>
+            <option label="New Hampshire" value="36" >New Hampshire</option>
+            <option label="New Jersey" value="37" >New Jersey</option>
+            <option label="New Mexico" value="38" >New Mexico</option>
+            <option label="New York" value="40" >New York</option>
+            <option label="North Carolina" value="33" >North Carolina</option>
+            <option label="North Dakota" value="34" >North Dakota</option>
+            <option label="Northern Mariana Islands" value="30" >Northern Mariana Islands</option>
+            <option label="Ohio" value="41" >Ohio</option>
+            <option label="Oklahoma" value="42" >Oklahoma</option>
+            <option label="Oregon" value="43" >Oregon</option>
+            <option label="Palau" value="46" >Palau</option>
+            <option label="Pennsylvania" value="44" >Pennsylvania</option>
+            <option label="Puerto Rico" value="45" >Puerto Rico</option>
+            <option label="Rhode Island" value="47" >Rhode Island</option>
+            <option label="South Carolina" value="48" >South Carolina</option>
+            <option label="South Dakota" value="49" >South Dakota</option>
+            <option label="Tennessee" value="50" >Tennessee</option>
+            <option label="Texas" value="51" >Texas</option>
+            <option label="Utah" value="52" >Utah</option>
+            <option label="Vermont" value="55" >Vermont</option>
+            <option label="Virgin Islands" value="54" >Virgin Islands</option>
+            <option label="Virginia" value="53" >Virginia</option>
+            <option label="Washington" value="56" >Washington</option>
+            <option label="West Virginia" value="58" >West Virginia</option>
+            <option label="Wisconsin" value="57" >Wisconsin</option>
+            <option label="Wyoming" value="59" >Wyoming</option>
+            <option label="Armed Forces Middle East" value="95" >Armed Forces Middle East</option>
+            <option label="Armed Forces Americas" value="94" >Armed Forces Americas</option>
+            <option label="Armed Forces Pacific" value="96" >Armed Forces Pacific</option>
+          </select>
+        </div>
+
+        <div class="span2 cr-label cr-question-right right-helper">
+          <p>This helps us identify trends from state to state.</p>
+        </div>
+      </fieldset>
+    </div>
+
+    <div id="student_questions" class="cr-primary-container product-specific-questions follow-up">
+
+      <fieldset id="school-question" class="student_questions">
+
+        <div class="span3 cr-label cr-question-left cr-question-with-sidebar">
+          <label for="con1-email">
+            What school were you attending when you got the loan? <small class="inline"> (optional)</small>
+          </label>
+
+          <input type="email" name="cr-email2" id="cr-email2_2356852120719850" placeholder="" class="input-large left">
+
+        </div>
+
+        <div class="span2 cr-label cr-question-right right-helper">
+          <p>This helps us understand the student lending practices of different schools.</p>
+        </div>
+      </fieldset>
+    </div>
+
+    <div id="vehicle_questions" class="cr-primary-container product-specific-questions">
+      <div class="cr-label title">
+        <h3 id="vehicle_questions_label" for="select_subproduct" class="last product ">
+          Was the loan for a new or used vehicle?
+        </h3>
+      </div>
+      <fieldset id="vehicle_questions_options" class="payday_questions">
+        <label id="new" class="radio block" >
+          <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+          New
+          <br /><small></small>
+        </label>
+        <label id="used" class="radio block" >
+          <input name="sec_selex" type="radio" class="radio_input_subpro"/>
+          Used
+          <br /><small></small>
+        </label>
+      </fieldset>
+    </div>
+  </div>
+  <!-- /.primary -->
+
+</section>
+
+<div class="row cr-continue">
+    <div class="pre-footer">
+        <nav class="m-pagination" role="navigation" aria-label="Pagination">
+            <a class="btn btn__super
+                      btn__disabled
+                      m-pagination_btn-prev">
+                <span class="btn_icon__left
+                             cf-icon
+                             cf-icon-left"></span>
+                Previous
+                </a>
+                <a class="btn
+                          btn__super
+                          m-pagination_btn-next"
+                   href="select-issue.html">
+                Next
+                <span class="btn_icon__right
+                             cf-icon
+                             cf-icon-right"></span>
+            </a>
+            <form action="">
+                <span class="m-pagination_label">
+                    Step
+                </span>
+                <span class="u-visually-hidden">
+                    1 out of 5 total steps
+                </span>
+                <span class="m-pagination_label">
+                    1
+                </span>
+                <span class="m-pagination_label">
+                    of 5
+                </span>
+            </form>
+        </nav>
+
+        <a id="save-and-continue-later-link" href="#">Save and continue later</a>
+    </div>
+</div>
+
+<!-- =============
+     / END CONTENT
+     ============= -->
+
+</div><!-- .wrapper-container -->
+
+</div><!-- .wrapper-body -->
+
+<footer class="o-footer" role="contentinfo">
+    <div class="wrapper wrapper__match-content">
+
+        <div class="o-footer_pre">
+            <a class="btn
+                      btn__secondary
+                      js-return-to-top
+                      o-footer_top-button" href="#" data-gtm_ignore="true">
+                Back to top <span class="cf-icon cf-icon-arrow-up"></span>
+            </a>
+        </div>
+
+        <div class="o-footer-middle-left">
+
+            <div class="o-footer_col">
+                <ul class="o-footer_list">
+                    <li class="list_item">
+                        <a id="privacy" class="list_link" href="#">Privacy act statement</a>
+                    </li>
+                    <li class="list_item">
+                        <a id="omb" class="list_link" href="#">OMB #3170-0011</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="o-footer-middle-right">
+            <ul class="o-footer_list">
+                <li class="list_item">
+                    <span class="icon-link_text list_link">
+                      Have questions or need help with this form?
+                      Call (855) 411-2372 or <a href="#">chat with us now</a>.
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-footer-post">
+            <p class="o-footer_official-website">
+                An official website of the United States Government
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Deprecated scripts -->
+<script src="static/js/jquery.min.js"></script>
+<script src="v0/form/js/main.js"></script>
+<script src="v0/form/js/emulate.js"></script>
+<!-- <script src="v0/form/js/responsive.js"></script> -->
+<script src="v0/annotations.js"></script>
+
+<!-- Modern scripts -->
+<script src="static/js/main.min.js"></script>
+
+</body>
+</html>

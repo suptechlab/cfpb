@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`initial state renders without crashing 1`] = `
+<section
+  className="filter-panel"
+>
+  <h3>
+    Filter results by...
+  </h3>
+  <section>
+    <div
+      className="o-expandable_header o-expandable_target"
+    >
+      <h4
+        className="o-expandable_header-left o-expandable_label"
+      >
+        Credit card name
+      </h4>
+    </div>
+    
+    <section
+      className="typeahead "
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <div
+        className="m-btn-inside-input input-contains-label"
+      >
+        <label
+          className="input-contains-label_before input-contains-label_before__search"
+        />
+        <input
+          autoComplete="off"
+          className="a-text-input"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Enter card name"
+          type="text"
+          value=""
+        />
+      </div>
+    </section>
+    <ul />
+  </section>
+  <hr />
+  <section>
+    <div
+      className="o-expandable_header o-expandable_target"
+    >
+      <h4
+        className="o-expandable_header-left o-expandable_label"
+      >
+        Issuer name
+      </h4>
+    </div>
+    
+    <section
+      className="typeahead "
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <div
+        className="m-btn-inside-input input-contains-label"
+      >
+        <label
+          className="input-contains-label_before input-contains-label_before__search"
+        />
+        <input
+          autoComplete="off"
+          className="a-text-input"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Enter card issuer name"
+          type="text"
+          value=""
+        />
+      </div>
+    </section>
+    <ul />
+  </section>
+</section>
+`;

@@ -1,0 +1,59 @@
+{# ==========================================================================
+
+   expandable_group.render()
+
+   ==========================================================================
+
+   Description:
+
+   Create an Expandable Group organism when given:
+
+   value:                   An object with the following options for value.
+                            Defaults to an empty object.
+
+   value.heading:           Heading text.
+
+   value.body:              Body introduction text.
+
+   value.is_accordion:      Whether this group is an accordion or not.
+                            Default is false.
+
+   value.expandables        A list of expandables.
+
+   value.is_faq:            Whether expandables should be output with
+                            FAQ schema.
+
+   value.has_top_rule_line: Whether there is a top gray rule.
+                            Default is false.
+                            Used in 'render_block.html' to modify classes
+                            on wrapping 'div.block'.
+
+   ========================================================================== #}
+
+
+{% if value.heading %}
+{% set group_slug = value.heading | slugify_unique %}
+<div id="{{ group_slug }}">
+    <h3>{{ value.heading }}</h3>
+{% else %}
+<div>
+{% endif %}
+
+    {% if value.body %}
+        <p>{{ value.body | safe }}</p>
+    {% endif %}
+
+    <div class="o-expandable-group
+                {{ 'o-expandable-group--accordion' if value.is_accordion else '' }}">
+        {# Should be a stack of Expandable instances. #}
+        {% if value.expandables %}
+            {% for expandable in value.expandables %}
+              {% do expandable.update({
+                  'is_faq': value.is_faq,
+                  'group_index_slug': group_slug + '-' + loop.index | string if group_slug else None
+               })%}
+                {{ expandable }}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

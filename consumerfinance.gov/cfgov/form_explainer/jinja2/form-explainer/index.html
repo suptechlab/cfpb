@@ -1,0 +1,34 @@
+{% extends 'v1/layouts/layout-full.html' %}
+
+{% import 'v1/includes/templates/render_block.html' as render_block with context %}
+{% import 'v1/includes/templates/streamfield-sidefoot.html' as streamfield_sidefoot with context %}
+
+{% block css -%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ static('apps/form-explainer/css/main.css') }}">
+{%- endblock css %}
+
+{% block content_main_modifiers -%}
+    {{ super() }} content--flush-bottom
+{%- endblock %}
+
+{% block content_main %}
+    {% for block in page.header -%}
+        {{ render_block.render(block, loop.index) }}
+    {%- endfor %}
+    {% for block in page.content -%}
+        {{ render_block.render(block, loop.index) }}
+    {%- endfor %}
+{% endblock %}
+
+{% if page.sidefoot %}
+    <aside class="o-prefooter">
+        {{ streamfield_sidefoot.render(page.sidefoot) }}
+    </aside>
+{% endif %}
+
+{% block javascript scoped %}
+    {{ super() }}
+    <script src="{{ static('apps/form-explainer/js/index.js') }}"></script>
+
+{% endblock javascript %}

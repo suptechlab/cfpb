@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`initial state renders the detail route 1`] = `
+<main
+  role="main"
+>
+  <section
+    className="card-container learning"
+  >
+    <section
+      className="light-box"
+    >
+      <div
+        className="loading-box"
+      >
+        <span
+          className="cf-icon cf-icon-update cf-icon__before cf-icon__spin"
+        />
+        <span>
+          This page is loading
+        </span>
+      </div>
+    </section>
+  </section>
+</main>
+`;
+
+exports[`initial state renders without crashing 1`] = `
+<main
+  className="content content__1-3"
+  role="main"
+>
+  <div
+    className="wrapper content_wrapper"
+  >
+    <div
+      className="content_main"
+    >
+      <header
+        className="content_hero"
+      >
+        <h1
+          className="content-header"
+        >
+          Credit Card Agreement Database
+        </h1>
+        <p>
+          If you are an issuer, email 
+          <a
+            href="mailto:CardAgreements@consumerfinance.gov"
+          >
+            CardAgreements@consumerfinance.gov
+          </a>
+           for agreement submission instructions. Sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi.
+        </p>
+      </header>
+    </div>
+    <aside
+      className="content_sidebar o-sidebar-content"
+    >
+      <div
+        className="block"
+      >
+        <div
+          className="m-related-links"
+        >
+          <header
+            className="m-slug-header"
+          >
+            <h2
+              className="a-heading"
+            >
+              More on the credit card agreement database
+            </h2>
+          </header>
+          <p>
+            View an archive of agreements submitted to the CFPB prior to March 2018.
+          </p>
+          <p>
+            <a
+              href="https://www.consumerfinance.gov/credit-cards/agreements/#dwnld"
+            >
+              View the archives
+            </a>
+          </p>
+          <p>
+            Credit card agreement database disclaimer
+          </p>
+          <p>
+            <a
+              href="#"
+            >
+              Read credit card database disclaimer
+            </a>
+          </p>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <div
+    className="content_wrapper"
+  >
+    <aside
+      className="content_sidebar"
+    >
+      <section
+        className="filter-panel"
+      >
+        <h3>
+          Filter results by...
+        </h3>
+        <section>
+          <div
+            className="o-expandable_header o-expandable_target"
+          >
+            <h4
+              className="o-expandable_header-left o-expandable_label"
+            >
+              Credit card name
+            </h4>
+          </div>
+          
+          <section
+            className="typeahead "
+            onBlur={[Function]}
+            onFocus={[Function]}
+          >
+            <div
+              className="m-btn-inside-input input-contains-label"
+            >
+              <label
+                className="input-contains-label_before input-contains-label_before__search"
+              />
+              <input
+                autoComplete="off"
+                className="a-text-input"
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter card name"
+                type="text"
+                value=""
+              />
+            </div>
+          </section>
+          <ul />
+        </section>
+        <hr />
+        <section>
+          <div
+            className="o-expandable_header o-expandable_target"
+          >
+            <h4
+              className="o-expandable_header-left o-expandable_label"
+            >
+              Issuer name
+            </h4>
+          </div>
+          
+          <section
+            className="typeahead "
+            onBlur={[Function]}
+            onFocus={[Function]}
+          >
+            <div
+              className="m-btn-inside-input input-contains-label"
+            >
+              <label
+                className="input-contains-label_before input-contains-label_before__search"
+              />
+              <input
+                autoComplete="off"
+                className="a-text-input"
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter card issuer name"
+                type="text"
+                value=""
+              />
+            </div>
+          </section>
+          <ul />
+        </section>
+      </section>
+    </aside>
+    <section
+      className="results-panel content_main"
+    >
+      <summary
+        className="action-bar"
+      >
+        <div>
+          <h4>
+            Showing 
+            <span>
+              0
+            </span>
+             matched results
+          </h4>
+        </div>
+      </summary>
+      <div />
+      <h2>
+        No results were found for your search
+      </h2>
+      <section
+        className="light-box"
+      >
+        <div
+          className="loading-box"
+        >
+          <span
+            className="cf-icon cf-icon-update cf-icon__before cf-icon__spin"
+          />
+          <span>
+            This page is loading
+          </span>
+        </div>
+      </section>
+    </section>
+  </div>
+</main>
+`;

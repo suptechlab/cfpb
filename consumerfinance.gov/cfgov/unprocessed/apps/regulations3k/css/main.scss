@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Regulations 3000
+   Main SCSS file for Regulations pages
+   ========================================================================== */
+
+@use '@cfpb/cfpb-design-system/src/utilities' as *;
+@use '../../../css/main' as *;
+@use './reg-listing' as *;
+@use './reg-landing-page' as *;
+@use './reg-navigation' as *;
+@use './reg-pagination' as *;
+@use './reg-search' as *;
+@use './reg-text' as *;
+@use './reg-inline-interpretations' as *;
+@use './reg-wayfinder' as *;
+
+.section-nav {
+  @include u-clearfix;
+}

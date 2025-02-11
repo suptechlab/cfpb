@@ -1,0 +1,74 @@
+{# ==========================================================================
+
+   Job Listings Table
+
+   ==========================================================================
+
+   Description:
+
+   Creates jobs table when given:
+
+   value.jobs:              List of currently open jobs, where each job has:
+
+   job.title:               Title of open job.
+
+   job.url:                 Link to job listing page.
+
+   job.close_date:          Date when open job closes.
+
+   job.grades:              List of job grades, as strings.
+
+   job.offices:             List of offices, where each office has:
+
+   office.name:             Office city name.
+
+   office.state_id:         Office state abbreviation.
+
+   job.regions:             List of regions, where each region has:
+
+   region.name:             Region name.
+
+   ========================================================================== #}
+
+{% if value.jobs -%}
+
+{%- import 'v1/includes/macros/time.html' as time %}
+
+{%- set columns = [
+    {'heading': 'TITLE'},
+    {'heading': 'GRADE'},
+    {'heading': 'POSTING CLOSES'},
+    {'heading': 'LOCATION'}
+ ] %}
+{%- set rows = [] %}
+
+{%- for job in value.jobs %}
+    {% if ( job.offices | length ) + ( job.regions | length ) > 1 %}
+        {% set location = 'Multiple locations' %}
+    {% elif job.regions %}
+        {% set location = job.regions[0].name %}
+    {% elif job.offices %}
+        {% set location = job.offices[0].name ~ ', ' ~ job.offices[0].state_id %}
+    {% endif %}
+
+    {% do rows.append( [
+        ('<a href="' ~ job.url ~ '">' ~ job.title ~ '</a>') | safe,
+        job.grades | join( ', ' ),
+        time.render( job.close_date, { 'date' : true }, text_format=True ),
+        location | default ( '' )
+    ] ) %}
+{% endfor %}
+
+{%- with value = {
+    'data': {
+        'columns': columns,
+        'rows': rows
+    },
+    'options': ['is_stacked']
+} %}
+    {% include 'v1/includes/organisms/tables/base.html' %}
+{% endwith %}
+
+{%- else -%}
+    <h3>There are no current openings at this time.</h3>
+{%- endif %}

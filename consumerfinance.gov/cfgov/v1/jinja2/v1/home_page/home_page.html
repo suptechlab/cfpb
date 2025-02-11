@@ -1,0 +1,139 @@
+{% extends "v1/layouts/layout-full.html" %}
+
+{% import "v1/includes/organisms/card-group.html" as card_group with context %}
+
+{% block title -%}
+    {{ _('Consumer Financial Protection Bureau') }}
+{%- endblock %}
+
+{% block css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ static('apps/homepage/css/main.css') }}">
+{% endblock %}
+
+{% block content_main_modifiers -%}
+content__main--flush-inner
+{%- endblock %}
+
+{% block content_intro %}
+    {% import "v1/home_page/_hardcoded_" ~ language ~ ".html" as hardcoded with context %}
+
+    <section class="content__level--1">
+        {% with value = hardcoded.hero %}
+            {% include "v1/includes/molecules/hero.html" with context %}
+        {% endwith %}
+
+        <section class="o-well">
+            <div class="o-info-unit-group">
+                <div class="content-l">
+                    {% for highlight in hardcoded.highlights %}
+                    <div class="content-l__col content-l__col-1-2">
+                        <div class="m-info-unit">
+                            <div style="padding-bottom:.25em;">
+                                <img style="max-height:2.5em;" src="{{ highlight.img_src }}" alt="" width="60" height="40">
+                            </div>
+                            <div class="m-info-unit__heading-text">
+                                <h2 class="h3">{{ highlight.heading }}</h2>
+                            </div>
+                            <div class="m-info-unit__content">
+                                <ul class="m-list m-list--links u-mt15">
+                                    <li class="m-list__item">
+                                        <a class="a-link a-link--jump"
+                                            href="{{ highlight.link_url }}">
+                                            <span class="a-link__text">
+                                                {{- highlight.link_text -}}
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </section>
+{% endblock %}
+
+{% block content_main %}
+    {% import "v1/home_page/_hardcoded_" ~ language ~ ".html" as hardcoded with context %}
+    <section class="block u-text-centered">
+        <h2 class="h1">{{ hardcoded.answers_heading }}</h2>
+    </section>
+
+    <section class="block">
+        <div class="o-well u-text-centered">
+            <div class="o-card-group o-card-group--flow">
+                <div class="o-card-group__cards">
+                    {% for card in hardcoded.topics.cards %}
+                    <article class="m-card m-card--topic
+                        {%- if loop.last %}  m-card--topic-action{% endif -%}
+                    ">
+                      <a href="{{ card.url }}">
+                          <div class="m-card__icon">
+                              {{ svg_icon( card.icon ) }}
+                          </div>
+                          <div class="m-card__footer">
+                              <span>{{ card.text }}</span>
+                          </div>
+                      </a>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content__level-1">
+        <section class="block">
+            <div class="o-info-unit-group">
+                <div class="content-l">
+                    {% for announcement in hardcoded.announcements %}
+                    <div class="content-l__col content-l__col-1-2">
+                        <div class="m-info-unit">
+                            {%- if announcement.link_url -%}
+                            <a class="m-info-unit__heading-link" href="{{ announcement.link_url }}">
+                            {%- endif -%}
+                                <div class="m-info-unit__heading-text">
+                                    <h2>{{ announcement.heading }}</h2>
+                                </div>
+                            {%- if announcement.link_url -%}
+                            </a>
+                            {%- endif -%}
+                            <div class="m-info-unit__content">
+                                {{ announcement.content }}
+                                {%- if announcement.link_url -%}
+                                <ul class="m-list m-list--links u-mt15">
+                                    <li class="m-list__item">
+                                        <a class="a-link a-link--jump"
+                                           href="{{ announcement.link_url }}">
+                                            <span class="a-link__text">
+                                                {{ announcement.link_text }}
+                                            </span>
+                                        </a>
+                                </ul>
+                                {%- endif -%}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section class="block content__level-2">
+            {{ card_group.render( {
+                'heading': hardcoded.breakout_cards_heading,
+                'type_group': 'column-3',
+                'type_card': 'breakout',
+                'cards': hardcoded.breakout_cards
+            } ) }}
+        </section>
+
+    </section>
+{% endblock content_main %}

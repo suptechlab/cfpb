@@ -1,0 +1,871 @@
+/**
+ * 
+ * # Babel
+ * 
+ * ## Colors
+ *
+ * CFPB BASIC GREEN       #43b02a
+ * GREEN MIDTONE          #addc91
+ * CFPB BLACK             #101820
+ * DARK FIELD             #63666a
+ * DARK FIELD /60         #afaeb0
+ * LIGHT FIELD            #d0d0ce
+ * LIGHT FIELD /20        #f7f5f4
+ * NAVY                   #002d72
+ * PACIFIC                #0072ce
+ *
+ * ## Font Weights
+ *
+ * 100 = thin
+ * 200 = extra-light
+ * 300 = light
+ * 400 = normal, book
+ * 500 = medium
+ * 600 = demi-bold
+ * 700 = bold
+ * 800 = heavy
+ * 900 = black
+ *
+ * ## Heading sizes
+ *
+ *       SMALL   LARGE
+ * -------------------
+ * h1  |  27px |  27px
+ * h2  |  20px |  26px
+ * h3  |  16px |  18px
+ * h4  |  16px |  15px
+ *
+ */
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body {
+    color: #101820;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-size: 100%;
+    line-height: 1.4;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+}
+
+b,
+strong {
+    font-family: "Avenir Next Demi", Arial, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+a {
+    color: #0072ce;
+    text-decoration: underline;
+}
+a:hover,
+a:active {
+    color: #0072ce;
+    text-decoration: none;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: #101820;
+    text-decoration: none;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+    color: #0072ce;
+    text-decoration: none;
+}
+
+li {
+    line-height: 1.4;
+}
+
+/* Nav lists */
+nav ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    line-height: 1.25;
+}
+
+/* Hand cursor on clickable elements */
+[role="button"] {
+    cursor: pointer;
+}
+
+    body {
+        line-height: 1.25;
+    }
+
+    h1 {
+        font-size: 1.6875em; /* 27/16 */
+    }
+
+    h2 {
+        font-size: 1.625em; /* 26/16 */
+    }
+
+    h3 {
+        font-size: 1.125em; /* 18/16 */
+    }
+
+    h4 {
+        font-size: 0.9375em; /* 15/16 */
+        margin: 1.33em 0;
+    }
+
+/* Form styling
+   ========================================================================== */
+
+form {
+    background: #fff;
+    color: #101820;
+    line-height: 1.25;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-weight: 400;
+}
+
+legend {
+    font-size: 1.071428571em; /* 15/14 */
+    font-family: "Avenir Next Demi", Arial, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+input,
+label,
+button,
+textarea {
+    font-size: 0.875em; /* 14/16 */
+    line-height: 1.4;
+    /*font-family: "Avenir Next", Arial, sans-serif;*/
+/*     font-weight: 400; */
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.5em 1.428571429em; /* 7/14 20/14 */
+    border: 0;
+    cursor: pointer;
+    background: #f7f5f4;
+    color: #101820;
+    font-family: "Avenir Next Medium", Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    background: #f7f5f4;
+    color: #101820;
+    text-decoration: none;
+}
+
+input[type="submit"] {
+    background: #43b02a;
+    color: #fff;
+}
+
+input[type="submit"]:hover {
+    background: #43b02a;
+    color: #fff;
+}
+
+label {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.5em 0; /* 7/14 */
+    vertical-align: baseline;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.428571429em; /* 6/14 */
+    border: 1px solid #d0d0ce;
+}
+
+input.input-block-level {
+    width: 95%;
+    min-height: 30px;
+}
+
+input.input-large {
+/*     width: 270px !important; */
+}
+
+select.input-medium,
+input.input-medium {
+    width: 200px;
+}
+
+input.input-name {
+    width: 130px;
+}
+
+input.input-small {
+    width: 80px;
+}
+
+input.input-mini,
+input[type=text].input-mini {
+    width: 60px;
+}
+
+input.input-micro,
+input[type=text].input-micro {
+    width: 50px !important;
+}
+
+input.left {
+    float: left;
+}
+
+textarea {
+    padding: 0.428571429em; /* 6/14 */
+}
+
+input:focus,
+input[type=checkbox]:focus,
+textarea:focus { 
+    outline: none;
+    border-color: #0072ce;
+    box-shadow: 0 0 10px #0087f4;
+}
+
+input.failure,
+input[type=checkbox].failure,
+input[type=radio].failure,
+textarea.failure,
+select.failure {
+    border-color: red;
+    box-shadow: 0 0 10px red;
+}
+
+input,
+label,
+button,
+textarea {
+    line-height: 1.25;
+}
+
+select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 30px;
+    line-height: 30px;
+    padding: 4px 6px;
+    vertical-align: middle;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+select.block {
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+/* @todo add final grid here */
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1 {
+    font-family: "Avenir Next Bold", Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Avenir Next Bold", Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h3,
+h4 {
+    text-transform: uppercase;
+}
+
+.lead {
+   font-size: 1.25em; /* 20/16 */
+   font-family: "Avenir Next Medium", Arial, sans-serif;
+   font-weight: 500;
+   font-style: normal;
+}
+
+
+/* ==========================================================================
+   Modules
+   ========================================================================== */
+
+/* Utilities
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/**
+ * Split / .split > .split-left + .split-right
+ * Absolutely positions .split-right to right: 0;
+ */
+
+.split {
+    position: relative;
+}
+
+.split-left,
+.split-right {
+    display: inline-block;
+}
+
+.split-right {
+    position: absolute;
+        right: 0;
+}
+
+/* JS plugins
+   @todo showtoggle needs work to deal with padding/margins
+   ========================================================================== */
+
+/*.js-showtoggle {
+    margin: 1em 0;
+}*/
+
+/**
+ * Fix margin collapse jumpiness with overflow: hidden;
+ * (we can also use padding/border if we need to).
+ * Set margin to 0 because margins are not animated and when
+ * display is set to none content around it will jump.
+ */
+.js-showtoggle-content {
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Fix double margins because we broke margin collapsing with overflow:hidden */
+.js-showtoggle-content > :first-child {
+    margin-top: 0;
+}
+.js-showtoggle-content > :last-child {
+    margin-bottom: 0;
+}
+
+
+/* Form modules
+   ========================================================================== */
+
+.form-controls {
+    margin: 1em 0; 
+}
+
+/**
+ * Radios
+ */
+
+label.radio.block {
+    display: block;
+    text-indent: -26px;
+/*     margin-left: 26px; */
+}
+
+label.radio.block input {
+    margin-right: 4px;
+}
+
+label.checkbox.right {
+    display: block;
+    float: right;
+    width: 150px;
+    padding: 0 15px 15px 0;
+    text-indent: -15px;
+}
+
+/**
+ * Checkboxes
+ */
+
+label.checkbox.block {
+    display: block;
+    text-indent: -16px;
+    margin-left: 16px;
+}
+
+/* Buttons
+   .btn
+   .btn-primary
+   .btn-secondary
+   .btn-block
+   ========================================================================== */
+
+/* Button sizing and defaults */
+.btn,
+.btn-primary,
+.btn-secondary {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.5em 1.428571429em; /* 7/14 20/14 */
+    border: 0;
+    font-size: 0.875em; /* 14/16 */
+    font-family: "Avenir Next Medium", Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.btn-block {
+    display: block;
+}
+
+.btn,
+.btn:hover,
+.btn:active {
+    background: #0072CE;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active {
+    background: #0072CE;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active {
+    background: #63666a;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn-arrow {
+
+}
+
+/* ==========================================================================
+   Wrapper and Wrapper Modules
+   ========================================================================== */
+
+/* Wrappers
+   .wrapper-header > .wrapper-container
+   .wrapper-body > .wrapper-container
+   .wrapper-footer > .wrapper-container
+   ========================================================================== */
+
+.wrapper-header,
+.wrapper-footer {
+    background: #fff;
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-weight: 400;
+}
+
+.wrapper-header {
+    border-bottom: 2px solid #000;
+}
+
+.wrapper-footer {
+    border-top: 1px solid #d0d0ce;
+}
+
+/*.wrapper-body {
+    background: transparent url('../img/bg-green-01.svg') no-repeat bottom center;
+    background-size: contain;
+}*/
+
+.wrapper-body .wrapper-container {
+    background: #fff;
+    min-height: 500px;
+}
+
+.wrapper-container {
+    position: relative;
+    margin: 0 auto;
+    width: 960px;
+    overflow: hidden; /* For containing margin collapse */
+}
+
+.wrapper-header .wrapper-container {
+    max-width: 940px;
+}
+
+.wrapper-footer .wrapper-container {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 3.75em; /* 60/16 */
+    max-width: 900px;
+    padding: 1.25em 20px;
+}
+
+
+/**
+ *      1px | border-left
+ *     69px | padding-left
+ *    820px | width
+ *     69px | padding-right
+ *      1px | border-right
+ * ----------------------
+ *    960px | TOTAL
+ */
+/*.wrapper-body .wrapper-container {
+    border-left: 1px solid #d0d0ce;
+    border-right: 1px solid #d0d0ce;
+}*/
+
+
+/* Brand / .brand
+   .brand .brand-logo
+   .brand .brand-tagline
+   ========================================================================== */
+
+.brand h1 {
+    float: left;
+}
+
+.brand-logo,
+.brand-logo img {
+    display: block;
+    width: 168px;
+    height: 42px;
+    line-height: 1;
+    float: right;
+}
+
+.brand .official-tagline {
+    font-size: 0.625em; /* 10/16 */
+    margin-bottom: 0.7em; /* 7/10 to match padding-bottom of .main-nav */
+}
+
+
+.brand p {
+    position: absolute;
+    margin: 0;
+    text-align: right;
+}
+
+
+.brand-logo {
+    padding: 1.5em 1.5em 0 0;
+}
+
+.brand-logo,
+.brand-logo img {
+    width: 160px;
+    height: 40px;
+}
+
+.brand .official-tagline {
+    right: 10px;
+    bottom: 0;
+}
+
+/* Footer stuff
+   ========================================================================== */
+
+.wrapper-footer nav ul {
+    margin: 0 0 1em;
+    font-size: 0.875em; /* 14/16 */
+}
+
+.wrapper-footer .official-tagline {
+    font-size: 0.75em; /* 12/16 */
+    margin-top: 1.2em;
+    float: right;
+}
+
+.wrapper-footer .social-nav.horizontal li + li {
+    margin-left: 0.875em; /* 14/16 */
+}
+
+.wrapper-footer nav {
+    position: relative;
+}
+
+.wrapper-footer nav .social-nav {
+    position: absolute;
+        top: 0;
+        right: 0;
+}
+
+.wrapper-footer .social-nav.horizontal li + li {
+    margin-left: 0.0625em; /* 1/16 */
+}
+
+/* Call us
+   ========================================================================== */
+
+.call-us {
+    margin-top: 1em; /* 14/14 */
+    font-size: 0.875em; /* 14/16 */
+    float: left;
+    font-family: "Avenir Next Demi", Arial, sans-serif;
+}
+
+.call-us .tel {
+    color: #666;
+    font-family: "Avenir Next", Arial, sans-serif;
+    padding-left: 10px;
+}
+
+/* Image icon sizes
+   ========================================================================== */
+
+.icon-18,
+.icon-20,
+.icon-25,
+.icon-40 {
+    vertical-align: middle;
+}
+
+.icon-18 {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-20 {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-25 {
+    width: 25px;
+    height: 25px;
+}
+
+.icon-40 {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* Share / .share
+   ========================================================================== */
+
+.share {
+    position: relative;
+    font-size: 0.875em; /* 14/16 */        
+    font-family: "Avenir Next", Arial, sans-serif;
+    font-weight: 400;
+}
+
+.share p {
+    margin: 0;
+}
+
+.share a {
+    color: #101820;
+    text-decoration: none;
+}
+
+.share img.icon-25 {
+    margin: -0.214285714em 0.214285714em 0; /* 3/14 */
+}
+
+.share img.icon-20 {
+    margin: -0.214285714em 0.142857143em 0; /* 3/14 2/14 */
+}
+
+.share-label {
+    margin: 0.214285714em 0.214285714em 0 0; /* 3/14 */
+}
+
+.print .share-label {
+    margin-left: 0.214285714em; /* 3/14 */
+}
+
+.split-left .print img {
+    margin-left: 0;
+}
+
+.share-compact .share-label {
+    display: block;
+}
+
+.share-compact img.icon-20,
+.share-compact img.icon-25 {
+    margin-top: .5em;
+}
+
+.share-compact .share-label + a img.icon-20,
+.share-compact .share-label + a img.icon-25 {
+    margin-left: 0
+}
+
+.share img.icon-20,
+.share img.icon-25 {
+    width: 33px;
+    height: 33px;
+}
+
+.content {
+    position: relative;
+}
+
+.content > .share {
+    position: absolute;
+        top: 0;
+        right: 0;
+}
+
+/* Lists
+   .unstyled
+   .horizontal
+   .horizontal-separated
+   .breadcrumb
+   ========================================================================== */
+
+.unstyled,
+.horizontal,
+.horizontal-separated,
+.breadcrumb {
+    margin: 1em 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.horizontal li,
+.horizontal-separated li,
+.breadcrumb li {
+    display: inline-block;
+}
+
+.horizontal li + li,
+.breadcrumb li + li {
+    margin-left: 1em;
+}
+
+.horizontal-separated li + li,
+.breadcrumb li + li {
+    margin-left: -0.25em; /* 4/16 fixes white space between inline-block elements */
+}
+
+.horizontal-separated li + li:before {
+    margin: 0 0.5em; /* 8/16 */
+    content: "|";
+    color: #0072ce;
+}
+
+.breadcrumb li + li:before {
+    margin: 0 0.25em; /* 4/16 */
+    content: "\003e";
+}
+
+.horizontal a,
+.horizontal-separated a {
+    text-decoration: none;
+}
+
+.horizontal a:hover,
+.horizontal a:focus,
+.horizontal-separated a:hover,
+.horizontal-separated a:focus {
+    text-decoration: underline;
+}
+
+.spaced > li {
+    margin: 1.25em 0; /* 20/16 */
+}
+
+/* ==========================================================================
+   States
+   ========================================================================== */
+
+.no-js .no-js-hide {
+    display: none;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+.s-printable {
+    padding: 1.25em;
+    background: #fff;
+}
+
+.s-printable .secondary {
+    border-top: 1px solid #101820;
+}
+
+@media print {
+
+    .breadcrumb {
+        display: none;
+    }
+
+}
+
+
+/* ==========================================================================
+   Stuff vz doesn't know where to place
+   ========================================================================== */
+
+.row.alt {
+    background-color: #f7f5f4;
+}
+
+.complaintstepicon {
+    padding: 0.8em 0;
+}
+

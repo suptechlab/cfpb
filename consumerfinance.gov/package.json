@@ -1,0 +1,82 @@
+{
+  "name": "consumerfinance.gov",
+  "description": "The consumerfinance.gov website.",
+  "homepage": "https://www.consumerfinance.gov/",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/consumerfinance.gov.git"
+  },
+  "license": "SEE LICENSE IN TERMS.md",
+  "engines": {
+    "node": ">=20.x"
+  },
+  "browserslist": "> 0.2% in @cfpb/browserslist-config stats",
+  "dependencies": {
+    "@cfpb/browserslist-config": "0.0.4",
+    "@cfpb/cfpb-analytics": "0.3.2",
+    "@cfpb/cfpb-design-system": "3.6.3",
+    "@csstools/postcss-sass": "5.1.1",
+    "@csstools/sass-import-resolve": "1.0.0",
+    "autoprefixer": "10.4.20",
+    "esbuild": "0.24.2",
+    "fancy-log": "2.0.0",
+    "highcharts": "7.2.2",
+    "lodash.clonedeep": "4.5.0",
+    "lodash.throttle": "4.1.1",
+    "number-to-words": "1.2.4",
+    "papaparse": "5.3.2",
+    "patternomaly": "1.3.2",
+    "postcss": "8.5.1",
+    "svg-inline-loader": "0.8.2"
+  },
+  "devDependencies": {
+    "@cypress/skip-test": "2.6.1",
+    "@eslint/js": "9.19.0",
+    "axe-core": "4.10.2",
+    "cypress": "13.17.0",
+    "cypress-axe": "1.5.0",
+    "cypress-fail-fast": "7.1.1",
+    "eslint": "9.19.0",
+    "eslint-config-prettier": "10.0.1",
+    "eslint-plugin-cypress": "4.1.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-jsdoc": "50.6.3",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react": "7.37.4",
+    "globals": "15.14.0",
+    "immutable": "5.0.3",
+    "jest": "29.7.0",
+    "jest-cli": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
+    "jest-fetch-mock": "3.0.3",
+    "postcss-replace": "2.0.1",
+    "postcss-scss": "4.0.9",
+    "prettier": "3.4.2",
+    "snyk": "1.1295.2",
+    "source-map": "0.7.4",
+    "stylelint": "16.14.1",
+    "stylelint-config-standard-scss": "14.0.0"
+  },
+  "scripts": {
+    "preinstall": "node scripts/preinstall.js",
+    "postinstall": "node scripts/yarn/apps-install && ./scripts/check-npm-cache.sh",
+    "lint": "./scripts/lint.sh",
+    "jest": "yarn node --experimental-vm-modules $(yarn bin jest)",
+    "test": "yarn lint && yarn jest",
+    "snyk": "snyk test",
+    "watch": "yarn build watch",
+    "build": "node ./esbuild/build.js",
+    "cy": "./scripts/cypress.sh"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "snyk": true,
+  "type": "module",
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

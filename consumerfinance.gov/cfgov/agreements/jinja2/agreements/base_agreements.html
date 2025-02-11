@@ -1,0 +1,6 @@
+{% extends "v1/layouts/layout-2-1.html" %}
+
+{% block javascript scoped %}
+  {{ super() }}
+  <script src="{{ static( 'apps/agreements/Agreements.js' ) }}"></script>
+{% endblock %}

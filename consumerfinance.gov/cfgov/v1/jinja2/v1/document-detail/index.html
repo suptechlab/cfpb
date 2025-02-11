@@ -1,0 +1,25 @@
+{% extends 'v1/layouts/layout-2-1.html' %}
+
+{% import 'v1/includes/templates/streamfield-sidefoot.html' as streamfield_sidefoot with context %}
+{% import 'v1/includes/templates/render_block.html' as render_block with context %}
+
+{% block content_main %}
+    {% for block in page.header -%}
+        {% if block.block_type == 'item_introduction' %}
+            {% include_block block %}
+        {% else %}
+            <div class="block
+                        block--flush-top">
+                {% include_block block %}
+            </div>
+        {% endif %}
+    {%- endfor %}
+
+    {% for block in page.content -%}
+        {{ render_block.render(block, loop.index) }}
+    {%- endfor %}
+{% endblock %}
+
+{% block content_sidebar scoped -%}
+    {{ streamfield_sidefoot.render(page.sidefoot) }}
+{%- endblock %}

@@ -1,0 +1,77 @@
+{
+  "name": "delete-merged-branch",
+  "version": "0.0.0-development",
+  "description": "A GitHub app built that automatically deletes a branch after it's merged. That's it, enjoy!",
+  "author": "Sebass van Boxel <svboxel@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/SvanBoxel/delete-merged-branch.git",
+  "homepage": "https://github.com/SvanBoxel/delete-merged-branch",
+  "bugs": "https://github.com/SvanBoxel/delete-merged-branchissues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app",
+    "delete-branch",
+    "git-tools",
+    "github-app"
+  ],
+  "scripts": {
+    "now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY | base64 -d) npm start",
+    "dev": "nodemon --exec \"npm start\"",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch",
+    "test:ci": "jest && codecov",
+    "semantic-release": "semantic-release"
+  },
+  "dependencies": {
+    "probot": "9.2.20"
+  },
+  "devDependencies": {
+    "@semantic-release/npm": "5.1.11",
+    "codecov": "3.4.0",
+    "jest": "23.4.1",
+    "nodemon": "1.18.11",
+    "semantic-release": "15.13.17",
+    "smee-client": "1.0.3",
+    "standard": "13.1.0"
+  },
+  "engines": {
+    "node": ">= 10.13.0"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/npm"
+    ],
+    "verifyConditions": [
+      "@semantic-release/github"
+    ],
+    "publish": [
+      "@semantic-release/github",
+      "@semantic-release/npm"
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  },
+  "now": {
+    "alias": "delete-merged-branch",
+    "env": {
+      "APP_ID": "@app_id",
+      "NODE_ENV": "production",
+      "PRIVATE_KEY": "@private_key",
+      "WEBHOOK_SECRET": "@webhook_secret"
+    }
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}

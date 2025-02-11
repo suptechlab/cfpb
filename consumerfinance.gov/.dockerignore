@@ -1,0 +1,29 @@
+# Ignore all
+**
+
+# ...except these directories
+!cfgov
+!config
+!esbuild
+!requirements
+!static.in
+!scripts
+!npm-packages-offline-cache
+
+# ...and these files
+!.npmrc
+!.yarnrc
+!docker-entrypoint.sh
+!dump-data.sh
+!Dockerfile
+!frontend.sh
+!index.sh
+!initial-data.sh
+!jest.config.js
+!package.json
+!refresh-data.sh
+!test.sql.gz
+!yarn.lock
+
+# ...but DO ignore these others
+cfgov/static_built

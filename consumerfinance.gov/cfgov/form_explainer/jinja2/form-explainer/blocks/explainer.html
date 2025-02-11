@@ -1,0 +1,201 @@
+{# ==========================================================================
+
+   render_map_points( categories, page_num )
+
+   ==========================================================================
+
+   Description:
+
+   Render a list of o-expandable notes with definitions.
+
+   categories:  An array of category objects containing note arrays.
+
+   page_num: The page that these map points belong to.
+
+   ========================================================================== #}
+
+{% macro render_map_points( categories, page_num ) %}
+{% for category in categories %}
+    {% set category_index = loop.index %}
+    {% for item in category.notes %}
+        {% set id = 'page-' + page_num | string + '-category-' + category_index | string + '-note-'  + loop.index | string %}
+        <a class="image-map__overlay image-map__overlay--category-{{ category_index }}"
+           style="{{ 'top:' + item.coordinates.top | string + '%; left:' + item.coordinates.left | string + '%; width:' + item.coordinates.width | string + '%; height:' + item.coordinates.height | string + '%;' }}"
+           href="#{{ id }}"
+           id="image-map__overlay--{{ id }}"
+           tabindex="-1">
+          <span class="u-visually-hidden">{{ item.heading }}</span>
+         </a>
+    {% endfor %}
+{% endfor %}
+{% endmacro %}
+
+
+{# ==========================================================================
+
+   render_terms( terms, page_num )
+
+   ==========================================================================
+
+   Description:
+
+   Render a list of o-expandable terms with definitions.
+
+   notes:    An array of note objects.
+
+   page_num: The page that these notes belong to.
+
+   category_index: category that these notes belong to.
+
+   ========================================================================== #}
+
+{% macro render_terms( notes, page_num, category_index ) %}
+{% for item in notes %}
+    {{ render_term( item, page_num, category_index, loop.index ) }}
+{% endfor %}
+{% endmacro %}
+
+
+{# ==========================================================================
+
+   render_term( note, page_num, category_index, note_index )
+
+   ==========================================================================
+
+   Description:
+
+   Render an o-expandable note with a definition.
+
+   item:      A note object. Note objects have the following structure:
+              {
+                'heading': 'Note title.',
+                'body':    'Text of note.'
+              }
+
+   page_num:   Page containing note.
+
+   category_index: Category containing note.
+
+   note_index: index of note in category note array.
+
+
+   ========================================================================== #}
+
+{% macro render_term( item, page_num, category_index, note_index ) %}
+{% set id = 'page-' + page_num | string + '-category-' + category_index | string + '-note-'  + note_index | string %}
+<div class="o-expandable
+            o-expandable__form-explainer
+            o-expandable__form-explainer-category-{{ category_index }}"
+     id="{{ id }}">
+    <button class="o-expandable__header"
+            tabindex="0">
+        <span class="o-expandable__label">
+            {{ item.heading }}
+        </span>
+        <span class="o-expandable__cues">
+            <span class="o-expandable__cue-open" role="img" aria-label="{{ _('Show') }}">
+                {{ svg_icon('plus-round') }}
+            </span>
+            <span class="o-expandable__cue-close" role="img" aria-label="{{ _('Hide') }}">
+                {{ svg_icon('minus-round') }}
+            </span>
+        </span>
+    </button>
+    <div class="o-expandable__content" tabindex="0">
+        {{ item.body | safe }}
+    </div>
+</div>
+{% endmacro %}
+
+
+{# ==========================================================================
+
+   render_pagination( pages )
+
+   ==========================================================================
+
+   Description:
+
+   Render pagination.
+
+   pages: Pages in form. The data structure is as follows:
+          [
+            { 'image':   wagtail image,
+              'categories': [ ... ]
+            }
+          ]
+
+   ========================================================================== #}
+
+{% macro render_pagination( pages ) %}
+<nav class="explain__pagination">
+    <span class="form-explainer__nav-label">Viewing page:</span>
+    <ul class="form-explainer__page-links">
+        {% for page in pages %}
+        <li>
+            <a class="form-explainer__page-link {{ 'current-page' if loop.index == 1 else '' }}"
+               data-page="{{ loop.index }}">
+               {{ loop.index }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endmacro %}
+
+<div class="block block--flush-top u-hide-if-js">
+    {% include "v1/includes/snippets/no_js_notification.html" %}
+</div>
+
+<div id="form-explainer" class="form-explainer u-js-only">
+    {{ value.heading | safe if value.heading else '' }}
+    <div class="explain" aria-controls="form-explainer">
+
+        {% set page_count = value.pages | length %}
+        {% if page_count > 1 %}
+            {{ render_pagination( value.pages ) }}
+        {% endif %}
+
+        {% for page in value.pages %}
+        {% set page_num = loop.index %}
+        <div class="explain__page"
+             id="explain__page-{{ page_num }}">
+            <figure class="explain__container">
+                <div class="image-map explain__image-map">
+                    <div class="image-map__wrapper">
+                        {% if page_count > 1 %}
+                            <div class="form-explainer__page-buttons">
+                                <button class="prev a-btn a-btn--disabled"
+                                        aria-label="Previous page">
+                                    {{ svg_icon('left') }}
+                                </button>
+                                <button class="a-btn next"
+                                        aria-label="Next page">
+                                    {{ svg_icon('right') }}
+                                </button>
+                            </div>
+                        {% endif %}
+                        {% set media = image(page.image, 'original') %}
+                        <img class="image-map__image"
+                             src="{{ media.url }}"
+                             alt="">
+                        {{ render_map_points( page.categories, page_num ) }}
+                    </div>
+                </div>
+                <figcaption class="explain__terms">
+                    <div class="o-expandable-group
+                                o-expandable-group--accordion">
+                        {% for category in page.categories %}
+                            {% set category_index = loop.index %}
+                            {% if category.title %}
+                                <h3>{{ category.title }}</h3>
+                            {% endif %}
+                            {{ render_terms( category.notes, page_num, category_index ) }}
+                        {% endfor %}
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+        {% endfor %}
+    </div>
+</div>

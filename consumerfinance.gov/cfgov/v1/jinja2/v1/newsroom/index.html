@@ -1,0 +1,69 @@
+{% extends 'v1/layouts/layout-1-3.html' %}
+
+{% import 'v1/includes/templates/streamfield-sidefoot.html' as streamfield_sidefoot with context %}
+
+{% block content_main %}
+    {% for block in page.header -%}
+        {% if 'featured_content' in block.block_type %}
+            <div class="block
+                        {{ 'u-mt0' if loop.first }}">
+                        {# u-mt0 is used instead of block--flush-top to keep top border #}
+                {% include_block block %}
+            </div>
+        {% elif loop.index == 1 %}
+        <div class="block
+                    block--flush-top">
+            {% include_block block %}
+        </div>
+        {% endif %}
+    {% endfor %}
+    {% for block in page.content %}
+        {% if 'filter_controls' in block.block_type %}
+            <div class="block block--flush-top">
+                {% include_block block %}
+            </div>
+        {% else %}
+            {% import 'v1/includes/templates/render_block.html' as render_block with context %}
+            {{ render_block.render(block, loop.index) }}
+        {% endif %}
+    {% endfor %}
+
+    <div class="block">
+        {% include "v1/includes/organisms/filterable-list-results.html" %}
+    </div>
+
+    <aside class="o-prefooter">
+        {% if page.sidefoot %}
+            {{ streamfield_sidefoot.render(page.sidefoot) }}
+        {% endif %}
+        <div class="block
+                    block--bg
+                    block--flush-sides
+                    block--flush-bottom
+                    block--border-top">
+            <div class="content-l">
+                <section class="block
+                                block--flush-top
+                                content-l__col
+                                content-l__col-1-2">
+                    {% import 'v1/includes/molecules/related-content.html' as related_links %}
+                    {{- related_links.render({
+                        'heading': 'Related links',
+                        'links': [
+                        {
+                            'url': '/about-us/blog/',
+                            'text': 'The blog'
+                        },
+                        {
+                            'url': '/about-us/the-bureau/',
+                            'text': 'About us'
+                        }
+                    ]}) -}}
+                </section>
+                <section class="block content-l__col content-l__col-1-2">
+                    {% include 'v1/includes/templates/upcoming-events.html' %}
+                </section>
+            </div>
+        </div>
+    </aside>
+{% endblock %}

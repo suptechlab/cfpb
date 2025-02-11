@@ -1,0 +1,52 @@
+{% extends 'v1/layouts/layout-2-1.html' %}
+{% import 'v1/includes/templates/render_block.html' as render_block with context %}
+{% import 'ask-cfpb/_ask-search.html' as ask_search with context %}
+
+{% set read_answer_text = _('Read answer') %}
+
+{% block css -%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ static('apps/ask-cfpb/css/main.css') }}">
+{%- endblock css %}
+
+{% block content_modifiers -%}
+    {{ super() }} ask-cfpb-page ask-cfpb-page--landing
+{%- endblock %}
+
+{% block content_intro -%}
+    {% for block in page.header -%}
+        {{ render_block.render(block, loop.index) }}
+    {%- endfor %}
+{% endblock %}
+
+{% block content_main %}
+    <div class="block block--flush-top">
+
+        {% import 'v1/includes/molecules/translation-links.html' as translation_links with context %}
+        {{ translation_links.render(modifier_classes='block--flush-top') }}
+
+        <section class="ask-search block block--sub block--flush-top">
+            {{ ask_search.render( language=page.language, is_subsection=False ) }}
+        </section>
+
+        {% include_block page.content %}
+    </div>
+
+{% endblock %}
+
+{% block content_sidebar scoped -%}
+    {% if about_us %}
+        <div class="block block--flush-top about-us-text">
+            {{ about_us.text | richtext }}
+        </div>
+    {% endif %}
+
+    {% if disclaimer %}
+        {% include '_disclaimer.html' %}
+    {% endif %}
+{%- endblock %}
+
+{% block javascript scoped %}
+    {{ super() }}
+    <script src="{{ static('apps/ask-cfpb/js/main.js') }}"></script>
+{% endblock javascript %}

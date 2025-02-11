@@ -1,0 +1,94 @@
+[tool.bandit]
+exclude_dirs = [
+    "*/tests/*",
+    "settings/local.py",
+    "settings/test.py",
+]
+skips = [
+    "B308",
+    "B703",
+
+    # Calls to requests.get() that don't include a timeout.
+    # TODO: We need to address those with relevant error handling of a timeout.
+    "B113",
+]
+
+[tool.ruff]
+# Use PEP8 line-length
+line-length = 79
+# Target Python 3.8
+target-version = "py38"
+# Exclude common paths
+exclude = [
+    # These are directories that it's a waste of time to traverse
+    ".git",
+    ".tox",
+    ".venv",
+    "config",
+    "develop-apps",
+    "docs",
+    "esbuild",
+    "requirements",
+    "node_modules",
+    "site",
+    "venv",
+
+    # And directories in cfgov that don't have python files to lint
+    "__pycache__",
+    "*/jinja2",
+    "cfgov/static_built",
+    "cfgov/templates",
+    "cfgov/unprocessed",
+
+    # Generated migration files will throw errors. We need to find a way
+    # to exclude django-generated migrations while including
+    # manually-written migrations.
+    "*/migrations/*.py",
+
+    # Our settings files might need to conform to different readability
+    # standards
+    "cfgov/cfgov/settings",
+]
+src = ["cfgov/"]
+
+
+[tool.ruff.lint]
+ignore = [
+    # Assigned Lambdas are fine.
+    "E731",
+
+    # B905 checks for a `strict=` parameter on calls to `zip()`, but that
+    # parameter isn't available on Python < 3.10.
+    "B905"
+]
+select = [
+    # pycodestyle
+    "E",
+    # pyflakes
+    "F",
+    # flake8-bugbear
+    "B",
+    # pyupgrade
+    "UP",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.ruff.lint.isort.sections]
+"django" = ["django"]
+"wagtail" = ["wagtail"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+known-third-party = ["jinja2"]
+section-order = [
+    "future",
+    "standard-library",
+    "django",
+    "wagtail",
+    "third-party",
+    "first-party",
+    "local-folder",
+]

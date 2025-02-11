@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Submit a complaint | Review your complaint</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="v0/form/css/normalize.css">
+    <link rel="stylesheet" href="v0/form/css/grid.css">
+    <link rel="stylesheet" href="v0/form/css/fonts.css">
+    <link rel="stylesheet" href="v0/form/css/new-core.css">
+    <link rel="stylesheet" href="v0/form/css/complain.css">
+    <link rel="stylesheet" href="v0/form/css/typeahead.css">
+    <!-- <link rel="stylesheet" href="v0/form/css/responsive.css"> -->
+    <link rel="stylesheet" href="static/css/header.min.css">
+    <link rel="stylesheet" href="static/css/footer.min.css">
+    <link rel="stylesheet" href="static/css/main.min.css">
+    <link rel="stylesheet" href="static/css/pagination.min.css">
+
+    <!-- Custom modernizr for touch detection only, see the .js file for the build link -->
+    <script src="v0/form/js/vendor/modernizr.custom.js"></script>
+
+    <!--
+        Old IE polyfills for:
+        - HTML5 tags
+        - Media queries (so we can style mobile first)
+    -->
+    <!--[if lt IE 9]>
+    <script src="static/js/html5shiv-printshiv.min.js"></script>
+    <script src="v0/form/js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="review yourinfo cruxform">
+
+    <header class="o-header" role="banner">
+        <div class="m-global-eyebrow
+                    m-global-eyebrow__horizontal">
+            <div class="wrapper
+                        wrapper__match-content">
+                <div class="m-global-eyebrow_tagline">
+                    An official website of the
+                    <span class="m-global-eyebrow_tagline-usa">United States Government</span>
+                </div>
+                <div class="m-global-eyebrow_actions">
+                    <ul class="list__unstyled
+                               list__horizontal
+                               m-global-eyebrow_languages">
+                        <li class="list_item">
+                            <a href="/es/" hreflang="es" lang="es">
+                                Español
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="m-global-eyebrow_phone">
+                        (855) 411-2372
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="o-header_content js">
+
+            <div class="wrapper wrapper__match-content">
+
+                <a class="o-header_logo" href="/">
+                    <!--[if lt IE 9]>
+                    <img class="o-header_logo-img"
+                         src="static/img/logo_sm-exec.png"
+                         alt="Consumer Financial Protection Bureau"
+                         width="237"
+                         height="50">
+                     <![endif]-->
+                     <!--[if gt IE 8]><!-->
+                     <img class="o-header_logo-img u-js-only" src="static/img/logo_sm-exec.svg" onerror="this.onerror=null;this.src='/static/img/logo_sm-exec.png';" alt="Consumer Financial Protection Bureau" width="237" height="50">
+                     <noscript>
+                        &lt;img class="o-header_logo-img"
+                        src="static/img/logo_sm-exec.png"
+                        alt="Consumer Financial Protection Bureau"
+                        width="237"
+                        height="50"&gt;
+                    </noscript>
+                    <!--<![endif]-->
+                </a>
+            </div>
+
+        </div>
+        <script>
+        /* TODO: scope no-js to individual molecules/organisms. This is a hack to fix no-js on the on-demand header, while also allowing the menu to be scoped to o-header for on-demand pages. */
+        var headerDom = document.querySelector( '.o-header_content' );
+        headerDom.className = headerDom.className.replace('no-js','js');
+        </script>
+    </header>
+
+    <noscript>
+        For full functionality of this application, it is necessary to enable JavaScript.
+        Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+        instructions how to enable JavaScript in your web browser</a>.
+    </noscript>
+
+
+    <div class="wrapper-body page-step-1">
+
+<!-- ANNOTATIONS SIDEBAR -->
+
+        <div id="annotations-sidebar">
+            <p id="annotations-opener"><a href="#">⎘</a></p>
+            <p id="annotations-toggle" class="opened"><a href="#">⎗</a></p>
+
+            <ul id="annotations-list">
+                <li class="annotation-format">
+                    <h3 class="anno-title">Title of annotation</h3>
+<!--                <h6 class="anno-date">Date added</h6> -->
+                    <p class="anno-link-text"><a class="anno-link" href="#">Link to element</a></p>
+                    <div class="anno-comment">Placeholder text</div>
+                </li>
+            </ul>
+
+        </div>
+
+<!-- END OF ANNOTATIONS SIDEBAR -->
+
+
+    <div class="wrapper-container">
+
+<!-- =============
+     BEGIN CONTENT
+     ============= -->
+
+       <section class="content row cr-content">
+
+<div class="span8 cr-primary">
+                <!-- .error-panel -->
+
+                <!-- end .error-panel -->
+
+  <div id="select_product" class="cr-primary-container">
+    <h2>Review your complaint</h2>
+    <p class="page-intro review-submit">Please review the information below before submitting this complaint. Once you submit it, you will not be able to make changes.</p>
+
+
+        <div id="review-sections">
+
+            <h2>
+                Step 1
+            </h2>
+            <fieldset id="review-product" class="review-section">
+
+                <div class="review-heading">
+                    <p class="review-heading-text">What product or service is your complaint about?</p>
+                    <p class="review-edit-link"><a href="">Edit this section</a></p>
+                </div>
+                <div class="review-column review-column-1">
+                    <p><strong>Product or service</strong></p>
+                    <p id="review-product-name">Payday loan, store loan, or other consumer loan</p>
+                </div>
+
+                <div class="review-column review-column-2">
+                    <p><strong>What type of loan?</strong></p>
+                    <p id="review-subproduct-name">Payday loan</p>
+                </div>
+
+<!--
+                <div class="review-column review-column-3">
+                    <p><strong>Where did you get the loan?</strong></p>
+                    <p>At a store</p>
+                    <p>Texas</p>
+                </div>
+-->
+
+
+            </fieldset>
+
+
+            <h2>
+                Step 2
+            </h2>
+            <fieldset id="review-issue" class="review-section">
+
+                <div class="review-heading">
+                    <p class="review-heading-text">What issue is your complaint about?</p>
+                    <p class="review-edit-link"><a href="">Edit this section</a></p>
+                </div>
+                <div class="review-column review-column-1">
+                    <p><strong>Issue</strong></p>
+                    <p id="review-issue-name">Credit reporting</p>
+                </div>
+
+                <div class="review-column review-column-2">
+                    <p><strong>What kind of credit reporting issue?</strong></p>
+                    <p>Incorrect information on my credit report</p>
+                    <p>Incorrect status of my account</p>
+                </div>
+
+            </fieldset>
+
+            <h2>
+                Step 3
+            </h2>
+            <fieldset id="review-wh" class="review-section">
+
+                <div class="review-heading">
+                    <p class="review-heading-text">What happened?</p>
+                    <p class="review-edit-link"><a href="">Edit this section</a></p>
+                </div>
+                <div class="review-full-width">
+                    <p id="review-what-happened-text">Example text lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipt ex ea commodo consequat.<br/>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+
+                <p id="review-narrative-consent">After removing personal information, we will include this description on consumerfinance.gov.</p>
+
+
+                <div id="narrative-consent-take-two">
+                    <div class="span2 cr-label cr-question cr-consent-checkbox">
+                        <label class="radio">
+                            <input type="checkbox" name="no-email" value="no-email" class="cr-no-email checkbox consent-checkbox" id="narrative-consent-checkbox" checked>I want the CFPB to publish this description on consumerfinance.gov so that others can learn from my experience.
+                        </label>
+                        <p>
+                            The CFPB will take steps to remove my personal information from this description, but someone may still be able to identify me. I consent to publishing this description after the CFPB has taken these steps.
+                        </p>
+                    </div>
+
+
+                </div>
+                <div class="review-heading">
+                    <p class="review-heading-text">What would be a fair resolution to this issue?</p>
+                </div>
+                <div class="review-full-width">
+                    <p id="review-desired-resolution-text">Example text lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipt ex ea commodo consequat.</p>
+                </div>
+
+            </fieldset>
+
+            <h2>
+                Step 4
+            </h2>
+            <fieldset id="review-companies" class="review-section">
+
+                <div class="review-heading">
+                    <p class="review-heading-text">What companies are involved?</p>
+                    <p class="review-edit-link"><a href="">Edit this section</a></p>
+                </div>
+                <div class="review-column review-column-1">
+                    <p><strong>Payday loan company</strong></p>
+                    <p>ABC Bank (Kwik Kash)</p>
+                    <p>Account number<br/>3342004893233</p>
+                </div>
+
+                <div class="review-column review-column-2">
+                    <p><strong>Credit reporting company</strong></p>
+                    <p>Experian</p>
+                    <p>Social security number<br/>242-67-1099</p>
+                </div>
+
+            </fieldset>
+
+            <h2>
+                Step 5
+            </h2>
+            <fieldset id="review-people" class="review-section">
+
+                <div class="review-heading">
+                    <p class="review-heading-text">What people are involved?</p>
+                    <p class="review-edit-link"><a href="">Edit this section</a></p>
+                </div>
+                <div class="review-column review-column-1">
+                    <p><strong>Primary Consumer</strong></p>
+                    <p>Patt Robinson
+                    <br/>Primary account holder</p>
+                    <p>p.robinson@gmail.com
+                    <br/>(501) 222-2710</p>
+                    <p>Virginia, 22206</p>
+                </div>
+
+                <div class="review-column review-column-2">
+                    <p><strong>Additional Consumer</strong></p>
+                    <p>Marcus Smith
+                    <br/>Recipient</p>
+                    <p>marc2000@gmail.com
+                </div>
+
+                <div class="review-column review-column-2">
+                    <p><strong>Additional Point of Contact</strong></p>
+                    <p>Jamie Robinson
+                    <p>Family member,
+                    <br/>Spouse</p>
+                    <p>jrob@yahoo.com</p>
+                </div>
+
+            </fieldset>
+
+
+        </div><!-- REVIEW SECTION -->
+
+    </div>
+
+</div> <!-- select_product -->
+    <!-- options below form -->
+    <div class="row cr-continue">
+        <!-- email address -->
+        <div id="certify-checkbox" class="cr-question cr-question-certify-checkbox">
+            <!--                    <p class="narrative-consent-text">Include this description in our database for researchers, journalists, and other consumers. We’ll remove identifying information before publishing. &nbsp;<a href="#">Learn more</a></p> -->
+            <div class="span2 cr-label cr-question cr-certify-checkbox">
+                <label class="radio">
+                    <input type="checkbox" name="no-email" value="no-email" class="cr-no-email checkbox certify-checkbox" id="cr-no-email">
+                    The information given is true to the best of my knowledge and belief. I understand that the CFPB cannot act as my lawyer, a court of law, or a financial advisor.
+                </label>
+            </div>
+        </div>
+        <!-- /email  -->
+
+        <div id="attachment-alert">
+            <div id="attachment-alert-icon" class='icon-exc left-obj'></div>
+            <p>
+                You will not be able to attach documents or edit this complaint after you submit it.
+            </p>
+            <p>
+                Please make sure everything is accurate and complete before continuing.
+            </p>
+        </div>
+    </div>
+    <!-- /options below form -->
+
+</section>
+
+<div class="row cr-continue">
+    <div class="pre-footer">
+        <a class="btn btn__super" href="confirmation.html">
+            Submit your complaint
+        </a>
+    </div>
+</div>
+
+<!-- =============
+     / END CONTENT
+     ============= -->
+
+    </div><!-- .wrapper-container -->
+
+</div><!-- .wrapper-body -->
+
+<footer class="o-footer" role="contentinfo">
+    <div class="wrapper wrapper__match-content">
+
+        <div class="o-footer_pre">
+            <a class="btn
+                      btn__secondary
+                      js-return-to-top
+                      o-footer_top-button" href="#" data-gtm_ignore="true">
+                Back to top <span class="cf-icon cf-icon-arrow-up"></span>
+            </a>
+        </div>
+
+        <div class="o-footer-middle-left">
+
+            <div class="o-footer_col">
+                <ul class="o-footer_list">
+                    <li class="list_item">
+                        <a id="privacy" class="list_link" href="#">Privacy act statement</a>
+                    </li>
+                    <li class="list_item">
+                        <a id="omb" class="list_link" href="#">OMB #3170-0011</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="o-footer-middle-right">
+            <ul class="o-footer_list">
+                <li class="list_item">
+                    <span class="icon-link_text list_link">
+                      Have questions or need help with this form?
+                      Call (855) 411-2372 or <a href="#">chat with us now</a>.
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-footer-post">
+            <p class="o-footer_official-website">
+                An official website of the United States Government
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Deprecated scripts -->
+<script src="static/js/jquery.min.js"></script>
+<script src="v0/form/js/main.js"></script>
+<script src="v0/form/js/emulate.js"></script>
+<!-- <script src="v0/form/js/responsive.js"></script> -->
+<script src="v0/annotations.js"></script>
+
+<!-- Modern scripts -->
+<script src="static/js/main.min.js"></script>
+
+</body>
+</html>

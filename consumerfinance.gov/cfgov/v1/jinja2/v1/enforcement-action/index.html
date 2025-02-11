@@ -1,0 +1,22 @@
+{% extends 'v1/layouts/layout-2-1.html' %}
+
+{% import 'v1/includes/molecules/related-metadata-enforcement-action.html' as related_metadata_enforcement_action with context %}
+{% import 'v1/includes/templates/streamfield-sidefoot.html' as streamfield_sidefoot with context %}
+{% import 'v1/includes/templates/render_block.html' as render_block with context %}
+
+{% block content_main %}
+    {% for block in page.header -%}
+        <div class="block block--flush-top">
+            {% include_block block %}
+        </div>
+    {%- endfor %}
+
+    {% for block in page.content -%}
+        {{ render_block.render(block, loop.index) }}
+    {%- endfor %}
+{% endblock %}
+
+{% block content_sidebar scoped -%}
+    {{ related_metadata_enforcement_action.render() }}
+    {{ streamfield_sidefoot.render(page.sidefoot) }}
+{%- endblock %}

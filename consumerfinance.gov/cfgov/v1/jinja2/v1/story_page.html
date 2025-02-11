@@ -1,0 +1,38 @@
+{% extends "v1/layouts/layout-full.html" %}
+
+{% block content_intro %}
+    {% for block in page.header -%}
+        {% if block.block_type == 'features' %}
+            <section class="wrapper
+                            wrapper--match-content
+                            block
+                            block--bg
+                            block--border
+                            block--flush-top
+                            u-mb0">
+                {% include_block block %}
+            </section>
+        {% else %}
+            {% include_block block %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{# Remove breadcrumbs from story_page by overriding with an empty block #}
+{% block pre_content -%}{%- endblock %}
+
+{% block content_modifiers -%}
+  {{ super() }} content__center-image-bleed content__supersize-headings
+{%- endblock %}
+
+{% block content_main %}
+
+    {% import 'v1/includes/molecules/translation-links.html' as translation_links with context %}
+    {{ translation_links.render(modifier_classes='block--flush-top') }}
+
+    {% for block in page.content %}
+        <div class="block{{ ' block--flush-top' if loop.first else '' }}">
+            {% include_block block %}
+        </div>
+    {% endfor %}
+{% endblock %}

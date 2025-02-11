@@ -1,0 +1,19 @@
+{
+  "name": "ccdb5-ui",
+  "version": "2.6.1",
+  "private": "true",
+  "description": "Consumer Complaint Database (CCDB-UI) application that appears at https://www.consumerfinance.gov/data-research/consumer-complaints/search/.",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
+  },
+  "dependencies": {
+    "@cfpb/ccdb5-ui": "2.14.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfpb/ccdb5-ui"
+  },
+  "type": "module"
+}

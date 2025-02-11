@@ -1,0 +1,96 @@
+<style webc:type="js" webc:scoped>
+`button {
+  appearance: none;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0.5em 0.875em;
+  border: 0;
+  margin: 0;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.1s;
+}
+
+button, button:link, button:visited {
+  background-color: ${vars.pacific};
+  color: ${vars.white};
+}
+
+button:hover, button:focus {
+  background-color: ${vars['pacific-dark'] };
+}
+
+button:focus {
+  outline: 1px dotted ${vars.pacific};
+  outline-offset: 1px;
+}
+
+button:active {
+  background-color: ${vars.navy};
+}
+
+.secondary, .secondary:link, .secondary:visited {
+  background-color: ${vars.gray};
+}
+
+.secondary:hover, .secondary:focus {
+  background-color: ${vars['gray-dark']};
+}
+
+.secondary:focus {
+  outline-color: ${vars.gray};
+}
+
+.secondary:active {
+  background-color: ${vars.black};
+}
+
+.warning, .warning:link, .warning:visited {
+  background-color: ${vars['red-mid-dark']}
+}
+
+.warning:hover, .warning:focus {
+  background-color: ${vars['red-dark']};
+}
+
+.warning:focus {
+  outline-color: ${vars['red-mid-dark']};
+}
+
+.warning:active {
+  background-color: ${vars['gray-dark']};
+}
+
+button:disabled,
+.disabled,
+.disabled:link,
+.disabled:visited,
+.disabled:hover,
+.disabled:focus,
+.disabled:active {
+  background-color: ${vars['gray-20']};
+  color: ${vars.gray};
+  cursor: not-allowed;
+}
+
+.super {
+  padding: 0.61em, 1.61em;
+  font-size: 1.125em;
+}
+
+@media only all and ( max-width: ${vars['bp-xs-max']} ) {
+  .full-on-xs {
+    display: block;
+    width: 100%;
+  }
+}`
+</style>
+
+<template webc:root>
+  <button :class="type" :disabled="type == 'disabled'"><slot>Default</slot></button>
+</template>

@@ -1,0 +1,71 @@
+{# =========================================================================
+
+   Text Introduction
+
+   =========================================================================
+
+   Description:
+
+   Create a Text Introduction molecule.
+   See https://cfpb.github.io/design-system/patterns/text-introductions.
+
+   value:                     Object defined from a StreamField block.
+
+   value.eyebrow:             (Optional) Text to display above heading.
+
+   value.heading:             (Optional) String for heading text.
+
+   value.intro:               (Optional) String for body introduction text.
+
+   value.intro.source:        TODO: add type and description.
+
+   value.body:                (Optional) String for body text.
+
+   value.links:               A tuple to create a list of links, containing:
+
+   value.links[i].text:       (Optional) A string for the text of the link.
+
+   value.links[i].url:        A string for the URL of the link.
+
+   value.links[i].aria_label: (Optional) An aria-label for the link.
+
+   value.links[i].is_link_boldface: (Optional) Sets bold formatting for the link.
+
+   value.has_rule:            Whether or not to render a rule line
+                              (border-bottom) at the bottom of the molecule.
+
+   ========================================================================== #}
+{% if value.eyebrow %}
+    <div class="eyebrow">{{ value.eyebrow }}</div>
+{% endif %}
+
+{% if value.heading -%}
+    <h1>{{ value.heading }}</h1>
+
+    {% import 'v1/includes/molecules/translation-links.html' as translation_links with context %}
+    {{ translation_links.render() }}
+{%- endif %}
+
+{% if value.intro.source %}
+    <div class="lead-paragraph">
+        {{ value.intro | safe }}
+    </div>
+{% endif %}
+{% if value.body %}
+    {{ value.body | safe }}
+{% endif %}
+{% for link in value.links %}
+    {% if link.text %}
+        {% if loop.first %}<ul class="m-list m-list--links">{% endif %}
+            <li class="m-list__item">
+                <a class="a-link a-link--jump"
+                   href="{{ link.url }}"
+                   {% if link.aria_label %}aria-label="{{ link.aria_label }}"{% endif %}>
+                   {%- if link.is_link_boldface -%}<strong>{%- endif -%}
+                   <span class="a-link__text">{{- link.text -}}</span>
+                   {%- if link.is_link_boldface -%}</strong>{%- endif -%}
+                </a>
+            </li>
+        {% if loop.last %}</ul>{% endif %}
+    {% endif %}
+{% endfor %}

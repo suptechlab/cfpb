@@ -1,0 +1,50 @@
+{% extends 'v1/layouts/layout-2-1.html' %}
+
+{% import 'v1/includes/templates/streamfield-sidefoot.html' as streamfield_sidefoot with context %}
+
+{% block og_type -%}
+    article
+{%- endblock %}
+
+{% block og_article_prefix -%}
+    article: http://ogp.me/ns/article#
+{%- endblock %}
+
+{% block og_article_author -%}
+    <meta property="article:author"
+          content="{{ _( 'https://www.facebook.com/CFPB' ) }}">
+{%- endblock %}
+
+{% block content_main %}
+    {% include 'v1/includes/article.html' %}
+    {% block post_article_content %}
+        <div class="block
+                    block--flush-top
+                    block--padded-top
+                    join-the-conversation">
+            <p>
+                {% set twitter_url = _("https://x.com/CFPB") %}
+                {% set twitter_handle = _("(formerly Twitter)") %}
+                {%- set twitter_link = '<a href="%s">X %s</a>' | format(twitter_url, twitter_handle) | safe %}
+
+                {%- set facebook_url = _("https://www.facebook.com/CFPB") %}
+                {%- set facebook_link = '<a href="%s">Facebook</a>' | format(facebook_url) | safe %}
+
+                {% trans trimmed %}
+                    Join the conversation.
+                    Follow CFPB on {{ twitter_link }} and {{ facebook_link }}.
+                {% endtrans %}
+            </p>
+        </div>
+    {% endblock %}
+{% endblock %}
+
+{% block content_sidebar %}
+    {{ streamfield_sidefoot.render(page.sidefoot) }}
+    {% if rss_feed %}
+        <div class="block">
+            {% import 'v1/includes/molecules/rss-feed.html' as rss %}
+            {{ rss.render(rss_feed) }}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,72 @@
+{
+  "name": "consumer-credit-trends",
+  "version": "0.1.0",
+  "description": "charts and trends",
+  "homepage": "http://www.consumerfinance.gov/",
+  "author": {
+    "name": "Catherine Farman",
+    "email": "tech@cfpb.gov",
+    "url": "https://cfpb.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/consumer-credit-trends"
+  },
+  "license": "CC0-1.0",
+  "keywords": [
+    "consumer-credit-trends"
+  ],
+  "dependencies": {
+    "cf-buttons": "3.2.0",
+    "cf-core": "3.5.0",
+    "cf-expandables": "3.1.0",
+    "cf-forms": "3.1.2",
+    "cf-grid": "3.2.0",
+    "cf-icons": "3.2.1",
+    "cf-layout": "3.2.2",
+    "cf-pagination": "3.1.1",
+    "cf-tables": "1.1.0",
+    "cf-typography": "3.1.0",
+    "cfpb-chart-builder": "0.0.9",
+    "github-api": "2.3.0",
+    "html5shiv": "3.7.3",
+    "moment": "2.17.1",
+    "snyk": "1.21.2"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.5",
+    "del": "2.2.2",
+    "fs": "0.0.1-security",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "3.1.1",
+    "gulp-changed": "1.3.2",
+    "gulp-compile-handlebars": "0.6.1",
+    "gulp-concat": "2.6.1",
+    "gulp-connect": "5.0.0",
+    "gulp-cssmin": "0.1.7",
+    "gulp-delete-lines": "0.0.7",
+    "gulp-eslint": "2.0.0",
+    "gulp-exit": "0.0.2",
+    "gulp-header": "1.8.8",
+    "gulp-html-replace": "1.6.2",
+    "gulp-htmlmin": "3.0.0",
+    "gulp-imagemin": "3.1.1",
+    "gulp-inline-css": "3.1.0",
+    "gulp-less": "3.3.0",
+    "gulp-load-plugins": "1.4.0",
+    "gulp-mq-remove": "0.0.2",
+    "gulp-notify": "2.2.0",
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "1.9.1",
+    "gulp-uglify": "2.0.0",
+    "gulp-util": "3.0.7",
+    "gulp-webpack": "1.5.0",
+    "jquery": "1.12.2",
+    "jsdom": "9.8.3",
+    "pretty-hrtime": "1.0.3",
+    "require-dir": "0.3.1"
+  },
+  "scripts": {
+  },
+  "snyk": false
+}

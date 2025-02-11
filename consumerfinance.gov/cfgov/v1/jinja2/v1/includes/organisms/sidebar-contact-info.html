@@ -1,0 +1,44 @@
+{# ==========================================================================
+
+   Sidebar Contact Info
+
+   ==========================================================================
+
+   Description:
+
+   Create a Contact Information Sidebar organism.
+
+   contact:                  An object with contact details.
+
+   contact.heading:          A string containing a sidebar header.
+   contact.body:             A string containing sidebar paragraph content.
+
+   contact.contact_info:     An array of contact blocks. See
+                             contact-address.html, contact-email.html,
+                             contact-hyperlink.html, and contact-phone.html
+                             for actual values.
+
+   ========================================================================== #}
+
+<div class="o-sidebar-contact-info">
+    <header class="m-slug-header">
+        <h2 class="m-slug-header__heading">
+            Contact Information
+        </h2>
+    </header>
+
+    <div class="o-sidebar-contact-info__content">
+        {% if value.contact.heading %}
+            <h3>{{ value.contact.heading }}</h3>
+        {% endif %}
+
+        {{ value.contact.body | safe }}
+    </div>
+
+    {# 'm-contact' blocks get added here. #}
+    {% if value.contact.contact_info %}
+        {% for block in value.contact.contact_info %}
+            {% include_block block %}
+        {% endfor %}
+    {% endif %}
+</div>

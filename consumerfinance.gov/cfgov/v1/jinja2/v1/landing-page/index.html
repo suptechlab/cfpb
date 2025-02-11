@@ -1,0 +1,34 @@
+{% extends 'v1/layouts/layout-2-1.html' %}
+
+{% import 'v1/includes/templates/render_block.html' as render_block with context %}
+{% import 'v1/includes/templates/streamfield-sidefoot.html' as streamfield_sidefoot with context %}
+
+{% block content_intro -%}
+    {% for block in page.header -%}
+        {% if 'hero' in block.block_type %}
+            {% include_block block %}
+        {% endif %}
+    {%- endfor %}
+{% endblock %}
+
+{% block content_main %}
+    {% set has_hero = namespace(found=false) %}
+    {% for block in page.header -%}
+        {% if block.block_type == 'hero' %}
+            {% set has_hero.found = true %}
+        {% else %}
+            {{ render_block.render(block, loop.index) }}
+        {% endif %}
+    {%- endfor %}
+    {% if has_hero.found %}
+      {% import 'v1/includes/molecules/translation-links.html' as translation_links with context %}
+      {{ translation_links.render(modifier_classes='block--flush-top') }}
+    {% endif %}
+    {% for block in page.content -%}
+        {{ render_block.render(block, loop.index) }}
+    {%- endfor %}
+{% endblock %}
+
+{% block content_sidebar scoped -%}
+    {{ streamfield_sidefoot.render(page.sidefoot) }}
+{%- endblock %}

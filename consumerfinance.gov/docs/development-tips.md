@@ -1,0 +1,79 @@
+# Development tips
+
+## EditorConfig
+
+We support [EditorConfig](https://editorconfig.org/). EditorConfig is a plugin for editors
+that allows for easy and quick configuration of editors for
+[multiple properties](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties).
+Feel free to [install a plugin](https://editorconfig.org/#download) for your editor.
+
+## Main front-end template/asset locations
+
+**Templates** that are served by the Django server: `cfgov/jinja2/v1`
+
+**Static assets** prior to processing (compilation, minification, etc.):
+`cfgov/unprocessed`.
+
+!!! note
+
+    After running `yarn build` (or `./setup.sh`) the site's assets are copied over to `cfgov/static_built`,
+    ready to be served by Django.
+
+## Adding new Javascript entrypoints
+
+- In order to build standalone javascript files that are to be included in a template, they
+  need to be included in the `jsPaths` variable in `esbuild/scripts`.
+
+## Installing new front-end dependencies
+
+- Use `yarn add new_dep@se.m.ver` to install new dependencies
+  or update existing dependencies.
+- If you can't do this for some reason or are looking to freshen all dependencies,
+  you will need to edit `.yarnrc`, temporarily commenting out the `--install.pure-lockfile true`
+  and `--install.offline true` flags before proceeding with your installation or update.
+- In the rare but observed case that `yarn add new_dep@se.m.ver` doesn't add
+  every needed package to the offline cache, you likely need to first run
+  `yarn cache clean`.
+
+## Watching files for changes
+
+Some (but not all) JavaScript and CSS files can be rebuilt automatically when they are changed by using `yarn watch`.
+
+## Developing on nested satellite apps
+
+Some projects can sit inside consumerfinance.gov, but manage their own asset
+dependencies. These projects have their own `package.json` and base templates.
+
+The structure looks like this:
+
+### npm modules
+
+- List an app's own dependencies in
+  `cfgov/unprocessed/apps/[project namespace]/package.json`.
+
+### App build scripts
+
+- Apps may include their own scripts to run during the build process
+  These must be `require`d from `esbuild/build.js`
+
+### Adding Images
+
+- Images should be compressed and optimized before being committed to the repo
+- In order to keep builds fast and reduce dependencies, the front-end build does not contain an image optimization step
+- A suggested workflow for those with Adobe Creative Suite is as follows:
+  1. Export a full-quality PNG from Adobe Illustrator
+  1. Reexport that PNG from Adobe Fireworks as an 8-bit PNG
+  1. Run the 8-bit PNG through [ImageOptim](https://imageoptim.com)
+
+### Templates
+
+- Apps use a Jinja template that extends the `base.html`
+  template used by the rest of the site.
+  This template would reside in `cfgov/jinja2/[project namespace]/index.html`
+  or similar (for example, [owning-a-home](https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/jinja2/owning-a-home/explore-rates/index.html)).
+
+!!! note
+
+    A template may support a non-standard browser, like an older IE version,
+    by including the required dependencies, polyfills, etc. in its
+    template's `{% block css %}` or `{% block javascript scoped %}` blocks.

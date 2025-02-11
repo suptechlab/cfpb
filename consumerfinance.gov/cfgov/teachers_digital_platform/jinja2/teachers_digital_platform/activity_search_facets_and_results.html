@@ -1,0 +1,171 @@
+{% import 'v1/includes/atoms/tag-filter.html' as tag %}
+{% import 'v1/includes/molecules/pagination.html' as pagination with context %}
+{% from 'teachers_digital_platform/tdp_expandable.html' import expandable with context %}
+
+{% macro build_filter_section(name) %}
+    <div class="filter-section">
+        {% set label = name | capitalize | replace('_', ' ') %}
+        {% set items = facets[name] %}
+        {% set expandable_settings = {
+            'label': label,
+            'is_expanded': true,
+            'is_collapsed_for_mobile': true,
+            'is_midtone': true
+        } %}
+        {% call() expandable(expandable_settings) %}
+          {{build_form_group(name, items)}}
+        {% endcall %}
+    </div>
+{% endmacro %}
+
+{% macro build_form_group(name, items) %}
+    <div class="o-form__group">
+        <fieldset class="o-form__fieldset">
+            <ul class="m-list m-list--unstyled">
+                {% for facet in items %}
+                <li>
+                    <div class="m-form-field m-form-field--checkbox">
+                      <input type="checkbox" class="a-checkbox" aria-label="{{ facet.title }}" id="{{name}}--{{ facet.title | trim | slugify }}" name="{{name}}" value="{{ facet.id }}"{% if facet.selected %} checked="checked"{% endif %}>
+                      <label class="a-label" for="{{name}}--{{ facet.title | trim | slugify }}">{{ facet.title }}</label>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </fieldset>
+    </div>
+{% endmacro %}
+
+{% macro  build_nested_filter_tags(facets, type) %}
+    {% for facet in facets %}
+        {% if facet.selected %}
+            {% set input_id = '#' + type | trim | replace("_","-") + "--" + facet.title | trim | slugify %}
+            {{ tag.render({
+                'label': facet.title,
+                'value': input_id,
+                'behavior': 'clear-filter'
+            }) }}
+        {% endif %}
+        {% if facet.children %}
+            {{ build_nested_filter_tags(facet.children, type) }}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+<a class="skip-filters u-visually-hidden{% if not activities %} skip-filters--hidden{% endif %}" href="#tdp-search-results">Skip to search results</a>
+
+<div class="results__count block--padded-bottom u-hide-on-med u-hide-on-lg u-hide-on-xl" data-results-count="{{ page.results.total_results }}">
+    {% if page.results.total_results %}
+    <h3>
+        {% if page.results.total_activities > page.results.total_results %}
+            Showing {{ page.results.total_results }}
+            match{% if page.results.total_results > 1 %}es{% endif %}
+            out of
+        {% endif %}
+        {{ page.results.total_activities }} activities
+    </h3>
+    {% else %}
+    <h3>No results match your search.</h3>
+    <p class="u-mb15">Try a new search with different terms or filters.</p>
+    {% endif %}
+</div>
+
+<aside class="content__sidebar content--flush-top-on-small content--flush-sides-on-small filters">
+    <h3 class="h2">Filter results by</h3>
+    <form action="." method="get" data-js-hook="behavior_change-filter">
+        <input type="hidden" name="q" value="{% if search_query: %}{{ search_query }}{% endif %}">
+        <input type="hidden" name="page" inputmode="numeric" value="1">
+
+        {% if facets.grade_level %}{{build_filter_section('grade_level')}}{% endif %}
+        {% if facets.activity_duration %}{{build_filter_section('activity_duration')}}{% endif %}
+        {% if facets.topic %}
+        {% set topic_dict = {'Earn': 'Earning', 'Save and invest': 'Saving and investing', 'Protect': 'Protecting', 'Spend': 'Spending', 'Borrow': 'Borrowing'} %}
+          <div class="filter-section">
+            {% set items = facets.topic %}
+            {% set expandable_settings = {
+                'label': 'Topic',
+                'is_expanded': true,
+                'is_collapsed_for_mobile': true,
+                'is_midtone': true
+            } %}
+            {% call() expandable(expandable_settings) %}
+              {% for topic in items %}
+              <h5>{{topic_dict[topic.title]}}</h5>
+              {{build_form_group('topic', topic.children)}}
+              <br/>
+              {% endfor %}
+            {% endcall %}
+          </div>
+        {% endif %}
+
+        <input type="hidden" value="{% if page.results.search_query: %}{{ page.results.search_query }}{% endif %}" name="q">
+        <button class="a-btn u-mb15 u-hide-on-js">Apply filters</button>
+    </form>
+
+</aside>
+<section id="tdp-search-results" class="content__main results" tabindex="-1">
+    <div class="results__header">
+        {% if page.results.total_results and page.results.total_results > 0 %}
+            <div class="results__count u-hide-on-sm u-hide-on-xs" data-results-count="{{ page.results.total_results }}">
+                <h3>
+                    {% if page.results.total_activities > page.results.total_results %}
+                        Showing {{ page.results.total_results }}
+                        match{% if page.results.total_results > 1 %}es{% endif %}
+                        out of
+                    {% endif %}
+                    {{ page.results.total_activities }} activities
+                </h3>
+            </div>
+        {% else %}
+            <div class="results__count results__count--empty u-hide-on-sm u-hide-on-xs" data-results-count="0">
+                <h3>No results match your search.</h3>
+                <p class="u-mb15">Try a new search with different terms or filters.</p>
+            </div>
+        {% endif %}
+        {% if show_filters %}
+            <div class="results__filters">
+                <span class="results__filters-label">
+                    Filters applied
+                </span>
+                <div class="results__filters-tags">
+                    {% for facet_name, facet_items in facets | items %}
+                        {% if facet_name == 'topic'%}
+                            {{ build_nested_filter_tags(facet_items, facet_name) }}
+                        {% else %}
+                            {% for facet in facet_items %}
+                                {% if facet.selected %}
+                                    {% set input_id = '#' + facet_name | trim + "--" + facet.title | trim | slugify %}
+                                    {{ tag.render({
+                                         'label': facet.title,
+                                         'value': input_id,
+                                         'behavior': 'clear-filter'
+                                    }) }}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <button class="a-btn a-btn--link a-btn--warning results__filters-clear u-mb10"
+                        data-js-hook="behavior_clear-all">
+                    Clear all filters
+                </button>
+            </div>
+        {% endif %}
+    </div>
+    {% if activities %}
+        <div class="results__list">
+            <ul class="m-list m-list--unstyled">
+                {% for result in activities %}
+                    {% if result %}
+                    <li class="u-mb30">{% include "activity_search_result.html" %}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="results__footer">
+            {{ pagination.render( paginator.num_pages, current_page, 'tdp-search-facets-and-results', '' ) }}
+            <div class="o-well">
+                Activities align with the My Money Five principles introduced by the statutorily created federal Financial Literacy and Education Commission.
+            </div>
+        </div>
+    {% endif %}
+</section>

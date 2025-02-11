@@ -1,0 +1,108 @@
+{% import 'v1/includes/molecules/pagination.html' as pagination with context %}
+{% import 'ask-cfpb/_ask-search.html' as ask_search with context %}
+
+{% extends 'v1/layouts/layout-2-1.html' %}
+
+{% block css -%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ static('apps/ask-cfpb/css/main.css') }}">
+{%- endblock css %}
+
+{% block content_modifiers -%}
+    {{ super() }} ask-cfpb-page ask-cfpb-page--search
+{%- endblock %}
+
+{% block content_main %}
+    <div class="block
+                block--flush-top">
+        <h1>{{ _('Search our library of answers') }}</h1>
+
+        <div class="block block--sub">
+        {{ ask_search.render( ask_query=tag or page.query, language=page.language, show_label=False, autocomplete=False, max_length=1024 ) }}
+        </div>
+
+        {% if results %}
+
+                {% if tag %}
+                    <h3 class="results-header">{{ _('Showing results for ') }} “{{ tag }}”</h3>
+                {% else %}
+                    <h3 class="results-header">{{ _('Showing') }} {{ results.start_index() }}-{{ results.end_index() }} {{ _('of') }} {{ paginator.count }} {{ _('results for') }} “{{ page.result_query }}”</h3>
+                {% endif %}
+                {% if page.suggestion %}
+                    <p>{{ _('Search instead for') }} <a href="{{ _('/ask-cfpb/search') }}?q={{ page.suggestion }}&correct=0">{{ page.suggestion }}</a></p>
+                {% endif %}
+
+
+            <section class="search-results
+                            block
+                            block--flush-top">
+
+                <div>
+                {% for question in results %}
+                    <article class="question__summary">
+                        <p class="question__title"><a href="{{ question[0] }}">{{ question[1] | safe }}</a></p>
+                        <p>{{ question[2] }}</p>
+                    </article>
+                {% endfor %}
+
+                </div>
+
+                <div class="block block--sub">
+                    {{ pagination.render(
+                        paginator.num_pages,
+                        current_page | int,
+                        '',
+                        index
+                    ) }}
+                </div>
+
+            </section>
+
+        {% elif not results and page.query %}
+
+            <section class="search-results
+                            block
+                            block--flush-top">
+                <div data-gtm_ask-no-results="true">
+                    <h3 class="results-header">
+                        {{ _('No results found for') }} “{{ tag or page.query }}”
+                    </h3>
+
+                    {% if page.suggestion %}
+                        <p>{{ _('Search instead for') }} <a href="{{ _('/ask-cfpb/search') }}?q={{ page.suggestion }}">{{ page.suggestion }}</a></p>
+                    {% endif %}
+                    </p>
+                </div>
+            </section>
+
+        {% else %}
+
+            <section class="search-results
+                            block
+                            block--flush-top">
+                <h4>
+                    {{ _('Please enter a search term in the box above.') }}
+                </h4>
+            </section>
+
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block content_sidebar scoped -%}
+    {% if about_us %}
+        <div class="block block--flush-top about-us-text">
+            {{ about_us.text | richtext }}
+        </div>
+    {% endif %}
+
+    {% if disclaimer %}
+        {% include '_disclaimer.html' %}
+    {% endif %}
+{%- endblock %}
+
+{% block javascript scoped %}
+    {{ super() }}
+    <script src="{{ static('apps/ask-cfpb/js/main.js') }}"></script>
+{% endblock javascript %}

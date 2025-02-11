@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Submit a complaint | Welcome</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="v0/form/css/normalize.css">
+    <link rel="stylesheet" href="v0/form/css/grid.css">
+    <link rel="stylesheet" href="v0/form/css/fonts.css">
+    <link rel="stylesheet" href="v0/form/css/new-core.css">
+    <link rel="stylesheet" href="v0/form/css/complain.css">
+    <link rel="stylesheet" href="v0/form/css/typeahead.css">
+    <!-- <link rel="stylesheet" href="form/css/responsive.css"> -->
+    <link rel="stylesheet" href="static/css/header.min.css">
+    <link rel="stylesheet" href="static/css/footer.min.css">
+    <link rel="stylesheet" href="static/css/main.min.css">
+
+    <!-- Custom modernizr for touch detection only, see the .js file for the build link -->
+    <script src="v0/form/js/vendor/modernizr.custom.js"></script>
+
+    <!--
+        Old IE polyfills for:
+        - HTML5 tags
+        - Media queries (so we can style mobile first)
+    -->
+    <!--[if lt IE 9]>
+    <script src="static/js/html5shiv-printshiv.min.js"></script>
+    <script src="form/js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="welcome cruxform">
+
+    <header class="o-header" role="banner">
+        <div class="m-global-eyebrow
+                    m-global-eyebrow__horizontal">
+            <div class="wrapper
+                        wrapper__match-content">
+                <div class="m-global-eyebrow_tagline">
+                    An official website of the
+                    <span class="m-global-eyebrow_tagline-usa">United States Government</span>
+                </div>
+                <div class="m-global-eyebrow_actions">
+                    <ul class="list__unstyled
+                               list__horizontal
+                               m-global-eyebrow_languages">
+                        <li class="list_item">
+                            <a href="/es/" hreflang="es" lang="es">
+                                Español
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="m-global-eyebrow_phone">
+                        (855) 411-2372
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="o-header_content js">
+
+            <div class="wrapper wrapper__match-content">
+
+                <a class="o-header_logo" href="/">
+                    <!--[if lt IE 9]>
+                    <img class="o-header_logo-img"
+                         src="static/img/logo_sm-exec.png"
+                         alt="Consumer Financial Protection Bureau"
+                         width="237"
+                         height="50">
+                     <![endif]-->
+                     <!--[if gt IE 8]><!-->
+                     <img class="o-header_logo-img u-js-only" src="static/img/logo_sm-exec.svg" onerror="this.onerror=null;this.src='/static/img/logo_sm-exec.png';" alt="Consumer Financial Protection Bureau" width="237" height="50">
+                     <noscript>
+                        &lt;img class="o-header_logo-img"
+                        src="static/img/logo_sm-exec.png"
+                        alt="Consumer Financial Protection Bureau"
+                        width="237"
+                        height="50"&gt;
+                    </noscript>
+                    <!--<![endif]-->
+                </a>
+            </div>
+
+        </div>
+        <script>
+        /* TODO: scope no-js to individual molecules/organisms. This is a hack to fix no-js on the on-demand header, while also allowing the menu to be scoped to o-header for on-demand pages. */
+        var headerDom = document.querySelector( '.o-header_content' );
+        headerDom.className = headerDom.className.replace('no-js','js');
+        </script>
+    </header>
+
+    <noscript>
+        For full functionality of this application, it is necessary to enable JavaScript.
+        Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+        instructions how to enable JavaScript in your web browser</a>.
+    </noscript>
+
+
+    <div class="wrapper-body page-step-1">
+
+        <div class="wrapper-container">
+
+<!-- =============
+     BEGIN CONTENT
+     ============= -->
+
+       <section class="content row cr-content">
+
+            <div class="span8 cr-primary">
+                <div id="select_product" class="cr-primary-container">
+            		<h2>
+                        Submit a complaint
+                    </h2>
+                    <h3>
+                        There are five steps to submitting your complaint:
+                    </h3>
+        			<ol id="welcome-list">
+                        <li>
+                            Step 1: What is this complaint about?
+                        </li>
+                        <li>
+                            Step 2: What type of problem are you having?
+                        </li>
+                        <li>
+                            Step 3: What happened?
+                        </li>
+                        <li>
+                            Step 4: What company is this complaint about?
+                        </li>
+                        <li>
+                            Step 5: Who are the people involved?
+                        </li>
+        			</ol>
+                    <h3>
+                        Before you get started
+                    </h3>
+                    <p>
+                        You’ll need the dates, amounts, and other details about your complaint. If you have documents you want to include, such as billing statements or letters from the company, you’ll be able to attach them in Step 3.
+                    </p>
+                    <p>
+                        Make sure to include all the information you can, because you cannot submit a second complaint about the same problem.
+                    </p>
+                    <p>
+                        The CFPB does not read the descriptions of your complaint. Instead, we send them directly to the companies involved.
+                    </p>
+                    <a id="get-started-button" href="select-product.html"><button class="btn btn-arrow" type="button">Start your complaint</button></a>
+                </div>
+
+            </div> <!-- select_product -->
+
+        </div>
+        <!-- /.primary -->
+
+    </section>
+    <!-- /.row -->
+
+<!-- =============
+     / END CONTENT
+     ============= -->
+
+    </div><!-- .wrapper-container -->
+
+</div><!-- .wrapper-body -->
+
+<footer class="o-footer" role="contentinfo">
+    <div class="wrapper wrapper__match-content">
+
+        <div class="o-footer_pre">
+            <a class="btn
+                      btn__secondary
+                      js-return-to-top
+                      o-footer_top-button" href="#" data-gtm_ignore="true">
+                Back to top <span class="cf-icon cf-icon-arrow-up"></span>
+            </a>
+        </div>
+
+        <div class="o-footer-middle-left">
+
+            <div class="o-footer_col">
+                <ul class="o-footer_list">
+                    <li class="list_item">
+                        <a id="privacy" class="list_link" href="#">Privacy act statement</a>
+                    </li>
+                    <li class="list_item">
+                        <a id="omb" class="list_link" href="#">OMB #3170-0011</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="o-footer-middle-right">
+            <ul class="o-footer_list">
+                <li class="list_item">
+                    <span class="icon-link_text list_link">
+                      Have questions or need help with this form?
+                      Call (855) 411-2372 or <a href="#">chat with us now</a>.
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-footer-post">
+            <p class="o-footer_official-website">
+                An official website of the United States Government
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Deprecated scripts -->
+<script src="static/js/jquery.min.js"></script>
+<script src="v0/form/js/main.js"></script>
+<script src="v0/form/js/emulate.js"></script>
+<!-- <script src="v0/form/js/responsive.js"></script> -->
+
+<!-- Modern scripts -->
+<script src="static/js/main.min.js"></script>
+
+</body>
+</html>

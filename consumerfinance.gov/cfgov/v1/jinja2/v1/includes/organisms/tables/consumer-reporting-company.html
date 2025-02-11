@@ -1,0 +1,15 @@
+{%- with value = {
+    'data': {
+        'columns': [
+            {'heading': 'Website'},
+            {'heading': 'Phone number'},
+            {'heading': 'Mailing address'}
+        ],
+        'rows': [
+            [value.website, value.phone, value.mailing_address]
+        ],
+    },
+    'options': ['is_full_width', 'stack_on_mobile']
+} %}
+    {% include 'v1/includes/organisms/tables/base.html' %}
+{% endwith %}

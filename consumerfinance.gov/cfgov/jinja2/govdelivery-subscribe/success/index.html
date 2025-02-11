@@ -1,0 +1,16 @@
+{% extends 'v1/layouts/layout-full.html' %}
+
+{% block title -%}
+    Subscription success | Consumer Financial Protection Bureau
+{%- endblock %}
+
+{% block desc -%}
+    Your subscription was successfully received.
+{%- endblock %}
+
+{% block content_main %}
+    <div class="block block--flush-top">
+        <h1>{{ svg_icon('approved-round') }} Success!</h1>
+        <p>Your subscription was successfully received.</p>
+    </div>
+{% endblock %}

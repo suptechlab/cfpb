@@ -1,0 +1,34 @@
+{% extends 'v1/layouts/layout-2-1.html' %}
+
+{% import 'hmda-explorer-controls.html' as controls with context %}
+{% import 'hmda-explorer-results.html' as results with context %}
+{% import 'hmda-explorer-institutions.html' as institutions with context %}
+{% import 'v1/includes/templates/render_block.html' as render_block with context %}
+{% import 'v1/includes/templates/streamfield-sidefoot.html' as streamfield_sidefoot with context %}
+
+{% block content_main %}
+    {% for block in page.header -%}
+        {{ render_block.render(block, loop.index) }}
+    {%- endfor %}
+
+    <div class="hmda-historic-data block">
+
+        {{ controls.render(form) }}
+
+        {{ results.render(
+            title,
+            files)
+        }}
+
+        {{ institutions.render() }}
+
+    </div>
+
+    {% for block in page.content -%}
+        {{ render_block.render(block, loop.index) }}
+    {%- endfor %}
+{% endblock %}
+
+{% block content_sidebar scoped -%}
+    {{ streamfield_sidefoot.render(page.sidefoot) }}
+{%- endblock %}

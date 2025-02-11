@@ -1,0 +1,41 @@
+{% import 'college-cost-blocks/macros/secondary-nav.html' as secondary_nav with context %}
+
+<aside class="content__sidebar
+              content--flush-top-on-small
+              content--flush-sides-on-small
+              content--half-top-on-desk
+              o-college-costs-nav">
+    {% set nav_items = [
+        {
+            'title': 'Calculating school costs',
+            'data': 'school-info',
+            'current': True
+        },
+        {
+            'title': 'Estimating your debt',
+            'data': 'estimate-debt',
+            'current': False
+        },
+        {
+            'title': 'Customizing your estimate ',
+            'data': 'customize-estimate',
+            'current': False
+        },
+        {
+            'title': 'Affording your loans',
+            'data': 'affording-payments',
+            'current': False
+        },
+        {
+            'title': 'Comparing your school',
+            'data': 'compare-school',
+            'current': False
+        },
+        {
+            'title': 'Reviewing your plan',
+            'data': 'review-plan',
+            'current': False
+        }
+    ]%}
+    {{secondary_nav.render(nav_items)}}
+</aside>

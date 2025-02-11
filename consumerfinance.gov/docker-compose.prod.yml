@@ -1,0 +1,20 @@
+volumes:
+  postgres_data:
+
+services:
+  elasticsearch:
+    environment:
+      ES_JAVA_OPTS: '-Xms1g -Xmx1g'
+
+  python:
+    image: cfgov_python:prod
+    build:
+      target: prod
+    environment:
+      ALLOW_ADMIN_URL: 'True'
+      DJANGO_ADMIN_USERNAME: admin
+      DJANGO_ADMIN_PASSWORD: admin
+      SECRET_KEY: abcdefghijklmnopqrstuvwxyz
+      MEDIA_ROOT: /src/consumerfinance.gov/cfgov/f/
+    ports:
+      - '8000:8000'

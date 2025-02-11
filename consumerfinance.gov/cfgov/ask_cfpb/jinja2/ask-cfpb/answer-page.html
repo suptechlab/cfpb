@@ -1,0 +1,123 @@
+{% extends 'v1/layouts/layout-2-1.html' %}
+{% import 'v1/includes/macros/util/format/datetime.html' as dt %}
+{% import 'v1/includes/templates/streamfield-sidefoot.html' as streamfield_sidefoot with context %}
+{% import 'ask-cfpb/_ask-search.html' as ask_search with context %}
+
+{% block title -%}
+    {{- seo_title or page.question or page.title | striptags }} | {{ _('Consumer Financial Protection Bureau') }}
+{%- endblock %}
+
+{%- block og_desc -%}
+    {{- meta_description -}}
+{%- endblock -%}
+
+{% block css -%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ static('apps/ask-cfpb/css/main.css') }}">
+{%- endblock css %}
+
+{% block content_modifiers -%}
+    {{ super() }} ask-cfpb-page ask-cfpb-page--answer
+{%- endblock %}
+
+{% block content_main %}
+    <div class="block
+                block--flush-top
+                block--sub">
+        {% if last_edited %}
+            <time datetime='{{ last_edited }}' class="answer-edited-date">{{ _('last reviewed') }}: {{ dt.format_date(last_edited) }}</time>
+        {% endif %}
+        <h1>
+            {{ page.question | striptags }}
+        </h1>
+
+        {% import 'v1/includes/molecules/translation-links.html' as translation_links with context %}
+        {{ translation_links.render() }}
+    </div>
+    <div class="block
+                block--flush-top">
+
+        {% if page.short_answer %}
+            <div class="lead-paragraph">
+                {{ page.short_answer | richtext | safe }}
+            </div>
+        {% endif %}
+
+        {% if page.notification %}
+            <div class="block block--sub">
+                {{ page.notification }}
+            </div>
+        {% endif %}
+
+        <div class="block block--sub">
+
+            <div class="o-summary o-summary--mobile">
+                <div class="o-summary__content answer-text">
+                    {% include_block page.answer_content %}
+                </div>
+
+                <button class="o-summary__btn u-hidden">
+                    {{ _('Read full answer') }}
+                    {{ svg_icon('plus-round') }}
+                </button>
+            </div>
+
+            <div class="block related-questions">
+                <h2>{{ _('Don\'t see what you\'re looking for?') }}</h2>
+                {% if related_questions %}
+                <div class="block block--sub">
+                    <h3>{{ _('Browse related questions') }} </h3>
+                    <ul class="m-list m-list--unstyled m-list--links">
+                        {% for question in related_questions %}
+                        <li class="m-list__item">
+                            <a class="a-link a-link--jump"
+                               href="{{ question.url }}">
+                                <span class="a-link__text">{{ question.question | safe }}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                        {% if portal_page %}
+                        <li class="m-list__item m-list__item--last">
+                            <a class="a-link a-link--jump"
+                               href="{{ portal_page.url }}">
+                                <span class="a-link__text"><b>
+                                    {{ _('Learn more about') }}
+                                    {{ portal_page.portal_topic.title(page.language) | lower }}
+                                </b></span>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endif %}
+                <div class="block block--sub">
+                    {{ ask_search.render( language=page.language ) }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block content_sidebar scoped  %}
+    {% if about_us %}
+        <div class="block
+                    block--flush-top
+                    about-us-text">
+            {{ about_us.text | richtext }}
+        </div>
+    {% endif %}
+
+    {% if page.sidebar_panels %}
+        {{ streamfield_sidefoot.render(page.sidebar) }}
+    {% endif %}
+
+    {% if disclaimer %}
+        {% include '_disclaimer.html' %}
+    {% endif %}
+{% endblock %}
+
+{% block javascript scoped %}
+    {{ super() }}
+    <script src="{{ static('apps/ask-cfpb/js/main.js') }}"></script>
+{% endblock javascript %}

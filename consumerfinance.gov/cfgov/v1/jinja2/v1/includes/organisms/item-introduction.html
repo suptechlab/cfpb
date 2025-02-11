@@ -1,0 +1,81 @@
+{# ==========================================================================
+
+   Item Introduction
+
+   ==========================================================================
+
+   Create an Item Introduction molecule.
+   See https://cfpb.github.io/design-system/patterns/item-introductions.
+
+   value:                   An object with the following options:
+
+   value.show_category:    Whether to show the category or not.
+   value.heading:          Heading text.
+   value.paragraph.source: Body introduction text.
+
+   value.date:             A datetime for the post.
+   value.has_social:       Whether to show the share icons or not.
+
+   page:                   The CFGOVPage object being rendered.
+
+   ========================================================================== #}
+
+
+{%- import 'v1/includes/molecules/social-media.html' as social_media with context -%}
+{%- import 'v1/includes/macros/category-slug.html' as category_slug -%}
+
+{%- set filter_page = page.get_filter_data() %}
+{%- set filter_page_url = pageurl(filter_page) if filter_page else none %}
+{%- set authors = page.get_authors() -%}
+
+<div class="o-item-introduction">
+    {% if value.show_category and filter_page_url -%}
+        {% set first_category = page.categories.first() -%}
+        {% if first_category -%}
+        <div class="o-item-introduction__intro">
+            {{ category_slug.render(
+                category=first_category.name,
+                href=filter_page_url
+            ) }}
+        </div>
+        {%- endif %}
+    {%- endif %}
+
+    {% if value.heading -%}
+        <h1>{{ value.heading | safe }}</h1>
+
+        {% import 'v1/includes/molecules/translation-links.html' as translation_links with context %}
+        {{ translation_links.render() }}
+    {%- endif %}
+
+    {% if value.paragraph %}
+        <div class="lead-paragraph">{{ value.paragraph | safe }}</div>
+    {% endif %}
+
+    {% if value.date or authors %}
+        <div class="meta">
+    {% endif %}
+        {% if filter_page_url and authors %}
+            <span class="byline">
+            {%- for author in authors -%}
+                {% if loop.first %}By {% elif loop.last %}and {% endif %}
+                {{ author }}
+                {%- if loop.length > 2 and loop.index < loop.length %}, {% endif %}
+            {% endfor %}
+            </span>
+            {% if value.date %}&ndash;{% endif %}
+        {% endif %}
+        {% if value.date %}
+            <span class="a-date">
+                {% import 'v1/includes/macros/time.html' as time %}
+                {{ time.render(value.date, {'date':true}) }}
+            </span>
+        {% endif %}
+    {% if value.date or authors %}
+        </div>
+    {% endif %}
+
+    {% if value.has_social %}
+        {{ social_media.render(value.social_options or {}) }}
+    {% endif %}
+</div>

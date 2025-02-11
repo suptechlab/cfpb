@@ -1,0 +1,74 @@
+ˇ{# ==========================================================================
+
+   Costs Group (organism using flyout code)
+
+   ==========================================================================
+
+   Description:
+
+   Create a financial item costs group flyout when given:
+
+   value:                   Object with following properties:
+
+   value.class:             Class for the enclosing div
+
+   value.label:             Label for costs group header.
+
+   value.value:             Value for costs group header.
+
+   value.is_editable:       Whether costs group contains form elements.
+                            Determines the open/close cues.
+
+   value.note:              Additional text for costs group header.
+
+   value.decor:             Decorative characters placed before the value
+
+   value.data_attribute:    Data attribute for value element.
+
+   value.status:            Status descriptor for financial item value.
+                            Options include warning.
+
+   ========================================================================== #}
+
+{% macro flyout(value) %}
+<div class="o-costs-group {{ value.class if value.class else '' }}">
+    <button class="o-costs-group__header
+                   o-costs-group__header--collapsed
+                   financial-item
+                   financial-item--flyout
+                   {{ ('financial-item--' + value.status | safe ) if value.status else ''}}"
+            type="button">
+      <span class="flex-container">
+        <span class="h4 o-costs-group__label financial-item__label">
+            {{ value.label | safe }}
+        </span>
+        <span class="o-costs-group__link">
+            {% if value.decor %}{{ value.decor | safe }}{% endif %}
+            <span class="financial-item__value" {{ value.data_attribute | safe if value.data_attribute else '' }} >
+               {{ value.value }}
+            </span>
+            <span class="o-costs-group__cue-open" aria-label="{{ 'Edit' if value.is_editable else 'Show' }}">
+                {{ 'Edit' if value.is_editable else svg_icon('plus-round') }}
+            </span>
+            <span class="o-costs-group__cue-close" aria-label="{{ 'Save' if value.is_editable else 'Hide' }}">
+                {{ 'Close' if value.is_editable else svg_icon('minus-round') }}
+            </span>
+        </span>
+        </span>
+        {% if value.note %}
+            <span class="financial-item__note">
+                {{ value.note | safe }}
+            </span>
+        {% endif %}
+    </button>
+    <div class="o-costs-group__content">
+        {% if caller is defined %}
+            {{ caller() }}
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}
+
+{% if value %}
+    {{ flyout(value) }}
+{% endif %}

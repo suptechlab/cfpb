@@ -1,0 +1,24 @@
+{% extends 'v1/layouts/layout-2-1.html' %}
+
+{% import 'v1/includes/templates/render_block.html' as render_block with context %}
+{% import 'v1/includes/templates/streamfield-sidefoot.html' as streamfield_sidefoot with context %}
+
+{% block content_main %}
+    {% for block in page.header -%}
+        {{ render_block.render(block, loop.index) }}
+    {%- endfor %}
+
+    {% for block in page.content -%}
+        {% if block.block_type == 'contact_expandable_group' %}
+            <div class="block">
+                {% include_block block %}
+            </div>
+        {% else %}
+            {{ render_block.render(block, loop.index) }}
+        {% endif %}
+    {%- endfor %}
+{% endblock %}
+
+{% block content_sidebar scoped -%}
+    {{ streamfield_sidefoot.render(page.sidefoot) }}
+{%- endblock %}

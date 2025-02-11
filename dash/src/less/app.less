@@ -1,0 +1,150 @@
+@import '../vendor/cf-grid/src/cf-grid.less';
+@import '../vendor/cf-breadcrumbs/src/cf-breadcrumbs.less';
+
+@import 'cfpb-brand-palette.less';
+@import 'cf-theme-overrides.less';
+
+body {
+  .webfont-regular();
+}
+
+// Header
+
+.masthead {
+  .cf-icon {
+    margin-right: .2em;
+  }
+}
+
+// Teams
+
+.teams-page-header {
+  min-height: 50px;
+  .cf-form_input-icon {
+    top: 0;
+  }
+}
+
+// Lists
+
+ul {
+  margin: .5em 0 2em;
+  padding-left: .7em;
+}
+
+.list-item {
+  list-style-type: none;
+}
+
+.asset-meta {
+  font-size: .85em;
+}
+
+// Actions
+
+.action-btn {
+  font-size: .2em;
+}
+
+.add-item {
+  margin-left: 5px;
+}
+
+.remove-item {
+  margin-right: .4em;
+}
+
+// Icons
+
+.cf-icon {
+  &-action:hover {
+    cursor: pointer;
+  }
+  &.disabled:hover {
+    cursor: not-allowed;
+  }
+}
+
+// Third-party components
+
+.typeahead {
+  display: inline;
+  &-selector {
+    margin: 0;
+    padding-left: 10px;
+    position: absolute;
+    background-color: #fff;
+    width: 166px;
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+// Utils
+
+.public-key{
+  word-break: break-all;
+}
+
+.responsive(@maxWidth; @rules) {
+    @media only screen and (max-width: @maxWidth) {
+        @rules();
+    }
+}
+
+.inline {
+  display: inline;
+}
+
+.disabled {
+  color: #ccc;
+}
+
+.expandable__team {
+  padding: 1em;
+}
+
+.expandable_header-link {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.user-meta_item {
+  border-left: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.cf-icon__spin {
+  -webkit-animation: cf-spin 2s infinite linear;
+  animation: cf-spin 2s infinite linear;
+}
+.cf-icon__pulse {
+  -webkit-animation: cf-spin 1s infinite steps(8);
+  animation: cf-spin 1s infinite steps(8);
+}
+@-webkit-keyframes cf-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes cf-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

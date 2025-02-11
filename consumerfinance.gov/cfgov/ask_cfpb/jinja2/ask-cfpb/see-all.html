@@ -1,0 +1,92 @@
+{% extends 'v1/layouts/layout-1-3.html' %}
+
+{% import 'v1/includes/molecules/pagination.html' as pagination with context %}
+
+{% block css -%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ static('apps/ask-cfpb/css/main.css') }}">
+{%- endblock css %}
+
+{% block content_modifiers -%}
+    {{ super() }} ask-cfpb-page ask-cfpb-page--see-all
+{%- endblock %}
+
+{% block content_main %}
+    <h1>
+      {{ page.title }}
+    </h1>
+    {% import 'v1/includes/molecules/translation-links.html' as translation_links with context %}
+    {{ translation_links.render() }}
+    {% if page.glossary_terms %}
+        <dl class="terms" itemscope itemtype="https://schema.org/DefinedTermSet">
+        {% for term in page.glossary_terms %}
+            <div class="term {{'' if loop.index == 1 else 'block block--border-top block--padded-top'}}"
+                 id="{{ term.anchor(page.language) }}"
+                 itemscope
+                 itemtype="https://schema.org/DefinedTerm">
+                <dt class="term__name" itemprop="name">
+                    {{ term.name(page.language) }}
+                    <link itemprop="url" href="{{ page.full_url }}{{ page.category_slug }}/#{{ term.anchor(page.language) }}">
+                </dt>
+                <dd class="term__definition" itemprop="description">
+                    {{ term.definition(page.language) | richtext }}
+                    {% if term.answer_page_en -%}
+                        <a class="term__link" href="{{ term.answer_page_url(page.language) }}">{{ _('Read more') }}</a>
+                    {%- endif %}
+                </dd>
+            </div>
+        {% endfor %}
+        </dl>
+    {% else %}
+        {% if not page.portal_category %}
+        <p class="lead-paragraph u-mt0">
+            {{ page.overview }}
+        </p>
+        {% endif %}
+        <aside class="search-bar">
+            <form method="get" action=".">
+                <label for="ask-search" class="a-label h4">
+                    {{ _('Narrow your results') }}
+                </label>
+                <div class="m-form-field">
+                    <input
+                        class="a-text-input a-text-input--full"
+                        type="text"
+                        aria-label="{{ _('Search term') }}"
+                        name="search_term"
+                        value="{{ search_term }}">
+                        <button class="a-btn" id="ask-search" type="submit">
+                            {{ _('Search') }}
+                        </button>
+                        <a class="a-btn a-btn--link a-btn--warning"
+                           href=".">
+                            {{ _('Clear search') }}
+                        </a>
+                </div>
+            </form>
+        </aside>
+
+        <p class="results-message">{{ results_message }}</p>
+
+        <section class="results">
+            <div class="page-links">
+            {% for page in pages %}
+            <article>
+                <div class="h3 hover"><a href="{{page.url}}" class="hover">{{page.autocomplete}}</a></div>
+            </article>
+            {% endfor %}
+
+            <div class="block block--sub">
+                {{ pagination.render( paginator.num_pages, current_page, '', 0 ) }}
+            </div>
+        </section>
+        {% if not page.portal_category %}
+        <div class="block block--flush-bottom block--padded-bottom">
+            <p class="ask-search-link h4">
+                <span>{{ _("Don't see what you're looking for?") }}</span>
+                <a href="{{ _('/ask-cfpb/search/') }}">{{ _('Search our full library of answers') }}</a>
+            </p>
+        </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}
