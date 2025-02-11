@@ -1,0 +1,43 @@
+- name: install libselinux-python for PUIAS
+  yum: name=libselinux-python
+
+- name: disable selinux for Vagrant only
+  selinux: state=disabled
+  when: groups.has_key('vagrant')
+
+- name: Create the PUIAS_6_computational Repository
+  copy: src=puias-computational.repo dest=/etc/yum.repos.d/puias-computational.repo
+
+- name: Create the GPG key for PUIAS_6_computational
+  copy: src=RPM-GPG-KEY-puias dest=/etc/pki/rpm-gpg
+
+- name: Install python
+  yum: name={{ item }}
+  with_items:
+    - tcl
+    - python27
+    - python27-tools
+    - python27-setuptools
+
+- name: Install pip
+  easy_install: name=pip executable=easy_install-2.7
+
+- name: Install python packages
+  pip: requirements={{ pantheon_dir }}/devdash/requirements.txt executable=pip2.7
+
+- name: template settings_secret.py
+  template: src=settings_secret.py.j2 dest={{ pantheon_dir }}/devdash/devdash/settings_secret.py
+
+- name: ensure data directory exists
+  file: path={{ data_dir }} state=directory
+
+- name: create web user
+  user: name={{ web_user }} system=yes createhome=no
+
+- name: ensure django data directory exists
+  file: path={{ data_dir }}/django owner={{ web_user }} group={{ web_user }} state=directory
+
+- name: migrate db
+  shell: "su -l {{ web_user }} -c '{{ pantheon_dir }}/devdash/manage.py migrate'"
+  register: migrate_result
+  changed_when: "'No migrations to apply.' not in migrate_result.stdout"

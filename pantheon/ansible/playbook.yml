@@ -1,0 +1,48 @@
+- hosts:
+    - dev
+    - test
+    - prod
+  gather_facts: no
+  pre_tasks:
+    - name: set umask to 022 so we can deploy
+      replace: dest=/etc/profile regexp='umask 077$' replace='umask 022'
+      sudo: yes
+    - name: set umask to 022 so we can deploy
+      replace: dest=/etc/bashrc regexp='umask 077$' replace='umask 022'
+      sudo: yes
+  roles:
+    - role: load_repos
+      sudo: yes
+- hosts:
+    - vagrant
+    - dev
+    - test
+    - prod
+  gather_facts: no
+  vars:
+    kratos_port: 5000
+    moirai_port: 5001
+    django_port: 8000
+  roles:
+    - role: django
+      sudo: yes
+    - role: node
+      sudo: yes
+    - role: couch
+      sudo: yes
+    - role: nginx
+      sudo: yes
+    - role: supervisord
+      sudo: yes
+- hosts:
+    - dev
+    - test
+    - prod
+  gather_facts: no
+  post_tasks:
+    - name: set umask to 077 for safety
+      replace: dest=/etc/profile regexp='umask 022$' replace='umask 077'
+      sudo: yes
+    - name: set umask to 077 for safety
+      replace: dest=/etc/bashrc regexp='umask 022$' replace='umask 077'
+      sudo: yes

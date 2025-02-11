@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+
+<!--
+    ===========
+    GLOBAL META
+    ===========
+-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+    ==================
+    PAGE-SPECIFIC META
+    ==================
+-->
+
+    <title>DevDash</title>
+    <meta name="description" content="A Dashboard for Devs and Designers.">
+
+<!--
+    ======
+    STYLES
+    ======
+    The number of stylesheets here must be kept to a minimum.
+    Unless adding a significant amount of CSS that is specific to a single page
+    or section of the site, all new styles should be added to src/static/css/app.less.
+-->
+
+<!--[if lt IE 9]>      <link rel="stylesheet" href="/static/css/main.ie.min.css"> <![endif]-->
+<!--[if gt IE 8]><!--> <link rel="stylesheet" href="/static/css/main.min.css"> <!--<![endif]-->
+
+<!--
+    ============
+    HEAD SCRIPTS
+    ============
+    The following scripts must be included in the head. DO NOT ADD ANY MORE.
+    All other scripts should go before the closing body tag.
+    If you come across a script that makes a convincing case to be included in
+    the head, then file an issue or PR to discuss including it.
+-->
+
+<!--[if lt IE 9]>
+    <script src="/static/vendor/html5shiv/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+
+    <script>
+        // Confirm availability of JS and remove no-js class from html
+        var docElement = document.documentElement;
+        docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2');
+    </script>
+
+</head>
+
+<body>
+
+<!--
+    =================
+    Begin page source
+    =================
+-->
+
+<header class="masthead wrapper wrapper__match-content" role="banner">
+    <h1 class="masthead_logo">
+        <span class="cf-icon cf-icon-web-round"></span>
+        DevDash
+    </h1>
+</header>
+
+<main class="content" id="main" role="main">
+    <div class="content_bar"></div>
+    <div class="content_wrapper">
+        <div class="content_main">
+
+            <div class="code-demo-group">
+
+                <section class="code-demo-group_item django-forms">
+                    <h1>Django forms</h1>
+                    <ul class="errorlist">
+                        <li>This is a form-wide error.</li>
+                    </ul>
+                    <p>
+                        <label for="id_valid_boolean">Valid boolean:</label>
+                        <input id="id_valid_boolean" name="valid_boolean" type="checkbox" />
+                        <span class="helptext">It's valid!</span>
+                    </p>
+                    <ul class="errorlist">
+                        <li>This field is required.</li>
+                    </ul>
+                    <p class="error">
+                        <label for="id_invalid_boolean">Invalid boolean:</label>
+                        <input id="id_invalid_boolean" name="invalid_boolean" type="checkbox" />
+                        <span class="helptext">It's invalid!</span>
+                    </p>
+                    <p>
+                        <label for="id_valid_charfield">Valid charfield:</label>
+                        <input id="id_valid_charfield" maxlength="10" name="valid_charfield" type="text" />
+                        <span class="helptext">It's valid!</span>
+                    </p>
+                    <p>
+                        <label for="id_valid_email_field">Valid email field:</label>
+                        <input id="id_valid_email_field" maxlength="10" name="valid_email_field" type="email" />
+                        <span class="helptext">It's valid!</span>
+                    </p>
+                    <ul class="errorlist">
+                        <li>This field is required.</li>
+                    </ul>
+                    <p class="error">
+                        <label for="id_invalid_charfield">Invalid charfield:</label>
+                        <input id="id_invalid_charfield" maxlength="10" name="invalid_charfield" type="text" />
+                        <span class="helptext">It's invalid!</span>
+                    </p>
+                    <p>
+                        <label for="id_valid_choice_field">Valid choice field:</label>
+                        <select id="id_valid_choice_field" name="valid_choice_field">
+                            <option value="1">one</option>
+                            <option value="2">two</option>
+                            <option value="3">three</option>
+                        </select>
+                        <span class="helptext">It's valid!</span>
+                    </p>
+                    <ul class="errorlist">
+                        <li>This field is required.</li>
+                    </ul>
+                    <p class="error">
+                        <label for="id_invalid_choice_field">Invalid choice field:</label>
+                        <select id="id_invalid_choice_field" name="invalid_choice_field">
+                            <option value="1">one</option>
+                            <option value="2">two</option>
+                            <option value="3">three</option>
+                        </select>
+                        <span class="helptext">It's invalid!</span>
+                    </p>
+                </section>
+
+                <section class="code-demo-group_item">
+                    <div class="team-content">
+                        <div class="team-content_item">
+                            <h1 class="slats-header">Users</h1>
+                            <div class="slats-type">
+                                <input class="slats-type_input" type="text" placeholder="Placeholder text">
+                            </div>
+                            <ul class="slats">
+                                <li class="slats_item slat">
+                                    <span class="slat_label">Name/label</span>
+                                    <small class="slat_label-small">Small</small>
+                                </li>
+                                <li class="slats_item slat">
+                                    <span class="slat_label-regular">Regular-sized label</span>
+                                </li>
+                                <li class="slats_item slat">
+                                    <span class="slat_label">Name/label</span>
+                                    <div class="slat_right">
+                                        <button class="btn btn__link slat_btn__link">Edit</button>
+                                    </div>
+                                </li>
+                                <li class="slats_item slat">
+                                    <span class="slat_label">Name/label</span>
+                                    <div class="slat_right">
+                                        <button class="slat_icon-btn slat_icon-btn__remove">
+                                            <span class="u-visually-hidden">Remove</span>
+                                            <span class="cf-icon cf-icon-minus-round"></span>
+                                        </button>
+                                        <button class="slat_icon-btn slat_icon-btn__add slat_icon-btn__last">
+                                            <span class="u-visually-hidden">Add</span>
+                                            <span class="cf-icon cf-icon-plus-round"></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="slats_item slat">
+                                    <button class="slat_icon-btn slat_icon-btn__add slat_icon-btn__first">
+                                        <span class="u-visually-hidden">Add</span>
+                                        <span class="cf-icon cf-icon-plus-round"></span>
+                                    </button>
+                                    <span class="slat_label">Name/label</span>
+                                </li>
+                                <li class="slats_item slat">
+                                    <span class="slat_label">Slat grid</span>
+                                    <div class="slat-l">
+                                        <div class="slat-l_col-1-3">
+                                            <div style="background:black; height:1em;"></div>
+                                        </div>
+                                        <div class="slat-l_col-2-3">
+                                            <div style="background:black; height:1em;"></div>
+                                        </div>
+                                        <div class="slat-l_col-2-3">
+                                            <div style="background:black; height:1em;"></div>
+                                        </div>
+                                        <div class="slat-l_col-1-3">
+                                            <div style="background:black; height:1em;"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="slats_item slat slat__bg-info">
+                                    <span class="slat_label">Info bg</span>
+                                </li>
+                                <li class="slats_item slat slat__bg-warning">
+                                    <span class="slat_label">Warning bg</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="team-content_item">
+                            <h1 class="slats-header slats-header__add">Add a user</h1>
+                            <div class="slats-type">
+                                <input class="slats-type_input" type="text" placeholder="Placeholder text">
+                            </div>
+                            <ul class="slats">
+                                <li class="slats_item slat">
+                                    <button class="slat_icon-btn slat_icon-btn__add slat_icon-btn__first">
+                                        <span class="u-visually-hidden">Add</span>
+                                        <span class="cf-icon cf-icon-plus-round"></span>
+                                    </button>
+                                    <span class="slat_label">Name/label</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="team-content_item">
+                            <button class="btn btn__secondary btn__block">Block button</button>
+                        </div>
+                        <div class="team-content_item">
+                            <a href="#" class="btn btn__secondary btn__block">Block button link</a>
+                        </div>
+                    </div>
+                </section>
+
+            </div><!-- END .code-demo-group -->
+
+            <div class="code-demo-group">
+
+                <section class="code-demo-group_item">
+                    <div class="expandable expandable__padded u-mb0">
+                        <button class="expandable_header expandable_target">
+                            <span class="expandable_header-left expandable_label">
+                                Expandables
+                            </span>
+                            <span class="expandable_header-right expandable_link">
+                                <span class="expandable_cue-open">
+                                    Show
+                                    <span class="cf-icon cf-icon-plus-round"></span>
+                                </span>
+                                <span class="expandable_cue-close">
+                                    Hide
+                                    <span class="cf-icon cf-icon-minus-round"></span>
+                                </span>
+                            </span>
+                        </button>
+                        <div class="expandable_content">
+                            <p>Expandable docs: <a href="http://cfpb.github.io/cf-expandables/docs/">http://cfpb.github.io/cf-expandables/docs/</a></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="code-demo-group_item">
+                    <div class="expandable expandable__padded u-mb0">
+                        <button class="expandable_header expandable_target">
+                            <span class="expandable_header-left expandable_label">
+                                Buttons
+                            </span>
+                            <span class="expandable_header-right expandable_link">
+                                <span class="expandable_cue-open">
+                                    Show
+                                    <span class="cf-icon cf-icon-plus-round"></span>
+                                </span>
+                                <span class="expandable_cue-close">
+                                    Hide
+                                    <span class="cf-icon cf-icon-minus-round"></span>
+                                </span>
+                            </span>
+                        </button>
+                        <div class="expandable_content">
+                            <figure class="code-demo">
+                                <button class="btn btn__grouped-first">Button 1</button>
+                                <button class="btn btn__grouped">Button 2</button>
+                                <button class="btn btn__grouped-last">Button 3</button>
+                                <figcaption class="code-demo_caption">
+                                    Button group docs: <a href="http://cfpb.github.io/cf-buttons/docs/#button-group-modifiers">http://cfpb.github.io/cf-buttons/docs/#button-group-modifiers</a>
+                                </figcaption>
+                            </figure>
+                            <figure class="code-demo">
+                                <button class="btn btn__grouped-first">Button</button>
+                                <button class="btn btn__grouped-last btn__compound-action">
+                                    <span class="cf-icon cf-icon-down btn__grouped-last"></span>
+                                </button>
+                                <figcaption class="code-demo_caption">
+                                    Compound button docs: <a href="http://cfpb.github.io/cf-buttons/docs/#compound-button">http://cfpb.github.io/cf-buttons/docs/#compound-button</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="code-demo-group_item">
+                    <div class="expandable expandable__padded u-mb0">
+                        <button class="expandable_header expandable_target">
+                            <span class="expandable_header-left expandable_label">
+                                Tables
+                            </span>
+                            <span class="expandable_header-right expandable_link">
+                                <span class="expandable_cue-open">
+                                    Show
+                                    <span class="cf-icon cf-icon-plus-round"></span>
+                                </span>
+                                <span class="expandable_cue-close">
+                                    Hide
+                                    <span class="cf-icon cf-icon-minus-round"></span>
+                                </span>
+                            </span>
+                        </button>
+                        <div class="expandable_content">
+                            <figure class="code-demo">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Column 1 header</th>
+                                            <th>Column 2 header</th>
+                                            <th>Column 3 header</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Row 1 header</th>
+                                            <td>Row 1, column 2</td>
+                                            <td>Row 1, column 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Row 2 header</th>
+                                            <td>Row 2, column 2</td>
+                                            <td>Row 2, column 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Row 3 header</th>
+                                            <td>Row 3, column 2</td>
+                                            <td>Row 3, column 3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <figcaption class="code-demo_caption">
+                                    Default table docs: <a href="https://cfpb.github.io/cf-core/docs/#tables">https://cfpb.github.io/cf-core/docs/#tables</a>
+                                </figcaption>
+                            </figure>
+                            <figure class="code-demo">
+                                <table class="compact-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Column 1 header</th>
+                                            <th>Column 2 header</th>
+                                            <th>Column 3 header</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Row 1 header</th>
+                                            <td>Row 1, column 2</td>
+                                            <td>Row 1, column 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Row 2 header</th>
+                                            <td>Row 2, column 2</td>
+                                            <td>Row 2, column 3</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Row 3 header</th>
+                                            <td>Row 3, column 2</td>
+                                            <td>Row 3, column 3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <figcaption class="code-demo_caption">
+                                    Compact table docs: <a href="https://cfpb.github.io/cf-core/docs/#tables">https://cfpb.github.io/cf-core/docs/#tables</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="code-demo-group_item">
+                    <div class="expandable expandable__padded u-mb0">
+                        <button class="expandable_header expandable_target">
+                            <span class="expandable_header-left expandable_label">
+                                Tabs
+                            </span>
+                            <span class="expandable_header-right expandable_link">
+                                <span class="expandable_cue-open">
+                                    Show
+                                    <span class="cf-icon cf-icon-plus-round"></span>
+                                </span>
+                                <span class="expandable_cue-close">
+                                    Hide
+                                    <span class="cf-icon cf-icon-minus-round"></span>
+                                </span>
+                            </span>
+                        </button>
+                        <div class="expandable_content">
+                            <figure class="code-demo">
+                                <div class="tabs">
+                                    <ul class="tabs_list">
+                                        <li class="tabs_list-item">
+                                            <button class="tabs_tab" data-panel="panel-1">Tab 1</button>
+                                        </li>
+                                        <li class="tabs_list-item">
+                                            <button class="tabs_tab" data-panel="panel-2">Tab 2</button>
+                                        </li>
+                                        <li class="tabs_list-item">
+                                            <button class="tabs_tab" data-panel="panel-3">Tab 3</button>
+                                        </li>
+                                    </ul>
+                                    <div class="tabs_panel" id="panel-1">
+                                        <h1>First tab content</h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                           Itaque quas obcaecati beatae sit aliquid saepe molestias ad
+                                           molestiae illum eos vero mollitia temporibus aperiam culpa
+                                           asperiores officiis minus eius animi?</p>
+                                    </div>
+                                    <div class="tabs_panel" id="panel-2">
+                                        <h1>Second tab content</h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                           Itaque quas obcaecati beatae sit aliquid saepe molestias ad
+                                           molestiae illum eos vero mollitia temporibus aperiam culpa
+                                           asperiores officiis minus eius animi?</p>
+                                    </div>
+                                    <div class="tabs_panel" id="panel-3">
+                                        <h1>Third tab content</h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                           Itaque quas obcaecati beatae sit aliquid saepe molestias ad
+                                           molestiae illum eos vero mollitia temporibus aperiam culpa
+                                           asperiores officiis minus eius animi?</p>
+                                    </div>
+                                </div>
+                                <figcaption class="code-demo_caption">
+                                    Tab docs: <a href="http://himedlooff.github.io/cf-tabs/docs/">http://himedlooff.github.io/cf-tabs/docs/</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="code-demo-group_item">
+                    <div class="expandable expandable__padded u-mb0">
+                        <button class="expandable_header expandable_target">
+                            <span class="expandable_header-left expandable_label">
+                                Alerts
+                            </span>
+                            <span class="expandable_header-right expandable_link">
+                                <span class="expandable_cue-open">
+                                    Show
+                                    <span class="cf-icon cf-icon-plus-round"></span>
+                                </span>
+                                <span class="expandable_cue-close">
+                                    Hide
+                                    <span class="cf-icon cf-icon-minus-round"></span>
+                                </span>
+                            </span>
+                        </button>
+                        <div class="expandable_content">
+                            <figure class="code-demo">
+                                <div class="alert" role="alert">
+                                    <span class="alert_icon cf-icon cf-icon-help"></span>
+                                    This is a default alert.
+                                </div>
+                                <div class="alert alert__success" role="alert">
+                                    <span class="alert_icon cf-icon cf-icon-approved"></span>
+                                    This is a success alert.
+                                </div>
+                                <div class="alert alert__info" role="alert">
+                                    <span class="alert_icon cf-icon cf-icon-information"></span>
+                                    This is an info alert.
+                                </div>
+                                <div class="alert alert__warning" role="alert">
+                                    <span class="alert_icon cf-icon cf-icon-error"></span>
+                                    This is a warning alert.
+                                </div>
+                                <div class="alert alert__danger" role="alert">
+                                    <span class="alert_icon cf-icon cf-icon-delete"></span>
+                                    This is a danger alert.
+                                </div>
+                                <figcaption class="code-demo_caption">
+                                    Alert docs: <a href="http://himedlooff.github.io/cf-alerts/docs/">http://himedlooff.github.io/cf-alerts/docs/</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="code-demo-group_item">
+                    <div class="expandable expandable__padded u-mb0">
+                        <button class="expandable_header expandable_target">
+                            <span class="expandable_header-left expandable_label">
+                                Breadcrumbs
+                            </span>
+                            <span class="expandable_header-right expandable_link">
+                                <span class="expandable_cue-open">
+                                    Show
+                                    <span class="cf-icon cf-icon-plus-round"></span>
+                                </span>
+                                <span class="expandable_cue-close">
+                                    Hide
+                                    <span class="cf-icon cf-icon-minus-round"></span>
+                                </span>
+                            </span>
+                        </button>
+                        <div class="expandable_content">
+                            <figure class="code-demo">
+                                <ul class="breadcrumbs">
+                                    <li class="breadcrumbs_item">
+                                        <a class="breadcrumbs_link" href="#home">
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumbs_item">
+                                        <a class="breadcrumbs_link" href="#some-place-else">
+                                            Some place else
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumbs_item">
+                                        Current page
+                                    </li>
+                                </ul>
+                                <figcaption class="code-demo_caption">
+                                    Breadcrumbs docs: <a href="http://himedlooff.github.io/cf-breadcrumbs/docs/">http://himedlooff.github.io/cf-breadcrumbs/docs/</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+                
+            </div><!-- END .code-demo-group -->
+
+        </div>
+    </div>
+</main>
+
+<footer role="contentinfo">
+    <!-- Footer stuff -->
+</footer>
+
+<!--
+    ============
+    BODY SCRIPTS
+    ============
+    The number of scripts here must be kept to a minimum.
+    Unless adding a significant amount of JS that is specific to a single page
+    or section of the site, all custom JS should be added to src/static/js/app.js.
+-->
+
+<script src="/static/js/main.min.js"></script>
+
+</body>
+
+</html>

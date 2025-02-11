@@ -1,0 +1,10 @@
+dash_static_dir: src
+is_virtualbox: yes
+kratos_web_cmd: icake runtestserver
+moirai_web_cmd: icake runtestserver
+devdash_cmd: '{{ pantheon_dir }}/devdash/manage.py runserver'
+supervisord_cmds:
+  - devdash
+  - kratos_web
+  - moirai_web
+web_user: vagrant

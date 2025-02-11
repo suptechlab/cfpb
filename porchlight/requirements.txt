@@ -1,0 +1,6 @@
+Django==1.7.1
+djangorestframework==3.0
+mock
+markdown
+requests
+dateutils

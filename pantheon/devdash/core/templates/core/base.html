@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+
+<!--
+    ===========
+    GLOBAL META
+    ===========
+-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+    ==================
+    PAGE-SPECIFIC META
+    ==================
+-->
+
+    <title>{% block title %}Title{% endblock %}</title>
+    <meta name="description" content="A Dashboard for Devs and Designers.">
+
+<!--
+    ======
+    STYLES
+    ======
+    The number of stylesheets here must be kept to a minimum.
+    Unless adding a significant amount of CSS that is specific to a single page
+    or section of the site, all new styles should be added to src/static/css/app.less.
+-->
+
+<!--[if lt IE 9]>      <link rel="stylesheet" href="/static/css/main.ie.min.css"> <![endif]-->
+<!--[if gt IE 8]><!--> <link rel="stylesheet" href="/static/css/main.min.css"> <!--<![endif]-->
+
+<!--
+    ============
+    HEAD SCRIPTS
+    ============
+    The following scripts must be included in the head. DO NOT ADD ANY MORE.
+    All other scripts should go before the closing body tag.
+    If you come across a script that makes a convincing case to be included in
+    the head, then file an issue or PR to discuss including it.
+-->
+
+<!--[if lt IE 9]>
+    <script src="/static/vendor/html5shiv/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+
+    <script>
+        // Confirm availability of JS and remove no-js class from html
+        var docElement = document.documentElement;
+        docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2');
+    </script>
+    {% block head %}{% endblock head %}
+
+</head>
+
+<body>
+
+  <header class="masthead wrapper wrapper__match-content" role="banner">
+      <h1 class="masthead_logo">
+        DevDash
+      </h1>
+      <div class="masthead_user user-meta">
+        {% if user.is_authenticated %}
+          <span class="user-meta_item user-meta_item__first">
+            <span class="user-meta_name">
+              <span class="cf-icon cf-icon-user"></span>
+              {{ user.username }}
+            </span>
+            <span class="user-meta_employee">
+              ({% if user.contractor %}contractor{% else %}employee{% endif %})
+            </span>
+          </span>
+          <span class="user-meta_item user-meta_item__last">
+            <a class="btn btn__link btn__warning" href="/logout">logout</a>
+          </span>
+        {% else %}
+          <a href="/login" class="btn btn__link btn__secondary">login</a>
+        {% endif %}
+      </div>
+      {% if messages %}
+        {% for message in messages %}
+        <div class="alert{% if message.tags %} alert__{{ message.tags }}"{% endif %}>{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+  </header>
+
+  <main class="content" id="main" role="main">
+    <div class="content_bar"></div>
+    <div class="meta">
+      <div class="wrapper wrapper__match-content">
+        <ul class="meta_left meta_breadcrumbs breadcrumbs">
+          {% block breadcrumbs %}
+            <li class="breadcrumbs_item">Home</li>
+          {% endblock breadcrumbs %}
+        </ul>
+        {% if user.is_authenticated %}
+          <form class="meta_right meta_refresh" action="{% url "sync" %}" method="POST">{% csrf_token %}
+            <input type="submit" class="btn btn__secondary meta_btn" value="refresh" />
+          </form>
+        {% endif %}
+      </div>
+    </div>
+    <div class="content_wrapper">
+      <div class="content_main">
+        {% if user.is_authenticated %}
+          {% block content %}{% endblock content %}
+        {% else %}
+        {% block unauthed_content %}
+        <div class="intro">
+          <p class="intro_text">Tools for starting, building, testing, deploying and maintaining code</p>
+          <a href="/login" class="btn btn__super intro_btn">
+            <span class="btn_icon__left cf-icon cf-icon-github"></span>
+            Login
+          </a>
+        </div>
+        {% endblock unauthed_content %}
+        {% endif %}
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/js/main.min.js"></script>
+</body>
+</html>

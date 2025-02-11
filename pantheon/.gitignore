@@ -1,0 +1,79 @@
+# Django #
+##########
+*.pyc
+/devdash/devdash/settings_secret.py
+/data
+
+# Vagrant #
+###########
+.vagrant
+
+# CouchDB #
+###########
+/apache-couchdb-1.6.1/
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+_site/
+devdash/frontend/src/static/css/main.css
+devdash/frontend/src/static/js/main.js
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.sqlite3.bak
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Grunt.js #
+############
+.grunt/
+/devdash/frontend/node_modules/
+
+# Bower packages #
+##################
+bower_components/
+/devdash/frontend/vendor
+
+# Project stuff #
+#################
+/devdash/corec
+/devdash/db.sqlite3
+# /devdash/frontend/dest/static/css
+# /devdash/frontend/dest/static/fonts
+# /devdash/frontend/dest/static/js
+# /devdash/frontend/dest/static/templates
+/devdash/frontend/dest/static/test-data.json
+/devdash/frontend/dest/static/test-data.old.json
+# /devdash/frontend/dest/static/vendor
+/devdash/static/test-data.old.json

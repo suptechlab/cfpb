@@ -1,0 +1,87 @@
+- name: ensure epel repo installed
+  copy: src=epel.repo dest=/etc/yum.repos.d/epel.repo
+
+- name: ensure epel gpg key installed
+  copy: src=RPM-GPG-KEY-EPEL-6 dest=/etc/pki/rpm-gpg
+
+- name: install rpms for building couchdb
+  yum: name={{ item }}
+  with_items:
+    - libicu-devel
+    - openssl-devel
+    - curl-devel
+    - make
+    - gcc
+    - gcc-c++
+    - erlang
+    - js-devel
+    - libtool
+    - which
+
+- stat: path=/usr/local/bin/couchdb
+  register: couch_bin
+
+- name: create couch user
+  user: name=couchdb createhome=no
+
+- name: ensure couchdb data directory exists
+  file: path={{ data_dir }}/couchdb owner=couchdb state=directory
+
+- name: ensure couchdb log directory exists
+  file: path=/var/log/couchdb owner=couchdb state=directory
+
+- name: get couchdb tar
+  get_url: url=http://download.nextag.com/apache/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz dest={{ pantheon_dir }}/couchdb.tar.gz
+
+- name: unzip couchdb
+  unarchive: src={{ pantheon_dir }}/couchdb.tar.gz dest=/usr/local/src copy=no owner=couchdb
+
+  # For some reason owner=couchdb doesn't work above, assigns UID=1000 instead of the couchdb user
+- name: change ownership of couchdb source
+  file: path=/usr/local/src/apache-couchdb-1.6.1 owner=couchdb group=couchdb recurse=yes
+
+  # TODO figure out a better way to use the couchdb user, right now sudo_user: couchdb fails due to missing password
+- name: configure
+  shell: "su -l couchdb -c 'cd /usr/local/src/apache-couchdb-1.6.1; ./configure --with-erlang=/usr/lib64/erlang/usr/include/'"
+  register: configure_result
+  when: not couch_bin.stat.exists
+  failed_when: configure_result.stderr and 'directory already configured' not in configure_result.stderr and 'You have configured Apache CouchDB' not in configure_result.stdout
+  changed_when: not configure_result.stderr or 'directory already configured' not in configure_result.stderr or 'You have configured Apache CouchDB' not in configure_result.stdout
+
+  # TODO figure out a better way to use the couchdb user, right now sudo_user: couchdb fails due to missing password
+- name: make couch
+  shell: "su -l couchdb -c 'cd /usr/local/src/apache-couchdb-1.6.1/; make'"
+  when: not couch_bin.stat.exists
+
+- name: install couch
+  shell: 'make install chdir=/usr/local/src/apache-couchdb-1.6.1/'
+  when: not couch_bin.stat.exists
+
+- name: change install permissions/ownership
+  file: path=/usr/local/{{ item }}/couchdb state=directory mode=0770 owner=couchdb recurse=yes
+  with_items:
+    - var/lib
+    - var/log
+    - var/run
+    - etc
+
+- name: add service to init.d
+  file: path=/etc/init.d/couchdb state=link src=/usr/local/etc/rc.d/couchdb
+
+- name: get couchdb password
+  shell: node -e "console.log(require('{{ kratos_dir }}/lib/config.js').COUCH_PWD)"
+  register: couch_pwd
+  changed_when: False
+
+- name: template couch ini file
+  template: src=local.ini.j2 dest=/usr/local/etc/couchdb/local.ini owner=couchdb
+  notify: restart couchdb
+
+- name: start couchdb
+  service: name=couchdb enabled=yes state=started
+
+- name: upgrade any design documents
+  shell: icake sync_design_docs chdir={{ item }}
+  with_items:
+    - "{{ kratos_dir }}"
+    - "{{ moirai_dir }}"

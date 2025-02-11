@@ -1,0 +1,19 @@
+- name: ensure git is on the machine
+  yum: name=git
+
+- name: clone pantheon repo
+  clone_repos: 
+    urls: 
+      - "{{ project_repository }}"
+    processes: 1
+    install_dir: "{{ project_dir }}"
+    ensure_pinned: "{{ pin_versions }}"
+
+- name: clone dependent sub-repos
+  clone_repos: 
+    urls: "{{ repositories }}"
+    processes: 5
+    install_dir: "{{ repos_dir }}"
+    ensure_pinned: "{{ pin_versions }}"
+
+# todo handle migrations

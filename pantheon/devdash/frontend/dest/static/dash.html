@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+
+<!--
+    ===========
+    GLOBAL META
+    ===========
+-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+    ==================
+    PAGE-SPECIFIC META
+    ==================
+-->
+
+    <title>DevDash</title>
+    <meta name="description" content="A Dashboard for Devs and Designers.">
+
+<!--
+    ======
+    STYLES
+    ======
+    The number of stylesheets here must be kept to a minimum.
+    Unless adding a significant amount of CSS that is specific to a single page
+    or section of the site, all new styles should be added to src/static/css/app.less.
+-->
+
+<!--[if lt IE 9]>      <link rel="stylesheet" href="/static/css/main.ie.min.css"> <![endif]-->
+<!--[if gt IE 8]><!--> <link rel="stylesheet" href="/static/css/main.min.css"> <!--<![endif]-->
+
+<!--
+    ============
+    HEAD SCRIPTS
+    ============
+    The following scripts must be included in the head. DO NOT ADD ANY MORE.
+    All other scripts should go before the closing body tag.
+    If you come across a script that makes a convincing case to be included in
+    the head, then file an issue or PR to discuss including it.
+-->
+
+<!--[if lt IE 9]>
+    <script src="/static/vendor/html5shiv/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+
+    <script>
+        // Confirm availability of JS and remove no-js class from html
+        var docElement = document.documentElement;
+        docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2');
+    </script>
+
+</head>
+
+<body ng-app="OSWizardApp" ng-controller="TeamsCtrl">
+
+<!--
+    =================
+    Begin page source
+    =================
+-->
+
+<header class="masthead wrapper wrapper__match-content" role="banner">
+    <h1 class="masthead_logo">
+        <span class="cf-icon cf-icon-web-round"></span>
+        DevDash
+    </h1>
+    <div ng-if="loggedIn" class="masthead_user user-meta">
+        <span class="user-meta_item user-meta_item__first">
+            <span class="user-meta_name">
+                <span class="cf-icon cf-icon-user"></span>
+                {{ user.name }}
+            </span>
+            <div ng-if="user.parsedRoles.length > 0">
+                <span ng-repeat="role in user.parsedRoles"
+                      class="user-role">
+                    <span class="user-role_resource">
+                        {{ role.resource }}:
+                    </span>
+                    <span class="user-role_role">
+                        {{ role.role }}
+                    </span>
+                </span>
+            </div>
+        </span>
+        <span class="user-meta_item user-meta_item__last">
+          <a class="btn btn__link btn__warning" href="/logout">logout</a>
+        </span>
+    </div>
+    <div ng-if="!loggedIn" class="masthead_user user-meta">
+        <a href="/login?next=/static/dash.html" class="btn btn__link btn__secondary">
+            login
+        </a>
+    </div>
+</header>
+
+<main class="content" id="main" role="main">
+    <div class="content_bar"></div>
+    <!-- <div class="meta">
+      <div class="wrapper wrapper__match-content">
+        <ul class="meta_left meta_breadcrumbs breadcrumbs">
+            <li class="breadcrumbs_item">
+                <a class="breadcrumbs_link" href="/">
+                    Home
+                </a>
+            </li>
+            <li class="breadcrumbs_item">My teams</li>
+        </ul>
+        <div class="meta_right">
+            <button class="btn btn__secondary meta_btn">Add new team</button>
+        </div>
+      </div>
+    </div> -->
+    <div class="content_wrapper">
+        <div ng-if="ready()"
+             class="content_main">
+            <div id="my-teams">
+                <h1>My teams</h1>
+                <div class="teams">
+                    <section team
+                             ng-repeat="team in teams | hasCurrentUser"
+                             data="team"
+                             class="teams_item">
+                    </section>
+                </div>
+            </div>
+            <div expandable class="expandable expandable__no-margin-on-expand">
+                <button class="expandable_target btn__block">
+                    <span class="btn btn__secondary btn__block">
+                        <span class="expandable_cue-open">
+                            Show other teams
+                            <span class="btn_icon__right cf-icon cf-icon-down"></span>
+                        </span>
+                        <span class="expandable_cue-close">
+                            Hide other teams
+                            <span class="btn_icon__right cf-icon cf-icon-up"></span>
+                        </span>
+                    </span>
+                </button>
+                <div class="expandable_content expandable_content__teams">
+                    <div id="other-teams">
+                        <h1 class="u-visually-hidden">Other teams</h1>
+                        <div class="teams">
+                            <section team
+                                     data="team"
+                                     ng-repeat="team in teams | hasCurrentUser:false"
+                                     class="teams_item">
+                            </section>
+                        </div>
+                    </div><!-- END #other-teams -->
+                </div>
+            </div><!-- END .expandable -->
+            <div ng-if="editable"
+                 expandable
+                 class="expandable expandable__padded expandable__team"
+                 id="team-admin">
+                <button class="expandable_header expandable_target">
+                    <span class="expandable_header-left expandable_label u-mb0">
+                        Edit teams
+                    </span>
+                    <span class="expandable_header-right btn btn__link btn__secondary assetbutton">
+                        <span class="expandable_cue-open">
+                            Show
+                            <span class="cf-icon cf-icon-down"></span>
+                        </span>
+                        <span class="expandable_cue-close">
+                            Hide
+                            <span class="cf-icon cf-icon-up"></span>
+                        </span>
+                    </span>
+                </button>
+                <div class="expandable_content">
+                    <div class="team-admin-content">
+                        <div class="team-admin-content_item" id="add-team">
+                            <div class="team-content">
+                                <div class="team-content_item">
+                                    <div class="team-content_item">
+                                        <h2 class="slats-header slats-header__add">
+                                            Add a new Team
+                                        </h2>
+                                        <div ng-show="!waiting"
+                                             class="slats-type">
+                                            <input ng-model="newTeamName"
+                                                   type="text"
+                                                   class="slats-type_input"
+                                                   placeholder="...">
+                                        </div>
+                                        <div ng-show="waiting"
+                                             class="slats">
+                                            <div class="slats_item slat slat__bg-info">
+                                                <span class="slat_label-regular">
+                                                    Adding <b>{{ newTeamName }}</b>, please wait...
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div ng-model="confirmMessage"
+                                             ng-show="confirmMessage.show"
+                                             class="slats">
+                                            <div class="slats_item slat slat__bg-info">
+                                                <span class="slat_label-regular">
+                                                    {{ confirmMessage.message }}
+                                                    <b>{{ confirmMessage.teamName }}</b>.
+                                                    {{ confirmMessage.supplement }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button ng-click="add(newTeamName)"
+                                            ng-show="!waiting"
+                                            class="team-content_item userlist_show-hide btn btn__block">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div><!-- END #add-team -->
+                    </div><!-- END .team-admin-content -->
+                </div>
+            </div><!-- END #team-admin -->
+        </div>
+    </div>
+</main>
+
+<footer role="contentinfo">
+    <!-- Footer stuff -->
+</footer>
+
+<!--
+    ============
+    BODY SCRIPTS
+    ============
+    The number of scripts here must be kept to a minimum.
+    Unless adding a significant amount of JS that is specific to a single page
+    or section of the site, all custom JS should be added to src/static/js/app.js.
+-->
+
+<script src="/static/js/main.min.js"></script>
+
+</body>
+
+</html>

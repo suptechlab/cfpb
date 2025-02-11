@@ -1,0 +1,701 @@
+/* ==========================================================================
+   dev-dash
+   App-specific styles
+
+   # Base
+   # .django-forms
+   # .extra-icon
+   # Code demo stuff
+   ## .code-demo-group
+   ## .code-demo
+   # .masthead
+   # .user-meta
+   # .meta
+   # .intro
+   # .tile
+   # .user-role
+   # .btn__block
+   # Expandables
+   # .corner-badge
+   # Slats
+   ## .slats
+   ## .slats-header
+   ## .slats-type
+   ## .slat
+   # .teams
+   # .team-admin-content
+   # Directives
+   ## userbutton, assetbutton
+   ## userlist
+   ========================================================================== */
+
+
+/* ==========================================================================
+   # Base
+   ========================================================================== */
+
+[role="banner"] {
+    margin-top: unit(45px / @base-font-size-px, em);
+    margin-bottom: unit(30px / @base-font-size-px, em);
+}
+
+[role="contentinfo"] {
+    margin-top: unit(45px / @base-font-size-px, em);
+}
+
+
+/* ==========================================================================
+   # .django-forms
+   ========================================================================== */
+
+.django-forms {
+    label {
+        display: inline-block;
+        margin-right: unit(5px / @base-font-size-px, em);
+    }
+
+    .helptext {
+        display: block;
+        .webfont-italic();
+        font-size: unit(14px / @base-font-size-px, em);
+    }
+
+    input[type="text"],
+    input[type="search"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+        display: block;
+
+        & + .helptext {
+            margin-top: unit(5px / 14px, em);
+        }
+    }
+
+    .error {
+        input[type="text"],
+        input[type="search"],
+        input[type="email"],
+        input[type="url"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            &:extend(input[type="text"].error);
+        }
+    }
+
+    .errorlist {
+        margin: 0 0 unit(5px / @base-font-size-px, em);
+        padding: 0;
+        list-style-type: none;
+        color: @redorange;
+        .webfont-italic();
+    }
+}
+
+
+/* ==========================================================================
+   # .extra-icon
+   ========================================================================== */
+
+@font-face {
+    font-family: 'extra-icons';
+    src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg6SAyoAAAC8AAAAYGNtYXAaVcxXAAABHAAAAExnYXNwAAAAEAAAAWgAAAAIZ2x5Zk0tRP8AAAFwAAABnGhlYWQCr3NjAAADDAAAADZoaGVhBgsDxgAAA0QAAAAkaG10eARJAAAAAANoAAAAFGxvY2EAKADiAAADfAAAAAxtYXhwAAoAfwAAA4gAAAAgbmFtZUnnC+AAAAOoAAABYHBvc3QAAwAAAAAFCAAAACAAAwQAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADmAAPA/8D/wAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEADgAAAAKAAgAAgACAAEAIOYA//3//wAAAAAAIOYA//3//wAB/+MaBAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAABAAAAAACSQNuABAAIQAyAHwAADc0JyYjIgcGFRQXFjMyNzY1ETQnJiMiBwYVFBcWMzI3NjUFNCcmIyIHBhUUFxYzMjc2NTMUBwYHBgcGBwYHBh0BFhcWFRQHBiMiJyY1NDc2NxEmJyY1NDc2MzIXFhUUBwYHETY3Njc2NzY3Njc2NzY1JicmNTQ3NjMyFxYVpRAQFxcQEBAQFxcQEBAQFxcQEBAQFxcQEAFtEBAXFhAQEBAWFxAQNw8PGQGAJ01JGBcZDw4gIC0uICAPDxkZDw8gIC4tICAODxkeOh8TEhYWDAwLCwUFGg4PICAtLiAgbhcQEBAQFxcQEBAQFwKSFxAQEBAXFxAQEBAXSRcQEBAQFxcQEBAQFx4ZGg6kSRUZFxESKA4PGRodLiAgICAuHRoZDwHUDhoZHi4gICAgLh4ZGg7+5A8SCQgHCgsMDBERFxYeDhoZHi4gICAgLgAAAAEAAAABAACjzOUxXw889QALBAAAAAAA0KQXfAAAAADQpBd8AAAAAAJJA24AAAAIAAIAAAAAAAAAAQAAA8D/wAAABAAAAAAAAkkAAQAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAACAAAAAkkAAAAAAAAACgAUAB4AzgABAAAABQB9AAQAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEAFAAAAAEAAAAAAAIADgBcAAEAAAAAAAMAFAAqAAEAAAAAAAQAFABqAAEAAAAAAAUAFgAUAAEAAAAAAAYACgA+AAEAAAAAAAoANAB+AAMAAQQJAAEAFAAAAAMAAQQJAAIADgBcAAMAAQQJAAMAFAAqAAMAAQQJAAQAFABqAAMAAQQJAAUAFgAUAAMAAQQJAAYAFABIAAMAAQQJAAoANAB+AGUAeAB0AHIAYQAtAGkAYwBvAG4AVgBlAHIAcwBpAG8AbgAgADEALgAwAGUAeAB0AHIAYQAtAGkAYwBvAG5leHRyYS1pY29uAGUAeAB0AHIAYQAtAGkAYwBvAG4AUgBlAGcAdQBsAGEAcgBlAHgAdAByAGEALQBpAGMAbwBuAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format('truetype'),
+         url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAV0AAsAAAAABSgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABCAAAAGAAAABgDpIDKmNtYXAAAAFoAAAATAAAAEwaVcxXZ2FzcAAAAbQAAAAIAAAACAAAABBnbHlmAAABvAAAAZwAAAGcTS1E/2hlYWQAAANYAAAANgAAADYCr3NjaGhlYQAAA5AAAAAkAAAAJAYLA8ZobXR4AAADtAAAABQAAAAUBEkAAGxvY2EAAAPIAAAADAAAAAwAKADibWF4cAAAA9QAAAAgAAAAIAAKAH9uYW1lAAAD9AAAAWAAAAFgSecL4HBvc3QAAAVUAAAAIAAAACAAAwAAAAMEAAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA5gADwP/A/8ADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAgAAAAMAAAAUAAMAAQAAABQABAA4AAAACgAIAAIAAgABACDmAP/9//8AAAAAACDmAP/9//8AAf/jGgQAAwABAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAQAAAAAAkkDbgAQACEAMgB8AAA3NCcmIyIHBhUUFxYzMjc2NRE0JyYjIgcGFRQXFjMyNzY1BTQnJiMiBwYVFBcWMzI3NjUzFAcGBwYHBgcGBwYdARYXFhUUBwYjIicmNTQ3NjcRJicmNTQ3NjMyFxYVFAcGBxE2NzY3Njc2NzY3Njc2NSYnJjU0NzYzMhcWFaUQEBcXEBAQEBcXEBAQEBcXEBAQEBcXEBABbRAQFxYQEBAQFhcQEDcPDxkBgCdNSRgXGQ8OICAtLiAgDw8ZGQ8PICAuLSAgDg8ZHjofExIWFgwMCwsFBRoODyAgLS4gIG4XEBAQEBcXEBAQEBcCkhcQEBAQFxcQEBAQF0kXEBAQEBcXEBAQEBceGRoOpEkVGRcREigODxkaHS4gICAgLh0aGQ8B1A4aGR4uICAgIC4eGRoO/uQPEgkIBwoLDAwRERcWHg4aGR4uICAgIC4AAAABAAAAAQAAo8zlMV8PPPUACwQAAAAAANCkF3wAAAAA0KQXfAAAAAACSQNuAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAJJAAEAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAgAAAAJJAAAAAAAAAAoAFAAeAM4AAQAAAAUAfQAEAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABABQAAAABAAAAAAACAA4AXAABAAAAAAADABQAKgABAAAAAAAEABQAagABAAAAAAAFABYAFAABAAAAAAAGAAoAPgABAAAAAAAKADQAfgADAAEECQABABQAAAADAAEECQACAA4AXAADAAEECQADABQAKgADAAEECQAEABQAagADAAEECQAFABYAFAADAAEECQAGABQASAADAAEECQAKADQAfgBlAHgAdAByAGEALQBpAGMAbwBuAFYAZQByAHMAaQBvAG4AIAAxAC4AMABlAHgAdAByAGEALQBpAGMAbwBuZXh0cmEtaWNvbgBlAHgAdAByAGEALQBpAGMAbwBuAFIAZQBnAHUAbABhAHIAZQB4AHQAcgBhAC0AaQBjAG8AbgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.extra-icons {
+    font-family: 'extra-icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.extra-icons-fork:before {
+    content: "\e600";
+}
+
+
+/* ==========================================================================
+   # Code demo stuff
+   ========================================================================== */
+
+
+/* ## .code-demo-group
+   ========================================================================== */
+
+.code-demo-group {
+    .respond-to-min(600px, {
+        .grid_nested-col-group();
+    });
+
+    &_item {
+        margin-bottom: @grid_gutter-width;
+        .respond-to-min(600px, {
+            .grid_column(6);
+        });
+    }
+}
+
+
+/* ## .code-demo
+   ========================================================================== */
+
+.code-demo {
+    margin: 0;
+
+    & + & {
+        padding-top: 1.5em;
+        margin-top: 1.5em;
+        border-top: 1px solid @gray-50;
+    }
+
+    &_caption {
+        margin: 1em 0;
+    }
+}
+
+
+/* ==========================================================================
+   # .masthead
+   ========================================================================== */
+
+.masthead {
+    .u-clearfix();
+    &_user {
+        .webfont-regular;
+    }
+    .respond-to-min(480px, {
+        &_logo {
+            margin: 0;
+            display: inline-block;
+        }
+        &_user {
+            float: right;
+            display: inline-block;
+        }
+    });
+}
+
+
+/* ==========================================================================
+   # .user-meta
+   ========================================================================== */
+
+.user-meta {
+    text-align: right;
+    &_name {
+        .h4();
+        margin: 0;
+    }
+    &_employee {
+        .webfont-regular();
+        font-size: unit(12px / @base-font-size-px, em);
+    }
+    &_item {
+        display: inline-block;
+        margin: 0;
+        padding: 0 unit(16px / @base-font-size-px, em);
+        border-left: 1px solid @gray-20;
+        border-right: 1px solid @gray-20;
+        vertical-align: middle;
+    }
+    &_item + &_item {
+        margin-left: unit(-5px / @base-font-size-px, em);
+    }
+    &_item__first {
+        padding-left: 0;
+        border-left: 0;
+    }
+    &_item__last {
+        padding-right: 0;
+        border-right: 0;
+    }
+}
+
+
+/* ==========================================================================
+   # .meta
+   ========================================================================== */
+
+.meta {
+    .u-clearfix();
+    padding: unit(30px / @base-font-size-px, em) 0;
+    background: @gray-10;
+    border-bottom: 1px solid @gray-20;
+
+    &_breadcrumbs {
+        margin-top: 0;
+    }
+
+    .respond-to-max(479px, {
+        &_refresh .btn {
+            display: block;
+            width: 100%;
+        }
+    });
+
+    .respond-to-min(480px, {
+        &_left {
+            float: left;
+        }
+        &_right {
+            float: right;
+        }
+        &_breadcrumbs {
+            margin: 0;
+        }
+        &_btn {
+            // Aligns .btn baseline to .breadcrumbs baseline.
+            margin-top: unit(-7px / @btn-font-size, em);
+        }
+    });
+}
+
+
+/* ==========================================================================
+   # .intro
+   ========================================================================== */
+
+.intro {
+    &_text {
+        .h1();
+        max-width: 20em;
+        margin-bottom: unit(40px / @font-size, em);
+    }
+}
+
+
+/* ==========================================================================
+   # .tile
+   ========================================================================== */
+
+.tile_container {
+    .respond-to-min(1024px, {
+        .grid_nested-col-group();
+        .tile {
+            .grid_column(6);
+        }
+    });
+}
+
+
+/* ==========================================================================
+   # .user-role
+   ========================================================================== */
+
+.user-role {
+    display: inline-block;
+    font-size: unit(12px / @base-font-size-px, em);
+    line-height: 1;
+
+    & + & {
+        margin-left: unit(8px / 12px, em);
+    }
+    &_resource {
+        .webfont-medium();
+    }
+    &_role {
+        .webfont-regular();
+    }
+}
+
+
+/* ==========================================================================
+   # .btn__block
+   ========================================================================== */
+
+.btn__block {
+    box-sizing: border-box;
+    display: block;
+    width: 100%; // Needed for the button element.
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   # Expandables
+   ========================================================================== */
+
+.expandable__no-margin-on-expand.expandable__expanded {
+    margin-bottom: 0;
+}
+
+.expandable_target:focus {
+    outline: 1px dotted @gray;
+    outline-offset: 1px;
+}
+
+.expandable_label-icon {
+    margin-right: unit(4px / @base-font-size-px, em);
+}
+
+// Adds some space between an .expandable_target and .expandable_content
+.expandable_content__teams {
+    padding-top: unit(@grid_gutter-width / @base-font-size-px, em);
+}
+
+.expandable__team {
+    position: relative;
+    margin-bottom: 0;
+    border: 1px solid @gray-20;
+
+    &.expandable__expanded,
+    &:hover {
+        background: @gray-10;
+    }
+
+    .expandable_header {
+        padding: 1em;
+    }
+
+    .expandable_label {
+        .h3();
+        // Eyeballed to 15px.
+        margin-bottom: unit(9px / @font-size, em);
+        line-height: 1;
+    }
+
+    .expandable_role {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .expandable_actions {
+        .u-clearfix();
+        line-height: 1;
+    }
+
+    .expandable_content {
+        margin-bottom: 1em;
+        &:before {
+            height: 0;
+            margin-bottom: unit(5px / @base-font-size-px, em);
+        }
+    }
+}
+
+
+/* ==========================================================================
+   # .corner-badge
+   ========================================================================== */
+
+.corner-badge {
+    display: inline-block;
+    padding: unit(4px / @base-font-size-px, em) unit(6px / @base-font-size-px, em);
+    border-bottom-left-radius: 4px;
+    background: @gray-20;
+    color: @black;
+    .webfont-regular();
+    line-height: 1;
+
+    &__user:before {
+        // cf-icon-user
+        .cf-icon();
+        content: "\e600";
+        margin-right: unit(4px / 12px, em);
+        font-size: unit(14px / @base-font-size-px, em);
+    }
+    &__hide {
+        display: none;
+    }
+    &__bg-green {
+        background-color: @green-midtone;
+    }
+    &_label {
+        font-size: unit(12px / @base-font-size-px, em);
+    }
+}
+
+
+/* ==========================================================================
+   # Slats
+   ========================================================================== */
+
+
+/* ## .slats
+   ========================================================================== */
+
+.slats {
+    margin: 0;
+    padding: 0;
+    border: 1px solid @gray-20;
+    background: @white;
+    list-style-type: none;
+
+    &_item {
+        & + & {
+            border-top: 1px dotted @gray-20;
+        }
+    }
+}
+
+
+/* ## .slats-header
+   ========================================================================== */
+
+.slats-header {
+    .h5();
+    line-height: 1;
+    margin: 0;
+    padding: unit(16px / @font-size, em);
+    border: 1px solid @gray-20;
+    background: @gray-20;
+
+    &__add {
+        border-color: @green-midtone;
+        background: @green-midtone;
+        color: @black;
+    }
+}
+
+.slats-header + .slats,
+.slats-header + .slats-type {
+    border-top: 0;
+}
+
+
+/* ## .slats-type
+   ========================================================================== */
+
+.slats-type {
+    display: block;
+    margin: 0;
+    border: 1px solid @gray-20;
+    background: @white;
+
+    &_input,
+    &_input[type="text"] {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: unit(14px / @base-font-size-px, em);
+        .webfont-regular();
+        font-size: unit(16px / @base-font-size-px, em);
+        border-color: transparent;
+    }
+}
+
+.slats-type + .slats {
+    margin-top: -1px;
+}
+
+
+/* ## .slat
+   ========================================================================== */
+
+.slat {
+    @padding: 16px;
+
+    .u-clearfix();
+    padding: unit(@padding / @base-font-size-px, em);
+
+    &__bg-info {
+        background: @pacific-20;
+    }
+
+    &__bg-warning {
+        background: @redorange-20;
+    }
+
+    &__has-roles {
+        position: relative;
+    }
+
+    &__hide {
+        display: none;
+    }
+
+    &_roles {
+        position: absolute;
+        top: -1px;
+        right: 0;
+    }
+
+    &_label {
+        .webfont-medium();
+        font-size: unit(18px / @base-font-size-px, em);
+        line-height: 1;
+    }
+
+    &_label + &_label {
+        margin-left: unit(8px / 18px, em);
+    }
+
+    &_label-regular {
+        .webfont-regular();
+        font-size: unit(16px / @base-font-size-px, em);
+    }
+
+    &_label-small {
+        color: @gray;
+        .webfont-regular();
+        font-size: unit(12px / 18px, em);
+        line-height: 1;
+    }
+
+    &_btn__link {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &_icon-btn {
+        @font-size: 14px;
+        display: inline-block;
+        margin: unit(-6px / @font-size, em)
+                unit((@padding - 6px - 4px) / @font-size, em);
+        padding: unit(6px / @font-size, em);
+        border: 0;
+        background: transparent;
+        color: @pacific;
+        font-size: unit(@font-size / @base-font-size-px, em);
+        line-height: unit(18px / 14px);
+
+        &:hover,
+        &:focus {
+            outline: 1px dotted @pacific;
+        }
+
+        & + & {
+            margin-left: unit(-6px / @font-size, em);
+        }
+
+        &__first {
+            margin-left: unit(-6px / @font-size, em);
+        }
+
+        &__last {
+            margin-right: unit(-6px / @font-size, em);
+        }
+
+        &__add {
+            color: @green;
+            &:hover,
+            &:focus {
+                color: @green;
+                outline-color: @green;
+            }
+        }
+
+        &__remove {
+            color: @redorange;
+            &:hover,
+            &:focus {
+                color: @redorange;
+                outline-color: @redorange;
+            }
+        }
+    }
+
+    &_left {
+        float: left;
+    }
+
+    &_right {
+        float: right;
+    }
+}
+
+.slat-l {
+    .grid_nested-col-group();
+
+    &_col-1-3 {
+        .grid_column(4);
+    }
+    &_col-2-3 {
+        .grid_column(8);
+    }
+}
+
+
+/* ==========================================================================
+   # .teams
+   ========================================================================== */
+
+.teams {
+    .respond-to-min(768px, {
+        .grid_nested-col-group();
+    });
+
+    &_item {
+        margin-bottom: @grid_gutter-width;
+
+        .respond-to-min(768px, {
+            .grid_column(6);
+            // ng-repeat does not add whitespace between items so we need to remove the default
+            // `margin-right: -4px` added by .grid_column().
+            [ng-repeat]& {
+                margin-right: 0;
+            }
+        });
+        .respond-to-min(1024px, {
+            .grid_column(4);
+            // ng-repeat does not add whitespace between items so we need to remove the default
+            // `margin-right: -4px` added by .grid_column().
+            [ng-repeat]& {
+                margin-right: 0;
+            }
+        });
+    }
+}
+
+.team-content {
+    &_item {
+        & + & {
+            margin-top: 1em;
+            margin-top: 1rem;
+        }
+    }
+}
+
+
+/* ==========================================================================
+   # .team-admin-content
+   ========================================================================== */
+
+.team-admin-content {
+    .respond-to-min(768px, {
+        .grid_nested-col-group();
+    });
+
+    &_item {
+        .respond-to-min(768px, {
+            .grid_column(6);
+        });
+    }
+}
+
+
+/* ==========================================================================
+   # Directives
+   ========================================================================== */
+
+
+/* ## userbutton, assetbutton
+   ========================================================================== */
+
+// .btn overrides.
+.userbutton,
+.assetbutton {
+    margin: 0;
+}
+
+.userbutton {
+    margin-right: unit(6px / @btn-font-size, em);
+    // Fixes weirdness with the right edge of the text getting cropped.
+    padding-right: 1px;
+}
