@@ -1,0 +1,164 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    {% if subsession.is_asl %}
+        {% if subsession.practiceround %}
+            Practice Round Results (ASL)
+        {% else  %}
+            Results (ASL)
+        {% endif %}
+    {% else %}
+        {% if subsession.practiceround %}
+            Practice Round Results (Truncation)
+        {% else %}
+            Results (Truncation)
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <p>You selected product: </p>
+                <table id = "product_selected">
+                    <thead>
+                        <tr>
+                            <th></th>
+                                <th>Product {{ product_selected }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                            {% for product_dim_i in productdimvals_selected %}
+                                <td>
+                                    <label>Attribute {{ forloop.counter }}</label>
+                                </td>
+                                <td>
+                                    <span>
+                                        {{ product_dim_i }}
+                                    </span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+    <div class="col_container">
+    <p>Based on your preference profile:
+                <table id = "preferences">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            {% for i in preferences_list %}
+                                <th>Attribute {{ i }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>
+                                    <label>Weight</label>
+                                </td>
+                            {% for preference in preferencedims %}
+                                <td>
+                                    <span>
+                                        {{ preference}}
+                                    </span>
+                                </td>
+                            {% endfor %}
+                            </tr>
+                    </tbody>
+                </table>
+        </p>
+    </div>
+        <p>
+            The total tokens received from product {{ product_selected }} is {{ utility_selected }}.
+        </p>
+    {% if product_selected == product_best %}
+        <p>You selected the product which gave you the most possible tokens in this round.</p>
+    {% else %}
+        <p>Based on your preference profile in this round, you did not select the product which would have given you the most tokens in this round.</p>
+        <p>The product which would have maximized your utility was product:
+                <table id = "product_best">
+                        <thead>
+                        <tr>
+                            <th></th>
+                                <th>Product {{ product_best }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                            {% for product_dim_i in productdimvals_best %}
+                                <td>
+                                    <label>Attribute {{ forloop.counter }}</label>
+                                </td>
+                                <td>
+                                    <span>
+                                        {{ product_dim_i }}
+                                    </span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            which would have given you {{ utility_best }} tokens.</p>
+    {% endif %}
+    <p>Here is a table of the full list of attributes for each product that was in this round:</p>
+    <table id = "products">
+        <thead>
+            <tr>
+                <th></th>
+                {% for i in products_list %}
+                    <th>Product {{ i }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for dimensions in productdimvals_transposed%}
+                <tr>
+                    <td>
+                        <label>Attribute {{ forloop.counter }}</label>
+                    </td>
+                {% for product_dim_i in dimensions%}
+                    <td>
+                        <span>
+                            {{ product_dim_i }}
+                        </span>
+                    </td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</p>
+    <p>
+        And a table of the tokens each product would have given you in this round:
+        <table id = "utilities">
+            <thead>
+                <tr>
+                    <th></th>
+                    {% for i in products_list %}
+                        <th>Product {{ i }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>
+                            <label>Tokens</label>
+                        </td>
+                    {% for utility in utilities_list %}
+                        <td>
+                            <span>
+                                {{ utility }}
+                            </span>
+                        </td>
+                    {% endfor %}
+                    </tr>
+            </tbody>
+         </table>
+     </p>
+    <p>Press next to continue to the next round.</p>
+    {% next_button %}
+{% endblock %}
+{% block app_styles %}
+   <link href="{% static "tiered_disclosure/Truncation.css" %}" rel="stylesheet">
+{% endblock %}

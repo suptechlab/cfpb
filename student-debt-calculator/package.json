@@ -1,0 +1,35 @@
+{
+  "name": "@cfpb/student-debt-calculator",
+  "version": "3.0.2",
+  "description": "Student debt calculator",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "test": "yarn node --experimental-vm-modules $(yarn bin jest)",
+    "snyk": "snyk test",
+    "lint": "eslint src && yarn prettier './**/*.{js,jsx,ts,tsx,md}' --write",
+    "snyk-protect": "snyk-protect",
+    "prepublish": "yarn snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/student-debt-calculator.git"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN TERMS.md (Public Domain / CC0)",
+  "bugs": {
+    "url": "https://github.com/cfpb/student-debt-calculator/issues"
+  },
+  "homepage": "https://github.com/cfpb/student-debt-calculator#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@snyk/protect": "1.1069.0",
+    "eslint": "8.29.0",
+    "jest-cli": "29.3.1",
+    "prettier": "2.8.0"
+  },
+  "snyk": true,
+  "type": "module"
+}

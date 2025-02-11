@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<notice xmlns="eregs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eregs https://raw.githubusercontent.com/cfpb/regulations-schema/master/src/eregs.xsd">
+  <fdsys>
+    <cfrTitleNum>12</cfrTitleNum>
+    <cfrTitleText>Banks and Banking</cfrTitleText>
+    <volume>8</volume>
+    <date>2013-02-15</date>
+    <originalDate>2012-01-01</originalDate>
+    <title>TRUTH IN LENDING</title>
+  </fdsys>
+  <preamble>
+    <agency>Bureau of Consumer Financial Protection</agency>
+    <cfr>
+      <title>12</title>
+      <section>1026</section>
+    </cfr>
+    <documentNumber>2013-01503_20140110</documentNumber>
+    <effectiveDate>2014-01-10</effectiveDate>
+    <federalRegisterURL>https://www.federalregister.gov/documents/2013/02/15/2013-01503/loan-originator-compensation-requirements-under-the-truth-in-lending-act-regulation-z</federalRegisterURL>
+  </preamble>
+  <changeset leftDocumentNumber="2013-01241" rightDocumentNumber="2013-01503_20140110">
+  <change operation="modified" label="1026-Subpart-E-TOC">
+    <tableOfContents label="1026-Subpart-E-TOC">
+      <tocSecEntry target="1026-31">
+        <sectionNum>31</sectionNum>
+        <sectionSubject>§ 1026.31 General rules.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-32">
+        <sectionNum>32</sectionNum>
+        <sectionSubject>§ 1026.32 Requirements for certain closed-end home mortgages.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-33">
+        <sectionNum>33</sectionNum>
+        <sectionSubject>§ 1026.33 Requirements for reverse mortgages.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-34">
+        <sectionNum>34</sectionNum>
+        <sectionSubject>§ 1026.34 Prohibited acts or practices in connection with high-cost mortgages.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-35">
+        <sectionNum>35</sectionNum>
+        <sectionSubject>§ 1026.35 Prohibited acts or practices in connection with higher-priced mortgage loans.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-36">
+        <sectionNum>36</sectionNum>
+        <sectionSubject>§ 1026.36 Prohibited acts or practices and certain requirements for credit secured by a dwelling.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-37">
+        <sectionNum>37</sectionNum>
+        <sectionSubject>§ 1026.37 [Reserved]</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-38">
+        <sectionNum>38</sectionNum>
+        <sectionSubject>§ 1026.38 [Reserved]</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-39">
+        <sectionNum>39</sectionNum>
+        <sectionSubject>§ 1026.39 Mortgage transfer disclosures.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-40">
+        <sectionNum>40</sectionNum>
+        <sectionSubject>§ 1026.40 Requirements for home equity plans.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-41">
+        <sectionNum>41</sectionNum>
+        <sectionSubject>§ 1026.41 Periodic statements for residential mortgage loans.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-42">
+        <sectionNum>42</sectionNum>
+        <sectionSubject>§ 1026.42 Valuation independence.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-43">
+        <sectionNum>43</sectionNum>
+        <sectionSubject>§ 1026.43 Minimum standards for transactions secured by a dwelling.</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-44">
+        <sectionNum>44</sectionNum>
+        <sectionSubject>§ 1026.44 [Reserved]</sectionSubject>
+      </tocSecEntry>
+      <tocSecEntry target="1026-45">
+        <sectionNum>45</sectionNum>
+        <sectionSubject>§ 1026.45 [Reserved]</sectionSubject>
+      </tocSecEntry>
+    </tableOfContents>
+  </change><!-- Section 1026.36 is amended by revising the section heading -->
+  <change operation="modified" label="1026-36" subpath="subject">
+    <subject>§ 1026.36 Prohibited acts or practices and certain requirements for credit secured by a dwelling.</subject>
+  </change><!-- Section 1026.36 is amended by adding paragraphs (g) through (i).  -->
+  <change operation="modified" label="1026-36-g">
+    <paragraph label="1026-36-g" marker="(g)">
+      <title>Name and NMLSR ID on loan documents.</title>
+      <content/>
+      <paragraph label="1026-36-g-1" marker="(1)">
+        <content>For a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref>, a <ref target="1026-36-a-1-iii" reftype="term">loan originator organization</ref> must include on the loan documents described in paragraph <ref target="1026-36-g-2" reftype="internal">(g)(2)</ref> of this section, whenever each such loan document is provided to a <ref target="1026-2-a-11" reftype="term">consumer</ref> or presented to a <ref target="1026-2-a-11" reftype="term">consumer</ref> for signature, as applicable:</content>
+        <paragraph label="1026-36-g-1-i" marker="(i)">
+          <content>Its name and NMLSR ID, if the NMLSR has provided it an NMLSR ID; and</content>
+        </paragraph>
+        <paragraph label="1026-36-g-1-ii" marker="(ii)">
+          <content>The name of the <ref target="1026-36-a-1-ii" reftype="term">individual loan originator</ref> (as the name appears in the NMLSR) with primary responsibility for the origination and, if the NMLSR has provided such <ref target="1026-2-a-22" reftype="term">person</ref> an NMLSR ID, that NMLSR ID.</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-36-g-2" marker="(2)">
+        <content>The loan documents that must include the names and NMLSR IDs pursuant to paragraph <ref target="1026-36-g-1" reftype="internal">(g)(1)</ref> of this section are:</content>
+        <paragraph label="1026-36-g-2-i" marker="(i)">
+          <content>The <ref target="1026-2-a-14" reftype="term">credit</ref> application;</content>
+        </paragraph>
+        <paragraph label="1026-36-g-2-ii" marker="(ii)">
+          <content>[Reserved]</content>
+        </paragraph>
+        <paragraph label="1026-36-g-2-iii" marker="(iii)">
+          <content>The note or loan contract; and</content>
+        </paragraph>
+        <paragraph label="1026-36-g-2-iv" marker="(iv)">
+          <content>The security instrument.</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-36-g-3" marker="(3)">
+        <content>For purposes of this section, NMLSR ID means a number assigned by the Nationwide Mortgage Licensing System and Registry to facilitate electronic tracking and uniform identification of <ref target="1026-36-a-1-i" reftype="term">loan originators</ref> and public access to the employment history of, and the publicly adjudicated disciplinary and enforcement actions against, <ref target="1026-36-a-1-i" reftype="term">loan originators</ref>.</content>
+      </paragraph>
+    </paragraph>
+  </change>
+  <change operation="modified" label="1026-36-h">
+    <paragraph label="1026-36-h" marker="(h)">
+      <title type="keyterm">Prohibition on mandatory arbitration clauses and waivers of certain consumer rights.</title>
+      <content/>
+      <paragraph label="1026-36-h-1" marker="(1)">
+        <title type="keyterm">Arbitration.</title>
+        <content>A contract or other <ref target="1026-58-b-1" reftype="term">agreement</ref> for a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref> (including a home equity line of <ref target="1026-2-a-14" reftype="term">credit</ref> secured by the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref>) may not include terms that require arbitration or any other non-judicial procedure to resolve any controversy or settle any claims arising out of the transaction. This prohibition does not limit a <ref target="1026-2-a-11" reftype="term">consumer</ref> and <ref target="1026-2-a-17" reftype="term">creditor</ref> or any assignee from agreeing, after a dispute or claim under the transaction arises, to settle or use arbitration or other non-judicial procedure to resolve that dispute or claim.</content>
+      </paragraph>
+      <paragraph label="1026-36-h-2" marker="(2)">
+        <title type="keyterm">No waivers of Federal statutory causes of action.</title>
+        <content>A contract or other <ref target="1026-58-b-1" reftype="term">agreement</ref> relating to a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref> (including a home equity line of <ref target="1026-2-a-14" reftype="term">credit</ref> secured by the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref>) may not be applied or interpreted to bar a <ref target="1026-2-a-11" reftype="term">consumer</ref> from bringing a claim in court pursuant to any provision of law for damages or other relief in connection with any alleged violation of any Federal law. This prohibition does not limit a <ref target="1026-2-a-11" reftype="term">consumer</ref> and <ref target="1026-2-a-17" reftype="term">creditor</ref> or any assignee from agreeing, after a dispute or claim under the transaction arises, to settle or use arbitration or other non-judicial procedure to resolve that dispute or claim.</content>
+      </paragraph>
+    </paragraph>
+  </change>
+  <change operation="added" label="1026-36-i" parent="1026-36" after="1026-36-h">
+    <paragraph label="1026-36-i" marker="(i)">
+      <title type="keyterm">Prohibition on financing single-premium credit insurance.</title>
+      <content/>
+      <paragraph label="1026-36-i-1" marker="(1)">
+        <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> may not finance, directly or indirectly, any premiums or fees for <ref target="1026-2-a-14" reftype="term">credit</ref> insurance in connection with a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref> (including a home equity line of <ref target="1026-2-a-14" reftype="term">credit</ref> secured by the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref>). This prohibition does not apply to <ref target="1026-2-a-14" reftype="term">credit</ref> insurance for which premiums or fees are calculated and paid in full on a monthly basis.</content>
+      </paragraph>
+      <paragraph label="1026-36-i-2" marker="(2)">
+        <content>For purposes of this paragraph <ref target="1026-36-i" reftype="internal">(i)</ref>, “<ref target="1026-2-a-14" reftype="term">credit</ref> insurance”:</content>
+        <paragraph label="1026-36-i-2-i" marker="(i)">
+          <content>Means <ref target="1026-2-a-14" reftype="term">credit</ref> life, <ref target="1026-2-a-14" reftype="term">credit</ref> disability, <ref target="1026-2-a-14" reftype="term">credit</ref> unemployment, or <ref target="1026-2-a-14" reftype="term">credit</ref> property insurance, or any other accident, loss-of-income, life, or health insurance, or any payments directly or indirectly for any debt cancellation or suspension <ref target="1026-58-b-1" reftype="term">agreement</ref> or contract, but</content>
+        </paragraph>
+        <paragraph label="1026-36-i-2-ii" marker="(ii)">
+          <content>Excludes <ref target="1026-2-a-14" reftype="term">credit</ref> unemployment insurance for which the unemployment insurance premiums are reasonable, the <ref target="1026-2-a-17" reftype="term">creditor</ref> receives no direct or indirect <ref target="1026-36-a-3" reftype="term">compensation</ref> in connection with the unemployment insurance premiums, and the unemployment insurance premiums are paid pursuant to a separate insurance contract and are not paid to an <ref target="1026-32-b-5" reftype="term">affiliate</ref> of the <ref target="1026-2-a-17" reftype="term">creditor</ref>.</content>
+        </paragraph>
+      </paragraph>
+    </paragraph>
+  </change><!-- Under 25(a) General rule, paragraph 5 is removed. -->
+  <change operation="deleted" label="1026-25-a-Interp-5"/>
+  <!-- Revise 1026.36 Interps -->
+  <!-- The heading for Section 1026.36 is revised. -->
+  <change operation="modified" label="1026-36-Interp" subpath="title">
+    <title>§ 1026.36 Prohibited Acts or Practices and Certain Requirements for Credit Secured by a Dwelling.</title>
+  </change><!-- Section 1026.36: Paragraphs 1 and 2 are removed. -->
+  <change operation="deleted" label="1026-36-Interp-1"/>
+  <change operation="deleted" label="1026-36-Interp-2"/>
+  <!-- Section 1026.36(g) is added. -->
+  <change operation="added" label="1026-36-g-Interp" after="1026-36-f-Interp">
+    <interpParagraph label="1026-36-g-Interp">
+      <title>36(g) Name and NMLSR ID on Loan Documents.</title>
+      <content/>
+      <interpParagraph label="1026-36-g-1-Interp" target="1026-36-g-1">
+        <title>Paragraph 36(g)(1).</title>
+        <content/>
+        <interpParagraph label="1026-36-g-1-Interp-1" marker="1.">
+          <title>NMLSR ID.</title>
+          <content>Section <ref target="1026-36-g" reftype="internal">1026.36(g)</ref> requires a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> organization to include its name and NMLSR ID and the name and NMLSR ID of the individual <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> on certain loan documents. As provided in § <ref target="1026-36-a-1" reftype="internal">1026.36(a)(1)</ref>, the term “loan originator” includes <ref target="1026-2-a-17" reftype="term">creditors</ref> that engage in <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> activities for purposes of this requirement. Thus, for example, if an individual <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> employed by a bank originates a loan, the names and NMLSR IDs of the individual and the bank must be included on covered loan documents. The NMLSR ID is a number generally assigned by the NMLSR to individuals registered or licensed through NMLSR to provide loan origination services. For more information, see the SAFE Act sections 1503(3) and (12) and 1504 (12 U.S.C. 5102(3) and (12) and 5103), and its implementing regulations (12 CFR 1007.103(a) and 1008.103(a)(2)). A <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> organization may also have an NMLSR unique identifier.</content>
+        </interpParagraph>
+        <interpParagraph label="1026-36-g-1-Interp-2" marker="2.">
+          <title>Loan originators without NMLSR IDs.</title>
+          <content>An NMLSR ID is not required by § <ref target="1026-36-g" reftype="internal">1026.36(g)</ref> to be included on loan documents if the <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> is not required to obtain and has not been issued an NMLSR ID. For example,certain <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> organizations and individual <ref target="1026-36-a-1-i" reftype="term">loan originator</ref>s who are employees of bona fide nonprofit organizations may not be required to obtain a unique identifier under State law. However, some <ref target="1026-36-a-1-i" reftype="term">loan originator</ref>s may have obtained NMLSR IDs, even if they are not required to have one for their current jobs. If a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> organization or an individual <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> has been provided a unique identifier by the NMLSR, it must be included on the covered loan documents, regardless of whether the <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> organization or individual <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> is required to obtain an NMLSR unique identifier. In any event, the name of the <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> is required by § <ref target="1026-36-g" reftype="internal">1026.36(g)</ref> to be included on the covered loan documents.</content>
+        </interpParagraph>
+        <interpParagraph label="1026-36-g-1-Interp-3" marker="3.">
+          <title>Inclusion of name and NMLSR ID.</title>
+          <content>Section <ref target="1026-36-g-1" reftype="internal">1026.36(g)(1)</ref> requires the inclusion of <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> names and NMLSR IDs on each loan document. Those items need not be included more than once on each loan document on which <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> names and NMLSR IDs are required, such as by including them on every page of a document.</content>
+        </interpParagraph>
+        <interpParagraph label="1026-36-g-1-ii-Interp" target="1026-36-g-1-ii">
+          <title>Paragraph 36(g)(1)(ii).</title>
+          <content/>
+          <interpParagraph label="1026-36-g-1-ii-Interp-1" marker="1.">
+            <title>Multiple individual loan originators.</title>
+            <content>If more than one individual meets the definition ofa <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> for a transaction, the name and NMLSR ID of the individual <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> with primary responsibility for the transaction at the time the loan document is issued must be included. A <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> organization that establishes and follows a reasonable, written policy for determining which individual <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> has primary responsibility for the transaction at the time the document is issued complies with the requirement. If the individual <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> with primary responsibility for a transaction at the time a document is issued is not the same individual <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> who had primary responsibility for the transaction at the time that a previously issued document was issued, the previously issued document is not required to be reissued merely to change a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> name and NMLSR ID.</content>
+          </interpParagraph>
+        </interpParagraph>
+      </interpParagraph>
+    </interpParagraph>
+  </change>
+  </changeset>
+</notice>

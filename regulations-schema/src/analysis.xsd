@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="eregs"
+    xmlns:tns="eregs" 
+    elementFormDefault="qualified">
+    
+  <include schemaLocation="formatting.xsd"></include>
+
+  <!-- 
+      The analysis type describes the analysis of a section of the 
+      regulation. It consists of the following elements:
+      1. title, the title of the analysis
+      2. one or more analysisSection elements
+   -->
+  <complexType name="Analysis">
+    <sequence>
+      <choice minOccurs="0" maxOccurs="unbounded">
+        <element ref="tns:analysisSection"></element>
+      </choice>
+    </sequence>
+    <attribute name="label" type="string" use="optional"></attribute>
+  </complexType>
+
+  <!-- 
+      The analysisSection describes the analysis of a section of the 
+      regulation. It consists of the following elements:
+      1. title, the title of the analysis section
+      2. one or more paragraph elements
+      3. zero or more other analysisSection elements
+
+      analysisSecton has three possible attributes, target (the label 
+      within the regulation text that it analyzes), notice (the 
+      notice number it originated in), and date (the notice publication date).
+   -->
+  <complexType name="AnalysisSection">
+    <sequence>
+      <element name="title" type="string"></element>
+
+      <choice minOccurs="1" maxOccurs="unbounded">
+        <element ref="tns:analysisParagraph"></element>
+        <element ref="tns:analysisSection"></element>
+      </choice>
+    </sequence>
+    <attribute name="target" type="string" use="optional"></attribute>
+    <attribute name="notice" type="string" use="optional"></attribute>
+    <attribute name="date" type="string" use="optional"></attribute>
+  </complexType>
+
+  <!-- 
+      The AnlaysisParagraph describes a paragraph within the analysis
+      of a regulation. This differs from the primitive paragraph 
+      because paragraphs within analysis are more limited in what they 
+      can express. They do not get markers, references, definitions, 
+      graphics, etc, they only contain footnotes.
+      
+      AnalysisParagraph consists of the following elements:
+
+      1. one content element, which can contain text and zero or more 
+         footnote elements
+      2. zero or more other analysisParagraph elements
+      3. zero or more footnote elements
+      4. italicized text
+   -->
+  <complexType name="AnalysisParagraph" mixed="true">
+    <sequence>
+      <choice minOccurs="0" maxOccurs="unbounded">
+        <element ref="tns:footnote"></element>
+        <element name="em" type="tns:Emphasis"></element>
+        <element ref="tns:graphic"></element>
+      </choice>
+    </sequence>
+  </complexType>
+
+  <!-- 
+      The footnote type defines a footnote within an analysisParagraph. 
+      Footnotes are strings with the following attributes:
+      1. reference, the reference number (typically) of the note.
+   -->
+  <complexType name="Footnote">
+    <simpleContent>
+      <extension base="string">
+        <attribute name="ref"></attribute>
+      </extension>
+    </simpleContent>
+  </complexType>
+
+  <element name="analysis" type="tns:Analysis"></element>
+  <element name="analysisSection" type="tns:AnalysisSection"></element>
+  <element name="analysisParagraph" type="tns:AnalysisParagraph"></element>
+  <element name="footnote" type="tns:Footnote"></element>
+
+</schema>

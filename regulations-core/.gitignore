@@ -1,0 +1,7 @@
+*.py[co]
+*.swp
+.coverage
+local_settings.py
+*.db
+*.egg-info/
+.DS_Store

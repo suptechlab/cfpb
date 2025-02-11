@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="eregs"
+	xmlns:tns="eregs" 
+	elementFormDefault="qualified">
+
+	<!--  
+	The Emphasis type describes italicized text. It is an extension of string, having the additional
+	attribute of data-original, which describes the original emphasis tag from the eCFR XML.
+	 -->
+	
+	<complexType name="Emphasis">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="data-original" type="string"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="Callout">
+        <sequence>
+            <element name="line" minOccurs="1" maxOccurs="unbounded"></element>
+        </sequence>
+        <attribute name="type" type="string" use="required"></attribute>
+    </complexType>
+    
+	<element name="em"></element>
+	<element name="dash"></element>
+	<element name="variable"></element>
+	<element name="subscript"></element>
+	<element name="callout" type="tns:Callout"></element>
+	
+</schema>

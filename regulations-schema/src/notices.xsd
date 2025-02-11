@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="eregs"
+    xmlns:tns="eregs" 
+    elementFormDefault="qualified">
+
+  <include schemaLocation="primitives.xsd"></include>
+  <include schemaLocation="preamble.xsd"></include>
+  <include schemaLocation="toc.xsd"></include>
+  <include schemaLocation="part.xsd"></include>
+  <include schemaLocation="analysis.xsd"></include>
+
+  <!-- 
+       Notices include the same sorts of content as regulations do,
+       except that the content is just the things that have been 
+       modified from the last notice, wrapped in a changeset element. 
+       
+      All the notice metadata is contained within the preamble, which 
+      is identical to the regulation preamble.
+
+      Any analysis that is provided with the notice will be contained 
+      within a top-level child of the notice.
+  -->
+  <complexType name="Notice">
+    <sequence>
+      <element ref="tns:fdsys"></element>
+      <element ref="tns:preamble"></element>
+      <choice minOccurs="0" maxOccurs="1">
+        <element ref="tns:changeset"></element>
+      </choice>
+      <choice minOccurs="0" maxOccurs="1">
+    	<element ref="tns:analysis"></element>
+      </choice>
+    </sequence>
+  </complexType>
+
+  <!-- 
+      Changeset express changes from one version of a regulation to
+      another. This includes operations that add/modify/delete for a 
+      given label within the regulation itself. It consists of the 
+      following elements:
+
+      1. leftDocumentNumber, the notice document number of the left 
+         version, which will be transformed into the right.
+      2. rightDocumentNumber, the notice document number of the right 
+         version, the one into which the left is transformed.
+   -->
+  <complexType name="Changeset">
+    <sequence>
+      <choice minOccurs="0" maxOccurs="unbounded">
+        <element ref="tns:change"></element>
+      </choice>
+    </sequence>
+    <attribute name="leftDocumentNumber" type="string"></attribute>
+    <attribute name="rightDocumentNumber" type="string"></attribute>
+    <attribute name="leftEffectiveDate" type="date"></attribute>
+    <attribute name="rightEffectiveDate" type="date"></attribute>
+    <attribute name="order" type="integer" use="optional"></attribute>
+  </complexType>
+
+  <!-- 
+       A Change modifies the given label from the immediately prior 
+       version of a regulation with the given contents. Deletions won't 
+       have any content.
+
+       - `operation` should be one of "added", "modified", "deleted",
+         "moved", "changeTarget", or "changeLabel"
+       - `parent`, optional for "added" and required for "moved" 
+         operations, should correspond to the new parent label.
+       - `after`, optional for "added" and "moved" operations, should 
+         correspond to the preceding sibling label, if there is one.
+       - `before`, optional for "added" and "moved" operations, should 
+         correspond to the following sibling label, if there is one.
+	 - `oldTarget` and `newTarget` are required for the `changeTarget`
+	 operation
+	 - `newLabel` is required for the `changeLabel` operation
+   -->
+  <complexType name="Change" mixed="true">
+    <choice minOccurs="0" maxOccurs="unbounded">
+      <element name="reserved" type="string"></element>
+      <element ref="tns:subpart"></element>
+      <element ref="tns:section"></element>
+      <element ref="tns:paragraph"></element>
+      <element ref="tns:analysis"></element>
+      <element ref="tns:analysisSection"></element>
+      <element ref="tns:appendix"></element>
+      <element ref="tns:appendixSection"></element>
+      <element ref="tns:interpParagraph"></element>
+      <element ref="tns:interpretations"></element>
+      <element ref="tns:interpSection"></element>
+      <element ref="tns:tableOfContents"></element>
+      <element name="title" type="string"></element>
+      <element name="subject" type="string"></element>
+      <element name="content" type="tns:RegText"></element>
+    </choice>
+    <attribute name="operation">
+      <simpleType>
+        <restriction base="string">
+          <enumeration value="added"/>
+          <enumeration value="modified"/>
+          <enumeration value="deleted"/>
+          <enumeration value="moved"/>
+          <enumeration value="changeTarget"/>
+	  <enumeration value="changeLabel"/>
+        </restriction>
+      </simpleType>
+    </attribute>
+    <attribute name="label" type="string"></attribute>
+    <attribute name="subpath" type="string"></attribute>
+    <attribute name="parent" type="string" use="optional"></attribute>
+    <attribute name="after" type="string" use="optional"></attribute>
+    <attribute name="before" type="string" use="optional"></attribute>
+    <attribute name="oldTarget" type="string" use="optional"></attribute>
+    <attribute name="newTarget" type="string" use="optional"></attribute>
+    <attribute name="newLabel" type="string" use="optional"></attribute>
+  </complexType>
+
+  <element name="change" type="tns:Change"></element>
+  <element name="changeset" type="tns:Changeset"></element>
+  <element name="notice" type="tns:Notice"></element>
+</schema>

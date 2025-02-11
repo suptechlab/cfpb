@@ -1,0 +1,33 @@
+{
+  "0": {
+    "host": "www.consumerfinance.gov",
+    "path": "/",
+    "port": "",
+    "protocol": "https",
+    "uriPath": "/",
+    "url": "https://www.consumerfinance.gov/",
+    "depth": 1,
+    "fetched": true,
+    "status": "failed",
+    "stateData": {
+      "requestLatency": 109,
+      "requestTime": 109,
+      "contentLength": 305,
+      "contentType": "text/html; charset=iso-8859-1",
+      "code": 400,
+      "headers": {
+        "content-length": "305",
+        "content-type": "text/html; charset=iso-8859-1",
+        "server": "Apache",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "date": "Sat, 18 Nov 2017 08:01:00 GMT",
+        "connection": "close",
+        "strict-transport-security": "max-age=31536000"
+      }
+    },
+    "id": 0
+  },
+  "length": 1
+}

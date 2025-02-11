@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<notice xmlns="eregs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eregs https://raw.githubusercontent.com/cfpb/regulations-schema/master/src/eregs.xsd">
+  <fdsys>
+    <cfrTitleNum>12</cfrTitleNum>
+    <cfrTitleText>Banks and Banking</cfrTitleText>
+    <volume>8</volume>
+    <date>2015-07-24</date>
+    <originalDate>2012-01-01</originalDate>
+    <title>REAL ESTATE SETTLEMENT PROCEDURES ACT</title>
+  </fdsys>
+  <preamble>
+    <agency>Bureau of Consumer Financial Protection</agency>
+    <regLetter>X</regLetter>
+    <cfr>
+      <title>12</title>
+      <section>1024</section>
+    </cfr>
+    <documentNumber>2015-18239</documentNumber>
+    <effectiveDate>2015-10-03</effectiveDate>
+    <federalRegisterURL>https://www.federalregister.gov/documents/2015/07/24/2015-18239/2013-integrated-mortgage-disclosures-rule-under-the-real-estate-settlement-procedures-act-regulation</federalRegisterURL>
+  </preamble>
+  <changeset leftDocumentNumber="2015-01321" rightDocumentNumber="2015-18239">
+    <!-- This notice just changed the effective date. -->
+  </changeset>
+</notice>

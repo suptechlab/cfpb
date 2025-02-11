@@ -1,0 +1,26 @@
+.expandable {
+    &:hover {
+        background-color: @gray-10;
+        cursor: pointer;
+    }
+}
+
+.expand-button {
+    color: @pacific;
+    .avenir-next-demi;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: .8em;
+    cursor: pointer;
+}
+
+.expand-button:before {
+    .cf-icon;
+    content: "\e109";
+    float: right;
+    padding-left: 6px;
+}
+
+.open.expand-button:before {
+    content: "\e111";
+}

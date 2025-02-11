@@ -1,0 +1,484 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<notice xmlns="eregs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eregs https://raw.githubusercontent.com/cfpb/regulations-schema/master/src/eregs.xsd">
+  <fdsys>
+    <cfrTitleNum>12</cfrTitleNum>
+    <cfrTitleText>Banks and Banking</cfrTitleText>
+    <volume>8</volume>
+    <date>2013-10-01</date>
+    <originalDate>2012-01-01</originalDate>
+    <title>TRUTH IN LENDING</title>
+  </fdsys>
+  <preamble>
+    <agency>Bureau of Consumer Financial Protection</agency>
+    <cfr>
+      <title>12</title>
+      <section>1026</section>
+    </cfr>
+    <documentNumber>2013-22752_20140110</documentNumber>
+    <effectiveDate>2014-01-10</effectiveDate>
+    <federalRegisterURL>https://www.federalregister.gov/documents/2013/10/01/2013-22752/amendments-to-the-2013-mortgage-rules-under-the-equal-credit-opportunity-act-regulation-b-real</federalRegisterURL>
+  </preamble>
+  <changeset leftDocumentNumber="2013-16962_20140110" rightDocumentNumber="2013-22752_20140110">
+    <!-- This final rule is effective January 10, 2014, except for the amendments to Sec. Sec. 1026.35(b)(2)(iii), 1026.36(a), (b), and (j), and commentary to Sec. Sec. 1026.25(c)(2), 1026.35, and 1026.36(a), (b), (d), and (f) in Supp. I to part 1026, which are effective January 1, 2014, and the amendments to commentary to Sec. 1002.14(b)(3) in Supplement I to part 1002, which are effective January 18, 2014. -->
+    <!-- Section 1026.23 is amended by revising paragraph (a)(3)(ii) -->
+    <change operation="modified" label="1026-23-a-3-ii">
+      <paragraph label="1026-23-a-3-ii" marker="(ii)">
+        <content>For purposes of this paragraph <ref target="1026-23-a-3" reftype="internal">(a)(3)</ref>, the term “<def term="material disclosure">material disclosures</def>” means the required disclosures of the annual percentage rate, the finance charge, the amount financed, the total of payments, the payment schedule, and the disclosures and limitations referred to in §§ <ref target="1026-32-c" reftype="internal">1026.32(c)</ref> and <ref target="1026-32-d" reftype="internal">(d)</ref> and <ref target="1026-43-g" reftype="internal">1026.43(g)</ref>.</content>
+      </paragraph>
+    </change>
+    <!-- Section 1026.31 is amended by revising paragraphs (g), (h)(1)(iii)(A), and (h)(2)(iii)(A) -->
+    <change operation="modified" label="1026-31-g">
+      <paragraph label="1026-31-g" marker="(g)">
+        <title type="keyterm">Accuracy of annual percentage rate.</title>
+        <content>For purposes of section <ref target="1026-32" reftype="internal">1026.32</ref>, the annual percentage rate shall be considered accurate, and may be used in determining whether a transaction is covered by section <ref target="1026-32" reftype="internal">1026.32</ref>, if it is accurate according to the requirements and within the tolerances under section <ref target="1026-22" reftype="internal">1026.22</ref> for closed-end credit transactions or <ref target="1026-6-a" reftype="internal">1026.6(a)</ref> for <ref target="1026-2-a-20" reftype="term">open-end credit</ref> plans. The finance charge tolerances for rescission under section <ref target="1026-23-g" reftype="internal">1026.23(g)</ref> or (h) shall not apply for this purpose.</content>
+      </paragraph>
+    </change>
+    <change operation="modified" label="1026-31-h-1-iii-A">
+      <paragraph label="1026-31-h-1-iii-A" marker="(A)">
+        <content>Make the loan or <ref target="1026-2-a-14" reftype="term">credit</ref> plan satisfy the requirements of 15 U.S.C. 1631-1651; or</content>
+      </paragraph>
+    </change>
+    <change operation="modified" label="1026-31-h-2-iii-A">
+      <paragraph label="1026-31-h-2-iii-A" marker="(A)">
+        <content>Make the loan or <ref target="1026-2-a-14" reftype="term">credit</ref> plan satisfy the requirements of 15 U.S.C. 1631-1651; or</content>
+      </paragraph>
+    </change>
+    <!-- Section 1026.32 is amended by:
+      a. Revising paragraph (a)(2)(iii), as amended January 31, 2013, at 78 FR 6856;
+      b. Revising paragraph (b)(1)(ii), as amended June 12, 2013, at 78 FR 35430;
+      c. Revising paragraph (b)(1)(vi), as amended January 30, 2013, at 78 FR 6408;
+      d. Revising paragraph (b)(2)(ii), as amended June 12, 2013, at 78 FR 35430; and
+      e. Revising paragraphs (b)(2)(vi), (b)(6)(ii), and (d)(1)(ii)(C), as amended January 31, 2013, at 78 FR 6856. -->
+    <change operation="modified" label="1026-32-a-2-iii">
+      <paragraph label="1026-32-a-2-iii" marker="(iii)">
+        <content>A transaction originated by a Housing Finance Agency, where the Housing Finance Agency is the <ref target="1026-2-a-17" reftype="term">creditor</ref> for the transaction; or</content>
+      </paragraph>
+    </change>
+    <change operation="modified" label="1026-32-b-1-ii">
+      <paragraph label="1026-32-b-1-ii" marker="(ii)">
+        <content>All <ref target="1026-36-a-3" reftype="term">compensation</ref> paid directly or indirectly by a <ref target="1026-2-a-11" reftype="term">consumer</ref> or <ref target="1026-2-a-17" reftype="term">creditor</ref> to a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref>, as defined in § <ref target="1026-36-a-1" reftype="internal">1026.36(a)(1)</ref>, that can be attributed to that transaction at the time the interest rate is set unless:</content><paragraph label="1026-32-b-1-ii-A" marker="(A)">
+          <content>That <ref target="1026-36-a-3" reftype="term">compensation</ref> is paid by a <ref target="1026-2-a-11" reftype="term">consumer</ref> to a mortgage broker, as defined in § <ref target="1026-36-a-2" reftype="internal">1026.36(a)(2)</ref>, and already has been included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under paragraph <ref target="1026-32-b-1-i" reftype="internal">(b)(1)(i)</ref> of this section;</content></paragraph>
+        <paragraph label="1026-32-b-1-ii-B" marker="(B)">
+          <content>That <ref target="1026-36-a-3" reftype="term">compensation</ref> is paid by a mortgage broker, as defined in § <ref target="1026-36-a-2" reftype="internal">1026.36(a)(2)</ref>, to a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> that is an employee of the mortgage broker; or</content>
+        </paragraph>
+        <paragraph label="1026-32-b-1-ii-C" marker="(C)">
+          <content>That <ref target="1026-36-a-3" reftype="term">compensation</ref> is paid by a <ref target="1026-2-a-17" reftype="term">creditor</ref> to a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> that is an employee of the <ref target="1026-2-a-17" reftype="term">creditor</ref>; or</content>
+        </paragraph>
+        <paragraph label="1026-32-b-1-ii-D" marker="(D)">
+          <content>That compensation is paid by a retailer of manufactured homes to its employee.</content>
+        </paragraph>
+      </paragraph>
+    </change>
+    <change operation="modified" label="1026-32-b-1-vi">
+      <paragraph label="1026-32-b-1-vi" marker="(vi)">
+        <content>The total <ref target="1026-32-b-6-i" reftype="term">prepayment penalty</ref>, as defined in paragraph <ref target="1026-32-b-6-i" reftype="internal">(b)(6)(i)</ref> or <ref target="1026-32-b-6-ii" reftype="internal">(ii)</ref> of this section, as applicable, incurred by the <ref target="1026-2-a-11" reftype="term">consumer</ref> if the <ref target="1026-2-a-11" reftype="term">consumer</ref> refinances the existing <ref target="1026-39-a-2" reftype="term">mortgage loan</ref>, with the current holder of the existing loan or plan, a servicer acting on behalf of the current holder, or an <ref target="1026-32-b-5" reftype="term">affiliate</ref> of either.</content>
+      </paragraph>
+    </change>
+    <change operation="modified" label="1026-32-b-2-ii">
+      <paragraph label="1026-32-b-2-ii" marker="(ii)">
+        <content>All <ref target="1026-36-a-3" reftype="term">compensation</ref> paid directly or indirectly by a <ref target="1026-2-a-11" reftype="term">consumer</ref> or <ref target="1026-2-a-17" reftype="term">creditor</ref> to a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref>, as defined in § <ref target="1026-36-a-1" reftype="internal">1026.36(a)(1)</ref>, that can be attributed to that transaction at the time the interest rate is set unless:</content>
+        <paragraph label="1026-32-b-2-ii-A" marker="(A)">
+          <content>That <ref target="1026-36-a-3" reftype="term">compensation</ref> is paid by a <ref target="1026-2-a-11" reftype="term">consumer</ref> to a mortgage broker, as defined in § <ref target="1026-36-a-2" reftype="internal">1026.36(a)(2)</ref>, and already has been included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under paragraph (b)(2)(i) of this section;</content></paragraph>
+        <paragraph label="1026-32-b-2-ii-B" marker="(B)">
+          <content>That <ref target="1026-36-a-3" reftype="term">compensation</ref> is paid by a mortgage broker, as defined in § <ref target="1026-36-a-2" reftype="internal">1026.36(a)(2)</ref>, to a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> that is an employee of the mortgage broker;</content>
+        </paragraph>
+        <paragraph label="1026-32-b-2-ii-C" marker="(C)">
+          <content>That <ref target="1026-36-a-3" reftype="term">compensation</ref> is paid by a <ref target="1026-2-a-17" reftype="term">creditor</ref> to a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> that is an employee of the <ref target="1026-2-a-17" reftype="term">creditor</ref>; or</content>
+        </paragraph>
+        <paragraph label="1026-32-b-2-ii-D" marker="(D)">
+          <content>That compensation is paid by a retailer of manufactured homes to its employee.</content>
+        </paragraph>
+      </paragraph>
+    </change>
+    <change operation="modified" label="1026-32-b-2-vi">
+      <paragraph label="1026-32-b-2-vi" marker="(vi)">
+        <content>The total <ref target="1026-32-b-6-i" reftype="term">prepayment penalty</ref>, as defined in paragraph (b)(6)(i) or (ii) of this section, as applicable, incurred by the <ref target="1026-2-a-11" reftype="term">consumer</ref> if the <ref target="1026-2-a-11" reftype="term">consumer</ref> refinances an existing closed-end credit transaction with an <ref target="1026-2-a-20" reftype="term">open-end credit</ref> plan, or terminates an existing <ref target="1026-2-a-20" reftype="term">open-end credit</ref> plan in connection with obtaining a new <ref target="1026-2-a-20" reftype="term">open-end credit</ref> plan, with the current holder of the existing transaction or plan, a servicer acting on behalf of the current holder, or an <ref target="1026-32-b-5" reftype="term">affiliate</ref> of either;</content></paragraph>
+    </change>
+    <change operation="modified" label="1026-32-b-6-ii">
+      <paragraph label="1026-32-b-6-ii" marker="(ii)">
+        <title>Open-end credit.</title>
+        <content>For an <ref target="1026-2-a-20" reftype="term">open-end credit</ref> plan, <ref target="1026-32-b-6-i" reftype="term">prepayment penalty</ref> means a charge imposed by the <ref target="1026-2-a-17" reftype="term">creditor</ref> if the <ref target="1026-2-a-11" reftype="term">consumer</ref> terminates the <ref target="1026-2-a-20" reftype="term">open-end credit</ref> plan prior to the end of its term, other than a waived, bona fide third-party charge that the <ref target="1026-2-a-17" reftype="term">creditor</ref> imposes if the <ref target="1026-2-a-11" reftype="term">consumer</ref> terminates the <ref target="1026-2-a-20" reftype="term">open-end credit</ref> plan sooner than 36 months after account opening.</content></paragraph>
+    </change>
+    <change operation="modified" label="1026-32-d-1-ii-C">
+      <paragraph label="1026-32-d-1-ii-C" marker="(C)">
+        <content>A loan that meets the criteria set forth in §§ <ref target="1026-43-f-1-i" reftype="internal">1026.43(f)(1)(i)</ref> through (vi) and <ref target="1026-43-f-2" reftype="internal">1026.43(f)(2)</ref>, or the conditions set forth in § <ref target="1026-43-e-6" reftype="internal">1026.43(e)(6)</ref>.</content></paragraph>
+    </change>
+    <!-- Section 1026.35 is amended by revising paragraphs (b)(2)(i)(D) -->
+    <!-- Revisions previously effective: (b)(2)(iii)(A), and (b)(2)(iii)(D)(1) -->
+    <change operation="modified" label="1026-35-b-2-i-D" subpath="content">
+      <content>A <ref target="1026-33-a" reftype="term">reverse mortgage transaction</ref> subject to § <ref target="1026-33" reftype="internal">1026.33</ref>.</content>
+    </change>
+    <!-- Section 1026.36 is amended by revising paragraphs (f)(3)(i) introductory text, (f)(3)(ii), and (i) -->
+    <change operation="modified" label="1026-36-f-3-i" subpath="content">
+      <content>Obtain for any individual whom the <ref target="1026-36-a-1-iii" reftype="term">loan originator organization</ref> hired on or after January 1, 2014 (or whom the <ref target="1026-36-a-1-iii" reftype="term">loan originator organization</ref> hired before this date but for whom there were no applicable statutory or regulatory background standards in effect at the time of hire or before January 1, 2014, used to screen the individual) and for any individual regardless of when hired who, based on reliable information known to the <ref target="1026-36-a-1-iii" reftype="term">loan originator organization</ref>, likely does not meet the standards under § <ref target="1026-36-f-3-ii" reftype="internal">1026.36(f)(3)(ii)</ref>, before the individual acts as a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> in a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref>:</content>
+    </change><change operation="modified" label="1026-36-f-3-ii" subpath="content">
+      <content>Determine on the basis of the information obtained pursuant to paragraph (f)(3)(i) of this section and any other information reasonably available to the <ref target="1026-36-a-1-iii" reftype="term">loan originator organization</ref>, for any individual whom the <ref target="1026-36-a-1-iii" reftype="term">loan originator organization</ref> hired on or after January 1, 2014 (or whom the <ref target="1026-36-a-1-iii" reftype="term">loan originator organization</ref> hired before this date but for whom there were no applicable statutory or regulatory background standards in effect at the time of hire or before January 1, 2014, used to screen the individual) and for any individual regardless of when hired who, based on reliable information known to the <ref target="1026-36-a-1-iii" reftype="term">loan originator organization</ref>, likely does not meet the standards under this paragraph (f)(3)(ii), before the individual acts as a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> in a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref>, that the <ref target="1026-36-a-1-ii" reftype="term">individual loan originator</ref>:</content>
+    </change><change operation="modified" label="1026-36-i">
+      <paragraph label="1026-36-i" marker="(i)">
+        <title type="keyterm">Prohibition on financing credit insurance.</title>
+        <content/>
+        <paragraph label="1026-36-i-1" marker="(1)">
+          <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> may not finance, directly or indirectly, any premiums or fees for <ref target="1026-2-a-14" reftype="term">credit</ref> insurance in connection with a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref> (including a home equity line of <ref target="1026-2-a-14" reftype="term">credit</ref> secured by the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref>). This prohibition does not apply to <ref target="1026-2-a-14" reftype="term">credit</ref> insurance for which premiums or fees are calculated and paid in full on a monthly basis.</content></paragraph>
+        <paragraph label="1026-36-i-2" marker="(2)">
+          <content>For purposes of this paragraph (i):</content>
+          <paragraph label="1026-36-i-2-i" marker="(i)">
+            <content>“<ref target="1026-2-a-14" reftype="term">Credit</ref> insurance”</content><paragraph label="1026-36-i-2-i-A" marker="(A)">
+              <content>Means <ref target="1026-2-a-14" reftype="term">credit</ref> life, <ref target="1026-2-a-14" reftype="term">credit</ref> disability, <ref target="1026-2-a-14" reftype="term">credit</ref> unemployment, or <ref target="1026-2-a-14" reftype="term">credit</ref> property insurance, or any other accident, loss-of-income, life, or health insurance, or any payments directly or indirectly for any debt cancellation or suspension <ref target="1026-58-b-1" reftype="term">agreement</ref> or contract, but</content></paragraph>
+            <paragraph label="1026-36-i-2-i-B" marker="(B)">
+              <content>Excludes <ref target="1026-2-a-14" reftype="term">credit</ref> unemployment insurance for which the unemployment insurance premiums are reasonable, the <ref target="1026-2-a-17" reftype="term">creditor</ref> receives no direct or indirect compensation in connection with the unemployment insurance premiums, and the unemployment insurance premiums are paid pursuant to a separate insurance contract and are not paid to an <ref target="1026-32-b-5" reftype="term">affiliate</ref> of the <ref target="1026-2-a-17" reftype="term">creditor</ref>;</content></paragraph>
+          </paragraph>
+          <paragraph label="1026-36-i-2-ii" marker="(ii)">
+            <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> finances premiums or fees for <ref target="1026-2-a-14" reftype="term">credit</ref> insurance if it provides a <ref target="1026-2-a-11" reftype="term">consumer</ref> the right to defer payment of a <ref target="1026-2-a-14" reftype="term">credit</ref> insurance premium or fee owed by the <ref target="1026-2-a-11" reftype="term">consumer</ref> beyond the monthly period in which the premium or fee is due; and</content></paragraph>
+          <paragraph label="1026-36-i-2-iii" marker="(iii)">
+            <content><ref target="1026-2-a-14" reftype="term">Credit</ref> insurance premiums or fees are calculated on a monthly basis if they are determined mathematically by multiplying a rate by the actual monthly outstanding balance.</content></paragraph>
+        </paragraph>
+      </paragraph>
+    </change><!-- Section 1026.43 is amended by revising paragraphs (a)(2), (e)(4)(ii) and (e)(4)(ii)(C) -->
+    <change operation="modified" label="1026-43-a-2">
+      <paragraph label="1026-43-a-2" marker="(2)">
+        <content>A mortgage transaction secured by a <ref target="1026-2-a-11" reftype="term">consumer</ref>'s interest in a timeshare plan, as defined in <ref target="USC:11-101" reftype="external">11 U.S.C. 101</ref>(53(D)); or</content>
+      </paragraph>
+    </change>
+    <change operation="modified" label="1026-43-e-4-ii" subpath="content">
+      <content>A qualified mortgage under this paragraph (e)(4) must be one of the following at <ref target="1026-2-a-13" reftype="term">consummation</ref>:</content>
+    </change><change operation="modified" label="1026-43-e-4-ii-C" subpath="content">
+      <content>A loan that is eligible to be guaranteed by the U.S. Department of Veterans Affairs;</content>
+    </change>
+    <!-- Update TOC with H-30(C) updated title -->
+    <change operation="modified" label="1026-H-TOC">
+      <tableOfContents label="1026-H-TOC">
+        <tocAppEntry target="1026-H-1">
+          <appendixLetter>1</appendixLetter>
+          <appendixSubject>H-1—Credit Sale Model Form (§ 1026.18)</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-2">
+          <appendixLetter>2</appendixLetter>
+          <appendixSubject>H-2—Loan Model Form (§ 1026.18)</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-3">
+          <appendixLetter>3</appendixLetter>
+          <appendixSubject>H-3—Amount Financed Itemization Model Form (§ 1026.18(c))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(A)">
+          <appendixLetter>4(A)</appendixLetter>
+          <appendixSubject>H-4(A)—Variable-Rate Model Clauses (§ 1026.18(f)(1))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(B)">
+          <appendixLetter>4(B)</appendixLetter>
+          <appendixSubject>H-4(B)—Variable-Rate Model Clauses (§ 1026.18(f)(2))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(C)">
+          <appendixLetter>4(C)</appendixLetter>
+          <appendixSubject>H-4(C)—Variable-Rate Model Clauses (§ 1026.19(b))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(D)">
+          <appendixLetter>4(D)</appendixLetter>
+          <appendixSubject>H-4(D) – Variable-Rate Model Clauses (§ 1026.20(c))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(E)">
+          <appendixLetter>4(E)</appendixLetter>
+          <appendixSubject>H-4(E) Fixed Rate Mortgage Interest Rate and Payment Summary Model Clause (§ 1026.18(s))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(F)">
+          <appendixLetter>4(F)</appendixLetter>
+          <appendixSubject>H-4(F) Adjustable-Rate Mortgage or Step-Rate Mortgage Interest Rate and Payment Summary Model Clause (§ 1026.18(s))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(G)">
+          <appendixLetter>4(G)</appendixLetter>
+          <appendixSubject>H-4(G) Mortgage with Negative Amortization Interest Rate and Payment Summary Model Clause (§ 1026.18(s))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(H)">
+          <appendixLetter>4(H)</appendixLetter>
+          <appendixSubject>H-4(H) Fixed Rate Mortgage with Interest Only Interest Rate and Payment Summary Model Clause (§ 1026.18(s))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(I)">
+          <appendixLetter>4(I)</appendixLetter>
+          <appendixSubject>H-4(I)—Introductory Rate Model Clause (§ 1026.18(s)(2)(iii))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(J)">
+          <appendixLetter>4(J)</appendixLetter>
+          <appendixSubject>H-4(J)—Balloon Payment Model Clause (§ 1026.18(s)(5))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-4(K)">
+          <appendixLetter>4(K)</appendixLetter>
+          <appendixSubject>H-4(K)—“No-Guarantee-to-Refinance” Statement Model Clause (§ 1026.18(t))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-5">
+          <appendixLetter>5</appendixLetter>
+          <appendixSubject>H-5–Demand Feature Model Clauses (§ 1026.18(i))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-6">
+          <appendixLetter>6</appendixLetter>
+          <appendixSubject>H-6–Assumption Policy Model Clause (§ 1026.18(q))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-7">
+          <appendixLetter>7</appendixLetter>
+          <appendixSubject>H-7–Required Deposit Model Clause (§ 1026.18(r))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-8">
+          <appendixLetter>8</appendixLetter>
+          <appendixSubject>H-8—Rescission Model Form (General) (§ 1026.23)</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-9">
+          <appendixLetter>9</appendixLetter>
+          <appendixSubject>H-9—Rescission Model Form (Refinancing With Original Creditor) (§ 1026.23)</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-10">
+          <appendixLetter>10</appendixLetter>
+          <appendixSubject>H-10—Credit Sale Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-11">
+          <appendixLetter>11</appendixLetter>
+          <appendixSubject>H-11—Installment Loan Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-12">
+          <appendixLetter>12</appendixLetter>
+          <appendixSubject>H-12—Refinancing Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-13">
+          <appendixLetter>13</appendixLetter>
+          <appendixSubject>H-13—Mortgage with Demand Feature Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-14">
+          <appendixLetter>14</appendixLetter>
+          <appendixSubject>H-14—Variable-Rate Mortgage Sample (§ 1026.19(b))</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-15">
+          <appendixLetter>15</appendixLetter>
+          <appendixSubject>H-15—Graduated Payment Mortgage Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-16">
+          <appendixLetter>16</appendixLetter>
+          <appendixSubject>H-16—Mortgage Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-17(A)">
+          <appendixLetter>17(A)</appendixLetter>
+          <appendixSubject>H-17(A) Debt Suspension Model Clause</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-17(B)">
+          <appendixLetter>17(B)</appendixLetter>
+          <appendixSubject>H-17(B) Debt Suspension Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-18">
+          <appendixLetter>18</appendixLetter>
+          <appendixSubject>H-18—Private Education Loan Application and Solicitation Model Form</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-19">
+          <appendixLetter>19</appendixLetter>
+          <appendixSubject>H-19—Private Education Loan Approval Model Form</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-20">
+          <appendixLetter>20</appendixLetter>
+          <appendixSubject>H-20—Private Education Loan Final Model Form</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-21">
+          <appendixLetter>21</appendixLetter>
+          <appendixSubject>H-21—Private Education Loan Application and Solicitation Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-22">
+          <appendixLetter>22</appendixLetter>
+          <appendixSubject>H-22—Private Education Loan Approval Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-23">
+          <appendixLetter>23</appendixLetter>
+          <appendixSubject>H-23—Private Education Loan Final  Sample</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-30(A)">
+          <appendixLetter>30(A)</appendixLetter>
+          <appendixSubject>H-30(A) Sample Form of Periodic Statement</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-30(B)">
+          <appendixLetter>30(B)</appendixLetter>
+          <appendixSubject>H-30(B) Sample Form of Periodic Statement with Delinquency Box</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-30(C)">
+          <appendixLetter>30(C)</appendixLetter>
+          <appendixSubject>H-30(C) Sample Form of Periodic Statement for a Payment-Option Loan</appendixSubject>
+        </tocAppEntry>
+        <tocAppEntry target="1026-H-30(D)">
+          <appendixLetter>30(D)</appendixLetter>
+          <appendixSubject>H-30(D) Sample Clause for Homeownership Counselor Contact Information</appendixSubject>
+        </tocAppEntry>
+      </tableOfContents>
+    </change>
+    <change operation="modified" label="1026-H-30(C)">
+      <appendixSection appendixSecNum="40" label="1026-H-30(C)">
+        <subject>H-30(C) Sample Form of Periodic Statement for a Payment-Option Loan</subject>
+        <paragraph label="1026-H-30(C)-p7" marker="">
+          <content>
+            <graphic>
+              <altText/>
+              <text>![](ER14FE13.010-1)</text>
+              <url>https://s3.amazonaws.com/files.consumerfinance.gov/eregulations/ER14FE13.010-1.png</url>
+              <thumbUrl>https://s3.amazonaws.com/files.consumerfinance.gov/eregulations/ER14FE13.010-1.thumb.png</thumbUrl>
+            </graphic>
+          </content>
+        </paragraph>
+      </appendixSection>
+    </change>
+    <!-- This final rule is effective January 10, 2014, except for the amendments to Sec. Sec. 1026.35(b)(2)(iii), 1026.36(a), (b), and (j), and commentary to Sec. Sec. 1026.25(c)(2), 1026.35, and 1026.36(a), (b), (d), and (f) in Supp. I to part 1026, which are effective January 1, 2014, and the amendments to commentary to Sec. 1002.14(b)(3) in Supplement I to part 1002, which are effective January 18, 2014. -->
+    <!-- In Supplement I to Part 1026:
+    a. Under Section 1026.25 Record Retention
+    i. Under Paragraph 25(c)(2) Records related to requirements for loan originator compensation, as amended February 15, 2013, at 78 FR 11280, paragraph 1 is revised.
+    ii. Under Paragraph 25(c)(3) Records related to minimum standards for transactions secured by a dwelling, as added January 30, 2013, at 78 FR 6408, paragraph 1 is revised. -->
+    <change operation="modified" label="1026-25-c-3-Interp-1">
+      <interpParagraph label="1026-25-c-3-Interp-1" marker="1.">
+        <title>Evidence of compliance with repayment ability provisions.</title>
+        <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> must retain evidence of compliance with § <ref target="1026-43" reftype="internal">1026.43</ref> for three years after the date of <ref target="1026-2-a-13" reftype="term">consummation</ref> of a <ref target="1026-2-a-12" reftype="term">consumer credit</ref> credit transaction covered by that section. (See comment 25(c)(3)-2 for guidance on the retention of evidence of compliance with the requirement to <ref target="1026-58-b-5" reftype="term">offer</ref> a <ref target="1026-2-a-11" reftype="term">consumer</ref> a loan without a <ref target="1026-32-b-6-i" reftype="term">prepayment penalty</ref> under § <ref target="1026-43-g-3" reftype="internal">1026.43(g)(3)</ref>.) If a <ref target="1026-2-a-17" reftype="term">creditor</ref> must verify and document information used in underwriting a transaction subject to § <ref target="1026-43" reftype="internal">1026.43</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> shall retain evidence sufficient to demonstrate compliance with the documentation requirements of the rule. Although a <ref target="1026-2-a-17" reftype="term">creditor</ref> need not retain actual paper copies of the documentation used in underwriting a transaction subject to § <ref target="1026-43" reftype="internal">1026.43</ref>, to comply with § <ref target="1026-25-c-3" reftype="internal">1026.25(c)(3)</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> must be able to reproduce such records accurately. For example, if the <ref target="1026-2-a-17" reftype="term">creditor</ref> uses a <ref target="1026-2-a-11" reftype="term">consumer</ref>'s Internal Revenue Service (IRS) Form W-2 to verify the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s income, the <ref target="1026-2-a-17" reftype="term">creditor</ref> must be able to reproduce the IRS Form W-2 itself, and not merely the income information that was contained in the form.</content>
+      </interpParagraph>
+    </change>
+    <!--b. Under Section 1026.32-Requirements for High-Cost Mortgages:
+        i. Under Paragraph 32(b)(1), as amended January 30, 2013, at 78 FR 6408, paragraph 2 is added.-->
+    <change operation="added" label="1026-32-b-1-i-Interp-2" parent="1026-32-b-1-i-Interp" after="1026-32-b-1-i-Interp-1">
+      <interpParagraph label="1026-32-b-1-i-Interp-2" marker="2.">
+        <title>Charges paid by parties other than the consumer.</title>
+        <content>Under § <ref target="1026-32-b-1" reftype="internal">1026.32(b)(1)</ref>, <ref target="1026-32-b-1" reftype="term">points and fees</ref> may include charges paid by third parties in addition to charges paid by the <ref target="1026-2-a-11" reftype="term">consumer</ref>. Specifically, charges paid by third parties that fall within the definition of <ref target="1026-32-b-1" reftype="term">points and fees</ref> set forth in § <ref target="1026-32-b-1-i" reftype="internal">1026.32(b)(1)(i)</ref> through (vi) are included in <ref target="1026-32-b-1" reftype="term">points and fees</ref>. In calculating <ref target="1026-32-b-1" reftype="term">points and fees</ref> in connection with a transaction, <ref target="1026-2-a-17" reftype="term">creditors</ref> may rely on written statements from the <ref target="1026-2-a-11" reftype="term">consumer</ref> or third party paying for a charge, including the seller, to determine the source and purpose of any third-party payment for a charge.</content>
+        <interpParagraph label="1026-32-b-1-i-Interp-2-i" marker="i.">
+          <title>Examples—included in points and fees.</title>
+          <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref>'s origination charge paid by a <ref target="1026-2-a-11" reftype="term">consumer</ref>'s employer on the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s behalf that is included in the finance charge as defined in § <ref target="1026-4-a" reftype="internal">1026.4(a)</ref> or (b), must be included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-i" reftype="internal">1026.32(b)(1)(i)</ref>, unless other exclusions under § <ref target="1026-4" reftype="internal">1026.4</ref> or § <ref target="1026-32-b-1-i-A" reftype="internal">1026.32(b)(1)(i)(A)</ref> through (F) apply. In addition, consistent with comment 32(b)(1)(i)-1, a third-party payment of an item excluded from the finance charge under a provision of § <ref target="1026-4" reftype="internal">1026.4</ref>, while not included in the total <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-i" reftype="internal">1026.32(b)(1)(i)</ref>, may be included under § <ref target="1026-32-b-1-ii" reftype="internal">1026.32(b)(1)(ii)</ref> through (vi). For example, a payment by a third party of a <ref target="1026-2-a-17" reftype="term">creditor</ref>-imposed fee for an appraisal performed by an employee of the <ref target="1026-2-a-17" reftype="term">creditor</ref> is included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-iii" reftype="internal">1026.32(b)(1)(iii)</ref>. See comment 32(b)(1)(i)-1.</content></interpParagraph>
+        <interpParagraph label="1026-32-b-1-i-Interp-2-ii" marker="ii.">
+          <title>Examples—not included in points and fees.</title>
+          <content>A charge paid by a third party is not included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-i" reftype="internal">1026.32(b)(1)(i)</ref> if the exclusions to <ref target="1026-32-b-1" reftype="term">points and fees</ref> in § <ref target="1026-32-b-1-i-A" reftype="internal">1026.32(b)(1)(i)(A)</ref> through (F) apply. For example, certain bona fide third-party charges not retained by the <ref target="1026-2-a-17" reftype="term">creditor</ref>, <ref target="1026-36-a-1-i" reftype="term">loan originator</ref>, or an <ref target="1026-32-b-5" reftype="term">affiliate</ref> of either are excluded from <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-i-D" reftype="internal">1026.32(b)(1)(i)(D)</ref>, regardless of whether those charges are paid by a third party or the <ref target="1026-2-a-11" reftype="term">consumer</ref>.</content></interpParagraph>
+        <interpParagraph label="1026-32-b-1-i-Interp-2-iii" marker="iii.">
+          <title>Seller's points</title>
+          <content>Seller's points, as described in § <ref target="1026-4-c-5" reftype="internal">1026.4(c)(5)</ref> and commentary, are excluded from the finance charge and thus are not included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-i" reftype="internal">1026.32(b)(1)(i)</ref>. However, charges paid by the seller for items listed in § <ref target="1026-32-b-1-ii" reftype="internal">1026.32(b)(1)(ii)</ref> through (vi) are included in <ref target="1026-32-b-1" reftype="term">points and fees</ref>.</content></interpParagraph>
+        <interpParagraph label="1026-32-b-1-i-Interp-2-iv" marker="iv.">
+          <title>Creditor-paid charges.</title>
+          <content>Charges that are paid by the <ref target="1026-2-a-17" reftype="term">creditor</ref>, other than <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> compensation paid by the <ref target="1026-2-a-17" reftype="term">creditor</ref> that is required to be included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-ii" reftype="internal">1026.32(b)(1)(ii)</ref>, are excluded from <ref target="1026-32-b-1" reftype="term">points and fees</ref>. See §§ <ref target="1026-32-b-1-i-A" reftype="internal">1026.32(b)(1)(i)(A)</ref>, <ref target="1026-4-a" reftype="internal">1026.4(a)</ref>, and comment 4(a)-(2).</content></interpParagraph>
+      </interpParagraph>
+    </change>
+    <!-- ii. Under Paragraph 32(b)(1)(ii), as amended June 12, 2013, at 78 FR 35430, paragraph 5 is added.-->
+    <change operation="modified" label="1026-32-b-1-ii-Interp-4" subpath="title">
+      <title>Loan originator compensation—calculating loan originator compensation in connection with other charges or payments included in the finance charge or made to loan originators.</title>
+    </change>
+    <change operation="modified" label="1026-32-b-1-ii-Interp-4-iii">
+      <interpParagraph label="1026-32-b-1-ii-Interp-4-iii">
+        <title>Creditor's origination fees—loan originator not employed by creditor.</title>
+        <content>Compensation paid by a <ref target="1026-2-a-17" reftype="term">creditor</ref> to a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> who is not employed by the <ref target="1026-2-a-17" reftype="term">creditor</ref> is included in the calculation of <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-ii" reftype="internal">1026.32(b)(1)(ii)</ref>. Such compensation is included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> in addition to any origination fees or charges paid by the <ref target="1026-2-a-11" reftype="term">consumer</ref> to the <ref target="1026-2-a-17" reftype="term">creditor</ref> that are included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-i" reftype="internal">1026.32(b)(1)(i)</ref>. For example, assume that a <ref target="1026-2-a-11" reftype="term">consumer</ref> pays to the <ref target="1026-2-a-17" reftype="term">creditor</ref> a $3,000 origination fee and that the <ref target="1026-2-a-17" reftype="term">creditor</ref> pays a mortgage broker $1,500 in compensation attributed to the transaction. Assume further that the <ref target="1026-2-a-11" reftype="term">consumer</ref> pays no other charges to the <ref target="1026-2-a-17" reftype="term">creditor</ref> that are included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-i" reftype="internal">1026.32(b)(1)(i)</ref> and that the mortgage broker receives no other compensation that is included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-ii" reftype="internal">1026.32(b)(1)(ii)</ref>. For purposes of calculating <ref target="1026-32-b-1" reftype="term">points and fees</ref>, the $3,000 origination fee is included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-i" reftype="internal">1026.32(b)(1)(i)</ref> and the $1,500 in <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> compensation is included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-ii" reftype="internal">1026.32(b)(1)(ii)</ref>, equaling $4,500 in total <ref target="1026-32-b-1" reftype="term">points and fees</ref>, provided that no other <ref target="1026-32-b-1" reftype="term">points and fees</ref> are paid or compensation received.</content></interpParagraph>
+    </change><change operation="added" label="1026-32-b-1-ii-Interp-5" parent="1026-32-b-1-ii-Interp" after="1026-32-b-1-ii-Interp-4">
+      <interpParagraph label="1026-32-b-1-ii-Interp-5" marker="5.">
+        <title>Loan originator compensation—calculating loan originator compensation in manufactured home transactions.</title>
+        <content/>
+        <interpParagraph label="1026-32-b-1-ii-Interp-5-i" marker="i.">
+          <content>If a manufactured home retailer qualifies as a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> under § <ref target="1026-36-a-1" reftype="internal">1026.36(a)(1)</ref>, then compensation that is paid by a <ref target="1026-2-a-11" reftype="term">consumer</ref> or <ref target="1026-2-a-17" reftype="term">creditor</ref> to the retailer for loan origination activities and that can be attributed to the transaction at the time the interest rate is set must be included in <ref target="1026-32-b-1" reftype="term">points and fees</ref>. For example, assume a manufactured home retailer takes a residential <ref target="1026-39-a-2" reftype="term">mortgage loan</ref> application and is entitled to receive at <ref target="1026-2-a-13" reftype="term">consummation</ref> a $1,000 commission from the <ref target="1026-2-a-17" reftype="term">creditor</ref> for taking the <ref target="1026-39-a-2" reftype="term">mortgage loan</ref> application. The $1,000 commission is <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> compensation that must be included in <ref target="1026-32-b-1" reftype="term">points and fees</ref>.</content></interpParagraph>
+        <interpParagraph label="1026-32-b-1-ii-Interp-5-ii" marker="ii.">
+          <content>If the <ref target="1026-2-a-17" reftype="term">creditor</ref> has knowledge that the sales price of a manufactured home includes <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> compensation, then such compensation can be attributed to the transaction at the time the interest rate is set and therefore is included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-ii" reftype="internal">1026.32(b)(1)(ii)</ref>. However, the <ref target="1026-2-a-17" reftype="term">creditor</ref> is not required to investigate the sales price of a manufactured home to determine if the sales price includes <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> compensation.</content></interpParagraph>
+        <interpParagraph label="1026-32-b-1-ii-Interp-5-iii" marker="iii.">
+          <content>As provided in § <ref target="1026-32-b-1-ii-D" reftype="internal">1026.32(b)(1)(ii)(D)</ref>, compensation paid by a manufactured home retailer to its employees is not included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> under § <ref target="1026-32-b-1-ii" reftype="internal">1026.32(b)(1)(ii)</ref>.</content></interpParagraph>
+      </interpParagraph>
+    </change>
+    <!-- iii. Paragraph 32(b)(2) and paragraph 1 are added.-->
+    <change operation="modified" label="1026-32-b-2-Interp" subpath="title">
+      <title>Paragraph 32(b)(2).</title>
+    </change>
+    <change operation="added" label="1026-32-b-2-Interp-1" parent="1026-32-b-2-Interp" before="1026-32-b-2-i-Interp">
+        <interpParagraph label="1026-32-b-2-Interp-1" marker="1.">
+          <content>See comment 32(b)(1)-2 for guidance concerning the inclusion in <ref target="1026-32-b-1" reftype="term">points and fees</ref> of charges paid by parties other than the <ref target="1026-2-a-11" reftype="term">consumer</ref>.</content>
+      </interpParagraph>
+    </change>
+    <!--iv. Under Paragraph 32(b)(2)(i), as amended January 30, 2013, at 78 FR 6408, paragraph 1 is revised. -->
+    <change operation="modified" label="1026-32-b-2-i-Interp-1">
+      <interpParagraph label="1026-32-b-2-i-Interp-1" marker="1.">
+        <title>Finance charge.</title>
+        <content>The <ref target="1026-32-b-1" reftype="term">points and fees</ref> calculation under § <ref target="1026-32-b-2" reftype="internal">1026.32(b)(2)</ref> generally does not include items that are included in the finance charge but that are not known until after account opening, such as minimum monthly finance charges or charges based on account activity or inactivity. Transaction fees also generally are not included in the <ref target="1026-32-b-1" reftype="term">points and fees</ref> calculation, except as provided in § <ref target="1026-32-b-2-vi" reftype="internal">1026.32(b)(2)(vi)</ref>. See comments 32(b)(1)-1 and 32(b)(1)(i)-1 for additional guidance concerning the calculation of <ref target="1026-32-b-1" reftype="term">points and fees</ref>.</content>
+      </interpParagraph>
+    </change>
+    <!-- v. Under Paragraph 32(b)(2)(i)(D), as amended January 30, 2013, at 78 FR 6408, paragraph 1 is revised. -->
+    <change operation="modified" label="1026-32-b-2-i-D-Interp-1">
+      <interpParagraph label="1026-32-b-2-i-D-Interp-1" marker="1.">
+        <content>For purposes of § <ref target="1026-32-b-2-i-D" reftype="internal">1026.32(b)(2)(i)(D)</ref>, the term <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> means a <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> as that term is defined in § <ref target="1026-36-a-1" reftype="internal">1026.36(a)(1)</ref>, without regard to § <ref target="1026-36-a-2" reftype="internal">1026.36(a)(2)</ref>. See comments 32(b)(1)(i)(D)-1 through -4 for further guidance concerning the exclusion of bona fide third-party charges from <ref target="1026-32-b-1" reftype="term">points and fees</ref>.</content></interpParagraph>
+    </change>
+    <!-- vi. Under Paragraph 32(d)(8)(ii), as amended January 30, 2013, at 78 FR 6408, paragraph 1 is revised.-->
+    <change operation="modified" label="1026-32-d-8-ii-Interp-1">
+      <interpParagraph label="1026-32-d-8-ii-Interp-1" marker="1.">
+        <title>Failure to meet repayment terms.</title>
+        <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> may terminate a loan or <ref target="1026-2-a-20" reftype="term">open-end credit</ref> <ref target="1026-58-b-1" reftype="term">agreement</ref> and accelerate the balance when the <ref target="1026-2-a-11" reftype="term">consumer</ref> fails to meet the repayment terms resulting in a default in payment under the <ref target="1026-58-b-1" reftype="term">agreement</ref>; a <ref target="1026-2-a-17" reftype="term">creditor</ref> may do so, however, only if the <ref target="1026-2-a-11" reftype="term">consumer</ref> actually fails to make payments resulting in a default in the <ref target="1026-58-b-1" reftype="term">agreement</ref>. For example, a <ref target="1026-2-a-17" reftype="term">creditor</ref> may not terminate and accelerate if the <ref target="1026-2-a-11" reftype="term">consumer</ref>, in error, sends a payment to the wrong location, such as a branch rather than the main office of the <ref target="1026-2-a-17" reftype="term">creditor</ref>. If a <ref target="1026-2-a-11" reftype="term">consumer</ref> files for or is placed in bankruptcy, the <ref target="1026-2-a-17" reftype="term">creditor</ref> may terminate and accelerate under § <ref target="1026-32-d-8-ii" reftype="internal">1026.32(d)(8)(ii)</ref> if the <ref target="1026-2-a-11" reftype="term">consumer</ref> fails to meet the repayment terms resulting in a default of the <ref target="1026-58-b-1" reftype="term">agreement</ref>. Section <ref target="1026-32-d-8-ii" reftype="internal">1026.32(d)(8)(ii)</ref> does not override any <ref target="1026-2-a-26" reftype="term">State</ref> or other law that requires a <ref target="1026-2-a-17" reftype="term">creditor</ref> to notify a <ref target="1026-2-a-11" reftype="term">consumer</ref> of a right to cure, or otherwise places a duty on the <ref target="1026-2-a-17" reftype="term">creditor</ref> before it can terminate a loan or <ref target="1026-2-a-20" reftype="term">open-end credit</ref> <ref target="1026-58-b-1" reftype="term">agreement</ref> and accelerate the balance.</content></interpParagraph>
+    </change>
+    <!-- c. Under Section 1026.34 Prohibited Acts or Practices in Connection with High-Cost Mortgages, under Paragraph 34(a)(5)(v), as amended January 30, 2013, at 78 FR 6408, paragraph 1 is revised. -->
+    <change operation="modified" label="1026-34-a-5-v-Interp-1" subpath="content">
+      <content>Section <ref target="1026-34-a-5-v" reftype="internal">1026.34(a)(5)(v)</ref> does not prohibit a <ref target="1026-2-a-17" reftype="term">creditor</ref> from financing the counseling fee as part of the transaction for a high-cost mortgage, if the fee is a bona fide third-party charge as provided by § <ref target="1026-32-b-1-i-D" reftype="internal">1026.32(b)(1)(i)(D)</ref> and (b)(2)(i)(D).</content>
+    </change>
+    <!-- e. Under Section 1026.36 Prohibited Acts or Practices in Connection With Credit Secured by a Dwelling -->
+    <change operation="added" label="1026-36-i-Interp" parent="1026-36-Interp">
+      <interpParagraph label="1026-36-i-Interp" target="1026-36-i">
+        <title>36(i) Prohibition on financing credit insurance.</title>
+        <content/>
+        <interpParagraph label="1026-36-i-Interp-1" marker="1.">
+          <title>Financing credit insurance premiums or fees.</title>
+          <content>In the case of single-premium <ref target="1026-2-a-14" reftype="term">credit</ref> insurance, a <ref target="1026-2-a-17" reftype="term">creditor</ref> violates § <ref target="1026-36-i" reftype="internal">1026.36(i)</ref> by adding the <ref target="1026-2-a-14" reftype="term">credit</ref> insurance premium or fee to the amount owed by the <ref target="1026-2-a-11" reftype="term">consumer</ref> at closing. In the case of monthly-pay <ref target="1026-2-a-14" reftype="term">credit</ref> insurance, a <ref target="1026-2-a-17" reftype="term">creditor</ref> violates § <ref target="1026-36-i" reftype="internal">1026.36(i)</ref> if, upon the close of the monthly period in which the premium or fee is due, the <ref target="1026-2-a-17" reftype="term">creditor</ref> includes the premium or fee in the amount owed by the <ref target="1026-2-a-11" reftype="term">consumer</ref>.</content>
+        </interpParagraph>
+      </interpParagraph>
+    </change>
+    <!-- i. Under Paragraph 41(b), as amended February 14, 2013, at 78 FR 10901, paragraph 1 is revised. -->
+    <change operation="modified" label="1026-41-b-Interp-1" subpath="title">
+      <title>Reasonably prompt time.</title>
+    </change>
+    <change operation="modified" label="1026-41-b-Interp-1" subpath="content">
+      <content>Section <ref target="1026-41-b" reftype="internal">1026.41(b)</ref> requires that the periodic statement be delivered or placed in the mail no later than a reasonably prompt time after the payment due date or the end of any courtesy period. Delivering, emailing or placing the periodic statement in the mail within four days of the close of the courtesy period of the previous billing cycle generally would be considered reasonably prompt.</content>
+    </change>
+    <!-- ii. Under Paragraph 41(d), as amended February 14, 2013, at 78 FR 10901, paragraph 3 is revised. -->
+    <change operation="modified" label="1026-41-d-Interp-3" subpath="title">
+      <title>Terminology.</title>
+    </change>
+    <change operation="modified" label="1026-41-d-Interp-3" subpath="content">
+      <content>A servicer may use terminology other than that found on the sample periodic statements in appendix H-30, so long as the new terminology is commonly understood. For example, servicers may take into consideration regional differences in terminology and refer to the account for the collection of taxes and insurance, referred to in § <ref target="1026-41-d" reftype="internal">1026.41(d)</ref> as the “escrow account,” as an “impound account.”</content>
+    </change>
+    <!-- iii. Under Paragraph 41(d)(4), as amended February 14, 2013, at 78 FR 10901, paragraph 1 is revised. -->
+    <change operation="modified" label="1026-41-d-4-Interp-1" subpath="title">
+      <title>Meaning.</title>
+    </change>
+    <change operation="modified" label="1026-41-d-4-Interp-1" subpath="content">
+      <content>Transaction activity includes any transaction that credits or debits the amount currently due. This is the same amount that is required to be disclosed under § <ref target="1026-41-d-1-iii" reftype="internal">1026.41(d)(1)(iii)</ref>. Examples of such transactions include, without limitation:</content>
+    </change>
+    <!-- iv. Under Paragraph 41(e)(3), as amended February 14, 2013, at 78 FR 10901, paragraph 1 is revised. -->
+    <change operation="modified" label="1026-41-e-3-Interp-1" subpath="title">
+      <title>Fixed rate.</title>
+    </change>
+    <change operation="modified" label="1026-41-e-3-Interp-1" subpath="content">
+      <content>For guidance on the meaning of “fixed rate” for purposes of § <ref target="1026-41-e-3" reftype="internal">1026.41(e)(3)</ref>, see § <ref target="1026-18-s-7-iii" reftype="internal">1026.18(s)(7)(iii)</ref> and its commentary.</content>
+    </change>
+    <!-- v. Under Paragraph 41(e)(4)(iii), as amended February 14, 2013, at 78 FR 10901, paragraph 1 is revised. -->
+    <change operation="modified" label="1026-41-e-4-iii-Interp-1" subpath="title">
+      <title>Loans obtained by merger or acquisition.</title>
+    </change>
+    <change operation="modified" label="1026-41-e-4-iii-Interp-1" subpath="content">
+      <content>Any mortgage loans obtained by a servicer or an affiliate as part of a merger or acquisition, or as part of the acquisition of all of the assets or liabilities of a branch office of a creditor, should be considered mortgage loans for which the servicer or an affiliate is the creditor to which the mortgage loan is initially payable. A branch office means either an office of a depository institution that is approved as a branch by a Federal or State supervisory agency or an office of a for-profit mortgage lending institution (other than a depository institution) that takes applications from the public for mortgage loans.</content>
+    </change>
+    <!-- g. Under Section 1026.43 Minimum Standards for Transactions Secured by a Dwelling: -->
+    <!-- i. Under Paragraph 43(b)(8), as added January 30, 2013, at 78 FR 6408, paragraph 4 is revised. -->
+    <change operation="modified" label="1026-43-b-8-Interp-4" subpath="title">
+      <title>Mortgage insurance, guarantee, or similar charges.</title>
+    </change>
+    <change operation="modified" label="1026-43-b-8-Interp-4" subpath="content">
+      <content>Section <ref target="1026-43-b-8" reftype="internal">1026.43(b)(8)</ref> includes in the evaluation of mortgage-related obligations premiums or charges protecting the creditor against the consumer's default or other credit loss. This includes all premiums or similar charges, whether denominated as mortgage insurance, guarantee, or otherwise, as determined according to applicable State or Federal law. For example, monthly “private mortgage insurance” payments paid to a non-governmental entity, annual “guarantee fee” payments required by a Federal housing program, and a quarterly “mortgage insurance” payment paid to a State agency administering a housing program are all mortgage-related obligations for purposes of § <ref target="1026-43-b-8" reftype="internal">1026.43(b)(8)</ref>. Section <ref target="1026-43-b-8" reftype="internal">1026.43(b)(8)</ref> includes these charges in the definition of mortgage-related obligations if the creditor requires the consumer to pay them, even if the consumer is not legally obligated to pay the charges under the terms of the insurance program. For example, if a mortgage insurance program obligates the creditor to make recurring mortgage insurance payments, and the creditor requires the consumer to reimburse the creditor for such recurring payments, the consumer's payments are mortgage-related obligations for purposes of § <ref target="1026-43-b-8" reftype="internal">1026.43(b)(8)</ref>. However, if a mortgage insurance program obligates the creditor to make recurring mortgage insurance payments, and the creditor does not require the consumer to reimburse the creditor for the cost of the mortgage insurance payments, the recurring mortgage insurance payments are not mortgage-related obligations for purposes of § <ref target="1026-43-b-8" reftype="internal">1026.43(b)(8)</ref>.</content>
+    </change>
+    <!-- ii. Under Paragraph 43(c)(3), as added January 30, 2013, at 78 FR 6408, paragraph 6 is revised. -->
+    <change operation="modified" label="1026-43-c-3-Interp-6" subpath="title">
+      <title>Verification of current debt obligations.</title>
+    </change>
+    <change operation="modified" label="1026-43-c-3-Interp-6" subpath="content">
+      <content>Section <ref target="1026-43-c-3" reftype="internal">1026.43(c)(3)</ref> does not require creditors to obtain additional records to verify the existence or amount of obligations shown on a consumer's credit report or listed on the consumer's application, absent circumstances described in comment 43(c)(3)-3. Under § <ref target="1026-43-c-3-iii" reftype="internal">1026.43(c)(3)(iii)</ref>, if a creditor relies on a consumer's credit report to verify a consumer's current debt obligations and the consumer's application lists a debt obligation not shown on the credit report, the creditor may consider the existence and amount of the obligation as it is stated on the consumer's application. The creditor is not required to further verify the existence or amount of the obligation, absent circumstances described in comment 43(c)(3)-3.</content>
+    </change>
+    <!-- iii. Under Paragraph 43(e)(4), as added January 30, 2013, at 78 FR 6408, paragraph 1 is revised. -->
+    <change operation="modified" label="1026-43-e-4-Interp-1" subpath="title">
+      <title>Alternative definition.</title>
+    </change>
+    <change operation="modified" label="1026-43-e-4-Interp-1" subpath="content">
+      <content>Subject to the sunset provided under § <ref target="1026-43-e-4-iii" reftype="internal">1026.43(e)(4)(iii)</ref>, § <ref target="1026-43-e-4" reftype="internal">1026.43(e)(4)</ref> provides an alternative definition of qualified mortgage to the definition provided in § <ref target="1026-43-e-2" reftype="internal">1026.43(e)(2)</ref>. To be a qualified mortgage under § <ref target="1026-43-e-4" reftype="internal">1026.43(e)(4)</ref>, the transaction must satisfy the requirements under § <ref target="1026-43-e-2-i" reftype="internal">1026.43(e)(2)(i)</ref> through (iii), in addition to being one of the types of loans specified in § <ref target="1026-43-e-4-ii-A" reftype="internal">1026.43(e)(4)(ii)(A)</ref> through (E).</content>
+    </change>
+    <!-- iv. Under Paragraph 43(e)(5), as amended June 12, 2013, at 78 FR 35430, paragraph 8 is revised. -->
+    <change operation="modified" label="1026-43-e-5-Interp-8" subpath="title">
+      <title>Transfer to another qualifying creditor.</title>
+    </change>
+    <change operation="modified" label="1026-43-e-5-Interp-8" subpath="content">
+      <content>Under § <ref target="1026-43-e-5-ii-B" reftype="internal">1026.43(e)(5)(ii)(B)</ref>, a qualified mortgage under § <ref target="1026-43-e-5" reftype="internal">1026.43(e)(5)</ref> may be sold, assigned, or otherwise transferred at any time to another creditor that meets the requirements of § <ref target="1026-43-e-5-i-D" reftype="internal">1026.43(e)(5)(i)(D)</ref>. That section requires that a creditor, during the preceding calendar year, together with all affiliates, originated 500 or fewer first-lien covered transactions and had total assets less than $2 billion (as adjusted for inflation) at the end of the preceding calendar year. A qualified mortgage under § <ref target="1026-43-e-5" reftype="internal">1026.43(e)(5)</ref> transferred to a creditor that meets these criteria would retain its qualified mortgage status even if it is transferred less than three years after consummation.</content>
+    </change>
+    <!-- v. Under Paragraph 43(f)(2)(iii), as added January 30, 2013, at 78 FR 6408, paragraph 1 is revised.-->
+    <change operation="modified" label="1026-43-f-2-iii-Interp-1" subpath="title">
+      <title>Supervisory sales.</title>
+    </change>
+    <change operation="modified" label="1026-43-f-2-iii-Interp-1" subpath="content">
+      <content>Section <ref target="1026-43-f-2-iii" reftype="internal">1026.43(f)(2)(iii)</ref> facilitates sales that are deemed necessary by supervisory agencies to revive troubled creditors and resolve failed creditors. A balloon-payment qualified mortgage under § <ref target="1026-43-f-1" reftype="internal">1026.43(f)(1)</ref> retains its qualified mortgage status if it is sold, assigned, or otherwise transferred to another person pursuant to: (1) A capital restoration plan or other action under 12 U.S.C. 1831o; (2) the actions or instructions of any person acting as conservator, receiver, or bankruptcy trustee; (3) an order of a State or Federal government agency with jurisdiction to examine the creditor pursuant to State or Federal law; or (4) an agreement between the creditor and such an agency. A balloon-payment qualified mortgage under § <ref target="1026-43-f-1" reftype="internal">1026.43(f)(1)</ref> that is sold, assigned, or otherwise transferred under these circumstances retains its qualified mortgage status regardless of how long after consummation it is sold and regardless of the size or other characteristics of the transferee. Section <ref target="1026-43-f-2-iii" reftype="internal">1026.43(f)(2)(iii)</ref> does not apply to transfers done to comply with a generally applicable regulation with future effect designed to implement, interpret, or prescribe law or policy in the absence of a specific order by or a specific agreement with a governmental agency described in § <ref target="1026-43-f-2-iii" reftype="internal">1026.43(f)(2)(iii)</ref> directing the sale of one or more qualified mortgages under § <ref target="1026-43-f-1" reftype="internal">1026.43(f)(1)</ref> held by the creditor or one of the other circumstances listed in § <ref target="1026-43-f-2-iii" reftype="internal">1026.43(f)(2)(iii)</ref>. For example, a balloon-payment qualified mortgage under § <ref target="1026-43-f-1" reftype="internal">1026.43(f)(1)</ref> that is sold pursuant to a capital restoration plan under 12 U.S.C. 1831o would retain its status as a qualified mortgage following the sale. However, if the creditor simply chose to sell the same qualified mortgage as one way to comply with general regulatory capital requirements in the absence of supervisory action or agreement the transaction would lose its status as a qualified mortgage following thesale unless it qualifies under another definition of qualified mortgage.</content>
+    </change>
+  </changeset>
+</notice>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="eregs"
+	xmlns:tns="eregs" 
+	elementFormDefault="qualified">
+  
+  <!-- 
+       The tableOfContents element describes the contents of the element that contains it.
+       It consists of the following elements:
+       1. zero or more tocSecEntry elements, which express a reference to a section of the content.
+       The tocSecEntry consists of the following elements:
+       a. sectionNum, an integer indicating the section number
+       b. sectionSubject, a string indicating the section title
+       c. zero or more nested tocSecEntry elements
+       In addition, the tocSecEntry element supports the following attributes:
+       a. target, a string indicating the label of the element being referenced
+       2. zero or more tocAppEntry elements, which express a reference to a section of the appendix content.
+       The tocAppEntry consists of the following elements:
+       a. zero or one appendixLetter, a string containing the letter of the appendix being referenced
+       b. appendixSubject, a string containing the subject of the appendix or section being referenced
+       c. zero or more nested tocAppEntry elements
+       In addition, the tocAppEntry element supports the following attributes:
+       a. target, a string indicating the label of the element being referenced
+  -->
+  
+  <complexType name="SectionEntry">
+    <sequence>
+      <element name="sectionNum" type="int"></element>
+      <element name="sectionSubject" type="string"></element>
+      <element ref="tns:tocSecEntry" minOccurs="0" maxOccurs="unbounded"></element>
+    </sequence>
+    <attribute name="target" type="string" use="required"></attribute>
+  </complexType>
+  
+  <complexType name="AppendixEntry">
+    <sequence>
+      <choice minOccurs="0" maxOccurs="1">
+	<element name="appendixLetter" type="string"></element>
+      </choice>
+      <element name="appendixSubject" type="string"></element>
+      <element ref="tns:tocAppEntry" minOccurs="0" maxOccurs="unbounded"></element>
+    </sequence>
+    <attribute name="target" type="string" use="required"></attribute>
+  </complexType>
+  
+  <complexType name="SubpartEntry">
+    <sequence>
+      <element name="subpartTitle" type="string"></element>
+      <element name="subpartLetter" type="string"></element>
+      <element ref="tns:tocSecEntry" minOccurs="0" maxOccurs="unbounded"></element>
+    </sequence>
+  </complexType>
+  
+  <complexType name="InterpEntry">
+    <sequence>
+      <element name="interpTitle" type="string"></element>
+      <element ref="tns:tocSecEntry" minOccurs="0" maxOccurs="unbounded"></element>
+    </sequence>
+    <attribute name="target" type="string" use="required"></attribute>
+  </complexType>
+
+  <complexType name="HeaderEntry">
+    <sequence>
+      <element name="headerTitle" type="string"></element>
+      <element name="headerSubject" type="string"></element>
+    </sequence>
+  </complexType>
+  
+  <complexType name="TableOfContents">
+    <sequence>
+      <choice minOccurs="0" maxOccurs="unbounded">
+	<element ref="tns:tocSubpartEntry"></element>
+	<element ref="tns:tocSecEntry"></element>
+	<element ref="tns:tocAppEntry"></element>
+	<element ref="tns:tocInterpEntry"></element>
+	<element ref="tns:tocHeaderEntry"></element>
+      </choice>
+    </sequence>
+    <attribute name="label" type="string" use="optional"></attribute>
+  </complexType>
+  
+  <element name="tocSecEntry" type="tns:SectionEntry"></element>
+  <element name="tocAppEntry" type="tns:AppendixEntry"></element>
+  <element name="tocSubpartEntry" type="tns:SubpartEntry"></element>
+  <element name="tocInterpEntry" type="tns:InterpEntry"></element>
+  <element name="tocHeaderEntry" type="tns:HeaderEntry"></element>
+  <element name="tableOfContents" type="tns:TableOfContents"></element>
+  
+</schema>

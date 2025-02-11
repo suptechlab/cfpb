@@ -1,0 +1,53 @@
+{% load reg_updates %}
+
+<div id="content-body" class="main-content">
+    <section id="content-wrapper">
+        <section data-base-version="{{ current_version.version }}" class="landing" data-page-type="landing-page" data-reg-part="{{reg_part}}">
+            {% block reg_title %}
+            {% endblock %}
+
+            {% update_in_progress label_id as reg_update_in_progress %}
+            {% if new_version or reg_update_in_progress %}
+                <div class="alert effective-alert group">
+                    {% if new_version %}
+                        <div class="alert_section group">
+                            <div class="alert_effective-date">
+                                New amendments effective: <strong>{{new_version.by_date|date:"m/d/Y"}}</strong>
+                            </div>
+                            <div class="alert_view-link">
+                                <a href="{% url 'chrome_section_view' reg_first_section new_version.version %}" class="go">
+                                    View amended regulation
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if reg_update_in_progress %}
+                        {% include "regulations/update-alert.html" %}
+                    {% endif %}
+                </div><!--/.alert-->
+            {% endif %}
+
+            {% block reg_main_content %}
+            {% endblock %}
+            {% block reg_addtl_content %}
+            {% endblock %}
+
+            <div id="disclaimer">
+                {% block legal_disclaimer %}
+                {% endblock %}
+            </div>
+        </section>
+    </section>
+</div>
+
+
+<div id="sidebar" class="secondary-content secondary-content-{{reg_part}}">
+    <div id="sidebar-content" class="sidebar-inner">
+    <section id="definition"></section>
+    <section class="landing-sidebar">
+
+        {% block reg_sidebar %}
+        {% endblock %}
+    </section>
+    </div>
+</div>

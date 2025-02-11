@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<notice xmlns="eregs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eregs https://raw.githubusercontent.com/cfpb/regulations-schema/master/src/eregs.xsd">
+  <fdsys>
+    <cfrTitleNum>12</cfrTitleNum>
+    <cfrTitleText>Banks and Banking</cfrTitleText>
+    <volume>8</volume>
+    <date>2014-11-03</date>
+    <originalDate>2012-01-01</originalDate>
+    <title>TRUTH IN LENDING</title>
+  </fdsys>
+  <preamble>
+    <agency>Bureau of Consumer Financial Protection</agency>
+    <cfr>
+      <title>12</title>
+      <section>1026</section>
+    </cfr>
+    <documentNumber>2014-25503_20141103</documentNumber>
+    <effectiveDate>2015-10-03</effectiveDate>
+    <federalRegisterURL>https://www.federalregister.gov/documents/2014/11/03/2014-25503/amendments-to-the-2013-mortgage-rules-under-the-truth-in-lending-act-regulation-z</federalRegisterURL>
+  </preamble>
+  <changeset leftDocumentNumber="2013-28210" rightDocumentNumber="2014-25503_20141103">
+  <!-- Section 1026.41 is amended by revising paragraph (e)(4)(ii) and the introductory text of paragraph (e)(4)(iii) to read as follows: -->
+  <change operation="modified" label="1026-41-e-4-ii">
+    <paragraph label="1026-41-e-4-ii" marker="(ii)">
+      <title type="keyterm">Small servicer defined.</title>
+      <content>A small servicer is a servicer that:</content>
+      <paragraph label="1026-41-e-4-ii-A" marker="(A)">
+        <content>Services, together with any <ref target="1026-32-b-5" reftype="term">affiliates</ref>, 5,000 or fewer mortgage loans, for all of which the servicer (or an <ref target="1026-32-b-5" reftype="term">affiliate</ref>) is the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee;</content>
+      </paragraph>
+      <paragraph label="1026-41-e-4-ii-B" marker="(B)">
+        <content>Is a Housing Finance Agency, as defined in <ref target="CFR:24-266-5" reftype="external">24 CFR 266.5</ref>; or</content>
+      </paragraph>
+      <paragraph label="1026-41-e-4-ii-C" marker="(C)">
+        <content>Is a <def term="nonprofit entity">nonprofit entity</def> that services 5,000 or fewer mortgage loans, including any mortgage loans serviced on behalf of <ref target="1026-41-e-4-ii-C-2" reftype="term">associated nonprofit entities</ref>, for all of which the servicer or an associated <ref target="1026-41-e-4-ii-C-1" reftype="term">nonprofit entity</ref> is the <ref target="1026-2-a-17" reftype="term">creditor</ref>. For purposes of this paragraph <ref target="1026-41-e-4-ii-C" reftype="internal">(e)(4)(ii)(C)</ref>, the following definitions apply:</content>
+        <paragraph label="1026-41-e-4-ii-C-1" marker="(1)">
+          <content>The term “<def term="nonprofit entity">nonprofit entity</def>” means an entity having a tax exemption ruling or determination letter from the Internal Revenue Service under section 501(c)(3) of the Internal Revenue Code of 1986 (<ref target="USC:26-501" reftype="external">26 U.S.C. 501</ref>(c)(3); <ref target="CFR:26-1-501" reftype="external">26 CFR 1.501</ref>(c)(3)-1), and;</content>
+        </paragraph>
+        <paragraph label="1026-41-e-4-ii-C-2" marker="(2)">
+          <content>The term “<def term="associated nonprofit entity">associated nonprofit entities</def>” means <ref target="1026-41-e-4-ii-C-1" reftype="term">nonprofit entities</ref> that by <ref target="1026-58-b-1" reftype="term">agreement</ref> operate using a common name, trademark, or servicemark to further and support a common charitable mission or purpose.</content></paragraph>
+      </paragraph>
+    </paragraph>
+  </change>
+  <change operation="modified" label="1026-41-e-4-iii">
+    <paragraph label="1026-41-e-4-iii" marker="(iii)">
+      <title type="keyterm">Small servicer determination.</title>
+      <content>In determining whether a servicer satisfies paragraph (e)(4)(ii)(A) of this section, the servicer is evaluated based on the mortgage loans serviced by the servicer and any <ref target="1026-32-b-5" reftype="term">affiliates</ref> as of January 1 and for the remainder of the calendar year. In determining whether a servicer satisfies paragraph (e)(4)(ii)(C) of this section, the servicer is evaluated based on the mortgage loans serviced by the servicer as of January 1 and for the remainder of the calendar year. A servicer that ceases to qualify as a small servicer will have six months from the time it ceases to qualify or until the next January 1, whichever is later, to comply with any requirements from which the servicer is no longer exempt as a small servicer. The following mortgage loans are not considered in determining whether a servicer qualifies as a small servicer:</content>
+      <paragraph label="1026-41-e-4-iii-A" marker="(A)">
+        <content><ref target="1026-39-a-2" reftype="term">Mortgage loans</ref> voluntarily serviced by the servicer for a <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee that is not an <ref target="1026-32-b-5" reftype="term">affiliate</ref> of the servicer and for which the servicer does not receive any compensation or fees.</content></paragraph>
+      <paragraph label="1026-41-e-4-iii-B" marker="(B)">
+        <content><ref target="1026-33-a" reftype="term">Reverse mortgage transactions</ref>.</content></paragraph>
+      <paragraph label="1026-41-e-4-iii-C" marker="(C)">
+        <content><ref target="1026-39-a-2" reftype="term">Mortgage loans</ref> secured by <ref target="1026-2-a-11" reftype="term">consumers</ref>’ interests in timeshare plans.</content></paragraph>
+    </paragraph>
+  </change>
+  <!-- Section 1026.43 is amended by revising paragraph (a)(3)(v)(D)(1) and adding new paragraph (a)(3)(vii) and by revising the introductory text of paragraph (e)(3)(i) and adding new paragraphs (e)(3)(iii) and (iv) to read as follows: -->
+  <change operation="modified" label="1026-43-a-3-v-D-1">
+    <paragraph label="1026-43-a-3-v-D-1" marker="(1)">
+      <content>During the calendar year preceding receipt of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s application, the <ref target="1026-2-a-17" reftype="term">creditor</ref> extended <ref target="1026-2-a-14" reftype="term">credit</ref> secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref> no more than 200 times, except as provided in paragraph (a)(3)(vii) of this section;</content>
+    </paragraph>
+  </change>
+  <change operation="added" label="1026-43-a-3-vii" parent="1026-43-a-3" after="1026-43-a-3-vi">
+    <paragraph label="1026-43-a-3-vii" marker="(vii)">
+      <content>Consumer credit transactions that meet the following criteria are not considered in determining whether a <ref target="1026-2-a-17" reftype="term">creditor</ref> exceeds the <ref target="1026-2-a-14" reftype="term">credit</ref> extension limitation in paragraph <ref target="1026-43-a-3-v-D-1" reftype="internal">(a)(3)(v)(D)(1)</ref> of this section:</content>
+      <paragraph label="1026-43-a-3-vii-A" marker="(A)">
+        <content>The transaction is secured by a subordinate lien;</content>
+      </paragraph>
+      <paragraph label="1026-43-a-3-vii-B" marker="(B)">
+        <content>The transaction is for the purpose of:</content>
+        <paragraph label="1026-43-a-3-vii-B-1" marker="(1)">
+          <content><ref target="1026-2-a-18" reftype="term">Downpayment</ref>, closing costs, or other similar home buyer assistance, such as principal or interest subsidies;</content>
+        </paragraph>
+        <paragraph label="1026-43-a-3-vii-B-2" marker="(2)">
+          <content>Property rehabilitation assistance;</content>
+        </paragraph>
+        <paragraph label="1026-43-a-3-vii-B-3" marker="(3)">
+          <content>Energy efficiency assistance; or</content>
+        </paragraph>
+        <paragraph label="1026-43-a-3-vii-B-4" marker="(4)">
+          <content>Foreclosure avoidance or prevention;</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-43-a-3-vii-C" marker="(C)">
+        <content>The <ref target="1026-2-a-14" reftype="term">credit</ref> contract does not require payment of interest;</content>
+      </paragraph>
+      <paragraph label="1026-43-a-3-vii-D" marker="(D)">
+        <content>The <ref target="1026-2-a-14" reftype="term">credit</ref> contract provides that repayment of the amount of the <ref target="1026-2-a-14" reftype="term">credit</ref> extended is:</content>
+        <paragraph label="1026-43-a-3-vii-D-1" marker="(1)">
+          <content>Forgiven either incrementally or in whole, at a date certain, and subject only to specified ownership and occupancy conditions, such as a requirement that the <ref target="1026-2-a-11" reftype="term">consumer</ref> maintain the property as the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref> for five years;</content>
+        </paragraph>
+        <paragraph label="1026-43-a-3-vii-D-2" marker="(2)">
+          <content>Deferred for a minimum of 20 years after <ref target="1026-2-a-13" reftype="term">consummation</ref> of the transaction;</content>
+        </paragraph>
+        <paragraph label="1026-43-a-3-vii-D-3" marker="(3)">
+          <content>Deferred until sale of the property securing the transaction; or</content>
+        </paragraph>
+        <paragraph label="1026-43-a-3-vii-D-4" marker="(4)">
+          <content>Deferred until the property securing the transaction is no longer the principal <ref target="1026-2-a-19" reftype="term">dwelling</ref> of the <ref target="1026-2-a-11" reftype="term">consumer</ref>;</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-43-a-3-vii-E" marker="(E)">
+        <content>The total of costs payable by the <ref target="1026-2-a-11" reftype="term">consumer</ref> in connection with the transaction at <ref target="1026-2-a-13" reftype="term">consummation</ref> is less than 1 percent of the amount of <ref target="1026-2-a-14" reftype="term">credit</ref> extended and includes no charges other than:</content>
+        <paragraph label="1026-43-a-3-vii-E-1" marker="(1)">
+          <content>Fees for recordation of security instruments, deeds, and similar documents;</content>
+        </paragraph>
+        <paragraph label="1026-43-a-3-vii-E-2" marker="(2)">
+          <content>A bona fide and reasonable <ref target="1026-2-a-3-i" reftype="term">application</ref> fee; and</content>
+        </paragraph>
+        <paragraph label="1026-43-a-3-vii-E-3" marker="(3)">
+          <content>A bona fide and reasonable fee for housing counseling services; and</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-43-a-3-vii-F" marker="(F)">
+        <content>The <ref target="1026-2-a-17" reftype="term">creditor</ref> complies with all other applicable requirements of this part in connection with the transaction.</content>
+      </paragraph>
+    </paragraph>
+  </change>
+  <change operation="modified" label="1026-43-e-3-i">
+    <paragraph label="1026-43-e-3-i" marker="(i)">
+      <content>Except as provided in paragraph (e)(3)(iii) of this section, a <ref target="1026-43-b-1" reftype="term">covered transaction</ref> is not a qualified mortgage unless the transaction's total <ref target="1026-32-b-1" reftype="term">points and fees</ref>, as defined in § <ref target="1026-32-b-1" reftype="internal">1026.32(b)(1)</ref>, do not exceed:</content><paragraph label="1026-43-e-3-i-A" marker="(A)">
+        <content>For a <ref target="1026-43-b-5" reftype="term">loan amount</ref> greater than or equal to $100,000 (indexed for inflation): 3 percent of the total <ref target="1026-43-b-5" reftype="term">loan amount</ref>;</content>
+      </paragraph>
+      <paragraph label="1026-43-e-3-i-B" marker="(B)">
+        <content>For a <ref target="1026-43-b-5" reftype="term">loan amount</ref> greater than or equal to $60,000 (indexed for inflation) but less than $100,000 (indexed for inflation): $3,000 (indexed for inflation);</content>
+      </paragraph>
+      <paragraph label="1026-43-e-3-i-C" marker="(C)">
+        <content>For a <ref target="1026-43-b-5" reftype="term">loan amount</ref> greater than or equal to $20,000 (indexed for inflation) but less than $60,000 (indexed for inflation): 5 percent of the total <ref target="1026-43-b-5" reftype="term">loan amount</ref>;</content>
+      </paragraph>
+      <paragraph label="1026-43-e-3-i-D" marker="(D)">
+        <content>For a <ref target="1026-43-b-5" reftype="term">loan amount</ref> greater than or equal to $12,500 (indexed for inflation) but less than $20,000 (indexed for inflation): $1,000 (indexed for inflation);</content>
+      </paragraph>
+      <paragraph label="1026-43-e-3-i-E" marker="(E)">
+        <content>For a <ref target="1026-43-b-5" reftype="term">loan amount</ref> less than $12,500 (indexed for inflation): 8 percent of the total <ref target="1026-43-b-5" reftype="term">loan amount</ref>.</content>
+      </paragraph>
+    </paragraph>
+  </change>
+  <change operation="added" label="1026-43-e-3-iii" parent="1026-43-e-3">
+    <paragraph label="1026-43-e-3-iii" marker="(iii)">
+      <content>For <ref target="1026-43-b-1" reftype="term">covered transactions</ref> consummated on or before January 10, 2021, if the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee determines after <ref target="1026-2-a-13" reftype="term">consummation</ref> that the transaction's total <ref target="1026-32-b-1" reftype="term">points and fees</ref> exceed the applicable limit under paragraph <ref target="1026-43-e-3-i" reftype="internal">(e)(3)(i)</ref> of this section, the loan is not precluded from being a qualified mortgage, provided:</content>
+      <paragraph label="1026-43-e-3-iii-A" marker="(A)">
+        <content>The loan otherwise meets the requirements of paragraphs <ref target="1026-43-e-2" reftype="internal">(e)(2)</ref>, <ref target="1026-43-e-4" reftype="internal">(e)(4)</ref>, <ref target="1026-43-e-5" reftype="internal">(e)(5)</ref>, <ref target="1026-43-e-6" reftype="internal">(e)(6)</ref>, or <ref target="1026-43-f" reftype="internal">(f)</ref> of this section, as applicable;</content>
+      </paragraph>
+      <paragraph label="1026-43-e-3-iii-B" marker="(B)">
+        <content>The <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee pays to the <ref target="1026-2-a-11" reftype="term">consumer</ref> the amount described in paragraph <ref target="1026-43-e-3-iv" reftype="internal">(e)(3)(iv)</ref> of this section within 210 days after <ref target="1026-2-a-13" reftype="term">consummation</ref> and prior to the occurrence of any of the following events:</content>
+        <paragraph label="1026-43-e-3-iii-B-1" marker="(1)">
+          <content>The institution of any action by the <ref target="1026-2-a-11" reftype="term">consumer</ref> in connection with the loan;</content>
+        </paragraph>
+        <paragraph label="1026-43-e-3-iii-B-2" marker="(2)">
+          <content>The receipt by the <ref target="1026-2-a-17" reftype="term">creditor</ref>, assignee, or servicer of written notice from the <ref target="1026-2-a-11" reftype="term">consumer</ref> that the transaction's total <ref target="1026-32-b-1" reftype="term">points and fees</ref> exceed the applicable limit under paragraph <ref target="1026-43-e-3-i" reftype="internal">(e)(3)(i)</ref> of this section; or</content>
+        </paragraph>
+        <paragraph label="1026-43-e-3-iii-B-3" marker="(3)">
+          <content>The <ref target="1026-2-a-11" reftype="term">consumer</ref> becoming 60 days past due on the legal obligation; and</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-43-e-3-iii-C" marker="(C)">
+        <content>The <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee, as applicable, maintains and follows policies and procedures for post-<ref target="1026-2-a-13" reftype="term">consummation</ref> review of <ref target="1026-32-b-1" reftype="term">points and fees</ref> and for making payments to <ref target="1026-2-a-11" reftype="term">consumers</ref> in accordance with paragraphs <ref target="1026-43-e-3-iii-B" reftype="internal">(e)(3)(iii)(B)</ref> and <ref target="1026-43-e-3-iv" reftype="internal">(e)(3)(iv)</ref> of this section.</content>
+      </paragraph>
+    </paragraph>
+  </change>
+  <change operation="added" label="1026-43-e-3-iv" parent="1026-43-e-3">
+    <paragraph label="1026-43-e-3-iv" marker="(iv)">
+      <content>For purposes of paragraph <ref target="1026-43-e-3-iii" reftype="internal">(e)(3)(iii)</ref> of this section, the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee must pay to the <ref target="1026-2-a-11" reftype="term">consumer</ref> an amount that is not less than the sum of the following:</content>
+      <paragraph label="1026-43-e-3-iv-A" marker="(A)">
+        <content>The dollar amount by which the transaction's total <ref target="1026-32-b-1" reftype="term">points and fees</ref> exceeds the applicable limit under paragraph <ref target="1026-43-e-3-i" reftype="internal">(e)(3)(i)</ref> of this section; and</content>
+      </paragraph>
+      <paragraph label="1026-43-e-3-iv-B" marker="(B)">
+        <content>Interest on the dollar amount described in paragraph <ref target="1026-43-e-3-iv-A" reftype="internal">(e)(3)(iv)(A)</ref> of this section, calculated using the contract interest rate applicable during the period from <ref target="1026-2-a-13" reftype="term">consummation</ref> until the payment described in this paragraph <ref target="1026-43-e-3-iv" reftype="internal">(e)(3)(iv)</ref> is made to the <ref target="1026-2-a-11" reftype="term">consumer</ref>.</content>
+      </paragraph>
+    </paragraph>
+  </change>
+  <!-- In Supplement I to part 1026: -->
+  <!-- a. Under Section 1026.41 Periodic Statements for Residential Mortgage Loans: -->
+  <!-- i. Under 41(e)(4)(ii) Small servicer defined, the introductory text of paragraph 2 is revised and paragraph 4 is added. -->
+  <change operation="modified" label="1026-41-e-4-ii-Interp-2">
+    <interpParagraph label="1026-41-e-4-ii-Interp-2" marker="2.">
+      <title type="keyterm">Services, together with affiliates, 5,000 or fewer mortgage loans.</title>
+      <content>Services, together with <ref target="1026-32-b-5" reftype="term">affiliates</ref>, 5,000 or fewer mortgage loans. To qualify as a small servicer, under § <ref target="CFR:12-1024-31" reftype="external">1026.41(e)(4)(</ref>ii)(A), a servicer must service, together with any <ref target="1026-32-b-5" reftype="term">affiliates</ref>, 5,000 or fewer mortgage loans, for all of which the servicer (or an <ref target="1026-32-b-5" reftype="term">affiliate</ref>) is the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee. There are two elements to satisfying § <ref target="1026-41-e-4-ii-A" reftype="internal">1026.41(e)(4)(ii)(A)</ref>. First, a servicer, together with any <ref target="1026-32-b-5" reftype="term">affiliates</ref>, must service 5,000 or fewer mortgage loans. Second, a servicer must service only mortgage loans for which the servicer (or an <ref target="1026-32-b-5" reftype="term">affiliate</ref>) is the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee. To be the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee of a mortgage loan, the servicer (or an <ref target="1026-32-b-5" reftype="term">affiliate</ref>) must either currently own the mortgage loan or must have been the entity to which the mortgage loan obligation was initially payable (that is, the originator of the mortgage loan). A servicer is not a small servicer under § <ref target="1026-41-e-4-ii-A" reftype="internal">1026.41(e)(4)(ii)(A)</ref> if it services any mortgage loans for which the servicer or an <ref target="1026-32-b-5" reftype="term">affiliate</ref> is not the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee (that is, for which the servicer or an <ref target="1026-32-b-5" reftype="term">affiliate</ref> is not the owner or was not the originator). The following two examples demonstrate circumstances in which a servicer would not qualify as a small servicer under § <ref target="1026-41-e-4-ii-A" reftype="internal">1026.41(e)(4)(ii)(A)</ref> because it did not meet both requirements under § <ref target="1026-41-e-4-ii-A" reftype="internal">1026.41(e)(4)(ii)(A)</ref> for determining a servicer's status as a small servicer:</content>
+      <interpParagraph label="1026-41-e-4-ii-Interp-2-i" marker="i.">
+        <content>A servicer services 3,000 <ref target="1026-39-a-2" reftype="term">mortgage loans</ref>, all of which it or an <ref target="1026-32-b-5" reftype="term">affiliate</ref> owns or originated. An <ref target="1026-32-b-5" reftype="term">affiliate</ref> of the servicer services 4,000 other <ref target="1026-39-a-2" reftype="term">mortgage loans</ref>, all of which it or an <ref target="1026-32-b-5" reftype="term">affiliate</ref> owns or originated. Because the number of <ref target="1026-39-a-2" reftype="term">mortgage loans</ref> serviced by a servicer is determined by counting the <ref target="1026-39-a-2" reftype="term">mortgage loans</ref> serviced by a servicer together with any <ref target="1026-32-b-5" reftype="term">affiliates</ref>, both of these servicers are considered to be servicing 7,000 <ref target="1026-39-a-2" reftype="term">mortgage loans</ref> and neither servicer is a small servicer.</content></interpParagraph>
+        <interpParagraph label="1026-41-e-4-ii-Interp-2-ii" marker="ii.">
+          <content>A service services 3,100 <ref target="1026-39-a-2" reftype="term">mortgage loans</ref>—3,000 <ref target="1026-39-a-2" reftype="term">mortgage loans</ref> it owns or originated and 100 <ref target="1026-39-a-2" reftype="term">mortgage loans</ref> it neither owns nor originated, but for which it owns the mortgage servicing rights. The servicer is not a small servicer because it services <ref target="1026-39-a-2" reftype="term">mortgage loans</ref> for which the servicer (or an <ref target="1026-32-b-5" reftype="term">affiliate</ref>) is not the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee, notwithstanding that the servicer services fewer than 5,000 <ref target="1026-39-a-2" reftype="term">mortgage loans</ref>.</content></interpParagraph>
+    </interpParagraph>
+  </change>
+  <change operation="added" label="1026-41-e-4-ii-Interp-4">
+    <interpParagraph label="1026-41-e-4-ii-Interp-4" marker="4.">
+      <title type="keyterm">Nonprofit entity that services 5,000 or fewer mortgage loans.</title>
+      <content>To qualify as a small servicer under § <ref target="1026-41-e-4-ii-C" reftype="internal">1026.41(e)(4)(ii)(C)</ref>, a servicer must be a nonprofit entity that services 5,000 or fewer mortgage loans, including any mortgage loans serviced on behalf of associated nonprofit entities, for all of which the servicer or an associated nonprofit entity is the <ref target="1026-2-a-17" reftype="term">creditor</ref>. There are two elements to satisfying § <ref target="1026-41-e-4-ii-C" reftype="internal">1026.41(e)(4)(ii)(C)</ref>. First, a nonprofit entity must service 5,000 or fewer mortgage loans, including any mortgage loans serviced on behalf of associated nonprofit entities. For each associated nonprofit entity, the small servicer determination is made separately, without consideration of the number of loans serviced by another associated nonprofit entity. Second, a nonprofit entity must service only mortgage loans for which the servicer (or an associated nonprofit entity) is the <ref target="1026-2-a-17" reftype="term">creditor</ref>. To be the <ref target="1026-2-a-17" reftype="term">creditor</ref>, the servicer (or an associated nonprofit entity) must have been the entity to which the mortgage loan obligation was initially payable (that is, the originator of the mortgage loan). A nonprofit entity is not a small servicer under § <ref target="1026-41-e-4-ii-C" reftype="internal">1026.41(e)(4)(ii)(C)</ref> if it services any mortgage loans for which the servicer (or an associated nonprofit entity) is not the <ref target="1026-2-a-17" reftype="term">creditor</ref> (that is, for which the servicer or an associated nonprofit entity was not the originator). The first of the following two examples demonstrates circumstances in which a nonprofit entity would qualify as a small servicer under § <ref target="1026-41-e-4-ii-C" reftype="internal">1026.41(e)(4)(ii)(C)</ref> because it meets both requirements for determining a nonprofit entity's status as a small servicer under § <ref target="1026-41-e-4-ii-C" reftype="internal">1026.41(e)(4)(ii)(C)</ref>. The second example demonstrates circumstances in which a nonprofit entity would not qualify as a small servicer under § <ref target="1026-41-e-4-ii-C" reftype="internal">1026.41(e)(4)(ii)(C)</ref> because it does not meet both requirements under § <ref target="1026-41-e-4-ii-C" reftype="internal">1026.41(e)(4)(ii)(C)</ref>.</content>
+      <interpParagraph label="1026-41-e-4-ii-Interp-4-i" marker="i.">
+        <content>Nonprofit entity A services 3,000 of its own mortgage loans, and 1,500 mortgage loans on behalf of associated nonprofit entity B. All 4,500 mortgage loans were originated by A or B. Associated nonprofit entity C services 2,500 mortgage loans, all of which it originated. Because the number of mortgage loans serviced by a nonprofit entity is determined by counting the number of mortgage loans serviced by the nonprofit entity (including mortgage loans serviced on behalf of associated nonprofit entities) but not counting any mortgage loans serviced by an associated nonprofit entity, A and C are both small servicers.</content>
+      </interpParagraph>
+      <interpParagraph label="1026-41-e-4-ii-Interp-4-ii" marker="ii.">
+        <content>A nonprofit entity services 4,500 mortgage loans 3,000 mortgage loans it originated, 1,000 mortgage loans originated by associated nonprofit entities, and 500 mortgage loans neither it nor an associated nonprofit entity originated. The nonprofit entity is not a small servicer because it services mortgage loans for which neither it nor an associated nonprofit entity is the <ref target="1026-2-a-17" reftype="term">creditor</ref>, notwithstanding that it services fewer than 5,000 mortgage loans.</content>
+      </interpParagraph>
+    </interpParagraph>
+  </change>
+  <!-- ii. Under 41(e)(4)(iii) Small servicer determination, paragraphs 2 and 3 are revised and paragraphs 4 and 5 are added. -->
+  <change operation="modified" label="1026-41-e-4-iii-Interp-2">
+    <interpParagraph label="1026-41-e-4-iii-Interp-2" marker="2.">
+      <title type="keyterm">Timing for small servicer exemption.</title>
+      <content>The following examples demonstrate when a servicer either is considered or is no longer considered a small servicer under § <ref target="1026-41-e-4-ii-A" reftype="internal">1026.41(e)(4)(ii)(A)</ref> and (C):</content>
+      <interpParagraph label="1026-41-e-4-iii-Interp-2-i" marker="i.">
+        <content>Assume a servicer (that as of January 1 of the current year qualifies as a small servicer) begins servicing more than 5,000 mortgage loans on October 1, and services more than 5,000 mortgage loans as of January 1 of the following year. The servicer would no longer be considered a small servicer on January 1 of the following year and would have to comply with any requirements from which it is no longer exempt as a small servicer on April 1 of the following year.</content>
+      </interpParagraph>
+      <interpParagraph label="1026-41-e-4-iii-Interp-2-ii" marker="ii.">
+        <content>Assume a servicer (that as of January 1 of the current year qualifies as a small servicer) begins servicing more than 5,000 mortgage loans on February 1, and services more than 5,000 mortgage loans as of January 1 of the following year. The servicer would no longer be considered a small servicer on January 1 of the following year and would have to comply with any requirements from which it is no longer exempt as a small servicer on that same January 1.</content>
+      </interpParagraph>
+      <interpParagraph label="1026-41-e-4-iii-Interp-2-iii" marker="iii.">
+        <content>Assume a servicer (that as of January 1 of the current year qualifies as a small servicer) begins servicing more than 5,000 mortgage loans on February 1, but services fewer than 5,000 mortgage loans as of January 1 of the following year. The servicer is considered a small servicer for the following year.</content>
+      </interpParagraph>
+    </interpParagraph>
+  </change>
+  <change operation="modified" label="1026-41-e-4-iii-Interp-3">
+    <interpParagraph label="1026-41-e-4-iii-Interp-3" marker="3.">
+      <title type="keyterm">Mortgage loans not considered in determining whether a servicer is a small servicer.</title>
+      <content>Mortgage loans that are not considered pursuant to § <ref target="1026-41-e-4-iii" reftype="internal">1026.41(e)(4)(iii)</ref> in applying § <ref target="1026-41-e-4-ii-A" reftype="internal">1026.41(e)(4)(ii)(A)</ref> are not considered either for determining whether a servicer (together with any <ref target="1026-32-b-5" reftype="term">affiliates</ref>) services 5,000 or fewer mortgage loans or whether a servicer is servicing only mortgage loans that it (or an <ref target="1026-32-b-5" reftype="term">affiliate</ref>) owns or originated. For example, assume a servicer services 5,400 mortgage loans. Of these mortgage loans, the servicer owns or originated 4,800 mortgage loans, voluntarily services 300 mortgage loans that neither it (nor an <ref target="1026-32-b-5" reftype="term">affiliate</ref>) owns or originated and for which the servicer does not receive any <ref target="1026-36-a-3" reftype="term">compensation</ref> or fees, and services 300 <ref target="1026-33-a" reftype="term">reverse mortgage transactions</ref>. The voluntarily serviced mortgage loans and reverse mortgage loans are not considered in determining whether the servicer qualifies as a small servicer pursuant to § <ref target="1026-41-e-4-iii-A" reftype="internal">1026.41(e)(4)(iii)(A)</ref>. Thus, because only the 4,800 mortgage loans owned or originated by the servicer are considered in determining whether the servicer qualifies as a small servicer, the servicer satisfies § <ref target="1026-41-e-4-ii-A" reftype="internal">1026.41(e)(4)(ii)(A)</ref> with regard to all 5,400 mortgage loans it services.</content></interpParagraph>
+  </change>
+  <change operation="added" label="1026-41-e-4-iii-Interp-4">
+    <interpParagraph label="1026-41-e-4-iii-Interp-4" marker="4.">
+      <title type="keyterm">Mortgage loans not considered in determining whether a nonprofit entity is a small servicer.</title>
+      <content>Mortgage loans that are not considered pursuant to § <ref target="1026-41-e-4-iii" reftype="internal">1026.41(e)(4)(iii)</ref> in applying § <ref target="1026-41-e-4-ii-C" reftype="internal">1026.41(e)(4)(ii)(C)</ref> are not considered either for determining whether a nonprofit entity services 5,000 or fewer mortgage loans, including any mortgage loans serviced on behalf of associated nonprofit entities, or whether a nonprofit entity is servicing only mortgage loans that it or an associated nonprofit entity originated. For example, assume a servicer that is a nonprofit entity services 5,400 mortgage loans. Of these mortgage loans, the nonprofit entity originated 2,800 mortgage loans and associated nonprofit entities originated 2,000 mortgage loans. The nonprofit entity receives <ref target="1026-36-a-3" reftype="term">compensation</ref> for servicing the loans originated by associated nonprofits. The nonprofit entity also voluntarily services 600 mortgage loans that were originated by an entity that is not an associated nonprofit entity, and receives no <ref target="1026-36-a-3" reftype="term">compensation</ref> or fees for servicing these loans. The voluntarily serviced mortgage loans are not considered in determining whether the servicer qualifies as a small servicer. Thus, because only the 4,800 mortgage loans originated by the nonprofit entity or associated nonprofit entities are considered in determining whether the servicer qualifies as a small servicer, the servicer satisfies § <ref target="1026-41-e-4-ii-C" reftype="internal">1026.41(e)(4)(ii)(C)</ref> with regard to all 5,400 mortgage loans it services.</content>
+    </interpParagraph>
+  </change>
+  <change operation="added" label="1026-41-e-4-iii-Interp-5">
+    <interpParagraph label="1026-41-e-4-iii-Interp-5" marker="5.">
+      <title type="keyterm">Limited role of voluntarily serviced mortgage loans.</title>
+      <content>Reverse mortgages and mortgage loans secured by <ref target="1026-2-a-11" reftype="term">consumers</ref>' interests in timeshare plans, in addition to not being considered in determining small servicer qualification, are also exempt from the requirements of § <ref target="1026-41" reftype="internal">1026.41</ref>. In contrast, although voluntarily serviced mortgage loans, as defined by § <ref target="1026-41-e-4-iii-A" reftype="internal">1026.41(e)(4)(iii)(A)</ref>, are likewise not considered in determining small servicer status, they are not exempt from the requirements of § <ref target="1026-41" reftype="internal">1026.41</ref>. Thus, a servicer that does not qualify as a small servicer would not have to provide periodic statements for reverse mortgages and timeshare plans because they are exempt from the rule, but would have to provide periodic statements for mortgage loans it voluntarily services.</content></interpParagraph>
+  </change>
+  <!-- b. Under Section 1026.43 Minimum Standards for Transactions Secured by a Dwelling: -->
+  <!-- i. New subheading Paragraph 43(a)(3)(vii) and paragraph 1 under that subheading are added.-->
+  <change operation="added" label="1026-43-a-3-vii-Interp" parent="1026-43-a-Interp" after="1026-43-a-3-vi-Interp">
+    <interpParagraph label="1026-43-a-3-vii-Interp" target="1026-43-a-3-vii">
+      <title>Paragraph 43(a)(3)(vii).</title>
+      <content/>
+      <interpParagraph label="1026-43-a-3-vii-Interp-1" marker="1.">
+        <title type="keyterm">Requirements of exclusion.</title>
+        <content>Section <ref target="1026-43-a-3-vii" reftype="internal">1026.43(a)(3)(vii)</ref> excludes certain transactions from the <ref target="1026-2-a-14" reftype="term">credit</ref> extension limit set forth in § <ref target="1026-43-a-3-v-D-1" reftype="internal">1026.43(a)(3)(v)(D)(1)</ref>, provided a transaction meets several conditions. The terms of the <ref target="1026-2-a-14" reftype="term">credit</ref> contract must satisfy the conditions that the transaction not require the payment of interest under § <ref target="1026-43-a-3-vii-C" reftype="internal">1026.43(a)(3)(vii)(C)</ref> and that repayment of the amount of <ref target="1026-2-a-14" reftype="term">credit</ref> extended be forgiven or deferred in accordance with § <ref target="1026-43-a-3-vii-D" reftype="internal">1026.43(a)(3)(vii)(D)</ref>. The other requirements of § <ref target="1026-43-a-3-vii" reftype="internal">1026.43(a)(3)(vii)</ref> need not be reflected in the <ref target="1026-2-a-14" reftype="term">credit</ref> contract, but the <ref target="1026-2-a-17" reftype="term">creditor</ref> must retain evidence of compliance with those provisions, as required by § <ref target="1026-25-a" reftype="internal">1026.25(a)</ref>. In particular, the <ref target="1026-2-a-17" reftype="term">creditor</ref> must have information reflecting that the total of closing costs imposed in connection with the transaction is less than 1 percent of the amount of <ref target="1026-2-a-14" reftype="term">credit</ref> extended and include no charges other than recordation, application, and housing counseling fees, in accordance with § <ref target="1026-43-a-3-vii-E" reftype="internal">1026.43(a)(3)(vii)(E)</ref>. Unless an itemization of the amount financed sufficiently details this requirement, the <ref target="1026-2-a-17" reftype="term">creditor</ref> must establish compliance with § <ref target="1026-43-a-3-vii-E" reftype="internal">1026.43(a)(3)(vii)(E)</ref> by some other written document and retain it in accordance with § <ref target="1026-25-a" reftype="internal">1026.25(a)</ref>.</content>
+      </interpParagraph>
+    </interpParagraph>
+  </change>
+  <!-- ii. New subheading Paragraph 43(e)(3)(iii) and paragraphs 1, 2, and 3 under that subheading are added.-->
+  <change operation="added" label="1026-43-e-3-iii-Interp">
+    <interpParagraph label="1026-43-e-3-iii-Interp" target="1026-43-e-3-iii">
+      <title>Paragraph 43(e)(3)(iii).</title>
+      <content/>
+      <interpParagraph label="1026-43-e-3-iii-Interp-1" marker="1.">
+        <title type="keyterm">Payment to the consumer.</title>
+        <content>The <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee, as applicable, complies with § <ref target="1026-43-e-3-iii-B" reftype="internal">1026.43(e)(3)(iii)(B)</ref> if it pays to the <ref target="1026-2-a-11" reftype="term">consumer</ref> the amount described in § <ref target="1026-43-e-3-iv" reftype="internal">1026.43(e)(3)(iv)</ref> within 210 days after <ref target="1026-2-a-13" reftype="term">consummation</ref> and prior to the occurrence of any of the events in § <ref target="1026-43-e-3-iii-B-1" reftype="internal">1026.43(e)(3)(iii)(B)(1)</ref> through <ref target="1026-43-e-3" reftype="internal">(3)</ref>. A <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee, as applicable, does not comply with § <ref target="1026-43-e-3-iii-B" reftype="internal">1026.43(e)(3)(iii)(B)</ref> if it pays to the <ref target="1026-2-a-11" reftype="term">consumer</ref> the amount described in § <ref target="1026-43-e-3-iv" reftype="internal">1026.43(e)(3)(iv)</ref> more than 210 days after <ref target="1026-2-a-13" reftype="term">consummation</ref> or after the occurrence of any of the events in § <ref target="1026-43-e-3-iii-B-1" reftype="internal">1026.43(e)(3)(iii)(B)(1)</ref> through <ref target="1026-43-e-3" reftype="internal">(3)</ref>. Payment may be made by any means mutually agreeable to the <ref target="1026-2-a-11" reftype="term">consumer</ref> and the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee, as applicable, or by check. If payment is made by check, the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee complies with § <ref target="1026-43-e-3-iii-B" reftype="internal">1026.43(e)(3)(iii)(B)</ref> if the check is delivered or placed in the mail to the <ref target="1026-2-a-11" reftype="term">consumer</ref> within 210 days after <ref target="1026-2-a-13" reftype="term">consummation</ref>.</content>
+      </interpParagraph>
+      <interpParagraph label="1026-43-e-3-iii-Interp-2" marker="2.">
+        <title type="keyterm">60 days past due.</title>
+        <content>Section <ref target="1026-43-e-3-iii-B-3" reftype="internal">1026.43(e)(3)(iii)(B)(3)</ref> provides that, to comply with § <ref target="1026-43-e-3-iii-B" reftype="internal">1026.43(e)(3)(iii)(B)</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee must pay to the <ref target="1026-2-a-11" reftype="term">consumer</ref> the amount described in § <ref target="1026-43-e-3-iv" reftype="internal">1026.43(e)(3)(iv)</ref> prior to the <ref target="1026-2-a-11" reftype="term">consumer</ref> becoming 60 days past due on the legal obligation. For this purpose, “past due” means the failure to make a periodic payment (in one full payment or in two or more partial payments) sufficient to cover principal, interest, and, if applicable, escrow under the terms of the legal obligation. Other amounts, such as any late fees, are not considered for this purpose. For purposes of § <ref target="1026-43-e-3-iii-B-3" reftype="internal">1026.43(e)(3)(iii)(B)(3)</ref>, a periodic payment is 30 days past due when it is not paid on or before the due date of the following scheduled periodic payment and is 60 days past due when, after already becoming 30 days past due, it is not paid on or before the due date of the next scheduled periodic payment. For purposes of § <ref target="1026-43-e-3-iii-B-3" reftype="internal">1026.43(e)(3)(iii)(B)(3)</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee may treat a received payment as applying to the oldest outstanding periodic payment. The following example illustrates the meaning of 60 days past due for purposes of § <ref target="1026-43-e-3-iii-B-3" reftype="internal">1026.43(e)(3)(iii)(B)(3)</ref>:</content>
+        <interpParagraph label="1026-43-e-3-iii-Interp-2-i" marker="i.">
+          <content>Assume a loan is consummated on October 15, 2015, that the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s periodic payment is due on the 1st of each month, and that the <ref target="1026-2-a-11" reftype="term">consumer</ref> timely made the first periodic payment due on December 1, 2015. For purposes of § <ref target="1026-43-e-3-iii-B-3" reftype="internal">1026.43(e)(3)(iii)(B)(3)</ref>, the <ref target="1026-2-a-11" reftype="term">consumer</ref> is 30 days past due if the <ref target="1026-2-a-11" reftype="term">consumer</ref> fails to make a payment (sufficient to cover the scheduled January 1, 2016 periodic payment of principal, interest, and, if applicable, escrow) on or before February 1, 2016. For purposes of § <ref target="1026-43-e-3-iii-B-3" reftype="internal">1026.43(e)(3)(iii)(B)(3)</ref>, the <ref target="1026-2-a-11" reftype="term">consumer</ref> is 60 days past due if the <ref target="1026-2-a-11" reftype="term">consumer</ref> then also fails to make a payment (sufficient to cover the scheduled January 1, 2016 periodic payment of principal, interest, and, if applicable, escrow) on or before March 1, 2016. For purposes of § <ref target="1026-43-e-3-iii-B-3" reftype="internal">1026.43(e)(3)(iii)(B)(3)</ref>, the <ref target="1026-2-a-11" reftype="term">consumer</ref> is not 60 days past due if the <ref target="1026-2-a-11" reftype="term">consumer</ref> makes a payment (sufficient to cover the scheduled January 1, 2016 periodic payment of principal, interest, and, if applicable, escrow) on or before March 1, 2016.</content>
+        </interpParagraph>
+      </interpParagraph>
+      <interpParagraph label="1026-43-e-3-iii-Interp-3" marker="3.">
+        <title type="keyterm">Post-consummation policies and procedures.</title>
+        <content>The policies and procedures described in § <ref target="1026-43-e-3-iii-C" reftype="internal">1026.43(e)(3)(iii)(C)</ref> need not require that a <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee, as applicable, conduct a post-<ref target="1026-2-a-13" reftype="term">consummation</ref> review of all loans originated by the <ref target="1026-2-a-17" reftype="term">creditor</ref> or acquired by the assignee, nor must such policies and procedures require a <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee to apply § <ref target="1026-43-e-3-iii" reftype="internal">1026.43(e)(3)(iii)</ref> and <ref target="1026-43-e-3-iv" reftype="internal">(iv)</ref> for all loans for which the total <ref target="1026-32-b-1" reftype="term">points and fees</ref> are found to exceed the applicable limit under § <ref target="1026-43-e-3-i" reftype="internal">1026.43(e)(3)(i)</ref>.</content>
+      </interpParagraph>
+    </interpParagraph>
+  </change>
+  <!-- iii. New subheading Paragraph 43(e)(3)(iv) and paragraphs 1 and 2 under that subheading are added.-->
+  <change operation="added" label="1026-43-e-3-iv-Interp">
+    <interpParagraph label="1026-43-e-3-iv-Interp" target="1026-43-e-3-iv">
+      <title>Paragraph 43(e)(3)(iv).</title>
+      <content/>
+      <interpParagraph label="1026-43-e-3-iv-Interp-1" marker="1.">
+        <title type="keyterm">Interest rate.</title>
+        <content>For purposes of § <ref target="1026-43-e-3-iv-B" reftype="internal">1026.43(e)(3)(iv)(B)</ref>, interest is calculated using the contract interest rate applicable during the period from <ref target="1026-2-a-13" reftype="term">consummation</ref> until the payment described in § <ref target="1026-43-e-3-iv" reftype="internal">1026.43(e)(3)(iv)</ref> is made to the <ref target="1026-2-a-11" reftype="term">consumer</ref>. In an adjustable-rate or step-rate transaction in which more than one interest rate applies during the period from <ref target="1026-2-a-13" reftype="term">consummation</ref> until payment is made to the <ref target="1026-2-a-11" reftype="term">consumer</ref>, the minimum payment amount is determined by calculating interest on the dollar amount described in § <ref target="1026-43-e-3-iv-A" reftype="internal">1026.43(e)(3)(iv)(A)</ref> at each such interest rate for the part of the overall period during which that rate applies. However, § <ref target="1026-43-e-3-iv" reftype="internal">1026.43(e)(3)(iv)</ref> provides that, for purposes of § <ref target="1026-43-e-3-iii" reftype="internal">1026.43(e)(3)(iii)</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee can pay to the <ref target="1026-2-a-11" reftype="term">consumer</ref> an amount that exceeds the sum of the amounts described in § <ref target="1026-43-e-3-iv-A" reftype="internal">1026.43(e)(3)(iv)(A)</ref> and <ref target="1026-43-e-3-iv-B" reftype="internal">(B)</ref>. Therefore, a <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee may, for example, elect to calculate interest using the maximum interest rate that may apply during the period from <ref target="1026-2-a-13" reftype="term">consummation</ref> until payment is made to the <ref target="1026-2-a-11" reftype="term">consumer</ref>. See comment <ref target="1026-43-e-3-iii-Interp-1" reftype="internal">43(e)(3)(iii)-1</ref> for guidance on making payments to the <ref target="1026-2-a-11" reftype="term">consumer</ref>.</content>
+      </interpParagraph>
+      <interpParagraph label="1026-43-e-3-iv-Interp-2" marker="2.">
+        <title type="keyterm">Relationship to RESPA tolerance cure.</title>
+        <content>Under Regulation X (<ref target="CFR:12-1024-7" reftype="external">12 CFR 1024.7</ref>(i)), if any charges at settlement exceed the charges listed on the good faith estimate of settlement costs by more than the amounts permitted under <ref target="CFR:12-1024-7" reftype="external">12 CFR 1024.7</ref>(e), the <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> may cure the tolerance violation by reimbursing the amount by which the tolerance was exceeded at settlement or within 30 calendar days after settlement. The amount paid to the <ref target="1026-2-a-11" reftype="term">consumer</ref> pursuant to § <ref target="1026-43-e-3-iv" reftype="internal">1026.43(e)(3)(iv)</ref> may be offset by the amount paid to the <ref target="1026-2-a-11" reftype="term">consumer</ref> pursuant to <ref target="CFR:12-1024-7" reftype="external">12 CFR 1024.7</ref>(i), to the extent that the amount paid to the <ref target="1026-2-a-11" reftype="term">consumer</ref> pursuant to <ref target="CFR:12-1024-7" reftype="external">12 CFR 1024.7</ref>(i) is being applied to fees or charges included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> pursuant to § <ref target="1026-32-b-1" reftype="internal">1026.32(b)(1)</ref>. However, a <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee has not satisfied § <ref target="1026-43-e-3-iii" reftype="internal">1026.43(e)(3)(iii)</ref> unless the total amount described in § <ref target="1026-43-e-3-iv" reftype="internal">1026.43(e)(3)(iv)</ref>, including any offset due to a payment made pursuant to <ref target="CFR:12-1024-7" reftype="external">12 CFR 1024.7</ref>(i), is paid to the <ref target="1026-2-a-11" reftype="term">consumer</ref> within 210 days after <ref target="1026-2-a-13" reftype="term">consummation</ref> and prior to the occurrence of any of the events in § <ref target="1026-43-e-3-iii-B-1" reftype="internal">1026.43(e)(3)(iii)(B)(1)</ref> through <ref target="1026-43-e-3" reftype="internal">(3)</ref>.</content>
+      </interpParagraph>
+    </interpParagraph>
+  </change>
+  </changeset>
+</notice>

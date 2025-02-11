@@ -1,0 +1,50 @@
+{% load staticfiles otree_tags %}
+
+
+    <table id = "products">
+        <thead>
+            <tr>
+                <th></th>
+                {% for i in products_list %}
+                    <th>Product {{ i }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for dimensions in productdimvals_transposed %}
+                <tr>
+                    <td>
+                        <label>Attribute {{ forloop.counter }}</label>
+                    </td>
+                {% for product_dim_i in dimensions%}
+                    <td>
+                        <span>
+                            {{ product_dim_i }}
+                        </span>
+                    </td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+                <tr>
+                    <td>
+                        <label>Attribute 3</label>
+                    </td>
+                    {% for i in products_list %}
+                    <td>
+                        <span>
+                            Hidden
+                        </span>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                <th></th>
+                {% for i in products_list %}
+                    <td>
+                            <input type = "radio" required = "" name = "product_selected" value = {{ i|stringformat:"i"}}>
+                            Product {{ i }}
+                    </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>

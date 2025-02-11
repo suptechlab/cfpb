@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="eregs"
+	xmlns:tns="eregs" 
+	elementFormDefault="qualified">
+
+	<include schemaLocation="primitives.xsd"></include>
+
+	<complexType name="Table">
+		<sequence>
+			<choice minOccurs="0" maxOccurs="1">
+				<element name="header" type="tns:TableHeader"></element>
+			</choice>
+			<choice minOccurs="1" maxOccurs="unbounded">
+				<element name="row" type="tns:Row"></element>
+			</choice>
+		</sequence>
+	</complexType>
+	
+	<complexType name="TableHeader">
+		<sequence minOccurs="0" maxOccurs="unbounded">
+			<element name="columnHeaderRow" type="tns:ColumnHeaderRow"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="ColumnHeaderRow">
+		<sequence minOccurs="0" maxOccurs="unbounded">
+			<element name="column" type="tns:ColumnHeaderEntry"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="ColumnHeaderEntry" mixed="true">
+		<attribute name="colspan" type="int"></attribute>
+		<attribute name="rowspan" type="int"></attribute>
+	</complexType>
+	
+	<complexType name="Row">
+		<sequence minOccurs="0" maxOccurs="unbounded">
+			<element name="cell" type="tns:CellContents"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="CellContents" mixed="true">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element ref="tns:ref"></element>
+		</choice>
+	</complexType>
+	
+	<element name="column" type="tns:ColumnHeaderEntry"></element>
+	<element name="table" type="tns:Table"></element>
+	
+</schema>

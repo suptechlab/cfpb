@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="eregs"
+	xmlns:tns="eregs" 
+	elementFormDefault="qualified">
+	
+	<include schemaLocation="table.xsd"></include>
+	<include schemaLocation="formatting.xsd"></include>
+	
+	<!-- 
+		This file represents the primitives that are allowed in the RegsML.
+	 -->
+	
+	<!-- 
+		Regulation text is a mixed element that can contain:
+		1. Regular text, 
+		2. references, and
+		3. definitions.
+	 -->
+	
+	<complexType name="RegText" mixed="true">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element ref="tns:ref"></element>
+			<element ref="tns:def"></element>
+			<element ref="tns:graphic"></element>
+			<element ref="tns:dash"></element>
+			<element ref="tns:table"></element>
+			<element ref="tns:callout"></element>
+			<element ref="tns:variable"></element>
+		</choice>
+	</complexType>
+	
+	<!-- 
+		titleType enumerates the possible attributes that can be contained
+		in a paragraph title tag
+	 -->
+	
+	<simpleType name="titleType">
+		<restriction base="string">
+			<enumeration value="header"></enumeration>
+			<enumeration value="keyterm"></enumeration>
+		</restriction>
+	</simpleType>
+	
+	<!-- 
+		The paragraph element can contain the following:
+		1. At most 1 paragraph title.
+		   a. Which supports a type attribute indicating whether the title is a keyterm
+		2. One content tag that contains regtext.
+		3. Possibly any number of subparagraphs.
+		
+		In addition, the paragraph element contains the following attributes:
+		1. marker, which defines the marker that is placed in the beginning of the paragraph
+		2. label, which defines the unique tag that identifies the paragraph.
+	 -->
+	
+	<complexType name="Paragraph">
+    	<sequence>
+    		<choice minOccurs="0" maxOccurs="1">
+    			<element name="title">
+    				<complexType>
+    					<simpleContent>
+    						<extension base="string">
+    							<attribute name="type" type="tns:titleType"></attribute>
+    						</extension>
+    					</simpleContent>
+    				</complexType>
+    			</element>
+    		</choice>
+    		<element name="content" type="tns:RegText"></element>
+    		<element ref="tns:paragraph" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+		<attribute name="marker" type="string" use="required"></attribute>
+		<attribute name="label" type="string"></attribute>
+    </complexType>
+
+	<!-- 
+		The reference element supports referencing any other element with a label attribute.
+		The reference element has the following attributes:
+		1. target, the element being referenced.
+		2. reftype, the type of reference (internal or external)
+	 -->
+	 
+	<simpleType name="reftype">
+		<restriction base="string">
+			<enumeration value="internal"></enumeration>
+			<enumeration value="external"></enumeration>
+			<enumeration value="footnote"></enumeration>
+			<enumeration value="term"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<complexType name="Reference">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="target" type="string" use="required"></attribute>
+				<attribute name="reftype" type="tns:reftype" use="required"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+	
+	<!-- 
+		The definition element supports defined terms within the text.
+		The defintion has the following attributes:
+		1. id, a unique id
+		2. term, the actual term being defined within this tag
+	 -->
+	
+	<complexType name="Definition">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="id" type="string" use="optional"></attribute>
+				<attribute name="term" type="string" use="required"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+	
+	<!--  
+		The graphics element supports embedding graphics within the text.
+		
+	 -->
+	
+	<complexType name="Graphics">
+		<sequence>
+			<element name="altText" type="string"></element>
+			<element name="text" type="string"></element>
+			<element name="url" type="anyURI"></element>
+			<choice minOccurs="0" maxOccurs="1">
+				<element name="thumbUrl" type="anyURI"></element>
+			</choice>
+		</sequence>
+	</complexType>
+	
+	<!-- 
+		Elements instantiating the various types.
+	 -->
+	
+	<element name="ref" type="tns:Reference"></element>
+    <element name="paragraph" type="tns:Paragraph"></element>
+    <element name="def" type="tns:Definition"></element>
+    <element name="graphic" type="tns:Graphics"></element>
+    
+</schema>

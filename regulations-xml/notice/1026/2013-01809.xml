@@ -1,0 +1,675 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<notice xmlns="eregs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eregs https://raw.githubusercontent.com/cfpb/regulations-schema/master/src/eregs.xsd">
+  <fdsys>
+    <cfrTitleNum>12</cfrTitleNum>
+    <cfrTitleText>Banks and Banking</cfrTitleText>
+    <volume>8</volume>
+    <date>2013-02-13</date>
+    <originalDate>2012-01-01</originalDate>
+    <title>TRUTH IN LENDING</title>
+  </fdsys>
+  <preamble>
+    <agency>Bureau of Consumer Financial Protection</agency>
+    <cfr>
+      <title>12</title>
+      <section>1026</section>
+    </cfr>
+    <documentNumber>2013-01809</documentNumber>
+    <effectiveDate>2014-01-18</effectiveDate>
+    <federalRegisterURL>https://www.federalregister.gov/documents/2013/02/13/2013-01809/appraisals-for-higher-priced-mortgage-loans</federalRegisterURL>
+  </preamble>
+  <changeset leftDocumentNumber="2013-24521" rightDocumentNumber="2013-01809">
+  <!-- Update TOC with N & O title changes -->
+  <change operation="modified" label="1026-TOC">
+    <tableOfContents label="1026-TOC">
+      <tocAppEntry target="1026-Subpart-A">
+        <appendixLetter>A</appendixLetter>
+        <appendixSubject>General</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-Subpart-B">
+        <appendixLetter>B</appendixLetter>
+        <appendixSubject>Open-End Credit</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-Subpart-C">
+        <appendixLetter>C</appendixLetter>
+        <appendixSubject>Closed-End Credit</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-Subpart-D">
+        <appendixLetter>D</appendixLetter>
+        <appendixSubject>Miscellaneous</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-Subpart-E">
+        <appendixLetter>E</appendixLetter>
+        <appendixSubject>Special Rules for Certain Home Mortgage Transactions</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-Subpart-F">
+        <appendixLetter>F</appendixLetter>
+        <appendixSubject>Special Rules for Private Education Loans</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-Subpart-G">
+        <appendixLetter>G</appendixLetter>
+        <appendixSubject>Special Rules Applicable to Credit Card Accounts and Open-End Credit Offered to College Students</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-A">
+        <appendixLetter>A</appendixLetter>
+        <appendixSubject>Appendix A to Part 1026—Effect on State Laws</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-B">
+        <appendixLetter>B</appendixLetter>
+        <appendixSubject>Appendix B to Part 1026—State Exemptions</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-C">
+        <appendixLetter>C</appendixLetter>
+        <appendixSubject>Appendix C to Part 1026—Issuance of Official Interpretations</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-D">
+        <appendixLetter>D</appendixLetter>
+        <appendixSubject>Appendix D to Part 1026—Multiple Advance Construction Loans</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-E">
+        <appendixLetter>E</appendixLetter>
+        <appendixSubject>Appendix E to Part 1026—Rules for Card Issuers That Bill on a Transaction-by-Transaction Basis</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-F">
+        <appendixLetter>F</appendixLetter>
+        <appendixSubject>Appendix F to Part 1026—Optional Annual Percentage Rate Computations for Creditors Offering Open-End Credit Plans Secured by a Consumer's Dwelling</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-G">
+        <appendixLetter>G</appendixLetter>
+        <appendixSubject>Appendix G to Part 1026—Open-End Model Forms and Clauses</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-H">
+        <appendixLetter>H</appendixLetter>
+        <appendixSubject>Appendix H to Part 1026—Closed-End Model Forms and Clauses</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-I">
+        <appendixLetter>I</appendixLetter>
+        <appendixSubject>Appendix I to Part 1026 [Reserved]</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-J">
+        <appendixLetter>J</appendixLetter>
+        <appendixSubject>Appendix J to Part 1026—Annual Percentage Rate Computations for Closed-End Credit Transactions</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-K">
+        <appendixLetter>K</appendixLetter>
+        <appendixSubject>Appendix K to Part 1026—Total Annual Loan Cost Rate Computations for Reverse Mortgage Transactions</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-L">
+        <appendixLetter>L</appendixLetter>
+        <appendixSubject>Appendix L to Part 1026—Assumed Loan Periods for Computations of Total Annual Loan Cost Rates</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-M1">
+        <appendixLetter>M1</appendixLetter>
+        <appendixSubject>Appendix M1 to Part 1026—Repayment Disclosures</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-M2">
+        <appendixLetter>M2</appendixLetter>
+        <appendixSubject>Appendix M2 to Part 1026—Sample Calculations of Repayment Disclosures</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-N">
+        <appendixLetter>N</appendixLetter>
+        <appendixSubject>Appendix N to Part 1026—Higher-Priced Mortgage Loan Appraisal Safe Harbor Review</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-O">
+        <appendixLetter>O</appendixLetter>
+        <appendixSubject>Appendix O to Part 1026—Illustrative Written Source Documents for Higher-Priced Mortgage Loan Appraisal Rules</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-P">
+        <appendixLetter>P</appendixLetter>
+        <appendixSubject>Appendix P to Part 1026-[Reserved]</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-Q">
+        <appendixLetter>Q</appendixLetter>
+        <appendixSubject>Appendix Q to Part 1026—Standards for Determining Monthly Debt and Income</appendixSubject>
+      </tocAppEntry>
+      <tocAppEntry target="1026-Interp">
+        <appendixLetter>Interp</appendixLetter>
+        <appendixSubject>Supplement I to Part 1026—Official Interpretations</appendixSubject>
+      </tocAppEntry>
+    </tableOfContents>
+  </change><!-- 2013-01809 changes the following: 1026.35, 1026-N, 1026-O -->
+  <change operation="modified" label="1026-35" subpath="subject">
+    <subject>§ 1026.35 Prohibited acts or practices in connection with higher-priced mortgage loans.</subject>
+  </change>
+  <change operation="modified" label="1026-35-c">
+    <paragraph label="1026-35-c" marker="(c)">
+      <title type="keyterm">Appraisals for higher-priced mortgage loans.</title>
+      <content/>
+      <paragraph label="1026-35-c-1" marker="(1)">
+        <title type="keyterm">Definitions.</title>
+        <content>For purposes of this section:</content>
+        <paragraph label="1026-35-c-1-i" marker="(i)">
+          <content><def term="certified or licensed appraiser">Certified or licensed appraiser</def> means a <ref target="1026-2-a-22" reftype="term">person</ref> who is certified or licensed by the <ref target="1026-42-g-3" reftype="term">State agency</ref> in the <ref target="1026-2-a-26" reftype="term">State</ref> in which the property that secures the transaction is located, and who performs the appraisal in conformity with the Uniform Standards of Professional Appraisal Practice and the requirements applicable to appraisers in title XI of the Financial Institutions Reform, Recovery, and Enforcement Act of 1989, as amended (<ref target="USC:12-3331" reftype="external">12 U.S.C. 3331</ref> et seq.), and any implementing regulations in effect at the time the appraiser signs the appraiser's certification.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-1-iii" marker="(ii)">
+          <content><def term="manufactured home">Manufactured home</def> has the same meaning as in <ref target="CFR:24-3280-2" reftype="external">24 CFR 3280.2</ref>.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-1-v" marker="(iii)">
+          <content><def term="national registry">National Registry</def> means the database of information about <ref target="1026-2-a-26" reftype="term">State</ref> certified and licensed appraisers maintained by the Appraisal Subcommittee of the Federal Financial Institutions Examination Council.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-1-iv" marker="(iv)">
+          <content><ref target="1026-42-g-3" reftype="term">State agency</ref> means a “<ref target="1026-2-a-26" reftype="term">State</ref> appraiser certifying and licensing agency” recognized in accordance with section 1118(b) of the Financial Institutions Reform, Recovery, and Enforcement Act of 1989 (<ref target="USC:12-3347" reftype="external">12 U.S.C. 3347</ref>(b)) and any implementing regulations.</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-35-c-2" marker="(2)">
+        <title type="keyterm">Exemptions.</title>
+        <content>The requirements in paragraphs <ref target="1026-35-c-3" reftype="internal">(c)(3)</ref> through <ref target="1026-35-c-6" reftype="internal">(6)</ref> of this section do not apply to the following types of transactions:</content>
+        <paragraph label="1026-35-c-2-i" marker="(i)">
+          <content>A qualified mortgage as defined in <ref target="CFR:12-1026-43" reftype="external">12 CFR 1026.43(e)</ref>.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-2-ii" marker="(ii)">
+          <content>A transaction secured by a new <ref target="1026-35-c-1-iii" reftype="term">manufactured home</ref>.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-2-iii" marker="(iii)">
+          <content>A transaction secured by a mobile home, boat, or trailer.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-2-iv" marker="(iv)">
+          <content>A transaction to finance the initial construction of a <ref target="1026-2-a-19" reftype="term">dwelling</ref>.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-2-v" marker="(v)">
+          <content>A loan with maturity of 12 months or less, if the purpose of the loan is a “bridge” loan connected with the acquisition of a <ref target="1026-2-a-19" reftype="term">dwelling</ref> intended to become the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref>.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-2-vi" marker="(vi)">
+          <content>A reverse-mortgage transaction subject to <ref target="1026-33-a" reftype="internal">12 CFR 1026.33(a)</ref>.</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-35-c-3" marker="(3)">
+        <title type="keyterm">Appraisals required.</title>
+        <content/>
+        <paragraph label="1026-35-c-3-i" marker="(i)">
+          <title type="keyterm">In general.</title>
+          <content>Except as provided in paragraph <ref target="1026-35-c-2" reftype="internal">(c)(2)</ref> of this section, a <ref target="1026-2-a-17" reftype="term">creditor</ref> shall not extend a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> to a <ref target="1026-2-a-11" reftype="term">consumer</ref> without obtaining, prior to <ref target="1026-2-a-13" reftype="term">consummation</ref>, a written appraisal of the property to be mortgaged. The appraisal must be performed by a <ref target="1026-35-c-1-i" reftype="term">certified or licensed appraiser</ref> who conducts a physical visit of the interior of the property that will secure the transaction.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-3-ii" marker="(ii)">
+          <title type="keyterm">Safe harbor.</title>
+          <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> obtains a written appraisal that meets the requirements for an appraisal required under paragraph <ref target="1026-35-c-3-i" reftype="internal">(c)(3)(i)</ref> of this section if the <ref target="1026-2-a-17" reftype="term">creditor</ref>:</content>
+          <paragraph label="1026-35-c-3-ii-A" marker="(A)">
+            <content>Orders that the appraiser perform the appraisal in conformity with the Uniform Standards of Professional Appraisal Practice and title XI of the Financial Institutions Reform, Recovery, and Enforcement Act of 1989, as amended (<ref target="USC:12-3331" reftype="external">12 U.S.C. 3331</ref> et seq.), and any implementing regulations in effect at the time the appraiser signs the appraiser's certification;</content>
+          </paragraph>
+          <paragraph label="1026-35-c-3-ii-B" marker="(B)">
+            <content>Verifies through the <ref target="1026-35-c-1-v" reftype="term">National Registry</ref> that the appraiser who signed the appraiser's certification was a <ref target="1026-35-c-1-i" reftype="term">certified or licensed appraiser</ref> in the <ref target="1026-2-a-26" reftype="term">State</ref> in which the appraised property is located as of the date the appraiser signed the appraiser's certification;</content>
+          </paragraph>
+          <paragraph label="1026-35-c-3-ii-C" marker="(C)">
+            <content>Confirms that the elements set forth in appendix <ref target="1026-N" reftype="internal">N</ref> to this part are addressed in the written appraisal; and</content>
+          </paragraph>
+          <paragraph label="1026-35-c-3-ii-D" marker="(D)">
+            <content>Has no actual knowledge contrary to the facts or certifications contained in the written appraisal.</content>
+          </paragraph>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-35-c-4" marker="(4)">
+        <title type="keyterm">Additional appraisal for certain higher-priced mortgage loans.</title>
+        <content/>
+        <paragraph label="1026-35-c-4-i" marker="(i)">
+          <title type="keyterm">In general.</title>
+          <content>Except as provided in paragraphs <ref target="1026-35-c-2" reftype="internal">(c)(2)</ref> and <ref target="1026-35-c-4-vii" reftype="internal">(c)(4)(vii)</ref> of this section, a <ref target="1026-2-a-17" reftype="term">creditor</ref> shall not extend a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> to a <ref target="1026-2-a-11" reftype="term">consumer</ref> to finance the acquisition of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref> without obtaining, prior to <ref target="1026-2-a-13" reftype="term">consummation</ref>, two written appraisals, if:</content>
+          <paragraph label="1026-35-c-4-i-A" marker="(A)">
+            <content>The seller acquired the property 90 or fewer days prior to the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property and the price in the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property exceeds the seller's acquisition price by more than 10 percent; or</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-i-B" marker="(B)">
+            <content>The seller acquired the property 91 to 180 days prior to the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property and the price in the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property exceeds the seller's acquisition price by more than 20 percent.</content>
+          </paragraph>
+        </paragraph>
+        <paragraph label="1026-35-c-4-ii" marker="(ii)">
+          <title type="keyterm">Different certified or licensed appraisers.</title>
+          <content>The two appraisals required under paragraph <ref target="1026-35-c-4-i" reftype="internal">(c)(4)(i)</ref> of this section may not be performed by the same <ref target="1026-35-c-1-i" reftype="term">certified or licensed appraiser</ref>.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-4-iii" marker="(iii)">
+          <title type="keyterm">Relationship to general appraisal requirements.</title>
+          <content>If two appraisals must be obtained under paragraph <ref target="1026-35-c-4-i" reftype="internal">(c)(4)(i)</ref> of this section, each appraisal shall meet the requirements of paragraph <ref target="1026-35-c-3-i" reftype="internal">(c)(3)(i)</ref> of this section.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-4-iv" marker="(iv)">
+          <title type="keyterm">Required analysis in the additional appraisal.</title>
+          <content>One of the two required appraisals must include an analysis of:</content>
+          <paragraph label="1026-35-c-4-iv-A" marker="(A)">
+            <content>The difference between the price at which the seller acquired the property and the price that the <ref target="1026-2-a-11" reftype="term">consumer</ref> is obligated to pay to acquire the property, as specified in the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property from the seller;</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-iv-B" marker="(B)">
+            <content>Changes in market conditions between the date the seller acquired the property and the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property; and</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-iv-C" marker="(C)">
+            <content>Any improvements made to the property between the date the seller acquired the property and the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property.</content>
+          </paragraph>
+        </paragraph>
+        <paragraph label="1026-35-c-4-v" marker="(v)">
+          <title type="keyterm">No charge for the additional appraisal.</title>
+          <content>If the <ref target="1026-2-a-17" reftype="term">creditor</ref> must obtain two appraisals under paragraph <ref target="1026-35-c-4-i" reftype="internal">(c)(4)(i)</ref> of this section, the <ref target="1026-2-a-17" reftype="term">creditor</ref> may charge the <ref target="1026-2-a-11" reftype="term">consumer</ref> for only one of the appraisals.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-4-vi" marker="(vi)">
+          <title type="keyterm">Creditor's determination of prior sale date and price.</title>
+          <content/>
+          <paragraph label="1026-35-c-4-vi-A" marker="(A)">
+            <title type="keyterm">Reasonable diligence.</title>
+            <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> must obtain two written appraisals under paragraph <ref target="1026-35-c-4-i" reftype="internal">(c)(4)(i)</ref> of this section unless the <ref target="1026-2-a-17" reftype="term">creditor</ref> can demonstrate by exercising reasonable diligence that the requirement to obtain two appraisals does not apply. A <ref target="1026-2-a-17" reftype="term">creditor</ref> acts with reasonable diligence if the <ref target="1026-2-a-17" reftype="term">creditor</ref> bases its determination on information contained in written source documents, such as the documents listed in Appendix <ref target="1026-O" reftype="internal">O</ref> to this part.</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-vi-B" marker="(B)">
+            <title type="keyterm">Inability to determine prior sale date or price—modified requirements for additional appraisal.</title>
+            <content>If, after exercising reasonable diligence, a <ref target="1026-2-a-17" reftype="term">creditor</ref> cannot determine whether the conditions in paragraphs <ref target="1026-35-c-4-i-A" reftype="internal">(c)(4)(i)(A)</ref> and <ref target="1026-35-c-4-i-B" reftype="internal">(c)(4)(i)(B)</ref> are present and therefore must obtain two written appraisals in accordance with paragraphs <ref target="1026-35-c-4-i" reftype="internal">(c)(4)(i)</ref> through (v) of this section, one of the two appraisals shall include an analysis of the factors in paragraph <ref target="1026-35-c-4-iv" reftype="internal">(c)(4)(iv)</ref> of this section only to the extent that the information necessary for the appraiser to perform the analysis can be determined.</content>
+          </paragraph>
+        </paragraph>
+        <paragraph label="1026-35-c-4-vii" marker="(vii)">
+          <title type="keyterm">Exemptions from the additional appraisal requirement.</title>
+          <content>The additional appraisal required under paragraph <ref target="1026-35-c-4-i" reftype="internal">(c)(4)(i)</ref> of this section shall not apply to extensions of <ref target="1026-2-a-14" reftype="term">credit</ref> that finance a <ref target="1026-2-a-11" reftype="term">consumer</ref>'s acquisition of property:</content>
+          <paragraph label="1026-35-c-4-vii-A" marker="(A)">
+            <content>From a local, <ref target="1026-2-a-26" reftype="term">State</ref> or Federal government agency;</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-vii-B" marker="(B)">
+            <content>From a <ref target="1026-2-a-22" reftype="term">person</ref> who acquired title to the property through foreclosure, deed-in-lieu of foreclosure, or other similar judicial or non-judicial procedure as a result of the <ref target="1026-2-a-22" reftype="term">person</ref>'s exercise of rights as the holder of a defaulted <ref target="1026-39-a-2" reftype="term">mortgage loan</ref>;</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-vii-C" marker="(C)">
+            <content>From a non-profit entity as part of a local, <ref target="1026-2-a-26" reftype="term">State</ref>, or Federal government program under which the non-profit entity is permitted to acquire title to single-family properties for resale from a seller who acquired title to the property through the process of foreclosure, deed-in-lieu of foreclosure, or other similar judicial or non-judicial procedure;</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-vii-D" marker="(D)">
+            <content>From a <ref target="1026-2-a-22" reftype="term">person</ref> who acquired title to the property by inheritance or pursuant to a court order of dissolution of marriage, civil union, or domestic partnership, or of partition of joint or marital assets to which the seller was a party;</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-vii-E" marker="(E)">
+            <content>From an employer or relocation agency in connection with the relocation of an employee;</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-vii-F" marker="(F)">
+            <content>From a servicemember, as defined in 50 U.S.C. App. 511(1), who received a deployment or permanent change of station order after the servicemember purchased the property;</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-vii-G" marker="(G)">
+            <content>Located in an area designated by the President as a federal disaster area, if and for as long as the Federal financial institutions regulatory agencies, as defined in <ref target="USC:12-3350" reftype="external">12 U.S.C. 3350</ref>(6), waive the requirements in title XI of the Financial Institutions Reform, Recovery, and Enforcement Act of 1989, as amended (<ref target="USC:12-3331" reftype="external">12 U.S.C. 3331</ref> et seq.), and any implementing regulations in that area; or</content>
+          </paragraph>
+          <paragraph label="1026-35-c-4-vii-H" marker="(H)">
+            <content>Located in a rural county, as defined in <ref target="1026-35-b-2-iv-A" reftype="internal">12 CFR 1026.35(b)(2)(iv)(A)</ref>.</content>
+          </paragraph>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-35-c-5" marker="(5)">
+        <title type="keyterm">Required disclosure.</title>
+        <content/>
+        <paragraph label="1026-35-c-5-i" marker="(i)">
+          <title type="keyterm">In general.</title>
+          <content>Except as provided in paragraph <ref target="1026-35-c-2" reftype="internal">(c)(2)</ref> of this section, a <ref target="1026-2-a-17" reftype="term">creditor</ref> shall disclose the following statement, in writing, to a <ref target="1026-2-a-11" reftype="term">consumer</ref> who applies for a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref>: “We may order an appraisal to determine the property's value and charge you for this appraisal. We will give you a copy of any appraisal, even if your loan does not close. You can pay for an additional appraisal for your own use at your own cost.” Compliance with the disclosure requirement in Regulation B, <ref target="CFR:12-1002-14" reftype="external">12 CFR 1002.14</ref>(a)(2), satisfies the requirements of this paragraph.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-5-ii" marker="(ii)">
+          <title type="keyterm">Timing of disclosure.</title>
+          <content>The disclosure required by paragraph <ref target="1026-35-c-5-i" reftype="internal">(c)(5)(i)</ref> of this section shall be delivered or placed in the mail no later than the third <ref target="1026-2-a-6" reftype="term">business day</ref> after the <ref target="1026-2-a-17" reftype="term">creditor</ref> receives the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s application for a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> subject to paragraph <ref target="1026-35-c" reftype="internal">(c)</ref> of this section. In the case of a loan that is not a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> subject to paragraph <ref target="1026-35-c" reftype="internal">(c)</ref> of this section at the time of application, but becomes a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> subject to paragraph <ref target="1026-35-c" reftype="internal">(c)</ref> of this section after application, the disclosure shall be delivered or placed in the mail not later than the third <ref target="1026-2-a-6" reftype="term">business day</ref> after the <ref target="1026-2-a-17" reftype="term">creditor</ref> determines that the loan is a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> subject to paragraph <ref target="1026-35-c" reftype="internal">(c)</ref> of this section.</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-35-c-6" marker="(6)">
+        <title type="keyterm">Copy of appraisals.</title>
+        <content/>
+        <paragraph label="1026-35-c-6-i" marker="(i)">
+          <title type="keyterm">In general.</title>
+          <content>Except as provided in paragraph <ref target="1026-35-c-2" reftype="internal">(c)(2)</ref> of this section, a <ref target="1026-2-a-17" reftype="term">creditor</ref> shall provide to the <ref target="1026-2-a-11" reftype="term">consumer</ref> a copy of any written appraisal performed in connection with a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> pursuant to paragraphs <ref target="1026-35-c-3" reftype="internal">(c)(3)</ref> and <ref target="1026-35-c-4" reftype="internal">(c)(4)</ref> of this section.</content>
+        </paragraph>
+        <paragraph label="1026-35-c-6-ii" marker="(ii)">
+          <title type="keyterm">Timing.</title>
+          <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> shall provide to the <ref target="1026-2-a-11" reftype="term">consumer</ref> a copy of each written appraisal pursuant to paragraph <ref target="1026-35-c-6-i" reftype="internal">(c)(6)(i)</ref> of this section:</content>
+          <paragraph label="1026-35-c-6-ii-A" marker="(A)">
+            <content>No later than three <ref target="1026-2-a-6" reftype="term">business day</ref>s prior to <ref target="1026-2-a-13" reftype="term">consummation</ref> of the loan; or</content>
+          </paragraph>
+          <paragraph label="1026-35-c-6-ii-B" marker="(B)">
+            <content>In the case of a loan that is not consummated, no later than 30 days after the <ref target="1026-2-a-17" reftype="term">creditor</ref> determines that the loan will not be consummated.</content>
+          </paragraph>
+        </paragraph>
+        <paragraph label="1026-35-c-6-iii" marker="(iii)">
+          <title type="keyterm">Form of copy.</title>
+          <content>Any copy of a written appraisal required by paragraph <ref target="1026-35-c-6-i" reftype="internal">(c)(6)(i)</ref> of this section may be provided to the applicant in electronic form, subject to compliance with the <ref target="1026-2-a-11" reftype="term">consumer</ref> consent and other applicable provisions of the Electronic Signatures in Global and National Commerce Act (E-Sign Act) (<ref target="USC:15-7001" reftype="external">15 U.S.C. 7001</ref> et seq.).</content>
+        </paragraph>
+        <paragraph label="1026-35-c-6-iv" marker="(iv)">
+          <title type="keyterm">No charge for copy of appraisal.</title>
+          <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> shall not charge the <ref target="1026-2-a-11" reftype="term">consumer</ref> for a copy of a written appraisal required to be provided to the <ref target="1026-2-a-11" reftype="term">consumer</ref> pursuant to paragraph <ref target="1026-35-c-6-i" reftype="internal">(c)(6)(i)</ref> of this section.</content>
+        </paragraph>
+      </paragraph>
+      <paragraph label="1026-35-c-7" marker="(7)">
+        <title type="keyterm">Relation to other rules.</title>
+        <content>The rules in this paragraph <ref target="1026-35-c" reftype="internal">(c)</ref> were adopted jointly by the Federal Reserve Board (Board), the Office of the Comptroller of the Currency (OCC), the Federal Deposit Insurance Corporation, the National <ref target="1026-2-a-14" reftype="term">Credit</ref> Union Administration, the Federal Housing Finance Agency, and the <ref target="1026-2-a-5" reftype="term">Bureau</ref>. These rules are substantively identical to the Board's and the OCC's <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> appraisal rules published separately in <ref target="CFR:12-226-43" reftype="external">12 CFR 226.43</ref> (for the Board) and in <ref target="CFR:12-34" reftype="external">12 CFR part 34</ref>, subpart G and <ref target="CFR:12-164" reftype="external">12 CFR part 164</ref>, subpart B (for the OCC).</content>
+      </paragraph>
+    </paragraph>
+  </change>
+  <change operation="modified" label="1026-N">
+    <appendix appendixLetter="N" label="1026-N">
+      <appendixTitle>Appendix N to Part 1026—Higher-Priced Mortgage Loan Appraisal Safe Harbor Review</appendixTitle>
+      <appendixSection appendixSecNum="1" label="1026-N-1">
+        <subject/>
+        <paragraph label="1026-N-p1" marker="">
+          <content>To qualify for the safe harbor provided in § <ref target="1026-35-c-3-ii" reftype="internal">1026.35(c)(3)(ii)</ref>, a <ref target="1026-2-a-17" reftype="term">creditor</ref> must confirm that the written appraisal:</content>
+        </paragraph>
+        <paragraph label="1026-N-p1-1" marker="1.">
+          <content>Identifies the <ref target="1026-2-a-17" reftype="term">creditor</ref> who ordered the appraisal and the property and the interest being appraised.</content>
+        </paragraph>
+        <paragraph label="1026-N-p1-2" marker="2.">
+          <content>Indicates whether the contract price was analyzed.</content>
+        </paragraph>
+        <paragraph label="1026-N-p1-3" marker="3.">
+          <content>Addresses conditions in the property's neighborhood.</content>
+        </paragraph>
+        <paragraph label="1026-N-p1-4" marker="4.">
+          <content>Addresses the condition of the property and any improvements to the property.</content>
+        </paragraph>
+        <paragraph label="1026-N-p1-5" marker="5.">
+          <content>Indicates which <ref target="1026-42-b-3" reftype="term">valuation</ref> approaches were used, and includes a reconciliation if more than one <ref target="1026-42-b-3" reftype="term">valuation</ref> approach was used.</content>
+        </paragraph>
+        <paragraph label="1026-N-p1-6" marker="6.">
+          <content>Provides an opinion of the property's market value and an effective date for the opinion.</content>
+        </paragraph>
+        <paragraph label="1026-N-p1-7" marker="7.">
+          <content>Indicates that a physical property visit of the interior of the property was performed.</content>
+        </paragraph>
+        <paragraph label="1026-N-p1-8" marker="8.">
+          <content>Includes a certification signed by the appraiser that the appraisal was prepared in accordance with the requirements of the Uniform Standards of Professional Appraisal Practice.</content>
+        </paragraph>
+        <paragraph label="1026-N-p1-9" marker="9.">
+          <content>Includes a certification signed by the appraiser that the appraisal was prepared in accordance with the requirements of title XI of the Financial Institutions Reform, Recovery and Enforcement Act of 1989, as amended (<ref target="USC:12-3331" reftype="external">12 U.S.C. 3331</ref> et seq.), and any implementing regulations.</content>
+        </paragraph>
+      </appendixSection>
+    </appendix>
+  </change>
+  <change operation="modified" label="1026-O">
+    <appendix appendixLetter="O" label="1026-O">
+      <appendixTitle>Appendix O to Part 1026—Illustrative Written Source Documents for Higher-Priced Mortgage Loan Appraisal Rules</appendixTitle>
+      <appendixSection appendixSecNum="1" label="1026-O-1">
+        <subject/>
+        <paragraph label="1026-O-p1" marker="">
+          <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> acts with reasonable diligence under § <ref target="1026-35-c-4-vi-A" reftype="internal">1026.35(c)(4)(vi)(A)</ref> if the <ref target="1026-2-a-17" reftype="term">creditor</ref> bases its determination on information contained in written source documents, such as:</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-1" marker="1.">
+          <content>A copy of the recorded deed from the seller.</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-2" marker="2.">
+          <content>A copy of a property tax bill.</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-3" marker="3.">
+          <content>A copy of any owner's title insurance policy obtained by the seller.</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-4" marker="4.">
+          <content>A copy of the RESPA settlement statement from the seller's acquisition (i.e., the HUD-1 or any successor form).</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-5" marker="5.">
+          <content>A property sales history report or title report from a third-party reporting service.</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-6" marker="6.">
+          <content>Sales price data recorded in multiple listing services.</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-7" marker="7.">
+          <content>Tax assessment records or transfer tax records obtained from local governments.</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-8" marker="8.">
+          <content>A written appraisal performed in compliance with § <ref target="1026-35-c-3-i" reftype="internal">1026.35(c)(3)(i)</ref> for the same transaction.</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-9" marker="9.">
+          <content>A copy of a title commitment report detailing the seller's ownership of the property, the date it was acquired, or the price at which the seller acquired the property.</content>
+        </paragraph>
+        <paragraph label="1026-O-p1-10" marker="10.">
+          <content>A property abstract.</content>
+        </paragraph>
+      </appendixSection>
+    </appendix>
+  </change><!-- Changes to Interps -->
+  <change operation="modified" label="1026-35-a-Interp" subpath="title">
+    <title>35(a) Higher-Priced Mortgage Loans.</title>
+  </change>
+  <change operation="added" label="1026-35-c-Interp">
+    <interpParagraph label="1026-35-c-Interp">
+      <title>35(c) Appraisals.</title>
+      <content/>
+      <interpParagraph label="1026-35-c-1-Interp">
+        <title>35(c)(1) Definitions.</title>
+        <content/>
+        <interpParagraph label="1026-35-c-1-i-Interp" target="1026-35-c-1-i">
+          <title>35(c)(1)(i) Certified or Licensed Appraiser.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-1-i-Interp-1" marker="1.">
+            <title type="keyterm">USPAP.</title>
+            <content>The Uniform Standards of Professional Appraisal Practice (USPAP) are established by the Appraisal Standards Board of the Appraisal Foundation (as defined in <ref target="USC:12-3350" reftype="external">12 U.S.C. 3350</ref>(9)). Under § <ref target="1026-35-c-1-i" reftype="internal">1026.35(c)(1)(i)</ref>, the relevant USPAP standards are those found in the edition of USPAP and that are in effect at the time the appraiser signs the appraiser's certification.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-1-i-Interp-2" marker="2.">
+            <title type="keyterm">Appraiser's certification.</title>
+            <content>The appraiser's certification refers to the certification that must be signed by the appraiser for each appraisal assignment. This requirement is specified in USPAP Standards Rule 2-3.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-1-i-Interp-3" marker="3.">
+            <title type="keyterm">FIRREA title XI and implementing regulations.</title>
+            <content>The relevant regulations are those prescribed under section 1110 of the Financial Institutions Reform, Recovery, and Enforcement Act of 1989 (FIRREA), as amended (<ref target="USC:12-3339" reftype="external">12 U.S.C. 3339</ref>), that relate to an appraiser's development and reporting of the appraisal in effect at the time the appraiser signs the appraiser's certification. Paragraph (3) of FIRREA section 1110 (<ref target="USC:12-3339" reftype="external">12 U.S.C. 3339</ref>(3)), which relates to the review of appraisals, is not relevant for determining whether an appraiser is a <ref target="1026-35-c-1-i" reftype="term">certified or licensed appraiser</ref> under § <ref target="1026-35-c-1-i" reftype="internal">1026.35(c)(1)(i)</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+      </interpParagraph>
+      <interpParagraph label="1026-35-c-2-Interp" target="1026-35-c-2">
+        <title>35(c)(2) Exemptions.</title>
+        <content/>
+        <interpParagraph label="1026-35-c-2-ii-Interp" target="1026-35-c-2-ii">
+          <title>Paragraph 35(c)(2)(ii).</title>
+          <content/>
+          <interpParagraph label="1026-35-c-2-ii-Interp-1" marker="1.">
+            <title type="keyterm">Secured by new manufactured home.</title>
+            <content>A transaction secured by a new <ref target="1026-35-c-1-iii" reftype="term">manufactured home</ref>, regardless of whether the transaction is also secured by the land on which it is sited, is not a “higher-priced mortgage loan” subject to the appraisal requirements of § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-2-iii-Interp" target="1026-35-c-2-iii">
+          <title>Paragraph 35(c)(2)(iii).</title>
+          <content/>
+          <interpParagraph label="1026-35-c-2-iii-Interp-1" marker="1.">
+            <title type="keyterm">Secured by a mobile home.</title>
+            <content>For purposes of the exemption in § <ref target="1026-35-c-2-iii" reftype="internal">1026.35(c)(2)(iii)</ref>, a mobile home does not include a <ref target="1026-35-c-1-iii" reftype="term">manufactured home</ref>, as defined in § <ref target="1026-35-c-1-iii" reftype="internal">1026.35(c)(1)(iii)</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-2-iv-Interp" target="1026-35-c-2-iv">
+          <title>Paragraph 35(c)(2)(iv).</title>
+          <content/>
+          <interpParagraph label="1026-35-c-2-iv-Interp-1" marker="1.">
+            <title type="keyterm">Construction-to-permanent loans.</title>
+            <content>Section <ref target="1026-35-c" reftype="internal">1026.35(c)</ref> does not apply to a transaction to finance the initial construction of a <ref target="1026-2-a-19" reftype="term">dwelling</ref>. This exclusion applies to a construction-only loan as well as to the construction phase of a construction-to-permanent loan. Section <ref target="1026-35-c" reftype="internal">1026.35(c)</ref> does apply, however, to permanent financing that replaces a construction loan, whether the permanent financing is extended by the same or a different <ref target="1026-2-a-17" reftype="term">creditor</ref>, unless the permanent financing is otherwise exempt from the requirements of § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>. See § <ref target="1026-35-c-2" reftype="internal">1026.35(c)(2)</ref>. When a construction loan may be permanently financed by the same <ref target="1026-2-a-17" reftype="term">creditor</ref>, the general disclosure requirements for <ref target="1026-2-a-10" reftype="term">closed-end credit</ref> (§ <ref target="1026-17" reftype="internal">1026.17</ref>) provide that the <ref target="1026-2-a-17" reftype="term">creditor</ref> may give either one combined disclosure for both the construction financing and the permanent financing, or a separate set of disclosures for each of the two phases as though they were two separate transactions. See § <ref target="1026-17-c-6-ii" reftype="internal">1026.17(c)(6)(ii)</ref> and comment <ref target="1026-17-c-6-Interp-2" reftype="internal">17(c)(6)-2</ref>. Section <ref target="1026-17-c-6-ii" reftype="internal">1026.17(c)(6)(ii)</ref> addresses only how a <ref target="1026-2-a-17" reftype="term">creditor</ref> may elect to disclose a construction-to-permanent transaction. Which disclosure option a <ref target="1026-2-a-17" reftype="term">creditor</ref> elects under § <ref target="1026-17-c-6-ii" reftype="internal">1026.17(c)(6)(ii)</ref> does not affect the determination of whether the permanent phase of the transaction is subject to § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>. When the <ref target="1026-2-a-17" reftype="term">creditor</ref> discloses the two phases as separate transactions, the annual percentage rate for the permanent phase must be compared to the <ref target="1026-35-a-2" reftype="term">average prime offer rate</ref> for a transaction that is comparable to the permanent financing to determine coverage under § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>. When the <ref target="1026-2-a-17" reftype="term">creditor</ref> discloses the two phases as a single transaction, a single annual percentage rate, reflecting the appropriate charges from both phases, must be calculated for the transaction in accordance with § <ref target="1026-35" reftype="internal">1026.35</ref> and <ref target="1026-D" reftype="internal">appendix D</ref> to part 1026. The annual percentage rate must be compared to the <ref target="1026-35-a-2" reftype="term">average prime offer rate</ref> for a transaction that is comparable to the permanent financing to determine coverage under § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>. If the transaction is determined to be a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> not otherwise exempt under § <ref target="1026-35-c-2" reftype="internal">1026.35(c)(2)</ref>, only the permanent phase is subject to the requirements of § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+      </interpParagraph>
+      <interpParagraph label="1026-35-c-3-Interp">
+        <title>35(c)(3) Appraisals Required.</title>
+        <content/>
+        <interpParagraph label="1026-35-c-3-i-Interp" target="1026-35-c-3-i">
+          <title>35(c)(3)(i) In General.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-3-i-Interp-1" marker="1.">
+            <title type="keyterm">Written appraisal—electronic transmission.</title>
+            <content>To satisfy the requirement that the appraisal be “written,” a <ref target="1026-2-a-17" reftype="term">creditor</ref> may obtain the appraisal in paper form or via electronic transmission.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-3-ii-Interp" target="1026-35-c-3-ii">
+          <title>35(c)(3)(ii) Safe Harbor.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-3-ii-Interp-1" marker="1.">
+            <title type="keyterm">Safe harbor.</title>
+            <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> that satisfies the safe harbor conditions in § <ref target="1026-35-c-3-ii-A" reftype="internal">1026.35(c)(3)(ii)(A)</ref> through <ref target="1026-35-c-3-ii-D" reftype="internal">(D)</ref> complies with the appraisal requirements of § <ref target="1026-35-c-3-i" reftype="internal">1026.35(c)(3)(i)</ref>. A <ref target="1026-2-a-17" reftype="term">creditor</ref> that does not satisfy the safe harbor conditions in § <ref target="1026-35-c-3-ii-A" reftype="internal">1026.35(c)(3)(ii)(A)</ref> through <ref target="1026-35-c-3-ii-D" reftype="internal">(D)</ref> does not necessarily violate the appraisal requirements of § <ref target="1026-35-c-3-i" reftype="internal">1026.35(c)(3)(i)</ref>.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-3-ii-Interp-2" marker="2.">
+            <title type="keyterm">Appraiser's certification.</title>
+            <content>For purposes of § <ref target="1026-35-c-3-ii" reftype="internal">1026.35(c)(3)(ii)</ref>, the appraiser's certification refers to the certification specified in item 9 of appendix <ref target="1026-N" reftype="internal">N</ref>. See also comment <ref target="1026-35-c-1-i-Interp-2" reftype="internal">35(c)(1)(i)-2</ref>.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-3-ii-C-Interp" target="1026-35-c-3-ii-C">
+            <title>Paragraph 35(c)(3)(ii)(C).</title>
+            <content/>
+            <interpParagraph label="1026-35-c-3-ii-C-Interp-1" marker="1.">
+              <title type="keyterm">Confirming elements in the appraisal.</title>
+              <content>To confirm that the elements in appendix <ref target="1026-N" reftype="internal">N</ref> to this part are included in the written appraisal, a <ref target="1026-2-a-17" reftype="term">creditor</ref> need not look beyond the face of the written appraisal and the appraiser's certification.</content>
+            </interpParagraph>
+          </interpParagraph>
+        </interpParagraph>
+      </interpParagraph>
+      <interpParagraph label="1026-35-c-4-Interp" target="1026-35-c-4">
+        <title>35(c)(4) Additional Appraisal for Certain Higher-Priced Mortgage Loans.</title>
+        <content/>
+        <interpParagraph label="1026-35-c-4-Interp-1" marker="1.">
+          <title type="keyterm">Acquisition.</title>
+          <content>For purposes of § <ref target="1026-35-c-4" reftype="internal">1026.35(c)(4)</ref>, the terms “acquisition” and “acquire” refer to the acquisition of legal title to the property pursuant to applicable <ref target="1026-2-a-26" reftype="term">State</ref> law, including by purchase.</content>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-4-i-Interp" target="1026-35-c-4-i">
+          <title>35(c)(4)(i) In General.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-4-i-Interp-1" marker="1.">
+            <title type="keyterm">Appraisal from a previous transaction.</title>
+            <content>An appraisal that was previously obtained in connection with the seller's acquisition or the financing of the seller's acquisition of the property does not satisfy the requirements to obtain two written appraisals under § <ref target="1026-35-c-4-i" reftype="internal">1026.35(c)(4)(i)</ref>.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-4-i-Interp-2" marker="2.">
+            <title type="keyterm">90-day, 180-day calculation.</title>
+            <content>The time periods described in § <ref target="1026-35-c-4-i-A" reftype="internal">1026.35(c)(4)(i)(A)</ref> and <ref target="1026-35-c-4-i-B" reftype="internal">(B)</ref> are calculated by counting the day after the date on which the seller acquired the property, up to and including the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property that secures the transaction. For example, assume that the <ref target="1026-2-a-17" reftype="term">creditor</ref> determines that date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s acquisition <ref target="1026-58-b-1" reftype="term">agreement</ref> is October 15, 2012, and that the seller acquired the property on April 17, 2012. The first day to be counted in the 180-day calculation would be April 18, 2012, and the last day would be October 15, 2012. In this case, the number of days from April 17 would be 181, so an additional appraisal is not required.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-4-i-Interp-3" marker="3.">
+            <title type="keyterm">Date seller acquired the property.</title>
+            <content>For purposes of § <ref target="1026-35-c-4-i-A" reftype="internal">1026.35(c)(4)(i)(A)</ref> and <ref target="1026-35-c-4-i-B" reftype="internal">(B)</ref>, the date on which the seller acquired the property is the date on which the seller became the legal owner of the property pursuant to applicable <ref target="1026-2-a-26" reftype="term">State</ref> law.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-4-i-Interp-4" marker="4.">
+            <title type="keyterm">Date of the consumer's agreement to acquire the property.</title>
+            <content>For the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property under § <ref target="1026-35-c-4-i-A" reftype="internal">1026.35(c)(4)(i)(A)</ref> and <ref target="1026-35-c-4-i-B" reftype="internal">(B)</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> should use the date on which the <ref target="1026-2-a-11" reftype="term">consumer</ref> and the seller signed the <ref target="1026-58-b-1" reftype="term">agreement</ref> provided to the <ref target="1026-2-a-17" reftype="term">creditor</ref> by the <ref target="1026-2-a-11" reftype="term">consumer</ref>. The date on which the <ref target="1026-2-a-11" reftype="term">consumer</ref> and the seller signed the <ref target="1026-58-b-1" reftype="term">agreement</ref> might not be the date on which the <ref target="1026-2-a-11" reftype="term">consumer</ref> became contractually obligated under <ref target="1026-2-a-26" reftype="term">State</ref> law to acquire the property. For purposes of § <ref target="1026-35-c-4-i-A" reftype="internal">1026.35(c)(4)(i)(A)</ref> and <ref target="1026-35-c-4-i-B" reftype="internal">(B)</ref>, a <ref target="1026-2-a-17" reftype="term">creditor</ref> is not obligated to determine whether and to what extent the <ref target="1026-58-b-1" reftype="term">agreement</ref> is legally binding on both parties. If the dates on which the <ref target="1026-2-a-11" reftype="term">consumer</ref> and the seller signed the <ref target="1026-58-b-1" reftype="term">agreement</ref> differ, the <ref target="1026-2-a-17" reftype="term">creditor</ref> should use the later of the two dates.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-4-i-Interp-5" marker="5.">
+            <title type="keyterm">Price at which the seller acquired the property.</title>
+            <content>The price at which the seller acquired the property refers to the amount paid by the seller to acquire the property. The price at which the seller acquired the property does not include the cost of financing the property.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-4-i-Interp-6" marker="6.">
+            <title type="keyterm">Price the consumer is obligated to pay to acquire the property.</title>
+            <content>The price the <ref target="1026-2-a-11" reftype="term">consumer</ref> is obligated to pay to acquire the property is the price indicated on the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> with the seller to acquire the property. The price the <ref target="1026-2-a-11" reftype="term">consumer</ref> is obligated to pay to acquire the property from the seller does not include the cost of financing the property. For purposes of § <ref target="1026-35-c-4-i-A" reftype="internal">1026.35(c)(4)(i)(A)</ref> and <ref target="1026-35-c-4-i-B" reftype="internal">(B)</ref>, a <ref target="1026-2-a-17" reftype="term">creditor</ref> is not obligated to determine whether and to what extent the <ref target="1026-58-b-1" reftype="term">agreement</ref> is legally binding on both parties. See also comment <ref target="1026-35-c-4-i-Interp-4" reftype="internal">35(c)(4)(i)-4</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-4-ii-Interp" target="1026-35-c-4-ii">
+          <title>35(c)(4)(ii) Different Certified or Licensed Appraisers.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-4-ii-Interp-1" marker="1.">
+            <title type="keyterm">Independent appraisers.</title>
+            <content>The requirements that a <ref target="1026-2-a-17" reftype="term">creditor</ref> obtain two separate appraisals under § <ref target="1026-35-c-4-i" reftype="internal">1026.35(c)(4)(i)</ref>, and that each appraisal be conducted by a different licensed or certified appraiser under § <ref target="1026-35-c-4-ii" reftype="internal">1026.35(c)(4)(ii)</ref>, indicate that the two appraisals must be conducted independently of each other. If the two <ref target="1026-35-c-1-i" reftype="term">certified or licensed appraisers</ref> are affiliated, such as by being employed by the same appraisal firm, then whether they have conducted the appraisal independently of each other must be determined based on the facts and circumstances of the particular case known to the <ref target="1026-2-a-17" reftype="term">creditor</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-4-iii-Interp" target="1026-35-c-4-iii">
+          <title>35(c)(4)(iii) Relationship to General Appraisal Requirements.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-4-iii-Interp-1" marker="1.">
+            <title type="keyterm">Safe harbor.</title>
+            <content>When a <ref target="1026-2-a-17" reftype="term">creditor</ref> is required to obtain an additional appraisal under § <ref target="1026-35-c-4-i" reftype="internal">1026.35(c)(4)(i)</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> must comply with the requirements of both § <ref target="1026-35-c-3-i" reftype="internal">1026.35(c)(3)(i)</ref> and § <ref target="1026-35-c-4-ii" reftype="internal">1026.35(c)(4)(ii)</ref> through (v) for that appraisal. The <ref target="1026-2-a-17" reftype="term">creditor</ref> complies with the requirements of § <ref target="1026-35-c-3-i" reftype="internal">1026.35(c)(3)(i)</ref> for the additional appraisal if the <ref target="1026-2-a-17" reftype="term">creditor</ref> meets the safe harbor conditions in § <ref target="1026-35-c-3-ii" reftype="internal">1026.35(c)(3)(ii)</ref> for that appraisal.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-4-iv-Interp" target="1026-35-c-4-iv">
+          <title>35(c)(4)(iv) Required Analysis in the Additional Appraisal.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-4-iv-Interp-1" marker="1.">
+            <title type="keyterm">Determining acquisition dates and prices used in the analysis of the additional appraisal.</title>
+            <content>For guidance on identifying the date on which the seller acquired the property, see comment <ref target="1026-35-c-4-i-Interp-3" reftype="internal">35(c)(4)(i)-3</ref>. For guidance on identifying the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property, see comment <ref target="1026-35-c-4-i-Interp-4" reftype="internal">35(c)(4)(i)-4</ref>. For guidance on identifying the price at which the seller acquired the property, see comment <ref target="1026-35-c-4-i-Interp-5" reftype="internal">35(c)(4)(i)-5</ref>. For guidance on identifying the price the <ref target="1026-2-a-11" reftype="term">consumer</ref> is obligated to pay to acquire the property, see comment <ref target="1026-35-c-4-i-Interp-6" reftype="internal">35(c)(4)(i)-6</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-4-v-Interp" target="1026-35-c-4-v">
+          <title>35(c)(4)(v) No Charge for Additional Appraisal.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-4-v-Interp-1" marker="1.">
+            <title type="keyterm">Fees and mark-ups.</title>
+            <content>The <ref target="1026-2-a-17" reftype="term">creditor</ref> is prohibited from charging the <ref target="1026-2-a-11" reftype="term">consumer</ref> for the performance of one of the two appraisals required under § <ref target="1026-35-c-4-i" reftype="internal">1026.35(c)(4)(i)</ref>, including by imposing a fee specifically for that appraisal or by marking up the interest rate or any other fees payable by the <ref target="1026-2-a-11" reftype="term">consumer</ref> in connection with the <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-4-vi-Interp">
+          <title>35(c)(4)(vi) Creditor's Determination of Prior Sale Date and Price.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-4-vi-A-Interp" target="1026-35-c-4-vi-A">
+            <title>35(c)(4)(vi)(A) In General.</title>
+            <content/>
+            <interpParagraph label="1026-35-c-4-vi-A-Interp-1" marker="1.">
+              <title type="keyterm">Estimated sales price.</title>
+              <content>If a written source document describes the seller's acquisition price in a manner that indicates that the price described is an estimated or assumed amount and not the actual price, the <ref target="1026-2-a-17" reftype="term">creditor</ref> should look at an alternative document to satisfy the reasonable diligence standard in determining the price at which the seller acquired the property.</content>
+            </interpParagraph>
+            <interpParagraph label="1026-35-c-4-vi-A-Interp-2" marker="2.">
+              <title type="keyterm">Reasonable diligence—oral statements insufficient.</title>
+              <content>Reliance on oral statements of interested parties, such as the <ref target="1026-2-a-11" reftype="term">consumer</ref>, seller, or mortgage broker, does not constitute reasonable diligence under § <ref target="1026-35-c-4-vi-A" reftype="internal">1026.35(c)(4)(vi)(A)</ref>.</content>
+            </interpParagraph>
+            <interpParagraph label="1026-35-c-4-vi-A-Interp-3" marker="3.">
+              <title type="keyterm">Lack of information and conflicting information—two appraisals required.</title>
+              <content>If a <ref target="1026-2-a-17" reftype="term">creditor</ref> is unable to demonstrate that the requirement to obtain two appraisals under § <ref target="1026-35-c-4-i" reftype="internal">1026.35(c)(4)(i)</ref> does not apply, the <ref target="1026-2-a-17" reftype="term">creditor</ref> must obtain two written appraisals before extending a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> subject to the requirements of § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>. See also comment <ref target="1026-35-c-4-vi-B-Interp-1" reftype="internal">35(c)(4)(vi)(B)-1</ref>. For example:</content>
+              <interpParagraph label="1026-35-c-4-vi-A-Interp-3-i" marker="i.">
+                <content>Assume a <ref target="1026-2-a-17" reftype="term">creditor</ref> orders and reviews the results of a title search, which shows that a prior sale occurred between 91 and 180 days ago, but not the price paid in that sale. Thus, based on the title search, the <ref target="1026-2-a-17" reftype="term">creditor</ref> would not be able to determine whether the price the <ref target="1026-2-a-11" reftype="term">consumer</ref> is obligated to pay under the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s acquisition <ref target="1026-58-b-1" reftype="term">agreement</ref> is more than 20 percent higher than the seller's acquisition price, pursuant to § <ref target="1026-35-c-4-i-B" reftype="internal">1026.35(c)(4)(i)(B)</ref>. Before extending a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> subject to the appraisal requirements of § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> must either: (1) Perform additional diligence to ascertain the seller's acquisition price and, based on this information, determine whether two written appraisals are required; or (2) obtain two written appraisals in compliance with § <ref target="1026-35-c-4" reftype="internal">1026.35(c)(4)</ref>. See also comment <ref target="1026-35-c-4-vi-B-Interp-1" reftype="internal">35(c)(4)(vi)(B)-1</ref>.</content>
+              </interpParagraph>
+              <interpParagraph label="1026-35-c-4-vi-A-Interp-3-ii" marker="ii.">
+                <content>Assume a <ref target="1026-2-a-17" reftype="term">creditor</ref> reviews the results of a title search indicating that the last recorded purchase was more than 180 days before the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property. Assume also that the <ref target="1026-2-a-17" reftype="term">creditor</ref> subsequently receives a written appraisal indicating that the seller acquired the property between 91 and 180 days before the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property. In this case, unless one of these sources is clearly wrong on its face, the <ref target="1026-2-a-17" reftype="term">creditor</ref> would not be able to determine whether the seller acquired the property within 180 days of the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property from the seller, pursuant to § <ref target="1026-35-c-4-i-B" reftype="internal">1026.35(c)(4)(i)(B)</ref>. Before extending a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> subject to the appraisal requirements of § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> must either: perform additional diligence to ascertain the seller's acquisition date and, based on this information, determine whether two written appraisals are required; or obtain two written appraisals in compliance with § <ref target="1026-35-c-4" reftype="internal">1026.35(c)(4)</ref>. See also comment <ref target="1026-35-c-4-vi-B-Interp-1" reftype="internal">35(c)(4)(vi)(B)-1</ref>.</content>
+              </interpParagraph>
+            </interpParagraph>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-4-vi-B-Interp" target="1026-35-c-4-vi-B">
+            <title>35(c)(4)(vi)(B) Inability To Determine Prior Sales Date or Price—Modified Requirements for Additional Appraisal.</title>
+            <content/>
+            <interpParagraph label="1026-35-c-4-vi-B-Interp-1" marker="1.">
+              <title type="keyterm">Required analysis.</title>
+              <content>In general, the additional appraisal required under § <ref target="1026-35-c-4-i" reftype="internal">1026.35(c)(4)(i)</ref> should include an analysis of the factors listed in § <ref target="1026-35-c-4-iv-A" reftype="internal">1026.35(c)(4)(iv)(A)</ref> through <ref target="1026-35-c-4-iv-C" reftype="internal">(C)</ref>. However, if, following reasonable diligence, a <ref target="1026-2-a-17" reftype="term">creditor</ref> cannot determine whether the conditions in § <ref target="1026-35-c-4-i-A" reftype="internal">1026.35(c)(4)(i)(A)</ref> or <ref target="1026-35-c-4-i-B" reftype="internal">(B)</ref> are present due to a lack of information or conflicting information, the required additional appraisal must include the analyses required under § <ref target="1026-35-c-4-iv-A" reftype="internal">1026.35(c)(4)(iv)(A)</ref> through <ref target="1026-35-c-4-iv-C" reftype="internal">(C)</ref> only to the extent that the information necessary to perform the analyses is known. For example, assume that a <ref target="1026-2-a-17" reftype="term">creditor</ref> is able, following reasonable diligence, to determine that the date on which the seller acquired the property occurred between 91 and 180 days prior to the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property. However, the <ref target="1026-2-a-17" reftype="term">creditor</ref> is unable, following reasonable diligence, to determine the price at which the seller acquired the property. In this case, the <ref target="1026-2-a-17" reftype="term">creditor</ref> is required to obtain an additional written appraisal that includes an analysis under § <ref target="1026-35-c-4-iv-B" reftype="internal">1026.35(c)(4)(iv)(B)</ref> and <ref target="1026-35-c-4-iv-C" reftype="internal">(c)(4)(iv)(C)</ref> of the changes in market conditions and any improvements made to the property between the date the seller acquired the property and the date of the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s <ref target="1026-58-b-1" reftype="term">agreement</ref> to acquire the property. However, the <ref target="1026-2-a-17" reftype="term">creditor</ref> is not required to obtain an additional written appraisal that includes analysis under § <ref target="1026-35-c-4-iv-A" reftype="internal">1026.35(c)(4)(iv)(A)</ref> of the difference between the price at which the seller acquired the property and the price that the <ref target="1026-2-a-11" reftype="term">consumer</ref> is obligated to pay to acquire the property.</content>
+            </interpParagraph>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-4-vii-Interp">
+          <title>35(c)(4)(vii) Exemptions From the Additional Appraisal Requirement.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-4-vii-C-Interp" target="1026-35-c-4-vii-C">
+            <title>Paragraph 35(c)(4)(vii)(C).</title>
+            <content/>
+            <interpParagraph label="1026-35-c-4-vii-C-Interp-1" marker="1.">
+              <title type="keyterm">Non-profit entity.</title>
+              <content>For purposes of § <ref target="1026-35-c-4-vii-C" reftype="internal">1026.35(c)(4)(vii)(C)</ref>, a “non-profit entity” is a <ref target="1026-2-a-22" reftype="term">person</ref> with a tax exemption ruling or determination letter from the Internal Revenue Service under section 501(c)(3) of the Internal Revenue Code of 1986 (<ref target="USC:26-501" reftype="external">26 U.S.C. 501</ref>(c)(3)).</content>
+            </interpParagraph>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-4-vii-H-Interp" target="1026-35-c-4-vii-H">
+            <title>Paragraph 35(c)(4)(vii)(H).</title>
+            <content/>
+            <interpParagraph label="1026-35-c-4-vii-H-Interp-1" marker="1.">
+              <title type="keyterm">Bureau table of rural counties.</title>
+              <content>The <ref target="1026-2-a-5" reftype="term">Bureau</ref> publishes on its Web site a table of rural counties under § <ref target="1026-35-c-4-vii-H" reftype="internal">1026.35(c)(4)(vii)(H)</ref> for each calendar year by the end of that calendar year. See comment <ref target="1026-35-b-2-iv-Interp-1" reftype="internal">35(b)(2)(iv)-1</ref>. A property securing an HPML subject to § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref> is in a rural county under § <ref target="1026-35-c-4-vii-H" reftype="internal">1026.35(c)(4)(vii)(H)</ref> if the county in which the property is located is on the table of rural counties most recently published by the <ref target="1026-2-a-5" reftype="term">Bureau</ref>. For example, for a transaction occurring in 2015, assume that the <ref target="1026-2-a-5" reftype="term">Bureau</ref> most recently published a table of rural counties at the end of 2014. The property securing the transaction would be located in a rural county for purposes of § <ref target="1026-35-c-4-vii-H" reftype="internal">1026.35(c)(4)(vii)(H)</ref> if the county is on the table of rural counties published by the <ref target="1026-2-a-5" reftype="term">Bureau</ref> at the end of 2014.</content>
+            </interpParagraph>
+          </interpParagraph>
+        </interpParagraph>
+      </interpParagraph>
+      <interpParagraph label="1026-35-c-5-Interp">
+        <title>35(c)(5) Required Disclosure.</title>
+        <content/>
+        <interpParagraph label="1026-35-c-5-i-Interp" target="1026-35-c-5-i">
+          <title>35(c)(5)(i) In General.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-5-i-Interp-1" marker="1.">
+            <title type="keyterm">Multiple applicants.</title>
+            <content>When two or more <ref target="1026-2-a-11" reftype="term">consumers</ref> apply for a loan subject to this section, the <ref target="1026-2-a-17" reftype="term">creditor</ref> is required to give the disclosure to only one of the <ref target="1026-2-a-11" reftype="term">consumers</ref>.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-5-i-Interp-2" marker="2.">
+            <title type="keyterm">Appraisal independence requirements not affected.</title>
+            <content>Nothing in the text of the <ref target="1026-2-a-11" reftype="term">consumer</ref> notice required by § <ref target="1026-35-c-5-i" reftype="internal">1026.35(c)(5)(i)</ref> should be construed to affect, modify, limit, or supersede the operation of any legal, regulatory, or other requirements or standards relating to independence in the conduct of appraisers or restrictions on the use of borrower-ordered appraisals by <ref target="1026-2-a-17" reftype="term">creditors</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+      </interpParagraph>
+      <interpParagraph label="1026-35-c-6-Interp">
+        <title>35(c)(6) Copy of Appraisals.</title>
+        <content/>
+        <interpParagraph label="1026-35-c-6-i-Interp" target="1026-35-c-6-i">
+          <title>35(c)(6)(i) In General.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-6-i-Interp-1" marker="1.">
+            <title type="keyterm">Multiple applicants.</title>
+            <content>When two or more <ref target="1026-2-a-11" reftype="term">consumers</ref> apply for a loan subject to this section, the <ref target="1026-2-a-17" reftype="term">creditor</ref> is required to give the copy of each required appraisal to only one of the <ref target="1026-2-a-11" reftype="term">consumers</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-6-ii-Interp" target="1026-35-c-6-ii">
+          <title>35(c)(6)(ii) Timing.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-6-ii-Interp-1" marker="1.">
+            <title type="keyterm">“Provide.”</title>
+            <content>For purposes of the requirement to provide a copy of the appraisal within a specified time under § <ref target="1026-35-c-6-ii" reftype="internal">1026.35(c)(6)(ii)</ref>, “provide” means “deliver.” Delivery occurs three <ref target="1026-2-a-6" reftype="term">business day</ref>s after mailing or delivering the copies to the last-known address of the applicant, or when evidence indicates actual receipt by the applicant (which, in the case of electronic receipt, must be based upon consent that complies with the E-Sign Act), whichever is earlier.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-6-ii-Interp-2" marker="2.">
+            <title type="keyterm">“Receipt” of the appraisal.</title>
+            <content>For appraisals prepared by the <ref target="1026-2-a-17" reftype="term">creditor</ref>'s internal appraisal staff, the date of “receipt” is the date on which the appraisal is completed.</content>
+          </interpParagraph>
+          <interpParagraph label="1026-35-c-6-ii-Interp-3" marker="3.">
+            <title type="keyterm">No waiver.</title>
+            <content>Regulation B, <ref target="CFR:12-1002-14" reftype="external">12 CFR 1002.14</ref>(a)(1), allowing the <ref target="1026-2-a-11" reftype="term">consumer</ref> to waive the requirement that the appraisal copy be provided three <ref target="1026-2-a-6" reftype="term">business day</ref>s before <ref target="1026-2-a-13" reftype="term">consummation</ref>, does not apply to <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loans</ref> subject to § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref>. A <ref target="1026-2-a-11" reftype="term">consumer</ref> of a <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref> subject to § <ref target="1026-35-c" reftype="internal">1026.35(c)</ref> may not waive the timing requirement to receive a copy of the appraisal under § <ref target="1026-35-c-6-i" reftype="internal">1026.35(c)(6)(i)</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+        <interpParagraph label="1026-35-c-6-iv-Interp" target="1026-35-c-6-iv">
+          <title>35(c)(6)(iv) No Charge for Copy Of Appraisal.</title>
+          <content/>
+          <interpParagraph label="1026-35-c-6-iv-Interp-1" marker="1.">
+            <title type="keyterm">Fees and mark-ups.</title>
+            <content>The <ref target="1026-2-a-17" reftype="term">creditor</ref> is prohibited from charging the <ref target="1026-2-a-11" reftype="term">consumer</ref> for any copy of an appraisal required to be provided under § <ref target="1026-35-c-6-i" reftype="internal">1026.35(c)(6)(i)</ref>, including by imposing a fee specifically for a required copy of an appraisal or by marking up the interest rate or any other fees payable by the <ref target="1026-2-a-11" reftype="term">consumer</ref> in connection with the <ref target="1026-35-a-1" reftype="term">higher-priced mortgage loan</ref>.</content>
+          </interpParagraph>
+        </interpParagraph>
+      </interpParagraph>
+    </interpParagraph>
+  </change>
+  <change operation="added" label="1026-O-Interp">
+    <interpSection label="1026-O-Interp">
+      <title>Appendix O Illustrative Written Source Documents for Higher-Priced Mortgage Loan Appraisal Rules.</title>
+      <interpParagraph label="1026-O-Interp-1" marker="1.">
+        <title type="keyterm">Title commitment report.</title>
+        <content>The “title commitment report” is a document from a title insurance company describing the property interest and status of its title, parties with interests in the title and the nature of their claims, issues with the title that must be resolved prior to closing of the transaction between the parties to the transfer, amount and disposition of the premiums, and endorsements on the title policy. This document is issued by the title insurance company prior to the company's issuance of an actual title insurance policy to the property's transferee and/or <ref target="1026-2-a-17" reftype="term">creditor</ref> financing the transaction. In different jurisdictions, this instrument may be referred to by different terms, such as a title commitment, title binder, title opinion, or title report.</content>
+      </interpParagraph>
+    </interpSection>
+  </change>
+  </changeset>
+</notice>

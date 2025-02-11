@@ -1,0 +1,130 @@
+{
+    "1005-33-c-Interp-5":{
+        "text":[
+            [
+                [
+                    "delete",
+                    4,
+                    27
+                ],
+                [
+                    "insert",
+                    4,
+                    "purposes of the remedies set forth in"
+                ]
+            ],
+            [
+                "insert",
+                51,
+                "(c)(2)(i)(B), "
+            ],
+            [
+                [
+                    "delete",
+                    69,
+                    101
+                ],
+                [
+                    "insert",
+                    69,
+                    "and (c)(2)(i)(A)(2) the amount appropriate to resolve the error is the specific amount of transferred funds that should have been received if the"
+                ]
+            ],
+            [
+                [
+                    "delete",
+                    122,
+                    200
+                ],
+                [
+                    "insert",
+                    122,
+                    "had been effected without error. The amount appropriate to resolve"
+                ]
+            ],
+            [
+                [
+                    "delete",
+                    205,
+                    773
+                ],
+                [
+                    "insert",
+                    205,
+                    "error does not include consequential damages."
+                ]
+            ]
+        ],
+        "title":[
+            [
+                [
+                    "delete",
+                    0,
+                    15
+                ],
+                [
+                    "insert",
+                    0,
+                    "Amount appropriate to resolve the error."
+                ]
+            ]
+        ],
+        "op":"modified"
+    },
+    "1005-33-c-Interp-6":{
+        "text":[
+            [
+                "insert",
+                69,
+                "(c)(2)(ii)(B), "
+            ],
+            [
+                [
+                    "delete",
+                    72,
+                    99
+                ],
+                [
+                    "insert",
+                    72,
+                    "(c)(2)(iii), a remittance"
+                ]
+            ]
+        ],
+        "op":"modified"
+    },
+    "1005-33-c-2-iii":{
+        "text":[
+            [
+                "insert",
+                20,
+                " an error under paragraph (a)(1)(iv) of this section that occurred because the sender provided incorrect or insufficient information in connection with the remittance transfer, the remittance transfer provider shall provide the remedies required by paragraphs (c)(2)(ii)(A)(1) and (B) within three business days of providing the report required by paragraph (c)(1) or (d)(1) of this section except that the provider may agree to the sender's request, upon receiving the results of the error investigation, that the funds be applied towards"
+            ],
+            [
+                [
+                    "delete",
+                    23,
+                    125
+                ],
+                [
+                    "insert",
+                    23,
+                    "new remittance transfer, rather than be refunded, if the provider has not yet processed a refund. The provider may deduct from the amount refunded"
+                ]
+            ],
+            [
+                [
+                    "delete",
+                    129,
+                    143
+                ],
+                [
+                    "insert",
+                    129,
+                    "applied towards a new transfer any fees actually imposed on or, to the extent not prohibited by law, taxes actually collected on the remittance transfer as part of the first unsuccessful remittance transfer attempt."
+                ]
+            ]
+        ],
+        "op":"modified"
+    }
+}

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<notice xmlns="eregs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eregs https://raw.githubusercontent.com/cfpb/regulations-schema/master/src/eregs.xsd">
+  <fdsys>
+    <cfrTitleNum>12</cfrTitleNum>
+    <cfrTitleText>Banks and Banking</cfrTitleText>
+    <volume>8</volume>
+    <date>2014-11-03</date>
+    <originalDate>2012-01-01</originalDate>
+    <title>TRUTH IN LENDING</title>
+  </fdsys>
+  <preamble>
+    <agency>Bureau of Consumer Financial Protection</agency>
+    <cfr>
+      <title>12</title>
+      <section>1026</section>
+    </cfr>
+    <documentNumber>2014-25503_20150801</documentNumber>
+    <effectiveDate>2015-10-03</effectiveDate>
+    <federalRegisterURL>https://www.federalregister.gov/documents/2014/11/03/2014-25503/amendments-to-the-2013-mortgage-rules-under-the-truth-in-lending-act-regulation-z</federalRegisterURL>
+  </preamble>
+  <changeset leftDocumentNumber="2014-25503_20141103" rightDocumentNumber="2014-25503_20150801">
+  <change operation="modified" label="1026-43-e-3-iv-Interp-2">
+    <interpParagraph label="1026-43-e-3-iv-Interp-2" marker="2.">
+      <title type="keyterm">Relationship to RESPA tolerance cure.</title>
+      <content>Under Regulation X (<ref target="CFR:12-1024-7" reftype="external">12 CFR 1024.7</ref>(i)), if any charges at settlement exceed the charges listed on the good faith estimate of settlement costs by more than the amounts permitted under <ref target="CFR:12-1024-7" reftype="external">12 CFR 1024.7</ref>(e), the <ref target="1026-36-a-1-i" reftype="term">loan originator</ref> may cure the tolerance violation by reimbursing the amount by which the tolerance was exceeded at settlement or within 30 calendar days after settlement. Similarly, under § <ref target="1026-19-f-2-v" reftype="internal">1026.19(f)(2)(v)</ref>, if amounts paid by the <ref target="1026-2-a-11" reftype="term">consumer</ref> exceed the amounts specified under § <ref target="1026-19-e-3-i" reftype="internal">1026.19(e)(3)(i)</ref> or <ref target="1026-19-e-3-i" reftype="internal">(ii)</ref>, the <ref target="1026-2-a-17" reftype="term">creditor</ref> complies with § <ref target="1026-19-e-1-i" reftype="internal">1026.19(e)(1)(i)</ref> if the <ref target="1026-2-a-17" reftype="term">creditor</ref> refunds the excess to the <ref target="1026-2-a-11" reftype="term">consumer</ref> no later than 60 days after <ref target="1026-2-a-13" reftype="term">consummation</ref>. The amount paid to the <ref target="1026-2-a-11" reftype="term">consumer</ref> pursuant to § <ref target="1026-43-e-3-iv" reftype="internal">1026.43(e)(3)(iv)</ref> may be offset by the amount paid to the <ref target="1026-2-a-11" reftype="term">consumer</ref> pursuant to 12 CFR <ref target="CFR:12-1024-7-i" reftype="external">1024.7(i)</ref> or § <ref target="1026-19-f-2-v" reftype="internal">1026.19(f)(2)(v)</ref>, to the extent that the amount paid to the <ref target="1026-2-a-11" reftype="term">consumer</ref> pursuant to <ref target="CFR:12-1024-7" reftype="external">12 CFR 1024.7(i)</ref> or § <ref target="1026-19-f-2-v" reftype="internal">1026.19(f)(2)(v)</ref> is being applied to fees or charges included in <ref target="1026-32-b-1" reftype="term">points and fees</ref> pursuant to § <ref target="1026-32-b-1" reftype="internal">1026.32(b)(1)</ref>. However, a <ref target="1026-2-a-17" reftype="term">creditor</ref> or assignee has not satisfied § <ref target="1026-43-e-3-iii" reftype="internal">1026.43(e)(3)(iii)</ref> unless the total amount described in § <ref target="1026-43-e-3-iv" reftype="internal">1026.43(e)(3)(iv)</ref>, including any offset due to a payment made pursuant to 12 CFR <ref target="CFR:12-1024-7-i" reftype="external">1024.7(i)</ref> or § <ref target="1026-19-f-2-v" reftype="internal">1026.19(f)(2)(v)</ref>, is paid to the <ref target="1026-2-a-11" reftype="term">consumer</ref> within 210 days after <ref target="1026-2-a-13" reftype="term">consummation</ref> and prior to the occurrence of any of the events in § <ref target="1026-43-e-3-iii-B-1" reftype="internal">1026.43(e)(3)(iii)(B)(1)</ref> through (3).</content></interpParagraph>
+  </change>
+  </changeset>
+</notice>

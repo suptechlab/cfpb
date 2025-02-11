@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<notice xmlns="eregs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eregs https://raw.githubusercontent.com/cfpb/regulations-schema/master/src/eregs.xsd">
+  <fdsys>
+    <cfrTitleNum>12</cfrTitleNum>
+    <cfrTitleText>Banks and Banking</cfrTitleText>
+    <volume>8</volume>
+    <date>2013-02-15</date>
+    <originalDate>2012-01-01</originalDate>
+    <title>TRUTH IN LENDING</title>
+  </fdsys>
+  <preamble>
+    <agency>Bureau of Consumer Financial Protection</agency>
+    <cfr>
+      <title>12</title>
+      <section>1026</section>
+    </cfr>
+    <documentNumber>2013-01503_20130601</documentNumber>
+    <effectiveDate>2013-06-01</effectiveDate>
+    <federalRegisterURL>https://www.federalregister.gov/documents/2013/02/15/2013-01503/loan-originator-compensation-requirements-under-the-truth-in-lending-act-regulation-z</federalRegisterURL>
+  </preamble>
+  <changeset leftDocumentNumber="2013-00734" rightDocumentNumber="2013-01503_20130601">
+  <change operation="added" label="1026-36-g" parent="1026-36" after="1026-36-f">
+    <paragraph label="1026-36-g" marker="(g)">
+      <content>[Reserved]</content>
+    </paragraph>
+  </change>
+  <change operation="added" label="1026-36-h" parent="1026-36" after="1026-36-g">
+    <paragraph label="1026-36-h" marker="(h)">
+      <title>Prohibition on mandatory arbitration clauses and waivers of certain consumer rights.</title>
+      <content/>
+      <paragraph label="1026-36-h-1" marker="(1)">
+        <title>Arbitration.</title>
+        <content>A contract or other <ref target="1026-58-b-1" reftype="term">agreement</ref> for a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref> (including a home equity line of <ref target="1026-2-a-14" reftype="term">credit</ref> secured by the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref>) may not include terms that require arbitration or any other non-judicial procedure to resolve any controversy or settle any claims arising out of the transaction. This prohibition does not limit a <ref target="1026-2-a-11" reftype="term">consumer</ref> and <ref target="1026-2-a-17" reftype="term">creditor</ref> or any assignee from agreeing, after a dispute or claim under the transaction arises, to settle or use arbitration or other non-judicial procedure to resolve that dispute or claim.</content>
+      </paragraph>
+      <paragraph label="1026-36-h-2" marker="(2)">
+        <title>No waivers of Federal statutory causes of action.</title>
+        <content>A contract or other <ref target="1026-58-b-1" reftype="term">agreement</ref> relating to a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref> (including a home equity line of <ref target="1026-2-a-14" reftype="term">credit</ref> secured by the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref>) may not be applied or interpreted to bar a <ref target="1026-2-a-11" reftype="term">consumer</ref> from bringing a claim in court pursuant to any provision of law for damages or other relief in connection with any alleged violation of any Federal law. This prohibition does not limit a <ref target="1026-2-a-11" reftype="term">consumer</ref> and <ref target="1026-2-a-17" reftype="term">creditor</ref> or any assignee from agreeing, after a dispute or claim under the transaction arises, to settle or use arbitration or other non-judicial procedure to resolve that dispute or claim.</content>
+      </paragraph>
+    </paragraph>
+  </change><!-- Removed from the 6-1-13 notice per direction from RMR -->
+<!-- <change operation="added" label="1026-36-i" parent="1026-36" after="1026-36-h">
+    <paragraph label="1026-36-i" marker="(i)">
+      <title>Prohibition on financing single-premium credit insurance.</title>
+      <content/>
+      <paragraph label="1026-36-i-1" marker="(1)">
+        <content>A <ref target="1026-2-a-17" reftype="term">creditor</ref> may not finance, directly or indirectly, any premiums or fees for <ref target="1026-2-a-14" reftype="term">credit</ref> insurance in connection with a consumer credit transaction secured by a <ref target="1026-2-a-19" reftype="term">dwelling</ref> (including a home equity line of <ref target="1026-2-a-14" reftype="term">credit</ref> secured by the <ref target="1026-2-a-11" reftype="term">consumer</ref>'s principal <ref target="1026-2-a-19" reftype="term">dwelling</ref>). This prohibition does not apply to <ref target="1026-2-a-14" reftype="term">credit</ref> insurance for which premiums or fees are calculated and paid in full on a monthly basis.</content>
+      </paragraph>
+      <paragraph label="1026-36-i-2" marker="(2)">
+        <content>For the purposes of this paragraph (i), "<def term="credit insurance">credit insurance</def>":</content>
+        <paragraph label="1026-36-i-2-i" marker="(i)">
+          <content>Means <ref target="1026-2-a-14" reftype="term">credit</ref> life, <ref target="1026-2-a-14" reftype="term">credit</ref> disability, <ref target="1026-2-a-14" reftype="term">credit</ref> unemployment, or <ref target="1026-2-a-14" reftype="term">credit</ref> property insurance, or any other accident, loss-of-income, life, or health insurance, or any payments directly or indirectly for any debt cancellation or suspension <ref target="1026-58-b-1" reftype="term">agreement</ref> or contract, but</content>
+        </paragraph>
+        <paragraph label="1026-36-i-2-ii" marker="(ii)">
+          <content>Excludes <ref target="1026-2-a-14" reftype="term">credit</ref> unemployment insurance for which the unemployment insurance premiums are reasonable, the <ref target="1026-2-a-17" reftype="term">creditor</ref> receives no direct or indirect compensation in connection with the unemployment insurance premiums, and the unemployment insurance premiums are paid pursuant to a separate insurance contract and are not paid to an <ref target="1026-42-d-5-iii" reftype="term">affiliate</ref> of the <ref target="1026-2-a-17" reftype="term">creditor</ref>.</content>
+        </paragraph>
+      </paragraph>
+    </paragraph>
+  </change> -->
+  </changeset>
+</notice>

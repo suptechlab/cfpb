@@ -1,0 +1,29 @@
+{
+    "1003-2-g-Interp-2":{
+        "text":[
+            [
+                "insert",
+                23,
+                "2012, the asset-size exemption threshold is $41 million. Depository institutions with assets at or below $41 million as of December 31, "
+            ],
+            [
+                "delete",
+                29,
+                189
+            ],
+            [
+                [
+                    "delete",
+                    225,
+                    230
+                ],
+                [
+                    "insert",
+                    225,
+                    "2012."
+                ]
+            ]
+        ],
+        "op":"modified"
+    }
+}

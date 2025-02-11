@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="eregs"
+	xmlns:tns="eregs" 
+	elementFormDefault="qualified">
+	
+	<!-- 
+		This is the main file that defines the RegsML schema. It serves mostly to include
+		other files that define various parts of the schema and defines the top-level
+		regulation element.
+	 -->
+	
+	<include schemaLocation="primitives.xsd"></include>
+	<include schemaLocation="preamble.xsd"></include>
+	<include schemaLocation="toc.xsd"></include>
+	<include schemaLocation="part.xsd"></include>
+	<include schemaLocation="notices.xsd"></include>
+	<include schemaLocation="analysis.xsd"></include>
+	
+	<!-- 
+		The regulation consists of three elements:
+		1. The FDSys tag which contains information pertinent to the federal register.
+		2. The preamble tag which contains some descriptive information about the reg.
+		3. At least one part.
+	 -->
+
+    <complexType name="Regulation">
+    	<sequence>
+    		<element name="fdsys" type="tns:FDSys"></element>
+    		<element name="preamble" type="tns:Preamble"></element>
+	    	<choice minOccurs="1" maxOccurs="unbounded">
+	    		<element ref="tns:part"></element>
+	    	</choice>
+	    	<choice minOccurs="0" maxOccurs="1">
+    			<element ref="tns:analysis"></element>
+	    	</choice>
+    	</sequence>
+    </complexType>
+    
+    <!-- 
+    	The regulation element enforces the following constraints:
+    	1. IDs of definitions must be unique.
+    	2. Labels of paragraphs must be unique.
+    	3. Labels of sections must be unique.
+    	4. Labels of subparts must be unique.
+    	5. Labels of appendices must be unique.
+    	6. Labels of appendix sections must be unique.
+     -->
+
+    <element name="regulation" type="tns:Regulation">
+    	<unique name="unique-def-id">
+    		<selector xpath=".//tns:def"></selector>
+    		<field xpath="@def-id"></field>
+    	</unique>
+    	<unique name="unique-par-label">
+    		<selector xpath=".//tns:paragraph|.//tns:section|.//tns:subpart|.//tns:appendix|.//tns:appendixSection"></selector>
+    		<field xpath="@label"></field>
+    	</unique>
+    	<unique name="unique-interp-label">
+    		<selector xpath=".//tns:interpSection|.//tns:interpParagraph|.//interpAppSection"></selector>
+    		<field xpath="@label"></field>
+    	</unique>
+    </element>
+        
+</schema>

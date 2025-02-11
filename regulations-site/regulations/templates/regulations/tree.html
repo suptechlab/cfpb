@@ -1,0 +1,37 @@
+{% load formatting %}
+{% comment %}
+    Template for inner paragraphs of a reg section
+{% endcomment %}
+{% if node.header %}
+<h{{ node.list_level|add:"+3" }}>{{ node.header | safe }}</h{{ node.list_level|add:"+3" }}>
+{% endif %}
+
+{%if node.marked_up %}
+<p> 
+{% if node.node_type == "appendix" %}
+    {{node.marked_up|safe|linebreaksbr}}
+{% else  %}
+    {{node.marked_up|safe}}
+{% endif %}
+</p>
+{% endif %}
+{% if node.children %}
+<ol class="level-{{node.children.0.list_level}}"
+    {% if node.children.0.marker %}
+        type="{{node.children.0.marker|format_marker}}"
+    {% else %}
+        type="{{node.children.0.list_type}}"
+    {% endif %}>
+
+    {% for c in node.children %}
+        {% with node=c template_name="regulations/tree-with-wrapper.html" %}
+            {% include template_name %}
+        {% endwith %}
+    {% endfor %}
+</ol>
+{% endif %}
+{% if node.interp %}
+    {% with interp=node.interp %}
+        {% include "regulations/slide-down-interp.html" %}
+    {% endwith %}
+{% endif %}

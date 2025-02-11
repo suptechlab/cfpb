@@ -1,0 +1,33 @@
+{
+  "name": "stay-positive",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Return 0 if the provided number is negative or optionally return the absolute value.",
+  "homepage": "https://github.com/cfpb/stay-positive",
+  "bugs": "https://github.com/cfpb/stay-positive/issues",
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "url": "http://consumerfinance.gov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/stay-positive"
+  },
+  "license": "Public Domain",
+  "keywords": [
+    "stay-positive",
+    "zero",
+    "number",
+    "positive",
+    "browserify"
+  ],
+  "devDependencies": {
+    "nodeunit": "~0.10.2",
+    "browserify": "^13.3.0",
+    "uglify-js": "~2.7.5"
+  },
+  "scripts": {
+    "test": "nodeunit test/stay-positive-tests.js",
+    "browser": "mkdir -p dist && browserify index.js -s stayPositive -o dist/stay-positive.js && uglifyjs dist/stay-positive.js -m -c sequences,dead_code,conditionals,booleans,unused,if_return,join_vars,drop_console -o dist/stay-positive.min.js"
+  }
+}

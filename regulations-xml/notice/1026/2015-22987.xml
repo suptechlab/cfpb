@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<notice xmlns="eregs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eregs https://raw.githubusercontent.com/cfpb/regulations-schema/master/src/eregs.xsd">
+  <fdsys>
+    <cfrTitleNum>12</cfrTitleNum>
+    <cfrTitleText>Banks and Banking</cfrTitleText>
+    <volume>8</volume>
+    <date>2015-09-21</date>
+    <originalDate>2012-01-01</originalDate>
+    <title>TRUTH IN LENDING</title>
+  </fdsys>
+  <preamble>
+    <agency>Bureau of Consumer Financial Protection</agency>
+    <cfr>
+      <title>12</title>
+      <section>1026</section>
+    </cfr>
+    <documentNumber>2015-22987</documentNumber>
+    <effectiveDate>2016-01-01</effectiveDate>
+    <federalRegisterURL>https://www.federalregister.gov/documents/2015/09/21/2015-22987/truth-in-lending-regulation-z-annual-threshold-adjustments-card-act-hoepa-and-atrqm</federalRegisterURL>
+  </preamble>
+  <changeset leftDocumentNumber="2015-32463" rightDocumentNumber="2015-22987">
+  <!-- Section 1026.52(b)(1)(ii)(B) is revised to read as follows: -->
+  <change operation="modified" label="1026-52-b-1-ii-B">
+    <paragraph label="1026-52-b-1-ii-B" marker="(B)">
+      <content>$37 if the <ref target="1026-2-a-7" reftype="term">card issuer</ref> previously imposed a fee pursuant to paragraph <ref target="1026-52-b-1-ii-A" reftype="internal">(b)(1)(ii)(A)</ref> of this section for a violation of the same type that occurred during the same <ref target="1026-2-a-4" reftype="term">billing cycle</ref> or one of the next six <ref target="1026-2-a-4" reftype="term">billing cycles</ref>; or</content>
+    </paragraph>
+  </change><!-- A. Under subpart E, Under Section 1026.32—Requirements for Certain Closed-End Home Mortgages, 32(a) Coverage, Paragraph 32(a)(1)(ii), paragraph 1.ii is added. -->
+  <change operation="added" label="1026-32-a-1-ii-Interp-1-ii" parent="1026-32-a-1-ii-Interp-1">
+    <interpParagraph label="1026-32-a-1-ii-Interp-1-ii" marker="ii.">
+      <content>For 2016, $1,017, reflecting a .2 percent decrease in the CPI-U from June 2014 to June 2015, rounded to the nearest whole dollar.</content>
+    </interpParagraph>
+  </change><!-- B. Under subpart E, Under Section 1026.32—Requirements for Certain Closed-End Home Mortgages, 32(a) Coverage, Paragraph 32(a)(1)(ii), paragraph 3.ii is added. -->
+  <change operation="added" label="1026-32-a-1-ii-Interp-3-ii" parent="1026-32-a-1-ii-Interp-3">
+    <interpParagraph label="1026-32-a-1-ii-Interp-3-ii" marker="ii.">
+      <content>For 2016, $20,350, reflecting a .2 percent decrease in the CPI-U from June 2014 to June 2015, rounded to the nearest whole dollar.</content>
+    </interpParagraph>
+  </change><!-- C. Under subpart E, Under Section 1026.43—Minimum Standards for Transactions Secured by a Dwelling, 43(e) Qualified Mortgages, Paragraph 43(e)(3)(ii), paragraph 1.ii is added. -->
+  <change operation="added" label="1026-43-e-3-ii-Interp-1-ii" parent="1026-43-e-3-ii-Interp-1">
+    <interpParagraph label="1026-43-e-3-ii-Interp-1-ii" marker="ii.">
+      <content>For 2016, reflecting a .2 percent decrease in the CPI-U that was reported on the preceding June 1, a <ref target="1026-42-b-2" reftype="term">covered transaction</ref> is not a qualified mortgage unless the transactions total <ref target="1026-32-b-1" reftype="term">points and fees</ref> do not exceed;</content>
+      <interpParagraph label="1026-43-e-3-ii-Interp-1-ii-A" marker="A.">
+        <content>For a loan amount greater than or equal to $101,749: 3 percent of the total loan amount;</content>
+      </interpParagraph>
+      <interpParagraph label="1026-43-e-3-ii-Interp-1-ii-B" marker="B.">
+        <content>For a loan amount greater than or equal to $61,050 but less than $101,749: $3,052;</content>
+      </interpParagraph>
+      <interpParagraph label="1026-43-e-3-ii-Interp-1-ii-C" marker="C.">
+        <content>For a loan amount greater than or equal to $20,350 but less than $61,050: 5 percent of the total loan amount;</content>
+      </interpParagraph>
+      <interpParagraph label="1026-43-e-3-ii-Interp-1-ii-D" marker="D.">
+        <content>For a loan amount greater than or equal to $12,719 but less than $20,350; $1,017;</content>
+      </interpParagraph>
+      <interpParagraph label="1026-43-e-3-ii-Interp-1-ii-E" marker="E.">
+        <content>For a loan amount less than $12,719: 8 percent of the total loan amount.</content>
+      </interpParagraph>
+    </interpParagraph>
+  </change><!-- D. Under subpart G, Under Section 1026.52—Limitations on Fees, 52(b) Limitations on Penalty Fees, 52 (b)(1)(ii) Safe Harbors, subheading i, paragraph 2.i.C is added. -->
+  <change operation="added" label="1026-52-b-1-ii-Interp-2-i-C">
+    <interpParagraph label="1026-52-b-1-ii-Interp-2-i-C" marker="C.">
+      <content><ref target="1026-2-a-7" reftype="term">Card issuers</ref> were permitted to impose a fee for violating the terms of an <ref target="1026-58-b-1" reftype="term">agreement</ref> if the fee did not exceed $27 under § <ref target="1026-52-b-1-ii-A" reftype="internal">1026.52(b)(1)(ii)(A)</ref> and $38 under § <ref target="1026-52-b-1-ii-B" reftype="internal">1026.52(b)(1)(ii)(B)</ref>, through December 31, 2015.</content></interpParagraph>
+  </change>
+  </changeset>
+</notice>

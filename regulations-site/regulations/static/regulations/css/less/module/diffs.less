@@ -1,0 +1,45 @@
+/*
+ Diffs
+ ========================================================================== 
+ diffs.less defines the visual appearance of regulations additions and deletions
+ */
+
+
+del {
+    color: @gray-40;
+    text-decoration: line-through;
+
+    img {
+        border: 2px solid @red;
+        opacity: .7;
+    }
+}
+
+ins {
+    background-color: @green-20;
+    text-decoration: none;
+    font-style: italic;
+
+    .key-term {
+        background-color: @green-20;
+        text-decoration: none;
+        .avenir-next-demi-italic;
+
+        .level-2 &,
+        .supplement-section .level-1 & {
+          .avenir-next-demi-italic; 
+        }
+    }
+
+    img {
+        border: 2px solid @green-20;
+    }
+}
+
+h2,
+h3,
+h4 {
+    ins {
+        .avenir-next-demi-italic
+    }
+}

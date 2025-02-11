@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<notice xmlns="eregs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eregs https://raw.githubusercontent.com/cfpb/regulations-schema/master/src/eregs.xsd">
+  <fdsys>
+    <cfrTitleNum>12</cfrTitleNum>
+    <cfrTitleText>Banks and Banking</cfrTitleText>
+    <volume>8</volume>
+    <date>2015-02-19</date>
+    <originalDate>2012-01-01</originalDate>
+    <title>REAL ESTATE SETTLEMENT PROCEDURES ACT</title>
+  </fdsys>
+  <preamble>
+    <agency>Bureau of Consumer Financial Protection</agency>
+    <regLetter>X</regLetter>
+    <cfr>
+      <title>12</title>
+      <section>1024</section>
+    </cfr>
+    <documentNumber>2015-01321</documentNumber>
+    <effectiveDate>2015-10-03</effectiveDate>
+    <federalRegisterURL>https://www.federalregister.gov/documents/2015/02/19/2015-01321/amendments-to-the-2013-integrated-mortgage-disclosures-rule-under-the-real-estate-settlement</federalRegisterURL>
+  </preamble>
+  <changeset leftDocumentNumber="2013-28210" rightDocumentNumber="2015-01321">
+    <change operation="modified" label="1024-5-d" subpath="content">
+      <content>Sections <ref target="1024-6" reftype="internal">1024.6</ref>, <ref target="1024-7" reftype="internal">1024.7</ref>, <ref target="1024-8" reftype="internal">1024.8</ref>, <ref target="1024-10" reftype="internal">1024.10</ref>, and <ref target="1024-33-a" reftype="internal">1024.33(a)</ref> do not apply to a federally related mortgage loan:</content>
+    </change>
+  </changeset>
+</notice>

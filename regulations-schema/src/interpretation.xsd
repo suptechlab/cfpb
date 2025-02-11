@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="eregs"
+	xmlns:tns="eregs" 
+	elementFormDefault="qualified">
+	
+	<include schemaLocation="primitives.xsd"></include>
+	<include schemaLocation="appendix.xsd"></include>
+	<include schemaLocation="toc.xsd"></include>
+	
+	<complexType name="Interpretations">
+		<sequence>
+			<choice minOccurs="0" maxOccurs="1">
+    			<element ref="tns:tableOfContents"></element>
+    		</choice>
+			<element name="title" type="string"></element>
+			<sequence>
+	    		<choice minOccurs="0" maxOccurs="unbounded">
+	    			<element ref="tns:interpSection"></element>
+	    		</choice>
+	    		<choice minOccurs="0" maxOccurs="unbounded">
+	    			<element ref="tns:interpAppSection"></element>
+	    		</choice>
+    		</sequence>
+<!-- 			<choice minOccurs="0" maxOccurs="1"> -->
+<!-- 				<element name="content" type="tns:InterpContents"></element> -->
+<!-- 			</choice> -->
+		</sequence>
+		<attribute name="label" type="string"></attribute>
+	</complexType>
+	
+	<complexType name="InterpSection">
+		<sequence>
+			<choice minOccurs="0" maxOccurs="1">
+				<element name="title" type="string"></element>
+			</choice>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element ref="tns:interpHeader"></element>
+			</choice>
+			<choice maxOccurs="unbounded">
+				<element name="reserved" type="string"></element>
+    			<element ref="tns:interpParagraph"></element>
+			</choice>
+		</sequence>
+		<attribute name="sectionNum" type="int" use="optional"></attribute>
+    	<attribute name="label" type="string" use="required"></attribute>
+	<attribute name="target" type="string" use="optional"></attribute>
+	</complexType>
+	
+	<complexType name="InterpAppSection">
+		<sequence>
+			<choice minOccurs="0" maxOccurs="1">
+    			<element name="title">
+    				<complexType>
+    					<simpleContent>
+    						<extension base="string">
+    							<attribute name="type" type="tns:titleType"></attribute>
+    						</extension>
+    					</simpleContent>
+    				</complexType>
+    			</element>
+			</choice>
+			<choice maxOccurs="unbounded">
+				<element name="reserved" type="string"></element>
+    			<element ref="tns:interpParagraph"></element>
+			</choice>
+		</sequence>
+		<attribute name="appendixSecNum" type="int" use="required"></attribute>
+    	<attribute name="label" type="string" use="required"></attribute>
+	</complexType>
+	
+	<complexType name="InterpAppendix">
+		<sequence>
+			<element name="title" type="string"></element>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element ref="tns:interpAppSection"></element>
+				<element ref="tns:interpParagraph"></element>
+			</choice>
+		</sequence>
+		<attribute name="appendixLetter" type="string" use="required"></attribute>
+		<attribute name="label" type="string" use="required"></attribute>
+	</complexType>
+	
+	<complexType name="InterpContents">
+    	<sequence>
+    		<choice minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:interpSection"></element>
+    		</choice>
+    		<choice minOccurs="0" maxOccurs="unbounded">
+                <element ref="tns:interpAppendix"></element>
+    		</choice>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="InterpParagraph">
+    	<sequence>
+    		<choice minOccurs="0" maxOccurs="1">
+    			<element name="title">
+    				<complexType>
+    					<simpleContent>
+    						<extension base="string">
+    							<attribute name="type" type="tns:titleType"></attribute>
+    						</extension>
+    					</simpleContent>
+    				</complexType>
+    			</element>
+    		</choice>
+    		<element name="content" type="tns:RegText"></element>
+    		<element ref="tns:interpParagraph" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+		<attribute name="marker" type="string" use="optional"></attribute>
+		<attribute name="label" type="string" use="required"></attribute>
+		<attribute name="target" type="string" use="optional"></attribute>
+    </complexType>
+    
+    <simpleType name="InterpHeader">
+		<restriction base="string"></restriction>
+	</simpleType>
+	
+	<element name="interpretations" type="tns:Interpretations"></element>
+	<element name="interpAppendix" type="tns:InterpAppendix"></element>
+	<element name="interpSection" type="tns:InterpSection"></element>
+	<element name="interpAppSection" type="tns:InterpAppSection"></element>
+	<element name="interpContent" type="tns:InterpContents"></element>
+	<element name="interpParagraph" type="tns:InterpParagraph"></element>
+	<element name="interpHeader" type="tns:InterpHeader"></element>
+	
+</schema>
