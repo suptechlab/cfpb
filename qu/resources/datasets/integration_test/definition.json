@@ -1,0 +1,121 @@
+{ "info": {
+    "name": "Integration Test Data",
+    "description": "Data for integration tests.",
+    "copyright": "This dataset is a public domain work of the US Government."
+  },
+  "concepts": {
+    "state_abbr": {
+      "description": "State Abbreviation",
+      "type": "string",
+      "table": "states",
+      "properties": {
+        "name": {
+          "name": "Name",
+          "description": "The name of the state",
+          "type": "string"
+        }
+      }        
+    },
+    "county": {
+      "description": "County"      
+    },
+    "tax_returns": {
+      "description": "Total Number of Tax Returns"
+    },
+    "adjusted_gross_income": {
+      "description": "Adjusted Gross Income (In Thousands)"
+    }
+  },
+  "slices": {
+    "incomes": {
+      "type": "table",
+      "table": "incomes",
+      "dimensions": [
+        "state_abbr", "state_name", "county"
+      ],
+      "indexes": [
+        ["state_abbr", "state_name"],
+        ["county", "state_name"],
+        ["state_abbr", "county"],
+        "state_abbr",
+        "county"
+      ],
+      "metrics": [
+        "tax_returns",
+        "adjusted_gross_income",
+        "date_observed"
+      ],
+      "references": {
+        "state_name": {
+          "column": "state_abbr",
+          "concept": "state_abbr",
+          "value": "name"
+        }
+      }
+    },
+    "incomes_by_state": {
+      "type": "derived",
+      "slice": "incomes",
+      "dimensions": [
+        "state_abbr"
+      ],
+      "metrics": [
+        "counties",
+        "tax_returns",
+        "median_tax_return"
+      ],
+      "aggregations": {
+        "counties": ["count"],
+        "tax_returns": ["sum", "tax_returns"],
+        "avg_tax_return": ["avg", "tax_returns"]
+      }
+    }
+  },  
+  "tables": {
+    "states": {
+      "sources": [
+        "states.csv"
+      ],
+      "columns": {
+        "state_abbr": {
+          "name": "_id",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },          
+    "incomes": {
+      "sources": [
+        "test_data.csv"
+      ],
+      "columns": {
+        "County Code": {
+          "skip": true
+        },
+        "State Abbreviation": {
+          "name": "state_abbr",
+          "type": "string"
+        },
+        "County Name": {
+          "name": "county",
+          "type": "string"
+        },
+        "Total Number of Tax Returns": {
+          "name": "tax_returns",
+          "type": "integer"
+        },
+        "Adjusted Gross Income (In Thousands)": {
+          "name": "adjusted_gross_income",
+          "type": "dollars"
+        },
+        "Date Observed": {
+          "name": "date_observed",
+          "type": "date",
+          "format": "YYYY/MM/dd"
+        }
+      }
+    }
+  }
+}
