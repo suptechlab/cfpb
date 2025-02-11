@@ -1,0 +1,48 @@
+name: Save ecfr as text
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '5 9 * * *'
+
+env:
+  PARTS: "1002,1003,1004,1005,1006,1007,1008,1010,1011,1012,1013,1016,1022,1024,1026,1030,1041"
+
+jobs:
+  save-ecfr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Installs htmlq
+        uses: baptiste0928/cargo-install@v3.0.0
+        with:
+          crate: htmlq
+          version: "0.4.0"
+
+      - name: Find latest date
+        id: date
+        uses: sergeysova/jq-action@a3f0d4ff59cc1dddf023fc0b325dd75b10deec58
+        with:
+          cmd: "curl -sSL https://www.ecfr.gov/api/versioner/v1/titles.json | jq '.titles[] | select(.number == 12) | .up_to_date_as_of' | tr -d '\"'"
+
+      - name: Fetch and extract parts from eCFR
+        run: |
+          IFS="," read -a BASH_PARTS <<< "$PARTS"
+          for PART in "${BASH_PARTS[@]}"; do
+            echo "$PART"
+            curl -sSL "https://www.ecfr.gov/api/renderer/v1/content/enhanced/${{ steps.date.outputs.value }}/title-12?chapter=X&part=${PART}" |
+            htmlq -r 'h1, h2, .source, .authority, .citation' |
+            htmlq -t '.part' |
+            ./.github/workflows/sed.sh |
+            awk '{$1=$1};1' > "./ecfr/${PART}.txt"
+          done
+
+      - name: Commit text
+        uses: stefanzweifel/git-auto-commit-action@v5.0.0
+        with:
+          commit_message: "ecfr update: ${{ steps.date.outputs.value }}"

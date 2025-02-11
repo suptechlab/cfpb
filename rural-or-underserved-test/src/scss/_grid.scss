@@ -1,0 +1,63 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+$columns: 12;
+$max-width: 1200px;
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $max-width;
+}
+
+.col {
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-2 {
+    width: percentage(2/$columns);
+}
+.col-3 {
+    width: percentage(3/$columns);
+}
+.col-4 {
+    width: percentage(4/$columns);
+}
+.col-5 {
+    width: percentage(5/$columns);
+}
+.col-6 {
+    width: percentage(6/$columns);
+}
+.col-8 {
+    width: percentage(8/$columns);
+}
+.col-9 {
+    width: percentage(9/$columns);
+}
+.col-10 {
+    width: percentage(10/$columns);
+}
+.col-11 {
+    width: percentage(11/$columns);
+}
+.col-12 {
+    width: percentage(12/$columns);
+}
+
+.col-offset-2 {
+  margin-left: percentage(2/$columns);
+}
+
+.col-near-half {
+  width: 48%;
+}
+
+.col-offset-near-half {
+  margin-left: 2%;
+}

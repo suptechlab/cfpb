@@ -1,0 +1,62 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+npm-debug.log
+
+# Vim swap files #
+##################
+*.swp
+
+# Python #
+#################
+*.pyc
+*.egg-info/
+__pycache__/
+*.py[cod]
+.eggs/
+.python-version
+build
+dist
+
+# Django #
+#################
+*.egg-info
+.installed.cfg
+settings.py
+retirement_api/tests/logs/*
+*api_check.log
+
+# sqlite #
+#################
+db.sqlite3
+retire.db
+
+# Unit test / coverage reports
+#################
+environment.cfg
+cover/
+ssa.json
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Front-End #
+#############
+node_modules/
+retirement_api/static/retirement/js/
+retirement_api/static/retirement/css/
+retirement_api/static/retirement/fonts/
+retirement_api/static/retirement/icons/
+retirement_api/static/retirement/webfonts
+
+# NPM Security #
+################
+.snyk

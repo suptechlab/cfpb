@@ -1,0 +1,24 @@
+# environment files
+.env
+
+# idea
+.idea/
+
+# Personal vscode settings 
+.vscode/
+
+# Python artifacts
+.ipynb_checkpoints
+__pycache__
+*.py[cod]
+.DS_Store
+.ruff_cache/
+
+#pytest
+.coverage
+coverage.xml
+
+# excel artifact
+~$example_sblar.xlsx
+
+errors.csv

@@ -1,0 +1,17 @@
+{{- if .Values.enabled -}}
+{{- $values := .Values -}}
+{{- $release := .Release.Name -}}
+{{- range $mapping := .Values.mappings -}}
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: {{ $mapping.name }}
+  namespace: {{ $values.target_namespace }}
+spec:
+{{- $filteredMapping := omit $mapping "name"}}
+{{- tpl (toYaml $filteredMapping) $ | nindent 2 }}
+  ambassador_id:
+  - {{ $values.ambassador_id }}
+{{ end }}
+{{- end -}}

@@ -1,0 +1,86 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "regtech-data-validator"
+version = "0.1.0"
+description = "RegTech submission data parser and validator"
+authors = []
+readme = "README.md"
+packages = [{ include = "regtech_data_validator", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4"
+pandas = "^2.2.2"
+pandera = "^0.22.1"
+tabulate = "^0.9.0"
+ujson = "^5.9.0"
+polars-lts-cpu = "^1.21.0"
+pyarrow = "^19.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.3.4"
+pytest-cov = "6.0.0"
+beautifulsoup4 = "^4.12.3"
+lxml = "^5.3.0"
+requests = "^2.32.3"
+
+[tool.poetry.group.data.dependencies]
+openpyxl = "^3.1.5"
+
+[tool.poetry.group.linters.dependencies]
+black = "24.8.0"
+ruff = "0.9.3"
+
+
+[tool.poetry.group.cli.dependencies]
+typer = "^0.15.1"
+
+[tool.poetry.scripts]
+cfpb-val = 'regtech_data_validator.cli:app'
+
+# Black formatting
+[tool.black]
+preview = true
+line-length = 120
+skip-string-normalization = true
+include = '\.pyi?$'
+exclude = '''
+/(
+    | .devcontainer
+    | .git          
+    | .gitignore
+    | .github
+    | data
+  )/
+'''
+
+# Linting
+[tool.ruff]
+# Same as Black.
+line-length = 120
+
+# Testing
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = [
+    "--cov-report=term-missing",
+    "--cov-branch",
+    "--cov-report=xml",
+    "--cov-report=term",
+    "--cov=regtech_data_validator",
+    "-vv",
+    "--strict-markers",
+    "-rfE",
+]
+testpaths = [
+    "tests",
+]
+
+[tool.coverage.run]
+relative_files = true
+source = ["regtech_data_validator"]
+
+[tool.coverage.report]
+skip_empty = true

@@ -1,0 +1,77 @@
+[tool.poetry]
+name = "regtech-user-fi-management"
+version = "0.1.0"
+description = ""
+authors = ["CFPB's RegTech Team"]
+readme = "README.md"
+packages = [{ include = "regtech_user_fi_management", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4"
+python-dotenv = "^1.0.0"
+SQLAlchemy = { version = "^2.0.36", extras = ["asyncio"]}
+psycopg2-binary = "^2.9.10"
+asyncpg = "^0.30.0"
+alembic = "^1.14.0"
+regtech-api-commons = {git = "https://github.com/cfpb/regtech-api-commons.git"}
+regtech-regex = {git = "https://github.com/cfpb/regtech-regex.git"}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytest-cov = "^6.0.0"
+pytest-mock = "^3.11.1"
+pytest-env = "^1.1.4"
+pytest-alembic = "^0.11.1"
+
+
+[tool.poetry.group.linters.dependencies]
+ruff = "0.9.3"
+black = "24.8.0"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["src","db_revisions"]
+addopts = [
+  "--cov-report=term-missing",
+  "--cov-branch",
+  "--cov-report=xml",
+  "--cov-report=term",
+  "--cov=src",
+  "-vv",
+  "--strict-markers",
+  "-rfE",
+]
+testpaths = ["tests"]
+env = [
+  "INST_DB_SCHEMA=main",
+  "INST_DB_USER=user",
+  "INST_DB_PWD=user",
+  "INST_DB_HOST=localhost:5432",
+  "INST_DB_NAME=fi",
+  "KC_URL=http://localhost",
+  "KC_REALM=",
+  "KC_ADMIN_CLIENT_ID=",
+  "KC_ADMIN_CLIENT_SECRET=",
+  "KC_REALM_URL=http://localhost",
+  "AUTH_URL=http://localhost",
+  "TOKEN_URL=http://localhost",
+  "CERTS_URL=http://localhost",
+  "AUTH_CLIENT=",
+]
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+
+[tool.coverage.run]
+relative_files = true
+source = ["src"]
+
+[tool.coverage.report]
+skip_empty = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

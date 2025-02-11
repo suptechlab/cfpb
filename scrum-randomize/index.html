@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+        Team order
+    </title>
+  </head>
+
+  <body>
+    <h1>Scrum order randomizer</h1>
+    
+    <p>Genereate a random order for your daily team standup!</p>
+
+    <p>
+      <b>Instructions:</b>
+      Append a comma separated list of names to the URL in the <code>team</code> parameter. 
+    </p>
+
+    <p>
+      For example, to generate a list for a four person team you'd add 
+      <code>?team=Cassandra Fin,Fred Ancial,Patty Pro,Bob Tection</code>
+      to the page's URL.
+    </p>
+
+    <section id="notice-view"></section>
+
+    <section id="team-view" style="display:none;">
+      <h2>Team members present:</h2>
+      <p>Uncheck any absent members.</p>
+      <ul></ul>
+      <button>Generate order!</button>
+    </section>
+
+    <section id="list-view" style="display:none;">
+      <h2>Order for <span id="date-today"></span>:</h2>
+      <ol></ol>
+    </section>
+
+    <script src="js/scrum-randomizer.js"></script>
+  </body>
+
+</html>

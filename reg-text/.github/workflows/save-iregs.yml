@@ -1,0 +1,47 @@
+name: Save iregs as text
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '2 8 * * 1'
+
+env:
+  PARTS: "1002,1003,1004,1005,1006,1007,1008,1010,1011,1012,1013,1016,1022,1024,1026,1030,1041"
+
+jobs:
+  save-iregs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Installs htmlq
+        uses: baptiste0928/cargo-install@v3.0.0
+        with:
+          crate: htmlq
+          version: "0.4.0"
+
+      - name: Fetch and extract parts from iRegs
+        run: |
+          IFS="," read -a BASH_PARTS <<< "$PARTS"
+          for PART in "${BASH_PARTS[@]}"; do
+            CHUNKS=($(curl -sSL "https://www.consumerfinance.gov/rules-policy/regulations/${PART}/" |
+              htmlq -t '.o-secondary-nav__link' -a href -b 'https://www.consumerfinance.gov'
+            ))
+            SUBPARTS=($(for chunk in "${CHUNKS[@]}"; do echo "$chunk" | awk -F '/' '{print $(NF-1)}'; done))
+            echo "${SUBPARTS[@]} found for part $PART at $(date '+%X')"
+            curl -sSL "${CHUNKS[@]}" |
+              htmlq -r '.regulation-meta, .inline-interpretation, .block--sub, .o-regulations-wayfinder' |
+              htmlq -t '.u-layout-grid__main' |
+              ./.github/workflows/sed.sh |
+              awk '{$1=$1};1' > "./iregs/${PART}.txt"
+              sleep 1
+          done
+
+      - name: Commit text
+        uses: stefanzweifel/git-auto-commit-action@v5.0.0
+        with:
+          commit_message: Nightly update
