@@ -1,0 +1,25 @@
+# Base configuration
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+markdown: kramdown
+highlighter: rouge
+gems:
+  - jekyll-redirect-from
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Title
+name: eRegulations
+subtitle: Making regulations easily readable, accessible, and understandable.
+
+# When using this template with a project page set the baseurl to '/project-name'
+# For user/organization pages set this to an empty string
+# When working locally use jekyll serve --baseurl '' so that you can view everything at localhost:4000
+# See http://jekyllrb.com/docs/github-pages/ for more info
+#baseurl: ''
+baseurl: '/eRegulations'
+
+# Style Variables
+brand_color: "#2cb34a"

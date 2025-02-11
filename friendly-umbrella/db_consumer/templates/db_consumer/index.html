@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h1>Hello, World!</h1>
+
+        {% if first_page %}
+            <h2>{{ first_page.title }}</h2>
+
+            {{ body | safe | linebreaks }}
+        {% else %}
+            <h2>No page found</h2>
+        {% endif %}
+
+    </body>
+</html>
