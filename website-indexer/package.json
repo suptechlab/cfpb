@@ -1,0 +1,46 @@
+{
+  "name": "website-indexer",
+  "version": "1.1.0",
+  "license": "CC0-1.0",
+  "engines": {
+    "node": ">=20.x"
+  },
+  "scripts": {
+    "build": "node ./esbuild/build.js",
+    "clean": "rm -rf ./viewer/static/",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "watch": "yarn build watch"
+  },
+  "dependencies": {
+    "@cfpb/cfpb-design-system": "3.6.2",
+    "@csstools/postcss-sass": "5.1.1",
+    "@csstools/sass-import-resolve": "1.0.0",
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.24.2",
+    "esbuild-plugin-copy": "^2.1.1",
+    "postcss": "^8.4.49",
+    "postcss-scss": "4.0.9"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-jinja-template": "^2.0.0"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-jinja-template"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.html"
+        ],
+        "options": {
+          "parser": "jinja-template"
+        }
+      }
+    ]
+  },
+  "type": "module",
+  "packageManager": "yarn@4.5.3"
+}

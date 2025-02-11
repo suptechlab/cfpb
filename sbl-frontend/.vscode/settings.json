@@ -1,0 +1,46 @@
+{
+  "css.validate": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    "source.fixAll",
+    "source.organizeImports"
+  ],
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.foldingImportsByDefault": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.eslintcache": true,
+    "**/.nyc_output": true,
+    "**/.stylelintcache": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/yarn.lock": true
+  },
+  "files.watcherExclude": {
+    "**/dist": true
+  },
+  "git.enableCommitSigning": true,
+  "javascript.format.enable": false,
+  "stylelint.validate": ["css"],
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "playwright.env": {
+    "NODE_OPTIONS": "-r ./.pnp.cjs"
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
+}

@@ -1,0 +1,149 @@
+<div class="o-well">
+  <form class="o-form" action="{% url 'index' %}">
+    <h2 class="h3">Search the index</h2>
+    <div class="o-search-input">
+      <div class="o-search-input__input">
+        <label
+          for="query"
+          class="o-search-input__input-label"
+          aria-label="Search"
+        >
+          {% include "search.svg" %}
+        </label>
+        <input
+          type="search"
+          id="query"
+          name="q"
+          value="{{ request.query_params.q }}"
+          class="a-text-input a-text-input__full"
+          placeholder="Search"
+          title="Search"
+          autocomplete="off"
+          maxlength="75"
+        />
+        <button
+          type="reset"
+          onclick="document.getElementById('query').setAttribute('value', '')"
+          aria-label="Clear search"
+          title="Clear search"
+        >
+          {% include "error.svg" %}
+        </button>
+      </div>
+      <button
+        class="a-btn"
+        type="submit"
+        aria-label="Search consumerfinance.gov content and source code"
+      >
+        Search
+      </button>
+    </div>
+
+    <p class="help-text">
+      Check out the <a href="{% url 'help' %}">Common searches</a> page for
+      examples.
+    </p>
+
+    <div class="search-options">
+      <div class="m-form-field m-form-field--radio">
+        <input
+          class="a-radio"
+          type="radio"
+          value="title"
+          id="search_type_title"
+          name="search_type"
+          {% if request.query_params.search_type is None or request.query_params.search_type == 'title' %}checked{% endif %}
+        />
+        <label class="a-label" for="search_type_title">
+          Title
+          <span>Search page titles</span>
+        </label>
+      </div>
+      <div class="m-form-field m-form-field--radio">
+        <input
+          class="a-radio"
+          type="radio"
+          value="url"
+          id="search_type_url"
+          name="search_type"
+          {% if request.query_params.search_type == 'url' %}
+            checked
+          {% endif %}
+        />
+        <label class="a-label" for="search_type_url">
+          URL
+          <span>Search page URLs</span>
+        </label>
+      </div>
+      <div class="m-form-field m-form-field--radio">
+        <input
+          class="a-radio"
+          type="radio"
+          value="text"
+          id="search_type_text"
+          name="search_type"
+          {% if request.query_params.search_type == 'text' %}checked{% endif %}
+        />
+        <label class="a-label" for="search_type_text">
+          Full text
+          <span>Search page text</span>
+        </label>
+      </div>
+      <div class="m-form-field m-form-field--radio">
+        <input
+          class="a-radio"
+          type="radio"
+          value="links"
+          id="search_type_links"
+          name="search_type"
+          {% if request.query_params.search_type == 'links' %}
+            checked
+          {% endif %}
+        />
+        <label class="a-label" for="search_type_links">
+          Links
+          <span>Search link URLs contained on CF.gov pages</span>
+        </label>
+      </div>
+      <div class="m-form-field m-form-field--radio">
+        <input
+          class="a-radio"
+          type="radio"
+          value="components"
+          id="search_type_components"
+          name="search_type"
+          {% if request.query_params.search_type == 'components' %}checked{% endif %}
+        />
+        <label class="a-label" for="search_type_components">
+          Components
+          <span>
+            <p>
+              Search by
+              <a href="{% url 'components' %}">class names</a>
+              of our
+              <a class="a-link" href="https://cfpb.github.io/design-system/">
+                <span class="a-link__text">Design System</span>
+                {% include "external-link.svg" %}</a
+              >
+              components and patterns
+            </p>
+          </span>
+        </label>
+      </div>
+      <div class="m-form-field m-form-field--radio">
+        <input
+          class="a-radio"
+          type="radio"
+          value="html"
+          id="search_type_html"
+          name="search_type"
+          {% if request.query_params.search_type == 'html' %}checked{% endif %}
+        />
+        <label class="a-label" for="search_type_html">
+          HTML
+          <span>Search page HTML</span>
+        </label>
+      </div>
+    </div>
+  </form>
+</div>

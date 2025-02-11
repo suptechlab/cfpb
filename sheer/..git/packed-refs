@@ -1,0 +1,20 @@
+# pack-refs with: peeled fully-peeled sorted 
+a7f805eb2c3d0cc98bbb150f0eff857ea799d2f8 refs/remotes/origin/facets
+41491eab9bb2d2c62e4814f99ed7c3cbe8830a3a refs/remotes/origin/flaskify
+493ef78614f4590158c2477133f15c1e6eb76437 refs/remotes/origin/get_document_for_indexers
+11b6f883bcfdc963548c2f7a2319fe07d5e32158 refs/remotes/origin/master
+db0f6d69eba29e7f2b06478449f10eb20677e4fb refs/tags/2.0.1
+752112973e1912f0ad3baafd422e4ed2ce3520f1 refs/tags/2.0.2
+5ca4f333e7431d5a083c833a0e91c234e6bbd9b9 refs/tags/2.0.3
+925016c7382ebfb5895d6694d4501655830d6fd5 refs/tags/2.0.4
+c94a3f661193001fbfea588ad51312b525ab1e30 refs/tags/3.0.0
+2395da4eb342cae8116942851b73d0e3f00b4d1e refs/tags/3.0.1
+8784e9963e4c970bff57dc4419ceebbed48e6f00 refs/tags/3.1.0
+a4a9e3ea1d44b10c5f177515c8076f082f732439 refs/tags/3.2.0
+96ddf6092878d94da421ac7529c06c87422d0424 refs/tags/3.3.0
+ba907acb35e3921a29205f36e428d1fa29299865 refs/tags/3.3.1
+11b6f883bcfdc963548c2f7a2319fe07d5e32158 refs/tags/3.4.0
+356293f4059f2a2f7ca153017a3e9b3791fb0ef4 refs/tags/v1.0.0
+^f35d72197530bef3c3ece7dbb61c0bd0e2e6c56a
+f7bfc9f6cc13712350647f74b0a72a38e031cbe7 refs/tags/v2.0.0
+5d3eda86d6189919750f043435376d53fdac76a9 refs/tags/v2.0.1

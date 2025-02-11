@@ -1,0 +1,10 @@
+.github
+.tox
+
+htmlcov
+sample
+venv
+viewer/static
+viewer/templates/viewer/gtm
+
+crawler/fixtures/sample.json

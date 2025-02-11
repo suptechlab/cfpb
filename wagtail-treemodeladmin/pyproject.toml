@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools>=63", "setuptools_scm[toml]>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wagtail-treemodeladmin"
+dynamic = ["version"]
+description = "TreeModelAdmin for Wagtail"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "CC0"}
+authors = [
+    {name = "CFPB", email = "tech@cfpb.gov" }
+]
+dependencies = [
+    "wagtail>=5.1",
+    "wagtail-modeladmin>=1.0",
+]
+classifiers = [
+    "Framework :: Django",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.2",
+    "Framework :: Wagtail",
+    "Framework :: Wagtail :: 4",
+    "Framework :: Wagtail :: 5",
+    "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+    "License :: Public Domain",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+
+[project.optional-dependencies]
+testing = [
+    "coverage[toml]",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/cfpb/wagtail-treemodeladmin"
+"Bug Reports" = "https://github.com/cfpb/wagtail-treemodeladmin/issues"
+"Source" = "https://github.com/cfpb/wagtail-treemodeladmin"
+
+[tool.setuptools.package-data]
+treemodeladmin = [
+    "templates/treemodeladmin/*",
+    "templates/treemodeladmin/includes/*",
+    "static/treemodeladmin/css/*",
+]
+
+[tool.setuptools_scm]
+
+[tool.ruff]
+# Use PEP8 line-length
+line-length = 79
+# Exclude common paths
+exclude = [
+    ".git",
+    ".tox",
+    "__pycache__",
+    "**/migrations/*.py",
+]
+
+[tool.ruff.lint]
+ignore = []
+# Select specific rulesets to use
+select = [
+    # pycodestyle
+    "E",
+    # pyflakes
+    "F",
+    # flake8-bugbear
+    "B",
+    # pyupgrade
+    "UP",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.ruff.lint.isort.sections]
+"django" = ["django"]
+"wagtail" = ["wagtail"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+known-third-party = ["jinja2"]
+section-order = [
+    "future",
+    "standard-library",
+    "django",
+    "wagtail",
+    "third-party",
+    "first-party",
+    "local-folder",
+]
+
+[tool.coverage.run]
+omit = [
+    "treemodeladmin/tests/*",
+]
+
+[tool.bandit]
+exclude_dirs = [
+    "*/tests/*",
+]

@@ -1,0 +1,53 @@
+{
+  "name": "atomic-component",
+  "version": "1.4.0",
+  "description": "Basic Atomic Component",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "gulp test",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfpb/AtomicComponent.git"
+  },
+  "author": {
+    "name": "Consumer Financial Protection Bureau",
+    "email": "tech@cfpb.gov",
+    "url": "https://consumerfinance.gov"
+  },
+  "license": "CC0-1.0",
+  "keywords": [
+    "capital-framework",
+    "Atomic Design"
+  ],
+  "bugs": {
+    "url": "https://github.com/cfpb/AtomicComponent/issues"
+  },
+  "homepage": "https://github.com/cfpb/AtomicComponent#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "chai": "^4.1.1",
+    "glob-all": "^3.1.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "jsdom": "^11.2.0",
+    "jsdom-global": "^3.0.2",
+    "minimist": "^1.2.0",
+    "mocha": "^3.5.0",
+    "require-dir": "^0.3.2",
+    "sinon": "^3.2.1",
+    "webpack": "^3.5.5",
+    "webpack-stream": "^4.0.0"
+  },
+  "dependencies": {
+    "dom-delegate": "^2.0.3"
+  }
+}

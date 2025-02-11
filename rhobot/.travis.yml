@@ -1,0 +1,47 @@
+sudo: required
+
+language: go
+go:
+    - 1.6.2
+    - 1.8.3
+
+services:
+    - docker
+
+env:
+    global:
+        - DOCKER_COMPOSE_VERSION=1.8.0
+
+before_install:
+    # For integration with codecov.io
+    - go get github.com/modocache/gover
+    # reinstall docker-compose at specific version
+    - sudo rm /usr/local/bin/docker-compose
+    - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+    - chmod +x docker-compose
+    - sudo mv docker-compose /usr/local/bin
+    - docker-compose build
+
+go_import_path: github.com/cfpb/rhobot
+
+install:
+    - go get github.com/tools/godep
+    - godep restore
+
+before_script:
+    # Disable services enabled by default
+    # http://docs.travis-ci.com/user/database-setup/#MySQL
+    - sudo /etc/init.d/mysql stop
+    - sudo /etc/init.d/postgresql stop
+
+script:
+    # setup dockerized services
+    - docker-compose up -d
+    - sleep 300
+    - docker ps
+    - go test -v ./...
+    - go list -f '{{if len .TestGoFiles}}"go test -coverprofile={{.Dir}}/.coverprofile {{.ImportPath}}"{{end}}' ./... | xargs -i sh -c {}
+    - gover . coverprofile.txt
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash) -f coverprofile.txt -v

@@ -1,0 +1,16 @@
+# pack-refs with: peeled fully-peeled sorted 
+fc788df90bb57ba33dae5e7ed6c86e794e6b439e refs/remotes/origin/anselmbradford-patch-1
+2a1c6cfa7055c2acce22fba2aae9e0dc2d87b694 refs/remotes/origin/atomic_component_update
+f45d7ded6687672c8b701c9910ddfe90c7ede742 refs/remotes/origin/master
+339eac8f1b4329c86d05a91240a8cf1fa9443dcc refs/remotes/origin/rollback_arrow_funcs
+0f58d6bc574e4cf3c399e00a2480ddbdf8620366 refs/tags/v1.0
+0c6f4a1333fc238ceafb657503b9dc4cb8b39230 refs/tags/v1.1
+bc635d93d2029a3f8bc912b254a445ad8243ffb6 refs/tags/v1.2
+5b48f37f73cf0df08889cb273a15402a9f5bde35 refs/tags/v1.2.1
+^79043d7392d5780e1e48b9aa005e12cb70d6bb1a
+af4c5b699bccca4e7c948a738a2a2b38958f6369 refs/tags/v1.2.2
+3e11956ccadd6f8329bbf466c3b2c9536696459f refs/tags/v1.3.0
+590fd6c24e6449b3e6cbe23ebb14142f62e2997c refs/tags/v1.3.1
+cb00c216c44d7081510dd6bce043405fd0aca9b8 refs/tags/v1.3.2
+5de92645aa5979cbdcf96e54a1572e0865da8391 refs/tags/v1.4.0
+^f41aa38082c1dcbb236259fb3e1f90ccbc1e05a3

@@ -1,0 +1,6 @@
+*.pyc
+*.swp
+tests/.coverage
+tests/nosetests.xml
+*.tmproj
+bill*

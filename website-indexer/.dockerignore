@@ -1,0 +1,25 @@
+# Ignore everything
+**
+
+# ...except for all of this
+!.yarnrc.yml
+!esbuild/**/*.js
+
+!manage.py
+!package.json
+!settings.py
+!urls.py
+!wsgi.py
+
+!crawler/**/*.py
+
+!patch_environ/**/*.py
+
+!requirements
+
+!sample/sample.sqlite3
+
+!viewer/**/*.py
+!viewer/static_src
+!viewer/templates
+

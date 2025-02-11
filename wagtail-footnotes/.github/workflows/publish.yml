@@ -1,0 +1,56 @@
+name: Publish to PyPI
+
+on:
+  release:
+    types: [released, prereleased]
+
+permissions:
+  contents: read # to fetch code (actions/checkout)
+
+env:
+  PYTHON_LATEST: "3.12"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{env.PYTHON_LATEST}}
+          cache: "pip"
+          cache-dependency-path: "pyproject.toml"
+
+      - name: ⬇️ Install dependencies
+        run: |
+          python -Im pip install flit
+          python -Im flit install --symlink
+
+      - name: 🏗️ Build
+        run: python -Im flit build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: ./dist
+
+  # https://docs.pypi.org/trusted-publishers/using-a-publisher/
+  pypi-publish:
+    needs: build
+    environment: 'release'
+
+    name: ⬆️ Upload release to PyPI
+    runs-on: ubuntu-latest
+    permissions:
+      # Mandatory for trusted publishing
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+
+      - name: 🚀 Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: artifact/
+          print-hash: true

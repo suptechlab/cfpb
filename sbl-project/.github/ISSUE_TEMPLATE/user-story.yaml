@@ -1,0 +1,53 @@
+name: User story
+description: Feature request written from the perspective of the end user
+title: '[Story] Start with verb that describes user action (pull from the "I want to" part of the user story)'
+labels:
+  - story
+projects:
+  - "cfpb/21"
+body:
+  - type: textarea
+    id: epic
+    attributes:
+      label: Epic
+      description: Link to parent epic, represented as GitHub issue
+      value: |
+        Epic issue includes overview, complete list of user stories, user testing task ideation, and final design mock-ups.
+        
+        - <link to parent epic> 
+  - type: textarea
+    id: story
+    attributes:
+      label: User story
+      description: Feature request written from the perspective of the end user
+      value: |
+        - As a [user type], I want to [take some action], so that [reason for action].
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: A set of predefined requirements that must be met to mark a user story complete
+      value: |
+        - Given [some context or conditions], when [the action that is performed], then [the expected observable outcome or behavior].
+  - type: textarea
+    id: technical-tasks
+    attributes:
+      label: Tasks
+      value: |
+        Team members should create task issues in their respective repos and add links to those tasks below. Please delete any task that is not being used. 
+
+        #### UX
+        - [ ] Task (link)
+        - [ ] Task (link)
+
+        #### Data
+        - [ ] Task (link)
+        - [ ] Task (link)
+
+        #### Front end
+        - [ ] Task (link)
+        - [ ] Task (link)
+ 
+        #### Back end
+        - [ ] Task (link)
+        - [ ] Task (link)

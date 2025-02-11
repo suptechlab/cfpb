@@ -1,0 +1,8 @@
+# pack-refs with: peeled fully-peeled sorted 
+13457278f142fa9a12a77cc1f6b594b5fc7bc1fe refs/remotes/origin/ans_esm
+e78d9d590482d6ae5e5360c8c6332b0a0a6e083f refs/remotes/origin/dependabot/npm_and_yarn/json5-2.2.3
+5e01fcf0f1b07a585dd5bafb0ca123135f9d9cc8 refs/remotes/origin/master
+261418a0690f3b567f2da04af0fd0962b678b40a refs/tags/v0.1.0
+^c7f0b005b762b4c9b08cb5bc2bcaadab2bac01da
+8fb656ce9ccec688d26d9fea2c0f78fdb0c08caa refs/tags/v0.1.1
+^68774d0f64104bcbfe9b774cd55c01846f3873cc

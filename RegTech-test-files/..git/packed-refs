@@ -1,0 +1,15 @@
+# pack-refs with: peeled fully-peeled sorted 
+1a73cc72985b25c420d1b92199bab4ffe807b529 refs/remotes/origin/13-add-table-of-content
+702823e5ca2bb7c07ff9579535c79dc43d92b2c1 refs/remotes/origin/beta-restructuring-2
+64f8deacbe553878faa65c8ce23160e15d68e0ca refs/remotes/origin/beta-restructuring-3
+c72f68b16962f4ca9338e5dbda2f5d125e8a0aa5 refs/remotes/origin/beta_restructuring
+6b338e271302a9a5b3a3f71dbd7fe1bbfc43a161 refs/remotes/origin/main
+23510b6b51b54416405e3a8bb035db758a4e5543 refs/remotes/origin/natalia-fitzgerald-patch-1
+af2a40902068e40d323ee5db8c9695e97c87c2b2 refs/remotes/origin/natalia-fitzgerald-patch-2
+f8e8c84936fdc65dc39c4c1ff760dca2f676d2b1 refs/remotes/origin/natalia-fitzgerald-patch-3
+fd7aec0bc3dc8f625576bcdf323176f681058a1f refs/remotes/origin/natalia-fitzgerald-patch-4
+8ac15a212a156f9e9c19cb2d36b63aaae0591ecc refs/remotes/origin/natalia-fitzgerald-patch-5
+117d9e3102c142cc54c97a6306df05668e29a712 refs/remotes/origin/natalia-fitzgerald-patch-6
+feb114a50602fe6e7e6e203751cc2242a70302b1 refs/remotes/origin/nongarak-patch-1
+4fc892af2bfbbfd8ea544b23fe42248cf5135ba6 refs/remotes/origin/nongarak-patch-1-1
+74ea4484063599dd2e071a62e718825ec1c5324d refs/remotes/origin/single_lei

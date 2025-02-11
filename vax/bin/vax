@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+'use strict';
+
+var program  = require('commander');
+
+require('../cmds/vax.js')(program);
+
+program
+  .version('1.0.0')
+  .option('-f, --fix', 'Automatically fix any issues.')
+  .parse(process.argv);

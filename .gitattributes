@@ -1,0 +1,4 @@
+/sbl-frontend/..git/objects/pack/pack-cb19c148927b1952e648a525cdfed2a40444a107.pack filter=lfs diff=lfs merge=lfs -text
+/uswds/..git/objects/pack/pack-5e32245a85a8cfd01f5c923a435b417ae774f936.pack filter=lfs diff=lfs merge=lfs -text
+/wagtail/..git/objects/pack/pack-d62656051c58f814b246c87eb375a455b137ee4b.pack filter=lfs diff=lfs merge=lfs -text
+/wagtail/..git/objects/pack/pack-dc124834ecbc345ce29be843ea9eae2f2fef56cf.pack filter=lfs diff=lfs merge=lfs -text

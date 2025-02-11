@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+294b53cda9178ec1019b679aa42fcdb9fd729905 refs/remotes/origin/human-friendly-numbering
+3b18e6b67d8a849db106bed71dbe05f6e166e53c refs/remotes/origin/main
+915ba7c66866224c7de49f840d670afd6eb694ca refs/remotes/origin/templated-reference-links

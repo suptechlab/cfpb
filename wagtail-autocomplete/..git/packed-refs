@@ -1,0 +1,29 @@
+# pack-refs with: peeled fully-peeled sorted 
+4a37f19b24fd52b97ea1e7bcc50a5a4f0f7fe11f refs/remotes/origin/50-manager
+8186cbad09631c4b9666aa1938e7fedc6b90257a refs/remotes/origin/dependabot/npm_and_yarn/elliptic-6.5.3
+dd646e136959f12434e4ca2161dd3aad3d495e7d refs/remotes/origin/dependabot/npm_and_yarn/eslint-4.18.2
+4f3c501c08e676bc46e5c50d356fa7efc9baff2d refs/remotes/origin/dependabot/npm_and_yarn/fstream-1.0.12
+e7b8e9f41c6c49e665a6204116771aa8260b9cbf refs/remotes/origin/dependabot/npm_and_yarn/lodash-4.17.19
+910bb3ef60220594ace51acfb4020a8443dc1346 refs/remotes/origin/dependabot/npm_and_yarn/lodash.merge-4.6.2
+747580c54cab1d9855e7cffa86148fe75a847007 refs/remotes/origin/dependabot/npm_and_yarn/lodash.mergewith-4.6.2
+2c43d60ee02bb4f9d3cd092478213fbf420ecc02 refs/remotes/origin/dependabot/npm_and_yarn/mixin-deep-1.3.2
+3b178fabef376670c91b40a035cff3b068e028ab refs/remotes/origin/fix-except-handling
+7c3f7892aff223d77cdd62bdb52cdb0da97e1546 refs/remotes/origin/master
+25832c2510adaad253f06e88129f8f2e88ed5b62 refs/remotes/origin/storybooks
+6821e4e0294b504ee5d04ad9914c64be1cd4bced refs/remotes/origin/wip
+065be8b7a1f625185f30e7faf598a3c0cce0352a refs/tags/0.3
+03438287bdbdbb69e0d7506bd56cb3548cdd6a81 refs/tags/0.7
+98fa2938c7ac9d06ee5e72045e5a2b7349994149 refs/tags/v0.1.1
+^0c64413411b149f33ea666ac7164d3c739ad3d90
+f5b4e2aa222e0ed98a45503b593b824a71264f6b refs/tags/v0.2
+^e467226f9674a727fc2e169285ce97c021dac819
+53651de550240a48abf16fc29cd45859f65eb43d refs/tags/v0.3
+^99606e890bf9e69710d15462aab6c7a181e3c229
+a3b4c54c9f57438b43a3b7a9b71fa45c992b84d6 refs/tags/v0.3.1
+^065be8b7a1f625185f30e7faf598a3c0cce0352a
+531b97e907cbad57325bf3035d7ad99e46fbc5d1 refs/tags/v0.4
+^8610356c42e9ce4fd95d1a8c3420ed994abe570f
+eab012876f604d7c6bab2d0aa4ad018e78115951 refs/tags/v0.5
+^c5774ee82d141a1e0fca771365f134195f3a52eb
+b8c26398b03fc7ff5547691bed5f0a50c5f18729 refs/tags/v0.6
+^8446870324652783e60b4adebaded7802317bff9

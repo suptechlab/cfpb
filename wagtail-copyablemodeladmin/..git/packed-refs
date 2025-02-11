@@ -1,0 +1,5 @@
+# pack-refs with: peeled fully-peeled sorted 
+6ae2c548deaa4a8aaa8ced410f28c46f1574dcff refs/remotes/origin/master
+27ab3f626356beae52c3acc9931c89aca3a554f3 refs/remotes/origin/update-and-blacken
+b71e743300839b151ffe4ae97bb63b0923557a82 refs/remotes/origin/wag28-support
+6ae2c548deaa4a8aaa8ced410f28c46f1574dcff refs/tags/1.0.0

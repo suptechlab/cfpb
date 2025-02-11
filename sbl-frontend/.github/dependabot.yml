@@ -1,0 +1,19 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Once we feel comfortable with e2e test coverage and it's running on dev, we can re-enable this
+    # see: https://github.com/cfpb/sbl-frontend/issues/835
+    # see also: https://github.com/cfpb/sbl-frontend/issues/957
+    open-pull-requests-limit: 0

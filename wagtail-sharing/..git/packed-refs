@@ -1,0 +1,35 @@
+# pack-refs with: peeled fully-peeled sorted 
+523e6b428a2cc47608e3eefc4ee9d5a4dff803af refs/remotes/origin/dependabot/github_actions/dot-github/workflows/actions/download-artifact-4.1.7
+4d3d3879b022af8ed995e8f513b3c612911ae63d refs/remotes/origin/header-sharing-link
+3d1681f4f5311afde966673c4701f3b514738d48 refs/remotes/origin/main
+ef9b02b3b625eaadfe0686b4d9b4194a5ed83e1c refs/remotes/origin/master
+221811c11b22b73b00762488f5d3d37d6568e43d refs/tags/0.1
+^fe4af4f3a5bcd69e122b4163d60442a3c13b537c
+7fc386e34a539b0ccf7b34f97fe12f2b1af72b23 refs/tags/0.2
+^25b6c37442dc4cde7bd87ee0d4b7c255bcc19732
+51d0393ebc3441fba7de0a7d1a7b413824a55bd3 refs/tags/0.3
+^fc5274e81f9ee781c7d74a8b48d50d05c23d78f5
+73af667f295cba303965b80dca3a38c6d5b29a50 refs/tags/0.4
+7a0c781077b86b9fe9db629eb8104f739dc65a52 refs/tags/0.5
+1d995f59fa0e2f2adf4a724e15f5c59b9c85cee4 refs/tags/0.5.1
+f66ee1cf5f513534141d583a684a9b01cba529bd refs/tags/0.6
+1e34287e3ead737315c6248c256bfd40eb15bce1 refs/tags/0.6.1
+e3c338dae3327d955f058b5eb2f311d4dc0cbbf7 refs/tags/0.7
+c56a846dd4b64e0a3bfa72b24ced1adc65c17831 refs/tags/0.8
+e9a9da8e7f9e14c1217ee5f7a33754b9a25cba9e refs/tags/1.0
+a34e95d840a5546c380b4186a368edc4f1a4d4f5 refs/tags/2.0
+5deb93b4bb878a7be3a0d36456297648941d6483 refs/tags/2.1
+34373a8dfd3a3c397c2d3ba10ca9df82fff065b1 refs/tags/2.10
+db88edab2d240db971c613c6c8b5602c8b172007 refs/tags/2.11
+705f5a5bbbd11d9d2ec559463bf43b143bfad0ea refs/tags/2.12
+3d1681f4f5311afde966673c4701f3b514738d48 refs/tags/2.12.1
+7ffe146c6b2d35549edece41871d639eaec60709 refs/tags/2.2
+ef9b02b3b625eaadfe0686b4d9b4194a5ed83e1c refs/tags/2.2.1
+792cb77b11661ab3faff70d31804fb81c144c9cf refs/tags/2.3.0
+b758ccb7d87efc8990e05768b44bcc760f6e39f7 refs/tags/2.4.0
+ca1db94268eed1e9507663325285a060d267e00d refs/tags/2.5.0
+51d5a5f291d866531056b9c6873634b5703c4eb9 refs/tags/2.5.1
+5e73d11d8f596d01e735107ba50764a27df479c4 refs/tags/2.6
+35a8855e267fc19490860db1626db18ee69cddf0 refs/tags/2.7
+9c025077bfe5ad9e3ac00df124d83a3ed7f6a0a8 refs/tags/2.8
+68557c0ec818fdf2025f9ea2308065763df0507a refs/tags/2.9

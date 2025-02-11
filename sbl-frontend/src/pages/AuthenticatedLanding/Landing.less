@@ -1,0 +1,49 @@
+.m-hero {
+  border-bottom: 1px solid;
+  @apply border-b-pacific40 !bg-pacific10;
+}
+
+#landing-page {
+  .list-none {
+    list-style: none;
+  }
+
+  .subsection-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.9375rem;
+    padding-right: 5em;
+
+    .left-padded {
+      margin-left: 0.5em;
+    }
+  }
+
+  .additional-resources {
+    ul {
+      padding-left: 0;
+      margin-top: 1em;
+
+      li {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  .content_line {
+    margin: 2.813rem auto;
+  }
+}
+
+// Mobile styles
+@media only all and (max-width: 600px) {
+  #landing-page {
+    .subsection-wrapper {
+      padding: 0;
+    }
+
+    .m-list_link {
+      margin-top: 0.25em;
+    }
+  }
+}
